@@ -1,40 +1,28 @@
+
 // ==================================
 // INTERACTIVE KNOWLEDGE LEXICON
-// First JavaScript Program
+// FIRST JAVASCRIPT PROGRAM
 // ==================================
-
-// 1. Display a message in the browser console
 
 console.log("Welcome to the Interactive Knowledge Lexicon!");
 
-// 2. Create our first variable
-
 let projectName = "Interactive Knowledge Lexicon";
 
-// 3. Display the project name
-
 console.log(projectName);
-
-// 4. Create a simple learning message
 
 let learningMessage = "Explore. Understand. Experiment.";
 
 console.log(learningMessage);
 
+
 // ==================================
 // FIRST VISIBLE JAVASCRIPT TEST
 // ==================================
 
-// 1. Create a new paragraph
-
 const testMessage = document.createElement("p");
-
-// 2. Give the paragraph a message
 
 testMessage.textContent =
     "JavaScript is running successfully!";
-
-// 3. Give the message some basic styling
 
 testMessage.style.backgroundColor = "#e0f2fe";
 testMessage.style.color = "#173b67";
@@ -42,9 +30,8 @@ testMessage.style.padding = "15px";
 testMessage.style.textAlign = "center";
 testMessage.style.fontWeight = "bold";
 
-// 4. Insert the message above the footer
-
 document.querySelector("footer").before(testMessage);
+
 
 // ==================================
 // KNOWLEDGE LEXICON
@@ -56,34 +43,40 @@ const concepts = [
     {
         name: "Ping",
         category: "Computer Networking",
-        description: "A tool used to test communication between devices."
+        description: "A tool used to test communication between devices.",
+        page: "concepts/ping.html"
     },
 
     {
         name: "Virtual Memory",
         category: "Operating Systems",
-        description: "A memory management technique that gives processes a virtual address space."
+        description: "A memory management technique that gives processes a virtual address space.",
+        page: null
     },
 
     {
         name: "Paging",
         category: "Operating Systems",
-        description: "A memory management technique that divides memory into fixed-size blocks."
+        description: "A memory management technique that divides memory into fixed-size blocks.",
+        page: null
     },
 
     {
         name: "API",
         category: "Software Development",
-        description: "A way for software applications to communicate with each other."
+        description: "A way for software applications to communicate with each other.",
+        page: null
     },
 
     {
         name: "Encryption",
         category: "Cybersecurity",
-        description: "A technique used to protect information by converting it into unreadable form."
+        description: "A technique used to protect information by converting it into unreadable form.",
+        page: null
     }
 
 ];
+
 
 // ==================================
 // CONNECT SEARCH HTML ELEMENTS
@@ -95,17 +88,18 @@ const searchButton = document.getElementById("searchButton");
 
 const searchResults = document.getElementById("searchResults");
 
+
 // ==================================
 // SEARCH THE KNOWLEDGE LEXICON
 // ==================================
 
 function searchConcepts() {
 
-    // 1. Read what the visitor typed
+    // 1. Read the visitor's search term
 
     const searchTerm = searchInput.value.trim().toLowerCase();
 
-    // 2. Clear previous search results
+    // 2. Clear previous results
 
     searchResults.innerHTML = "";
 
@@ -118,7 +112,7 @@ function searchConcepts() {
         return;
     }
 
-    // 4. Find concepts matching the search term
+    // 4. Find matching concepts
 
     const matchingConcepts = concepts.filter(function(concept) {
 
@@ -130,7 +124,7 @@ function searchConcepts() {
 
     });
 
-    // 5. Display a message if nothing matches
+    // 5. Display a message if no concepts match
 
     if (matchingConcepts.length === 0) {
 
@@ -139,7 +133,7 @@ function searchConcepts() {
         return;
     }
 
-    // 6. Display every matching concept
+    // 6. Display matching concepts
 
     matchingConcepts.forEach(function(concept) {
 
@@ -147,29 +141,41 @@ function searchConcepts() {
 
         resultCard.className = "result-card";
 
-        resultCard.style.cursor = "pointer";
-
-resultCard.addEventListener("click", function() {
-
-    if (concept.name === "Ping") {
-
-        window.location.href = "concepts/ping.html";
-
-    }
-
-});
+        // Create the concept name
 
         const title = document.createElement("h3");
 
-        title.textContent = concept.name;
+        // Make the title clickable if a page exists
+
+        if (concept.page !== null) {
+
+            const conceptLink = document.createElement("a");
+
+            conceptLink.href = concept.page;
+
+            conceptLink.textContent = concept.name;
+
+            title.appendChild(conceptLink);
+
+        } else {
+
+            title.textContent = concept.name;
+
+        }
+
+        // Display the category
 
         const category = document.createElement("p");
 
         category.textContent = "Category: " + concept.category;
 
+        // Display the description
+
         const description = document.createElement("p");
 
         description.textContent = concept.description;
+
+        // Assemble the result card
 
         resultCard.appendChild(title);
 
@@ -177,17 +183,21 @@ resultCard.addEventListener("click", function() {
 
         resultCard.appendChild(description);
 
+        // Add the card to the search results
+
         searchResults.appendChild(resultCard);
 
     });
 
 }
 
+
 // ==================================
 // ACTIVATE THE SEARCH BUTTON
 // ==================================
 
 searchButton.addEventListener("click", searchConcepts);
+
 
 // Allow visitors to search by pressing Enter
 
@@ -200,6 +210,3 @@ searchInput.addEventListener("keydown", function(event) {
     }
 
 });
-
-
-
