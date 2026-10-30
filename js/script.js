@@ -30,7 +30,11 @@ testMessage.style.padding = "15px";
 testMessage.style.textAlign = "center";
 testMessage.style.fontWeight = "bold";
 
-document.querySelector("footer").before(testMessage);
+const footer = document.querySelector("footer");
+
+if (footer) {
+    footer.before(testMessage);
+}
 
 
 // ==================================
@@ -196,17 +200,45 @@ function searchConcepts() {
 // ACTIVATE THE SEARCH BUTTON
 // ==================================
 
-searchButton.addEventListener("click", searchConcepts);
+if (searchButton && searchInput && searchResults) {
+
+    // Activate search when the visitor taps the button
+
+    searchButton.addEventListener("click", searchConcepts);
 
 
-// Allow visitors to search by pressing Enter
+    // Allow visitors to search by pressing Enter
 
-searchInput.addEventListener("keydown", function(event) {
+    searchInput.addEventListener("keydown", function(event) {
 
-    if (event.key === "Enter") {
+        if (event.key === "Enter") {
 
-        searchConcepts();
+            searchConcepts();
 
-    }
+        }
 
-});
+    });
+
+}
+
+
+// ==================================
+// PING INTERACTIVE SIMULATION
+// ==================================
+
+const sendPingButton = document.getElementById("sendPingButton");
+
+const pingStatus = document.getElementById("ping-status");
+
+
+// Activate the Ping button when it exists
+
+if (sendPingButton && pingStatus) {
+
+    sendPingButton.addEventListener("click", function() {
+
+        pingStatus.textContent = "Ping simulation started!";
+
+    });
+
+}
