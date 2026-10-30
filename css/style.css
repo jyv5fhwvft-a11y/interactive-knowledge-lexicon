@@ -1,8 +1,8 @@
-
-/* =================================
+/* =====================================
    INTERACTIVE KNOWLEDGE LEXICON
-   Main Website Design
-================================= */
+   Complete Homepage Design
+===================================== */
+
 
 /* 1. Basic page settings */
 
@@ -10,58 +10,252 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    padding: 40px 20px;
+    padding: 0;
     font-family: Arial, sans-serif;
     background: #f0f4f8;
     color: #243247;
     line-height: 1.7;
 }
 
-/* 2. Main heading */
 
-h1 {
+/* 2. Navigation bar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: #173b67;
+    color: white;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar nav a:hover {
+    color: #a9d5ff;
+}
+
+
+/* 3. Hero section */
+
+.hero {
+    text-align: center;
+    padding: 85px 20px;
+    background: linear-gradient(
+        135deg,
+        #e1efff,
+        #f0f4f8
+    );
+}
+
+.hero h1 {
     color: #173b67;
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 42px;
+    margin-bottom: 15px;
 }
 
-/* 3. Secondary heading */
-
-h2 {
-    color: #2563a6;
-    text-align: center;
-    font-size: 25px;
-    margin-top: 30px;
-}
-
-/* 4. Paragraphs */
-
-p {
+.hero p {
     max-width: 750px;
-    margin: 15px auto;
+    margin: 15px auto 25px;
+    font-size: 18px;
+}
+
+
+/* Explore button */
+
+.explore-button {
+    display: inline-block;
+    padding: 13px 28px;
+    background: #2563a6;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.explore-button:hover {
+    background: #173b67;
+}
+
+
+/* 4. Search section */
+
+.search-section {
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.search-section h2,
+.categories h2,
+.learning-section h2 {
+    color: #173b67;
+    font-size: 28px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    max-width: 650px;
+    margin: 25px auto;
+    gap: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid #b8c9dc;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.search-box button {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 7px;
+    background: #2563a6;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #173b67;
+}
+
+
+/* 5. Knowledge categories */
+
+.categories {
+    padding: 55px 8%;
+    text-align: center;
+    background: #ffffff;
+}
+
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    max-width: 1000px;
+    margin: 35px auto 0;
+}
+
+.category-card {
+    padding: 28px;
+    background: #f0f4f8;
+    border: 1px solid #d8e3ef;
+    border-radius: 12px;
+    text-align: left;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(23, 59, 103, 0.12);
+}
+
+.category-card h3 {
+    color: #2563a6;
+    font-size: 21px;
+    margin-top: 0;
+}
+
+.category-card p {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+
+/* 6. Interactive learning section */
+
+.learning-section {
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.learning-section p {
+    max-width: 800px;
+    margin: 20px auto;
     font-size: 17px;
+}
+
+
+/* 7. Footer */
+
+footer {
+    padding: 22px 15px;
+    background: #173b67;
+    color: white;
     text-align: center;
 }
 
-/* 5. Responsive design */
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
 
-@media (max-width: 600px) {
-    body {
-        padding: 25px 15px;
+
+/* 8. Responsive design */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
     }
 
-    h1 {
-        font-size: 28px;
+    .navbar nav {
+        gap: 18px;
     }
 
-    h2 {
-        font-size: 21px;
+    .hero {
+        padding: 55px 18px;
     }
 
-    p {
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
         font-size: 16px;
     }
+
+    .category-container {
+        grid-template-columns: 1fr;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .search-section h2,
+    .categories h2,
+    .learning-section h2 {
+        font-size: 24px;
+    }
+
 }
