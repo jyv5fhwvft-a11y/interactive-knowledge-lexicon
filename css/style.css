@@ -1,0 +1,67 @@
+
+/* =================================
+   INTERACTIVE KNOWLEDGE LEXICON
+   Main Website Design
+================================= */
+
+/* 1. Basic page settings */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    color: #243247;
+    line-height: 1.7;
+}
+
+/* 2. Main heading */
+
+h1 {
+    color: #173b67;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 3. Secondary heading */
+
+h2 {
+    color: #2563a6;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+/* 4. Paragraphs */
+
+p {
+    max-width: 750px;
+    margin: 15px auto;
+    font-size: 17px;
+    text-align: center;
+}
+
+/* 5. Responsive design */
+
+@media (max-width: 600px) {
+    body {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
