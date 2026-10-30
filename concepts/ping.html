@@ -854,6 +854,284 @@
         </section>
 
         
+        <!-- ================================== -->
+        <!-- SECTION 7: WORKING MECHANISM -->
+        <!-- ================================== -->
+
+        <section id="working-mechanism">
+
+            <h2>7. How Does Ping Work? The Complete Process</h2>
+
+            <p>
+                Now that we understand the components of Ping,
+                let's follow the complete journey of a test
+                message from one computer to another.
+            </p>
+
+            <h3>7.1 Step 1: The User Starts Ping</h3>
+
+            <p>
+                The process begins when a user opens a
+                command-line interface and enters a Ping command.
+            </p>
+
+            <p><strong>Example command:</strong></p>
+
+            <pre>ping 8.8.8.8</pre>
+
+            <p>
+                This command asks the computer to test
+                communication with the destination IP address
+                8.8.8.8.
+            </p>
+
+            <h3>7.2 Step 2: The Destination Address Is Identified</h3>
+
+            <p>
+                The computer needs to know where to send
+                the test message.
+            </p>
+
+            <ul>
+                <li>
+                    If the user enters an IP address,
+                    the computer can use that address directly.
+                </li>
+                <li>
+                    If the user enters a hostname,
+                    DNS may be used to find its IP address.
+                </li>
+            </ul>
+
+            <p>
+                The destination IP address helps IP networking
+                deliver the packet toward the intended destination.
+            </p>
+
+            <h3>7.3 Step 3: The ICMP Echo Request Is Created</h3>
+
+            <p>
+                The operating system prepares an ICMP
+                Echo Request message.
+            </p>
+
+            <p>
+                Think of this message as a digital question:
+                "Are you there? Can you respond?"
+            </p>
+
+            <p>
+                The Echo Request contains information that
+                helps identify and match the corresponding reply.
+            </p>
+
+            <h3>7.4 Step 4: IP Prepares the Packet</h3>
+
+            <p>
+                The IP layer carries the ICMP Echo Request
+                inside an IP packet.
+            </p>
+
+            <p>The packet includes important information such as:</p>
+
+            <ul>
+                <li>Source IP address.</li>
+                <li>Destination IP address.</li>
+                <li>ICMP message and its contents.</li>
+            </ul>
+
+            <p>
+                The source computer then sends the packet
+                through the appropriate network interface.
+            </p>
+
+            <h3>7.5 Step 5: The Request Travels Through the Network</h3>
+
+            <p>
+                The packet travels through network links
+                toward its destination.
+            </p>
+
+            <ul>
+                <li>
+                    Ethernet or Wi-Fi may carry the packet
+                    across a local network.
+                </li>
+                <li>
+                    Routers forward the packet when it needs
+                    to travel between networks.
+                </li>
+                <li>
+                    Each router uses routing information
+                    to determine where to forward the packet next.
+                </li>
+            </ul>
+
+            <p>
+                The exact route depends on the network
+                configuration and routing decisions.
+            </p>
+
+            <h3>7.6 Step 6: The Destination Processes the Request</h3>
+
+            <p>
+                When the packet reaches the destination,
+                its networking system processes the incoming
+                IP packet.
+            </p>
+
+            <p>
+                If the ICMP Echo Request is accepted and
+                permitted, the destination may prepare
+                an ICMP Echo Reply.
+            </p>
+
+            <p>
+                The reply is the destination's response
+                to the original test message.
+            </p>
+
+            <h3>7.7 Step 7: The Echo Reply Travels Back</h3>
+
+            <p>
+                The destination sends an ICMP Echo Reply
+                toward the original source computer.
+            </p>
+
+            <p>
+                The reply is carried inside an IP packet
+                and travels through the network.
+            </p>
+
+            <p>
+                Important: The return route does not
+                necessarily have to be identical to
+                the route taken by the original request.
+            </p>
+
+            <h3>7.8 Step 8: The Source Calculates RTT</h3>
+
+            <p>
+                When the source computer receives the
+                corresponding Echo Reply, Ping can calculate
+                the Round-Trip Time (RTT).
+            </p>
+
+            <p>
+                RTT measures the time between sending
+                the request and receiving its reply.
+            </p>
+
+            <p><strong>Example:</strong></p>
+
+            <ul>
+                <li>Request sent at: 0 ms.</li>
+                <li>Reply received at: 25 ms.</li>
+                <li>Measured RTT: 25 ms.</li>
+            </ul>
+
+            <p>
+                The computer displays the response time
+                to the user.
+            </p>
+
+            <h3>7.9 What Happens If No Reply Arrives?</h3>
+
+            <p>
+                Sometimes the source computer does not
+                receive an Echo Reply within the allowed
+                waiting time.
+            </p>
+
+            <p>
+                In that situation, Ping may report
+                a timeout or another failure message.
+            </p>
+
+            <p>Possible reasons include:</p>
+
+            <ul>
+                <li>The destination is unavailable.</li>
+                <li>A network connection is interrupted.</li>
+                <li>A firewall blocks ICMP messages.</li>
+                <li>A router or network path has a problem.</li>
+                <li>The reply is delayed or lost.</li>
+            </ul>
+
+            <p>
+                Remember: No Ping reply does not automatically
+                prove that the destination computer is switched off.
+            </p>
+
+            <h3>7.10 Complete Ping Process at a Glance</h3>
+
+            <pre>
++---------------------------+
+|       USER STARTS PING    |
+|       ping 8.8.8.8        |
++-------------+-------------+
+              |
+              v
++---------------------------+
+|   IDENTIFY DESTINATION    |
+|       IP ADDRESS          |
++-------------+-------------+
+              |
+              v
++---------------------------+
+|    CREATE ICMP ECHO       |
+|        REQUEST            |
++-------------+-------------+
+              |
+              v
++---------------------------+
+|       IP PACKET           |
+|  CARRIES ICMP MESSAGE     |
++-------------+-------------+
+              |
+              v
++---------------------------+
+|    NETWORK TRANSMISSION   |
+|     LINKS AND ROUTERS     |
++-------------+-------------+
+              |
+              v
++---------------------------+
+|    DESTINATION PROCESSES  |
+|        REQUEST            |
++-------------+-------------+
+              |
+              v
++---------------------------+
+|     ICMP ECHO REPLY       |
+|      IF PERMITTED         |
++-------------+-------------+
+              |
+              v
++---------------------------+
+|      REPLY RETURNS        |
+|      TO THE SOURCE        |
++-------------+-------------+
+              |
+              v
++---------------------------+
+|       CALCULATE RTT       |
+|      DISPLAY RESULT      |
++---------------------------+
+            </pre>
+
+            <h3>Key Working Mechanism Takeaway</h3>
+
+            <p>
+                Ping begins when a source computer creates
+                an ICMP Echo Request. IP carries the request
+                toward the destination. If the destination
+                responds, an Echo Reply returns, allowing
+                the source to calculate the Round-Trip Time.
+            </p>
+
+        </section>
+
 
     </main>
 
