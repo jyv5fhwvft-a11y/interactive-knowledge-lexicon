@@ -64,22 +64,17 @@
                 Ping helps answer this question.
             </p>
 
-            
             <h3>What Will You Learn?</h3>
 
             <ul>
-
                 <li>What Ping means.</li>
-
                 <li>Why Ping is useful.</li>
-
                 <li>How computers use it to test connectivity.</li>
-
                 <li>How to interpret its results.</li>
-
             </ul>
 
         </section>
+
 
         <!-- ================================== -->
         <!-- SECTION 2: FIRST-GRADER EXPLANATION -->
@@ -127,21 +122,16 @@
             <h3>What Should You Remember?</h3>
 
             <ul>
-
                 <li>A computer sends a test message.</li>
-
                 <li>Another computer may respond.</li>
-
                 <li>Ping helps test network reachability.</li>
-
                 <li>A successful reply does not prove every
                     application or service is working.</li>
-
             </ul>
 
         </section>
 
-        
+
         <!-- ================================== -->
         <!-- SECTION 3: ANALOGY AND MENTAL MODEL -->
         <!-- ================================== -->
@@ -171,32 +161,13 @@
             <h3>Mapping the Analogy to Computers</h3>
 
             <ul>
-
-                <li>
-                    Your house represents the sending computer.
-                </li>
-
-                <li>
-                    Your friend's house represents the destination computer.
-                </li>
-
-                <li>
-                    Shouting "Hello!" represents an ICMP Echo Request.
-                </li>
-
-                <li>
-                    Your friend's reply represents an ICMP Echo Reply.
-                </li>
-
-                <li>
-                    Waiting for the reply represents waiting for a Ping response.
-                </li>
-
-                <li>
-                    The time taken for the reply to return is called
-                    Round-Trip Time (RTT).
-                </li>
-
+                <li>Your house represents the sending computer.</li>
+                <li>Your friend's house represents the destination computer.</li>
+                <li>Shouting "Hello!" represents an ICMP Echo Request.</li>
+                <li>Your friend's reply represents an ICMP Echo Reply.</li>
+                <li>Waiting for the reply represents waiting for a Ping response.</li>
+                <li>The time taken for the reply to return is called
+                    Round-Trip Time (RTT).</li>
             </ul>
 
             <h3>Where Does the Analogy Have Limitations?</h3>
@@ -224,7 +195,7 @@
 
         </section>
 
-        
+
         <!-- ================================== -->
         <!-- SECTION 4: BEGINNER EXPLANATION -->
         <!-- ================================== -->
@@ -254,54 +225,25 @@
             <h3>When Do People Use Ping?</h3>
 
             <ul>
-
-                <li>
-                    To check whether another computer responds
-                    over a network.
-                </li>
-
-                <li>
-                    To investigate basic network connectivity problems.
-                </li>
-
-                <li>
-                    To measure how long a test message takes
-                    to travel to a destination and back.
-                </li>
-
-                <li>
-                    To help identify possible communication
-                    problems between devices.
-                </li>
-
+                <li>To check whether another computer responds
+                    over a network.</li>
+                <li>To investigate basic network connectivity problems.</li>
+                <li>To measure how long a test message takes
+                    to travel to a destination and back.</li>
+                <li>To help identify possible communication
+                    problems between devices.</li>
             </ul>
 
             <h3>What Happens When We Run Ping?</h3>
 
             <ol>
-
-                <li>
-                    The source computer prepares a test message.
-                </li>
-
-                <li>
-                    It sends an ICMP Echo Request to the destination.
-                </li>
-
-                <li>
-                    The destination may send an ICMP Echo Reply.
-                </li>
-
-                <li>
-                    The source computer receives the reply,
-                    if one returns.
-                </li>
-
-                <li>
-                    Ping reports the result and may show
-                    the Round-Trip Time (RTT).
-                </li>
-
+                <li>The source computer prepares a test message.</li>
+                <li>It sends an ICMP Echo Request to the destination.</li>
+                <li>The destination may send an ICMP Echo Reply.</li>
+                <li>The source computer receives the reply,
+                    if one returns.</li>
+                <li>Ping reports the result and may show
+                    the Round-Trip Time (RTT).</li>
             </ol>
 
             <h3>How Do We Understand the Results?</h3>
@@ -322,34 +264,18 @@
             <h3>Important Beginner Vocabulary</h3>
 
             <ul>
-
-                <li>
-                    <strong>Network:</strong>
-                    A group of connected devices that can communicate.
-                </li>
-
-                <li>
-                    <strong>Source:</strong>
-                    The device sending the Ping request.
-                </li>
-
-                <li>
-                    <strong>Destination:</strong>
-                    The device being tested.
-                </li>
-
-                <li>
-                    <strong>ICMP:</strong>
+                <li><strong>Network:</strong>
+                    A group of connected devices that can communicate.</li>
+                <li><strong>Source:</strong>
+                    The device sending the Ping request.</li>
+                <li><strong>Destination:</strong>
+                    The device being tested.</li>
+                <li><strong>ICMP:</strong>
                     Internet Control Message Protocol, used
-                    by Ping for Echo Request and Echo Reply messages.
-                </li>
-
-                <li>
-                    <strong>RTT:</strong>
+                    by Ping for Echo Request and Echo Reply messages.</li>
+                <li><strong>RTT:</strong>
                     The time taken for a request to travel
-                    to the destination and for its reply to return.
-                </li>
-
+                    to the destination and for its reply to return.</li>
             </ul>
 
             <h3>Key Takeaway</h3>
@@ -438,22 +364,14 @@
                 its corresponding reply.
             </p>
 
-            <p>
-                RTT is commonly measured in milliseconds (ms).
-            </p>
+            <p>RTT is commonly measured in milliseconds (ms).</p>
 
-            <p>
-                For example:
-            </p>
+            <p>For example:</p>
 
             <ul>
-
                 <li>Request sent: 0 milliseconds.</li>
-
                 <li>Reply received: 25 milliseconds.</li>
-
                 <li>Measured RTT: 25 milliseconds.</li>
-
             </ul>
 
             <p>
@@ -464,108 +382,54 @@
             <h3>5.6 What Happens Behind the Scenes?</h3>
 
             <ol>
-
-                <li>
-                    The user enters a destination address
-                    or hostname.
-                </li>
-
-                <li>
-                    The computer determines the destination
-                    IP address if necessary.
-                </li>
-
-                <li>
-                    The operating system prepares an
-                    ICMP Echo Request.
-                </li>
-
-                <li>
-                    The IP layer carries the ICMP message
-                    toward the destination.
-                </li>
-
-                <li>
-                    Routers may forward the packet
-                    through different networks.
-                </li>
-
-                <li>
-                    If the destination accepts and processes
-                    the request, it may send an ICMP Echo Reply.
-                </li>
-
-                <li>
-                    The reply travels back toward the source.
-                </li>
-
-                <li>
-                    The source calculates the RTT and
-                    displays the result.
-                </li>
-
+                <li>The user enters a destination address
+                    or hostname.</li>
+                <li>The computer determines the destination
+                    IP address if necessary.</li>
+                <li>The operating system prepares an
+                    ICMP Echo Request.</li>
+                <li>The IP layer carries the ICMP message
+                    toward the destination.</li>
+                <li>Routers may forward the packet
+                    through different networks.</li>
+                <li>If the destination accepts and processes
+                    the request, it may send an ICMP Echo Reply.</li>
+                <li>The reply travels back toward the source.</li>
+                <li>The source calculates the RTT and
+                    displays the result.</li>
             </ol>
 
             <h3>5.7 Important Technical Terms</h3>
 
             <ul>
-
-                <li>
-                    <strong>ICMP:</strong>
-                    Internet Control Message Protocol.
-                </li>
-
-                <li>
-                    <strong>Echo Request:</strong>
-                    The ICMP message asking for a response.
-                </li>
-
-                <li>
-                    <strong>Echo Reply:</strong>
-                    The ICMP response to an Echo Request.
-                </li>
-
-                <li>
-                    <strong>IP Address:</strong>
+                <li><strong>ICMP:</strong>
+                    Internet Control Message Protocol.</li>
+                <li><strong>Echo Request:</strong>
+                    The ICMP message asking for a response.</li>
+                <li><strong>Echo Reply:</strong>
+                    The ICMP response to an Echo Request.</li>
+                <li><strong>IP Address:</strong>
                     A numerical address used to identify
-                    a device or network interface.
-                </li>
-
-                <li>
-                    <strong>DNS:</strong>
+                    a device or network interface.</li>
+                <li><strong>DNS:</strong>
                     Domain Name System, which helps translate
-                    hostnames into IP addresses.
-                </li>
-
-                <li>
-                    <strong>Packet:</strong>
+                    hostnames into IP addresses.</li>
+                <li><strong>Packet:</strong>
                     A formatted unit of data transmitted
-                    across a network.
-                </li>
-
-                <li>
-                    <strong>RTT:</strong>
+                    across a network.</li>
+                <li><strong>RTT:</strong>
                     The measured time between sending
-                    a request and receiving its reply.
-                </li>
-
-                <li>
-                    <strong>Latency:</strong>
+                    a request and receiving its reply.</li>
+                <li><strong>Latency:</strong>
                     Delay experienced while data travels
-                    through a network.
-                </li>
-
+                    through a network.</li>
             </ul>
 
             <h3>5.8 Technical Example</h3>
 
-            <p>
-                Suppose a computer runs the following command:
-            </p>
+            <p>Suppose a computer runs the following command:</p>
 
-            <p>
-                <strong>ping 8.8.8.8</strong>
-            </p>
+            <p><strong>ping 8.8.8.8</strong></p>
 
             <p>
                 The computer sends ICMP Echo Requests
@@ -577,13 +441,9 @@
                 reports the response times.
             </p>
 
-            <p>
-                Example result:
-            </p>
+            <p>Example result:</p>
 
-            <p>
-                Reply from 8.8.8.8: time=25ms
-            </p>
+            <p>Reply from 8.8.8.8: time=25ms</p>
 
             <p>
                 This means that the measured round-trip
@@ -658,7 +518,7 @@
             <ul>
                 <li>Uses source and destination IP addresses.</li>
                 <li>Carries ICMP messages inside IP packets.</li>
-                <li>Helps packets travel toward their destination.</li>
+                <li>Helps packets travel toward their destinations.</li>
                 <li>Supports communication across different networks.</li>
             </ul>
 
@@ -728,42 +588,19 @@
             </p>
 
             <ol>
-                <li>
-                    The source computer runs a Ping command.
-                </li>
-
-                <li>
-                    It identifies the destination IP address.
-                </li>
-
-                <li>
-                    The operating system creates an ICMP
-                    Echo Request.
-                </li>
-
-                <li>
-                    IP carries the ICMP message inside
-                    an IP packet.
-                </li>
-
-                <li>
-                    The network delivers the packet.
-                    Routers forward it when necessary.
-                </li>
-
-                <li>
-                    The destination processes the request
-                    and may create an Echo Reply.
-                </li>
-
-                <li>
-                    The reply travels back toward the source.
-                </li>
-
-                <li>
-                    The source receives the reply and
-                    calculates the RTT.
-                </li>
+                <li>The source computer runs a Ping command.</li>
+                <li>It identifies the destination IP address.</li>
+                <li>The operating system creates an ICMP
+                    Echo Request.</li>
+                <li>IP carries the ICMP message inside
+                    an IP packet.</li>
+                <li>The network delivers the packet.
+                    Routers forward it when necessary.</li>
+                <li>The destination processes the request
+                    and may create an Echo Reply.</li>
+                <li>The reply travels back toward the source.</li>
+                <li>The source receives the reply and
+                    calculates the RTT.</li>
             </ol>
 
             <h3>6.3 Simplified Ping Architecture Diagram</h3>
@@ -853,7 +690,7 @@
 
         </section>
 
-        
+
         <!-- ================================== -->
         <!-- SECTION 7: WORKING MECHANISM -->
         <!-- ================================== -->
@@ -893,14 +730,10 @@
             </p>
 
             <ul>
-                <li>
-                    If the user enters an IP address,
-                    the computer can use that address directly.
-                </li>
-                <li>
-                    If the user enters a hostname,
-                    DNS may be used to find its IP address.
-                </li>
+                <li>If the user enters an IP address,
+                    the computer can use that address directly.</li>
+                <li>If the user enters a hostname,
+                    DNS may be used to find its IP address.</li>
             </ul>
 
             <p>
@@ -953,18 +786,12 @@
             </p>
 
             <ul>
-                <li>
-                    Ethernet or Wi-Fi may carry the packet
-                    across a local network.
-                </li>
-                <li>
-                    Routers forward the packet when it needs
-                    to travel between networks.
-                </li>
-                <li>
-                    Each router uses routing information
-                    to determine where to forward the packet next.
-                </li>
+                <li>Ethernet or Wi-Fi may carry the packet
+                    across a local network.</li>
+                <li>Routers forward the packet when it needs
+                    to travel between networks.</li>
+                <li>Each router uses routing information
+                    to determine where to forward the packet next.</li>
             </ul>
 
             <p>
@@ -1131,88 +958,90 @@
             </p>
 
         </section>
-<!-- ================================== -->
-<!-- SECTION 8: INTERACTIVE SIMULATION -->
-<!-- ================================== -->
 
-<section id="interactive-simulation">
 
-    <h2>8. Interactive Ping Simulation</h2>
+        <!-- ================================== -->
+        <!-- SECTION 8: INTERACTIVE SIMULATION -->
+        <!-- ================================== -->
 
-    <p>
-        Now that we understand how Ping works, let's experience
-        the process through an interactive simulation.
-    </p>
+        <section id="interactive-simulation">
 
-    <p>
-        In this experiment, you will send a simulated Ping request
-        from one computer to another and observe how the reply returns.
-    </p>
+            <h2>8. Interactive Ping Simulation</h2>
 
-    <p>
-        <strong>Learning Objective:</strong>
-        Understand how an ICMP Echo Request travels to a destination
-        and how an ICMP Echo Reply returns to the source.
-    </p>
+            <p>
+                Now that we understand how Ping works, let's experience
+                the process through an interactive simulation.
+            </p>
 
-        <!-- SIMULATION WORKSPACE -->
+            <p>
+                In this experiment, you will send a simulated Ping request
+                from one computer to another and observe how the reply returns.
+            </p>
 
-    <div id="ping-simulation">
+            <p>
+                <strong>Learning Objective:</strong>
+                Understand how an ICMP Echo Request travels to a destination
+                and how an ICMP Echo Reply returns to the source.
+            </p>
 
-        <h3>8.1 Meet the Two Computers</h3>
+            <!-- SIMULATION WORKSPACE -->
 
-        <p>
-            A Ping test begins at the source computer
-            and travels toward the destination computer.
-        </p>
+            <div id="ping-simulation">
 
-        <div id="computer-network">
+                <h3>8.1 Meet the Two Computers</h3>
 
-            <div class="computer">
+                <p>
+                    A Ping test begins at the source computer
+                    and travels toward the destination computer.
+                </p>
 
-                <h4>Source Computer</h4>
+                <div id="computer-network">
 
-                <p>Computer A</p>
+                    <div class="computer">
 
-                <p>Sending Device</p>
+                        <h4>Source Computer</h4>
 
-            </div>
+                        <p>Computer A</p>
 
-            <div id="network-connection">
+                        <p>Sending Device</p>
 
-                <p>Network Connection</p>
+                    </div>
 
-                <p>Request →</p>
+                    <div id="network-connection">
 
-                <p>← Reply</p>
+                        <p>Network Connection</p>
 
-            </div>
+                        <p>Request →</p>
 
-            <div class="computer">
+                        <p>← Reply</p>
 
-                <h4>Destination Computer</h4>
+                    </div>
 
-                <p>Computer B</p>
+                    <div class="computer">
 
-                <p>Receiving Device</p>
+                        <h4>Destination Computer</h4>
 
-            </div>
+                        <p>Computer B</p>
 
-        </div>
+                        <p>Receiving Device</p>
 
-        <p id="ping-status">
-            Waiting to start the Ping simulation.
-        </p>
+                    </div>
+
+                </div>
+
+                <p id="ping-status">
+                    Waiting to start the Ping simulation.
+                </p>
 
                 <!-- START PING SIMULATION -->
 
-        <button type="button" id="sendPingButton">
-            SEND PING
-        </button>
+                <button type="button" id="sendPingButton">
+                    SEND PING
+                </button>
 
-    </div>
+            </div>
 
-</section>
+        </section>
 
     </main>
 
@@ -1224,6 +1053,11 @@
         <p>Explore. Understand. Experiment.</p>
 
     </footer>
+
+
+    <!-- LOAD THE PING SIMULATION JAVASCRIPT -->
+
+    <script src="../js/ping-simulation.js"></script>
 
 </body>
 
