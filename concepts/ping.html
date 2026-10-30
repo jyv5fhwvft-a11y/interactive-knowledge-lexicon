@@ -1131,7 +1131,88 @@
             </p>
 
         </section>
+<!-- ================================== -->
+<!-- SECTION 8: INTERACTIVE SIMULATION -->
+<!-- ================================== -->
 
+<section id="interactive-simulation">
+
+    <h2>8. Interactive Ping Simulation</h2>
+
+    <p>
+        Now that we understand how Ping works, let's experience
+        the process through an interactive simulation.
+    </p>
+
+    <p>
+        In this experiment, you will send a simulated Ping request
+        from one computer to another and observe how the reply returns.
+    </p>
+
+    <p>
+        <strong>Learning Objective:</strong>
+        Understand how an ICMP Echo Request travels to a destination
+        and how an ICMP Echo Reply returns to the source.
+    </p>
+
+        <!-- SIMULATION WORKSPACE -->
+
+    <div id="ping-simulation">
+
+        <h3>8.1 Meet the Two Computers</h3>
+
+        <p>
+            A Ping test begins at the source computer
+            and travels toward the destination computer.
+        </p>
+
+        <div id="computer-network">
+
+            <div class="computer">
+
+                <h4>Source Computer</h4>
+
+                <p>Computer A</p>
+
+                <p>Sending Device</p>
+
+            </div>
+
+            <div id="network-connection">
+
+                <p>Network Connection</p>
+
+                <p>Request →</p>
+
+                <p>← Reply</p>
+
+            </div>
+
+            <div class="computer">
+
+                <h4>Destination Computer</h4>
+
+                <p>Computer B</p>
+
+                <p>Receiving Device</p>
+
+            </div>
+
+        </div>
+
+        <p id="ping-status">
+            Waiting to start the Ping simulation.
+        </p>
+
+                <!-- START PING SIMULATION -->
+
+        <button type="button" id="sendPingButton">
+            SEND PING
+        </button>
+
+    </div>
+
+</section>
 
     </main>
 
