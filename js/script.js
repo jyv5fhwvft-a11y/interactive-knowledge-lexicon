@@ -45,3 +45,43 @@ testMessage.style.fontWeight = "bold";
 // 4. Insert the message above the footer
 
 document.querySelector("footer").before(testMessage);
+
+// ==================================
+// KNOWLEDGE LEXICON
+// OUR FIRST CONCEPT COLLECTION
+// ==================================
+
+const concepts = [
+
+    {
+        name: "Ping",
+        category: "Computer Networking",
+        description: "A tool used to test communication between devices."
+    },
+
+    {
+        name: "Virtual Memory",
+        category: "Operating Systems",
+        description: "A memory management technique that gives processes a virtual address space."
+    },
+
+    {
+        name: "Paging",
+        category: "Operating Systems",
+        description: "A memory management technique that divides memory into fixed-size blocks."
+    },
+
+    {
+        name: "API",
+        category: "Software Development",
+        description: "A way for software applications to communicate with each other."
+    },
+
+    {
+        name: "Encryption",
+        category: "Cybersecurity",
+        description: "A technique used to protect information by converting it into unreadable form."
+    }
+
+];
+
