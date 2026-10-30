@@ -363,6 +363,244 @@
         </section>
 
 
+        <!-- ================================== -->
+        <!-- SECTION 5: TECHNICAL EXPLANATION -->
+        <!-- ================================== -->
+
+        <section id="technical-explanation">
+
+            <h2>5. Technical Explanation of Ping</h2>
+
+            <h3>5.1 What Is ICMP?</h3>
+
+            <p>
+                ICMP stands for Internet Control Message Protocol.
+                It is a network-layer protocol used by devices
+                to exchange control, diagnostic, and error
+                information in IP networks.
+            </p>
+
+            <p>
+                Ping uses ICMP Echo Request and Echo Reply
+                messages to test whether a destination responds.
+            </p>
+
+            <h3>5.2 What Is an ICMP Echo Request?</h3>
+
+            <p>
+                An ICMP Echo Request is a message sent by
+                the source computer to ask a destination
+                device to respond.
+            </p>
+
+            <p>
+                It is the message that begins a typical
+                Ping test.
+            </p>
+
+            <h3>5.3 What Is an ICMP Echo Reply?</h3>
+
+            <p>
+                An ICMP Echo Reply is the response that
+                a destination device may send after receiving
+                an Echo Request.
+            </p>
+
+            <p>
+                When the source receives this reply,
+                Ping can report that the test received
+                a response.
+            </p>
+
+            <h3>5.4 How Are IP Addresses Involved?</h3>
+
+            <p>
+                An IP address is a numerical address
+                used to identify a device or network interface
+                on an IP network.
+            </p>
+
+            <p>
+                When you run Ping, you specify a destination
+                using an IP address or a hostname.
+            </p>
+
+            <p>
+                If you enter a hostname, your computer
+                may use DNS to find its corresponding IP address.
+            </p>
+
+            <h3>5.5 Understanding Round-Trip Time (RTT)</h3>
+
+            <p>
+                Round-Trip Time (RTT) measures the time
+                between sending a request and receiving
+                its corresponding reply.
+            </p>
+
+            <p>
+                RTT is commonly measured in milliseconds (ms).
+            </p>
+
+            <p>
+                For example:
+            </p>
+
+            <ul>
+
+                <li>Request sent: 0 milliseconds.</li>
+
+                <li>Reply received: 25 milliseconds.</li>
+
+                <li>Measured RTT: 25 milliseconds.</li>
+
+            </ul>
+
+            <p>
+                A lower RTT generally indicates a shorter
+                response time for that particular test.
+            </p>
+
+            <h3>5.6 What Happens Behind the Scenes?</h3>
+
+            <ol>
+
+                <li>
+                    The user enters a destination address
+                    or hostname.
+                </li>
+
+                <li>
+                    The computer determines the destination
+                    IP address if necessary.
+                </li>
+
+                <li>
+                    The operating system prepares an
+                    ICMP Echo Request.
+                </li>
+
+                <li>
+                    The IP layer carries the ICMP message
+                    toward the destination.
+                </li>
+
+                <li>
+                    Routers may forward the packet
+                    through different networks.
+                </li>
+
+                <li>
+                    If the destination accepts and processes
+                    the request, it may send an ICMP Echo Reply.
+                </li>
+
+                <li>
+                    The reply travels back toward the source.
+                </li>
+
+                <li>
+                    The source calculates the RTT and
+                    displays the result.
+                </li>
+
+            </ol>
+
+            <h3>5.7 Important Technical Terms</h3>
+
+            <ul>
+
+                <li>
+                    <strong>ICMP:</strong>
+                    Internet Control Message Protocol.
+                </li>
+
+                <li>
+                    <strong>Echo Request:</strong>
+                    The ICMP message asking for a response.
+                </li>
+
+                <li>
+                    <strong>Echo Reply:</strong>
+                    The ICMP response to an Echo Request.
+                </li>
+
+                <li>
+                    <strong>IP Address:</strong>
+                    A numerical address used to identify
+                    a device or network interface.
+                </li>
+
+                <li>
+                    <strong>DNS:</strong>
+                    Domain Name System, which helps translate
+                    hostnames into IP addresses.
+                </li>
+
+                <li>
+                    <strong>Packet:</strong>
+                    A formatted unit of data transmitted
+                    across a network.
+                </li>
+
+                <li>
+                    <strong>RTT:</strong>
+                    The measured time between sending
+                    a request and receiving its reply.
+                </li>
+
+                <li>
+                    <strong>Latency:</strong>
+                    Delay experienced while data travels
+                    through a network.
+                </li>
+
+            </ul>
+
+            <h3>5.8 Technical Example</h3>
+
+            <p>
+                Suppose a computer runs the following command:
+            </p>
+
+            <p>
+                <strong>ping 8.8.8.8</strong>
+            </p>
+
+            <p>
+                The computer sends ICMP Echo Requests
+                toward the destination IP address 8.8.8.8.
+            </p>
+
+            <p>
+                If Echo Replies return, the computer
+                reports the response times.
+            </p>
+
+            <p>
+                Example result:
+            </p>
+
+            <p>
+                Reply from 8.8.8.8: time=25ms
+            </p>
+
+            <p>
+                This means that the measured round-trip
+                time for that reply was 25 milliseconds.
+            </p>
+
+            <h3>Key Technical Takeaway</h3>
+
+            <p>
+                Ping uses ICMP Echo Request and Echo Reply
+                messages carried by IP to test whether
+                a destination responds and to measure
+                the round-trip time.
+            </p>
+
+        </section>
+
 
         
 
