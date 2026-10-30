@@ -602,6 +602,257 @@
         </section>
 
 
+        <!-- ================================== -->
+        <!-- SECTION 6: COMPONENTS AND ARCHITECTURE -->
+        <!-- ================================== -->
+
+        <section id="components-architecture">
+
+            <h2>6. Components and Architecture of Ping</h2>
+
+            <h3>6.1 What Are the Main Components?</h3>
+
+            <p>
+                Ping involves several networking components
+                that work together to test communication
+                between a source computer and a destination.
+            </p>
+
+            <h3>Component 1: Source Computer</h3>
+
+            <p>
+                The source computer is the device that
+                starts the Ping test.
+            </p>
+
+            <ul>
+                <li>Runs the Ping command.</li>
+                <li>Identifies the destination address.</li>
+                <li>Prepares an ICMP Echo Request.</li>
+                <li>Waits for a possible Echo Reply.</li>
+                <li>Measures and displays the response time.</li>
+            </ul>
+
+            <h3>Component 2: Destination Computer</h3>
+
+            <p>
+                The destination computer is the device
+                that the source computer wants to test.
+            </p>
+
+            <ul>
+                <li>Receives the incoming IP packet.</li>
+                <li>Processes the ICMP Echo Request if permitted.</li>
+                <li>May generate an ICMP Echo Reply.</li>
+                <li>Sends the reply toward the source.</li>
+            </ul>
+
+            <h3>Component 3: IP Layer</h3>
+
+            <p>
+                IP stands for Internet Protocol.
+                It provides addressing and packet delivery
+                across interconnected networks.
+            </p>
+
+            <ul>
+                <li>Uses source and destination IP addresses.</li>
+                <li>Carries ICMP messages inside IP packets.</li>
+                <li>Helps packets travel toward their destination.</li>
+                <li>Supports communication across different networks.</li>
+            </ul>
+
+            <h3>Component 4: ICMP</h3>
+
+            <p>
+                ICMP stands for Internet Control Message Protocol.
+                It provides control, diagnostic, and error
+                messages for IP networking.
+            </p>
+
+            <ul>
+                <li>Creates the Echo Request message.</li>
+                <li>Defines the Echo Reply message.</li>
+                <li>Helps Ping test network reachability.</li>
+                <li>Does not use TCP or UDP ports.</li>
+            </ul>
+
+            <h3>Component 5: Routers</h3>
+
+            <p>
+                Routers are networking devices that forward
+                IP packets between networks.
+            </p>
+
+            <ul>
+                <li>Examine destination IP addresses.</li>
+                <li>Use routing information to select a next hop.</li>
+                <li>Forward packets toward their destinations.</li>
+                <li>May not be involved when devices communicate
+                    on the same local network.</li>
+            </ul>
+
+            <h3>Component 6: Network Transmission</h3>
+
+            <p>
+                Network transmission is the movement of
+                data through wired or wireless connections.
+            </p>
+
+            <ul>
+                <li>Ethernet cables can carry network data.</li>
+                <li>Wi-Fi can carry network data wirelessly.</li>
+                <li>Network links connect devices and routers.</li>
+                <li>Transmission conditions can affect response time.</li>
+            </ul>
+
+            <h3>Component 7: Echo Request and Echo Reply</h3>
+
+            <p>
+                These are the two ICMP message types
+                central to a typical Ping test.
+            </p>
+
+            <ul>
+                <li>Echo Request begins the test.</li>
+                <li>Echo Reply is the possible response.</li>
+                <li>The source matches the reply with its request.</li>
+                <li>The measured time is reported as RTT.</li>
+            </ul>
+
+            <h3>6.2 How Do These Components Work Together?</h3>
+
+            <p>
+                The following sequence shows a simplified
+                Ping communication process.
+            </p>
+
+            <ol>
+                <li>
+                    The source computer runs a Ping command.
+                </li>
+
+                <li>
+                    It identifies the destination IP address.
+                </li>
+
+                <li>
+                    The operating system creates an ICMP
+                    Echo Request.
+                </li>
+
+                <li>
+                    IP carries the ICMP message inside
+                    an IP packet.
+                </li>
+
+                <li>
+                    The network delivers the packet.
+                    Routers forward it when necessary.
+                </li>
+
+                <li>
+                    The destination processes the request
+                    and may create an Echo Reply.
+                </li>
+
+                <li>
+                    The reply travels back toward the source.
+                </li>
+
+                <li>
+                    The source receives the reply and
+                    calculates the RTT.
+                </li>
+            </ol>
+
+            <h3>6.3 Simplified Ping Architecture Diagram</h3>
+
+            <p>
+                This diagram shows the relationship between
+                the major components.
+            </p>
+
+            <pre>
++---------------------------+
+|      SOURCE COMPUTER      |
+|                           |
+|       Ping Command        |
+|             |             |
+|       ICMP Echo Request   |
++-------------+-------------+
+              |
+              v
++---------------------------+
+|          IP LAYER          |
+|                           |
+| Source and Destination IP |
+|      Addresses            |
++-------------+-------------+
+              |
+              v
++---------------------------+
+|     NETWORK TRANSMISSION  |
+|                           |
+|    Links and Routers      |
++-------------+-------------+
+              |
+              v
++---------------------------+
+|   DESTINATION COMPUTER    |
+|                           |
+|   Processes ICMP Request  |
+|             |             |
+|     ICMP Echo Reply       |
++-------------+-------------+
+              |
+              v
+       REPLY RETURNS
+       TOWARD SOURCE
+            |
+            v
++---------------------------+
+|      SOURCE COMPUTER      |
+|                           |
+|       Calculates RTT      |
+|       Displays Result     |
++---------------------------+
+            </pre>
+
+            <h3>6.4 Important Architectural Relationship</h3>
+
+            <p>
+                ICMP and IP have different responsibilities.
+                ICMP defines the diagnostic message,
+                while IP carries that message across
+                the network.
+            </p>
+
+            <p>
+                Routers forward IP packets based on
+                destination addresses. They do not need
+                to generate an Echo Reply when forwarding
+                an ordinary Ping packet.
+            </p>
+
+            <p>
+                The return path may be different from
+                the path taken by the original request.
+            </p>
+
+            <h3>Key Architectural Takeaway</h3>
+
+            <p>
+                Ping depends on several networking components
+                working together. The source creates an ICMP
+                Echo Request, IP carries it toward the
+                destination, and the destination may return
+                an ICMP Echo Reply. The source uses the
+                response to calculate the Round-Trip Time.
+            </p>
+
+        </section>
+
         
 
     </main>
