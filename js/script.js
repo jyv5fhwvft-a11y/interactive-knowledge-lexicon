@@ -147,6 +147,18 @@ function searchConcepts() {
 
         resultCard.className = "result-card";
 
+        resultCard.style.cursor = "pointer";
+
+resultCard.addEventListener("click", function() {
+
+    if (concept.name === "Ping") {
+
+        window.location.href = "concepts/ping.html";
+
+    }
+
+});
+
         const title = document.createElement("h3");
 
         title.textContent = concept.name;
