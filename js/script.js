@@ -85,3 +85,109 @@ const concepts = [
 
 ];
 
+// ==================================
+// CONNECT SEARCH HTML ELEMENTS
+// ==================================
+
+const searchInput = document.getElementById("conceptSearch");
+
+const searchButton = document.getElementById("searchButton");
+
+const searchResults = document.getElementById("searchResults");
+
+// ==================================
+// SEARCH THE KNOWLEDGE LEXICON
+// ==================================
+
+function searchConcepts() {
+
+    // 1. Read what the visitor typed
+
+    const searchTerm = searchInput.value.trim().toLowerCase();
+
+    // 2. Clear previous search results
+
+    searchResults.innerHTML = "";
+
+    // 3. Check whether the search box is empty
+
+    if (searchTerm === "") {
+
+        searchResults.textContent = "Please enter a concept to search.";
+
+        return;
+    }
+
+    // 4. Find concepts matching the search term
+
+    const matchingConcepts = concepts.filter(function(concept) {
+
+        return (
+            concept.name.toLowerCase().includes(searchTerm) ||
+            concept.category.toLowerCase().includes(searchTerm) ||
+            concept.description.toLowerCase().includes(searchTerm)
+        );
+
+    });
+
+    // 5. Display a message if nothing matches
+
+    if (matchingConcepts.length === 0) {
+
+        searchResults.textContent = "No concepts found. Try another search.";
+
+        return;
+    }
+
+    // 6. Display every matching concept
+
+    matchingConcepts.forEach(function(concept) {
+
+        const resultCard = document.createElement("div");
+
+        resultCard.className = "result-card";
+
+        const title = document.createElement("h3");
+
+        title.textContent = concept.name;
+
+        const category = document.createElement("p");
+
+        category.textContent = "Category: " + concept.category;
+
+        const description = document.createElement("p");
+
+        description.textContent = concept.description;
+
+        resultCard.appendChild(title);
+
+        resultCard.appendChild(category);
+
+        resultCard.appendChild(description);
+
+        searchResults.appendChild(resultCard);
+
+    });
+
+}
+
+// ==================================
+// ACTIVATE THE SEARCH BUTTON
+// ==================================
+
+searchButton.addEventListener("click", searchConcepts);
+
+// Allow visitors to search by pressing Enter
+
+searchInput.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+
+        searchConcepts();
+
+    }
+
+});
+
+
+
