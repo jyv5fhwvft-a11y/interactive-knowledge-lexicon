@@ -1691,6 +1691,279 @@ Request timed out.
 </section>
 
         
+<!-- ========================================== -->
+<!-- SECTION 12: LIMITATIONS AND TROUBLESHOOTING -->
+<!-- ========================================== -->
+
+<section id="limitations-troubleshooting">
+
+    <h2>12. Limitations and Troubleshooting</h2>
+
+    <h3>12.1 What Can Ping Tell Us?</h3>
+
+    <p>
+        Ping helps us investigate communication between
+        devices on an IP network. By examining its results,
+        we can learn useful information about network
+        reachability and response time.
+    </p>
+
+    <h4>1. Whether a Destination Responds</h4>
+
+    <p>
+    If Ping receives an ICMP Echo Reply, we know
+    that a response came back from the destination
+    for that particular test.
+</p>
+        
+    
+
+    <h4>2. Round-Trip Time (RTT)</h4>
+
+    <p>
+        Ping can measure how long a test request takes
+        to travel to the destination and for its reply
+        to return.
+    </p>
+
+    <h4>3. Possible Packet Loss</h4>
+
+    <p>
+        If some Ping requests do not receive replies,
+        Ping may report packet loss. This can help us
+        investigate possible communication problems.
+    </p>
+
+    <h4>4. Changes in Response Time</h4>
+
+    <p>
+        By comparing multiple Ping results, we can
+        observe whether response times vary.
+        Large variations may indicate changing network
+        conditions, although they do not identify
+        the exact cause by themselves.
+    </p>
+
+    <h4>Key Takeaway</h4>
+
+    <p>
+        Ping provides useful clues about destination
+        responses, round-trip time, and possible packet
+        loss. These clues help us investigate network
+        communication.
+    </p>
+
+</section>
+
+        
+<!-- SECTION 12.2: WHAT PING CANNOT TELL US -->
+
+<section id="ping-limitations">
+
+    <h3>12.2 What Can Ping NOT Tell Us?</h3>
+
+    <p>
+        Although Ping is useful, it cannot tell us
+        everything about a network or a destination device.
+        It provides limited information about ICMP communication.
+    </p>
+
+    <h4>1. Whether a Website Is Working Correctly</h4>
+
+    <p>
+        A successful Ping does not guarantee that
+        a website will open in a browser.
+    </p>
+
+    <p>
+        The website's web service or application
+        might still have a problem.
+    </p>
+
+    <h4>2. Whether a Device Is Definitely Offline</h4>
+
+    <p>
+        If Ping receives no reply, we cannot immediately
+        conclude that the destination device is switched off.
+    </p>
+
+    <p>
+        A firewall or network policy may be blocking
+        ICMP messages.
+    </p>
+
+    <h4>3. The Actual Download or Upload Speed</h4>
+
+    <p>
+    Ping measures Round-Trip Time, not download
+    or upload throughput. Throughput describes
+    how much data can be transferred in a given
+    amount of time.
+</p>
+
+    <h4>4. The Exact Cause of a Network Problem</h4>
+
+    <p>
+        A timeout or high response time may indicate
+        a communication problem, but Ping alone
+        cannot always identify its exact cause.
+    </p>
+
+    <h4>5. The Complete Quality of a Network Connection</h4>
+
+    <p>
+        A few successful Ping replies do not guarantee
+        that every network application, service,
+        or connection will work reliably.
+    </p>
+
+    <h4>Key Takeaway</h4>
+
+    <p>
+        Ping is a diagnostic tool that provides useful
+        clues. It is not a complete test of internet
+        speed, website functionality, or overall
+        network health.
+    </p>
+
+</section>
+
+
+<!-- SECTION 12.3: WHY MIGHT PING FAIL? -->
+
+<section id="ping-failure-reasons">
+
+    <h3>12.3 Why Might Ping Fail?</h3>
+
+    <p>
+        Sometimes a computer sends an ICMP Echo Request
+        but does not receive an Echo Reply.
+        This may happen for several different reasons.
+    </p>
+
+    <h4>1. The Destination Device Is Unavailable</h4>
+
+    <p>
+        The destination computer or device may be
+        switched off, disconnected, or temporarily unavailable.
+    </p>
+
+    <p>
+        If the destination device is unavailable or does not process the request, it may not send an Echo Reply.
+    </p>
+
+    <h4>2. A Firewall Blocks ICMP Messages</h4>
+
+    <p>
+        A firewall is a security system that controls
+        network traffic entering or leaving a device
+        or network.
+    </p>
+
+    <p>
+        Some firewalls block ICMP Echo Requests
+        or Echo Replies. As a result, Ping may fail
+        even when the destination device is online.
+    </p>
+
+    <h4>3. A Local Network Connection Problem</h4>
+
+    <p>
+        The source computer may have a problem
+        connecting to its local network.
+    </p>
+
+    <p>Possible examples include:</p>
+
+    <ul>
+        <li>Wi-Fi is disconnected.</li>
+        <li>An Ethernet cable is unplugged.</li>
+        <li>The network adapter is disabled.</li>
+        <li>The computer has an incorrect network configuration.</li>
+    </ul>
+
+    <h4>4. A Router or Routing Problem</h4>
+
+    <p>
+        Routers help forward IP packets toward
+        their destinations. If a router or routing
+        path has a problem, packets may not reach
+        the destination or their replies may not return.
+    </p>
+
+    <h4>5. Network Congestion or Packet Loss</h4>
+
+    <p>
+        When a network is busy, packets may experience
+        delays or may be lost.
+    </p>
+
+    <p>
+        This can cause Ping response times to increase
+        or some Echo Replies to fail to arrive.
+    </p>
+
+    <h4>6. DNS or Hostname Resolution Problems</h4>
+
+    <p>
+        When a user enters a hostname such as
+        google.com, the computer normally needs
+        to resolve that name into an IP address.
+    </p>
+
+    <p>
+        If DNS resolution fails, Ping may report
+        that it cannot find the hostname.
+        In this situation, the computer may not
+        have reached the stage of sending an
+        ICMP Echo Request to the intended destination.
+    </p>
+
+    <h4>7. ICMP Traffic Is Rate-Limited</h4>
+
+    <p>
+        Some devices and networks limit how many
+        ICMP messages they process within a period
+        of time.
+    </p>
+
+    <p>
+        This can cause some Ping requests or replies
+        to be delayed or ignored.
+    </p>
+
+    <h4>Important Difference: Timeout vs. Hostname Error</h4>
+
+    <p>
+        <strong>Request timed out:</strong>
+        The computer did not receive an Echo Reply
+        within the allowed waiting time.
+    </p>
+
+    <p>
+        <strong>Could not find host:</strong>
+        The computer could not resolve the hostname
+        into an IP address.
+    </p>
+
+    <p>
+        These messages describe different problems
+        and should not be confused.
+    </p>
+
+    <h4>Key Takeaway</h4>
+
+    <p>
+        A failed Ping test can have several possible
+        causes, including unavailable devices, firewalls,
+        network connection problems, routing issues,
+        congestion, and DNS failures. We must investigate
+        the situation before deciding what went wrong.
+    </p>
+
+</section>
+
+        
 
     </main>
 
