@@ -50,3 +50,134 @@ const flowchartSteps = [
     }
 
 ];
+
+
+// ==========================================
+// CONNECT HTML ELEMENTS TO JAVASCRIPT
+// ==========================================
+
+const flowchartVisual = document.getElementById("flowchart-visual");
+
+const flowchartCounter = document.getElementById("flowchart-step-counter");
+
+const flowchartDescription = document.getElementById("flowchart-description");
+
+const previousFlowButton = document.getElementById("previousFlowStep");
+
+const nextFlowButton = document.getElementById("nextFlowStep");
+
+
+// ==========================================
+// TRACK THE CURRENT FLOWCHART STEP
+// ==========================================
+
+// The first stage has index 0.
+
+let currentFlowStep = 0;
+
+
+// ==========================================
+// DISPLAY THE CURRENT FLOWCHART STEP
+// ==========================================
+
+function displayFlowStep() {
+
+    // Get the selected stage from the array.
+
+    const step = flowchartSteps[currentFlowStep];
+
+
+    // Display the stage title and explanation.
+
+    flowchartVisual.innerHTML = "";
+
+    const node = document.createElement("div");
+
+    node.className = "flowchart-node active";
+
+    const heading = document.createElement("h4");
+
+    heading.textContent = step.title;
+
+    const explanation = document.createElement("p");
+
+    explanation.textContent = step.description;
+
+    node.appendChild(heading);
+
+    node.appendChild(explanation);
+
+    flowchartVisual.appendChild(node);
+
+
+    // Update the step counter.
+
+    flowchartCounter.textContent =
+        "Step " + (currentFlowStep + 1) +
+        " of " + flowchartSteps.length;
+
+
+    // Update the explanation area.
+
+    flowchartDescription.textContent = step.description;
+
+
+    // Disable Previous Step at the beginning.
+
+    previousFlowButton.disabled = (currentFlowStep === 0);
+
+
+    // Disable Next Step at the end.
+
+    nextFlowButton.disabled =
+        (currentFlowStep === flowchartSteps.length - 1);
+
+}
+
+
+// ==========================================
+// NEXT STEP BUTTON
+// ==========================================
+
+nextFlowButton.addEventListener("click", function() {
+
+    if (currentFlowStep < flowchartSteps.length - 1) {
+
+        currentFlowStep++;
+
+        displayFlowStep();
+
+    }
+
+});
+
+
+// ==========================================
+// PREVIOUS STEP BUTTON
+// ==========================================
+
+previousFlowButton.addEventListener("click", function() {
+
+    if (currentFlowStep > 0) {
+
+        currentFlowStep--;
+
+        displayFlowStep();
+
+    }
+
+});
+
+
+// ==========================================
+// INITIALIZE THE FLOWCHART
+// ==========================================
+
+displayFlowStep();
+
+
+
+
+
+
+
