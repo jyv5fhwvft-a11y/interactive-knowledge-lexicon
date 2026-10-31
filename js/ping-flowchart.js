@@ -66,12 +66,16 @@ const previousFlowButton = document.getElementById("previousFlowStep");
 
 const nextFlowButton = document.getElementById("nextFlowStep");
 
+const flowchartDecision = document.getElementById("flowchart-decision");
+
+const replyReceivedButton = document.getElementById("replyReceived");
+
+const replyTimeoutButton = document.getElementById("replyTimeout");
+
 
 // ==========================================
 // TRACK THE CURRENT FLOWCHART STEP
 // ==========================================
-
-// The first stage has index 0.
 
 let currentFlowStep = 0;
 
@@ -82,12 +86,9 @@ let currentFlowStep = 0;
 
 function displayFlowStep() {
 
-    // Get the selected stage from the array.
-
     const step = flowchartSteps[currentFlowStep];
 
-
-    // Display the stage title and explanation.
+    // Display the current flowchart node.
 
     flowchartVisual.innerHTML = "";
 
@@ -117,9 +118,14 @@ function displayFlowStep() {
         " of " + flowchartSteps.length;
 
 
-    // Update the explanation area.
+    // Update the explanation.
 
     flowchartDescription.textContent = step.description;
+
+
+    // Show decision options only at Stage 6.
+
+    flowchartDecision.hidden = (currentFlowStep !== 5);
 
 
     // Disable Previous Step at the beginning.
@@ -127,10 +133,9 @@ function displayFlowStep() {
     previousFlowButton.disabled = (currentFlowStep === 0);
 
 
-    // Disable Next Step at the end.
+    // Disable Next Step at the decision and outcome stages.
 
-    nextFlowButton.disabled =
-        (currentFlowStep === flowchartSteps.length - 1);
+    nextFlowButton.disabled = (currentFlowStep >= 5);
 
 }
 
@@ -141,7 +146,7 @@ function displayFlowStep() {
 
 nextFlowButton.addEventListener("click", function() {
 
-    if (currentFlowStep < flowchartSteps.length - 1) {
+    if (currentFlowStep < 5) {
 
         currentFlowStep++;
 
@@ -158,13 +163,45 @@ nextFlowButton.addEventListener("click", function() {
 
 previousFlowButton.addEventListener("click", function() {
 
-    if (currentFlowStep > 0) {
+    if (currentFlowStep === 6 || currentFlowStep === 7) {
+
+        // Return from either outcome to the decision.
+
+        currentFlowStep = 5;
+
+    } else if (currentFlowStep > 0) {
 
         currentFlowStep--;
 
-        displayFlowStep();
-
     }
+
+    displayFlowStep();
+
+});
+
+
+// ==========================================
+// YES: REPLY RECEIVED
+// ==========================================
+
+replyReceivedButton.addEventListener("click", function() {
+
+    currentFlowStep = 6;
+
+    displayFlowStep();
+
+});
+
+
+// ==========================================
+// NO: TIMEOUT
+// ==========================================
+
+replyTimeoutButton.addEventListener("click", function() {
+
+    currentFlowStep = 7;
+
+    displayFlowStep();
 
 });
 
@@ -174,10 +211,3 @@ previousFlowButton.addEventListener("click", function() {
 // ==========================================
 
 displayFlowStep();
-
-
-
-
-
-
-
