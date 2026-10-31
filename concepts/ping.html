@@ -1271,6 +1271,235 @@
 
 </section>
 
+        <!-- ================================== -->
+<!-- SECTION 10.2: TROUBLESHOOTING INVESTIGATION -->
+<!-- ================================== -->
+
+<section id="troubleshooting-investigation">
+
+    <h3>10.2 Investigating the Problem</h3>
+
+    <p>
+        Alex decides to perform two simple Ping tests
+        to investigate the network problem.
+    </p>
+
+    <h4>Test 1: Ping an IP Address</h4>
+
+    <p>
+        First, Alex opens the command-line interface
+        and enters the following command:
+    </p>
+
+    <pre>ping 8.8.8.8</pre>
+
+    <p>
+        This command attempts to send ICMP Echo Requests
+        to the IP address 8.8.8.8.
+    </p>
+
+    <p>
+        Alex checks whether Echo Replies arrive.
+        If replies arrive, the test shows that communication
+        with this IP address worked at that time.
+    </p>
+
+    <h4>Test 2: Ping a Website's Hostname</h4>
+
+    <p>
+        Next, Alex enters the following command:
+    </p>
+
+    <pre>ping google.com</pre>
+
+    <p>
+        This time, Alex uses a hostname instead of
+        directly entering an IP address.
+    </p>
+
+    <p>
+        The computer first needs to resolve the hostname
+        using DNS. If resolution succeeds, it attempts
+        to send ICMP Echo Requests to the resulting IP address.
+    </p>
+
+    <p>
+        Alex checks whether Echo Replies arrive.
+    </p>
+
+    <h4>Why Perform Two Different Tests?</h4>
+
+    <ul>
+        <li>
+            The first test uses a known IP address.
+        </li>
+        <li>
+            The second test uses a human-readable hostname.
+        </li>
+        <li>
+            The second test also involves DNS resolution.
+        </li>
+        <li>
+            Comparing the results helps investigate
+            possible network or DNS problems.
+        </li>
+    </ul>
+
+    <h4>Important Reminder</h4>
+
+    <p>
+        Ping tests ICMP communication, not whether
+        a website's web server or browser service
+        is functioning correctly.
+    </p>
+
+</section>
+
+        <!-- ================================== -->
+<!-- SECTION 10.3: UNDERSTANDING PING RESULTS -->
+<!-- ================================== -->
+
+<section id="ping-results">
+
+    <h3>10.3 Understanding the Possible Ping Results</h3>
+
+    <p>
+        After performing the two tests, Alex examines
+        the results to understand what might be happening
+        with the network connection.
+    </p>
+
+    <h4>Scenario 1: Both Tests Receive Replies</h4>
+
+    <p><strong>Test 1:</strong> ping 8.8.8.8</p>
+
+    <pre>
+Reply from 8.8.8.8: time=25ms
+Reply from 8.8.8.8: time=27ms
+    </pre>
+
+    <p><strong>Test 2:</strong> ping google.com</p>
+
+    <pre>
+Reply from google.com: time=30ms
+Reply from google.com: time=28ms
+    </pre>
+
+    <p><strong>What does this mean?</strong></p>
+
+    <ul>
+        <li>The IP-address test received replies.</li>
+        <li>The hostname was successfully resolved.</li>
+        <li>The hostname-based Ping test also received replies.</li>
+        <li>Both tests show successful ICMP communication
+            with their respective destinations.</li>
+    </ul>
+
+    <p>
+        <strong>What should Alex understand?</strong>
+        Basic network communication worked for both tests.
+        However, the website may still have a separate
+        application, server, or browser problem.
+    </p>
+
+    <h4>Scenario 2: IP Test Succeeds but Hostname Resolution Fails</h4>
+
+    <p><strong>Test 1:</strong> ping 8.8.8.8</p>
+
+    <pre>
+Reply from 8.8.8.8: time=25ms
+Reply from 8.8.8.8: time=26ms
+    </pre>
+
+    <p><strong>Test 2:</strong> ping google.com</p>
+
+    <pre>
+Ping request could not find host google.com.
+Please check the name and try again.
+    </pre>
+
+    <p><strong>What does this mean?</strong></p>
+
+    <ul>
+        <li>The IP-address test received replies.</li>
+        <li>The computer could not resolve the hostname.</li>
+        <li>A DNS configuration or name-resolution problem
+            may exist.</li>
+    </ul>
+
+    <p>
+        <strong>What should Alex investigate?</strong>
+        Alex should investigate DNS settings and
+        hostname resolution.
+    </p>
+
+    <h4>Scenario 3: Both Tests Receive No Replies</h4>
+
+    <p><strong>Test 1:</strong> ping 8.8.8.8</p>
+
+    <pre>
+Request timed out.
+Request timed out.
+    </pre>
+
+    <p><strong>Test 2:</strong> ping google.com</p>
+
+    <pre>
+Request timed out.
+Request timed out.
+    </pre>
+
+    <p><strong>What does this mean?</strong></p>
+
+    <p>
+    Because the result says "Request timed out"
+    rather than "could not find host", the hostname
+    appears to have been resolved. However, an
+    ICMP Echo Reply did not arrive within the
+    waiting time.
+</p>
+
+    <ul>
+        <li>No Echo Replies arrived within the waiting time.</li>
+        <li>The tests did not receive successful responses.</li>
+        <li>A network connection or routing problem
+            may exist.</li>
+        <li>A firewall or destination policy may block ICMP.</li>
+    </ul>
+
+    <p>
+        <strong>What should Alex investigate?</strong>
+        Alex should check the local network connection,
+        gateway, routing, and possible ICMP filtering.
+    </p>
+
+    <h4>Important Technical Note</h4>
+
+    <p>
+        These are illustrative examples, not guaranteed
+        outputs from every operating system.
+        Ping output can differ between Windows, Linux,
+        and macOS.
+    </p>
+
+    <p>
+        A timeout does not automatically mean that
+        a device is offline. Some devices and networks
+        block Ping requests or replies.
+    </p>
+
+    <h4>Key Takeaway</h4>
+
+    <p>
+        Ping results help us investigate network
+        communication, but we must interpret them
+        carefully before deciding what the actual
+        problem might be.
+    </p>
+
+</section>
+        
+
     </main>
 
 
