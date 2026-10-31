@@ -1128,6 +1128,109 @@
 
         </section>
 
+                <!-- ================================== -->
+        <!-- SECTION 9.2: SEQUENCE DIAGRAM -->
+        <!-- ================================== -->
+
+        <section id="sequence-diagram">
+
+            <h3>9.2 Explore the Ping Sequence Diagram</h3>
+
+            <p>
+                Follow the messages exchanged between
+                Computer A, the network, and Computer B
+                during a Ping operation.
+            </p>
+
+                        <!-- SEQUENCE DIAGRAM PARTICIPANTS -->
+
+            <div id="sequence-participants">
+
+                <div class="sequence-participant">
+                    <h4>Computer A</h4>
+                    <p>Source Computer</p>
+                    <p>Sends the Ping request</p>
+                </div>
+
+                <div class="sequence-participant">
+                    <h4>Network</h4>
+                    <p>Communication Path</p>
+                    <p>Carries the messages</p>
+                </div>
+
+                <div class="sequence-participant">
+                    <h4>Computer B</h4>
+                    <p>Destination Computer</p>
+                    <p>Receives the request</p>
+                </div>
+
+            </div>
+
+                        <!-- SEQUENCE DIAGRAM MESSAGE AREA -->
+
+            <div id="sequence-message-area">
+
+                <h4>Messages Exchanged During Ping</h4>
+
+                <div id="sequence-messages">
+
+    <!-- MESSAGE 1: ICMP ECHO REQUEST -->
+
+    <div class="sequence-message" id="sequence-message-1">
+
+        <h4>Message 1: ICMP Echo Request</h4>
+
+        <p>
+            Computer A sends an ICMP Echo Request
+            toward Computer B through the network.
+        </p>
+
+        <p>
+            Direction: Computer A → Network → Computer B
+        </p>
+
+    </div>
+
+                        <!-- MESSAGE 2: ICMP ECHO REPLY -->
+
+    <div class="sequence-message" id="sequence-message-2" hidden>
+
+        <h4>Message 2: ICMP Echo Reply</h4>
+
+        <p>
+            Computer B sends an ICMP Echo Reply
+            back toward Computer A through the network.
+        </p>
+
+        <p>
+            Direction: Computer B → Network → Computer A
+        </p>
+
+    </div>
+
+</div>
+                                <!-- SEQUENCE DIAGRAM NAVIGATION CONTROLS -->
+
+                <div id="sequence-controls">
+
+                    <p id="sequence-step-counter">
+                        Message 1 of 2
+                    </p>
+
+                    <button type="button" id="previousSequenceMessage">
+                        Previous Message
+                    </button>
+
+                    <button type="button" id="nextSequenceMessage">
+                        Next Message
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
 
