@@ -1964,6 +1964,230 @@ Request timed out.
 </section>
 
         
+<section id="troubleshooting-checklist">
+
+    <h3>12.4 A Beginner's Troubleshooting Checklist</h3>
+
+    <p>
+        When a network problem occurs, we should not guess
+        what is wrong. Instead, we can perform a series
+        of simple checks to investigate the problem.
+    </p>
+
+    <p>
+        Follow these steps in order. Each test helps us
+        examine a different part of the communication process.
+    </p>
+
+    <h4>Step 1: Check the Destination Address</h4>
+
+    <p>
+        First, check whether the IP address or hostname
+        has been entered correctly.
+    </p>
+
+    <ul>
+        <li>Check for typing mistakes.</li>
+        <li>Make sure the hostname is spelled correctly.</li>
+        <li>Verify that the intended destination is correct.</li>
+    </ul>
+
+    <p>
+        <strong>Why?</strong> An incorrect address or hostname
+        can cause the test to target the wrong destination
+        or fail during name resolution.
+    </p>
+
+    <h4>Step 2: Check the Local Network Connection</h4>
+
+    <p>
+        Make sure the computer is connected to its local network.
+    </p>
+
+    <ul>
+        <li>Check whether Wi-Fi is enabled and connected.</li>
+        <li>Check whether the Ethernet cable is connected.</li>
+        <li>Make sure the network adapter is enabled.</li>
+    </ul>
+
+    <p>
+        <strong>Why?</strong> If the computer is not properly
+        connected to its local network, it may not be able
+        to communicate with other devices.
+    </p>
+
+    <h4>Step 3: Test the Local Computer</h4>
+
+    <p>
+        Enter the following command:
+    </p>
+
+    <pre>ping 127.0.0.1</pre>
+
+    <p>
+        The address 127.0.0.1 is a special IPv4 loopback
+        address. It allows a computer to test its own
+        local TCP/IP networking software.
+    </p>
+
+    <p>
+        <strong>Why?</strong> This test helps investigate
+        whether the computer's local networking software
+        is responding.
+    </p>
+
+    <p>
+        <strong>Important:</strong> A successful loopback
+        test does not prove that Wi-Fi, Ethernet, the router,
+        or the internet connection is working.
+    </p>
+
+    <h4>Step 4: Test the Local Router</h4>
+
+    <p>
+        Next, find the IP address of the computer's
+        default gateway, which is commonly the local router.
+    </p>
+
+    <p>
+        Enter a Ping command using that gateway address.
+        For example, if the gateway address is 192.168.1.1:
+    </p>
+
+    <pre>ping 192.168.1.1</pre>
+
+    <p>
+        <strong>Why?</strong> This test helps check whether
+        the computer can communicate with its local gateway.
+    </p>
+
+    <p>
+        <strong>Important:</strong> Your router may use
+        a different IP address. Also, some routers do not
+        respond to ICMP requests.
+    </p>
+
+    <h4>Step 5: Test a Known External IP Address</h4>
+
+    <p>
+        Now, try testing a known external IP address:
+    </p>
+
+    <pre>ping 8.8.8.8</pre>
+
+    <p>
+        This address belongs to Google's public DNS service.
+        The test checks whether an ICMP response can be
+        received from that destination.
+    </p>
+
+    <p>
+        <strong>Why?</strong> If the local gateway responds
+        but the external destination does not, we have
+        another clue to investigate the connection beyond
+        the local network.
+    </p>
+
+    <h4>Step 6: Test a Hostname</h4>
+
+    <p>
+        Enter a hostname instead of an IP address:
+    </p>
+
+    <pre>ping google.com</pre>
+
+    <p>
+        The computer normally uses DNS to resolve the
+        hostname into an IP address before attempting
+        the Ping test.
+    </p>
+
+    <p>
+        <strong>Why?</strong> Comparing the hostname test
+        with the external IP-address test can help us
+        investigate possible DNS or name-resolution problems.
+    </p>
+
+    <h4>Step 7: Test the Actual Website or Application</h4>
+
+    <p>
+        Finally, open the website in a browser or test
+        the application that was originally causing trouble.
+    </p>
+
+    <p>
+        <strong>Why?</strong> Ping tests ICMP communication.
+        It does not guarantee that the website's web service
+        or application is working correctly.
+    </p>
+
+    <p>
+        A destination may respond to Ping while its website
+        remains unavailable.
+    </p>
+
+    <h4>How to Interpret the Investigation</h4>
+
+    
+<ul>
+    <li>
+        <strong>Loopback test fails:</strong>
+        Investigate the computer's local TCP/IP networking software.
+    </li>
+
+    <li>
+        <strong>Loopback succeeds, gateway test fails:</strong>
+        Investigate the local network connection and gateway.
+        Also consider whether the gateway blocks ICMP.
+    </li>
+
+    <li>
+        <strong>Gateway responds, external IP test fails:</strong>
+        Investigate routing, internet connectivity, and possible
+        ICMP filtering beyond the local network.
+    </li>
+
+    <li>
+        <strong>External IP responds, hostname produces
+        a "Could not find host" error:</strong>
+        Investigate DNS or hostname resolution.
+    </li>
+
+    <li>
+        <strong>Ping succeeds, website fails:</strong>
+        Investigate the website's application, web service,
+        or browser connection.
+    </li>
+</ul>
+
+    
+
+    <h4>Important Troubleshooting Reminder</h4>
+
+    <p>
+        These tests provide clues, not guaranteed diagnoses.
+        Firewalls, network policies, routing rules, and
+        ICMP filtering can affect the results.
+    </p>
+
+    <p>
+        A failed Ping test does not automatically identify
+        the exact cause of a network problem.
+    </p>
+
+    <h4>Key Takeaway</h4>
+
+    <p>
+        Good troubleshooting follows a logical sequence:
+        check the address, test the local computer,
+        investigate the local gateway, test external
+        communication, examine DNS, and finally check
+        the actual application.
+    </p>
+
+</section>
+
+        
 
     </main>
 
