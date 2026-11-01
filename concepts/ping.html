@@ -3247,6 +3247,28 @@ a network connection can carry over a period of time.
     </ul>
 
     
+    <h3>15.2 How Ping Works — Five Simple Steps</h3>
+
+    <ol>
+        <li><strong>Identify the destination:</strong> The user enters an IP address or hostname.</li>
+
+        <li><strong>Resolve the hostname:</strong> If a hostname is used, DNS helps find its IP address.</li>
+
+        <li><strong>Send a request:</strong> The source computer sends an ICMP Echo Request.</li>
+
+        <li><strong>Receive a reply:</strong> If the destination responds, it sends an ICMP Echo Reply.</li>
+
+        <li><strong>Calculate the RTT:</strong> Ping measures the time taken for the request and reply to complete the round trip.</li>
+    </ol>
+
+    <p>
+        <strong>Remember:</strong> If no reply arrives within
+        the allowed time, Ping may report a request timeout.
+        This does not always mean the destination is offline.
+    </p>
+
+
+    
 
 </section>
 
