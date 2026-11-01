@@ -396,6 +396,51 @@ question9Options.forEach((button, index) => {
 });
 
 
+// ==========================================
+// QUESTION 10: PRACTICAL NETWORK TROUBLESHOOTING
+// ==========================================
+
+// Find the Question 10 container.
+const question10 = document.getElementById("question-10");
+
+// Find all four answer buttons.
+const question10Options = question10.querySelectorAll(".quiz-option");
+
+// Find the feedback area.
+const question10Feedback = document.getElementById("question-10-feedback");
+
+// The fourth answer (D) is correct.
+const correctAnswerIndex10 = 3;
+
+// Check the student's selected answer.
+question10Options.forEach((button, index) => {
+
+    button.addEventListener("click", function () {
+
+        // Prevent another answer from being selected.
+        question10Options.forEach(option => {
+            option.disabled = true;
+        });
+
+        // Check the selected answer.
+        if (index === correctAnswerIndex10) {
+
+            question10Feedback.textContent =
+                "Correct! Since the local router responds, the computer can communicate with its local gateway. The external timeout means we should investigate routing beyond the gateway, internet connectivity, and possible ICMP filtering.";
+
+        } else {
+
+            question10Feedback.textContent =
+                "Not quite. The correct answer is D. A successful Ping to the local router confirms local gateway communication, but an external timeout requires investigating routing, internet connectivity, or ICMP filtering. A timeout alone does not prove the destination is offline.";
+
+        }
+
+    });
+
+});
+
+
+
 
 
 
