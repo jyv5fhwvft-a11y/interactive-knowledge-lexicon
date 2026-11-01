@@ -2601,6 +2601,66 @@ Request timed out.
         Ping to test whether a destination responds.
     </p>
 </div>
+
+    
+<!-- 13.6 Connection to Network Connectivity -->
+<div class="concept-subsection">
+    <h3>13.6 How Is Ping Connected to Network Connectivity?</h3>
+
+    <h4>What Is Network Connectivity?</h4>
+    <p>
+        Network connectivity means that devices can
+        communicate with one another through a network.
+        This communication allows devices to exchange
+        information and access network resources.
+    </p>
+
+    <h4>How Is Ping Connected to Network Connectivity?</h4>
+    <p>
+        Ping helps us test whether a destination
+        responds to network communication using
+        ICMP Echo Request and Echo Reply messages.
+    </p>
+
+    <ol>
+        <li>Your computer sends an ICMP Echo Request towards a destination.</li>
+        <li>The request travels across the network.</li>
+        <li>The destination may receive the request.</li>
+        <li>If it responds, it sends an ICMP Echo Reply.</li>
+        <li>Your computer receives the reply and reports the response time.</li>
+    </ol>
+
+    <h4>Example</h4>
+    <p>
+        Suppose your computer needs to communicate
+        with another device on a network. You enter:
+    </p>
+    <pre><code>ping 192.168.1.10</code></pre>
+
+    <p>
+        If the destination responds, Ping indicates
+        that communication was possible between
+        your computer and that destination at that time.
+    </p>
+
+    <h4>Important Limitation</h4>
+    <p>
+        A successful Ping does not prove that every
+        network service or application is working.
+        Similarly, a failed Ping does not always mean
+        the destination is offline. A firewall or
+        network policy may block ICMP messages.
+    </p>
+
+    <h4>Key Takeaway</h4>
+    <p>
+        Ping is a useful tool for testing basic
+        network reachability, but it does not
+        guarantee complete network connectivity
+        or that every application is working.
+    </p>
+</div>
+
     
 </section>     
         
