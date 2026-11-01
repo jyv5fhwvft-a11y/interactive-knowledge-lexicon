@@ -174,6 +174,51 @@ question4Options.forEach((button, index) => {
 });
 
 
+// ==========================================
+// QUESTION 5: LATENCY VS BANDWIDTH
+// ==========================================
+
+// Find the Question 5 container.
+const question5 = document.getElementById("question-5");
+
+// Find all four answer buttons.
+const question5Options = question5.querySelectorAll(".quiz-option");
+
+// Find the feedback area.
+const question5Feedback = document.getElementById("question-5-feedback");
+
+// The third answer (C) is correct.
+const correctAnswerIndex5 = 2;
+
+// Check the student's selected answer.
+question5Options.forEach((button, index) => {
+
+    button.addEventListener("click", function () {
+
+        // Prevent another answer from being selected.
+        question5Options.forEach(option => {
+            option.disabled = true;
+        });
+
+        // Check the selected answer.
+        if (index === correctAnswerIndex5) {
+
+            question5Feedback.textContent =
+                "Correct! Latency describes response delay, while bandwidth describes how much data a connection can carry over time. Ping measures round-trip time, not bandwidth.";
+
+        } else {
+
+            question5Feedback.textContent =
+                "Not quite. The correct answer is C. Latency describes delay, while bandwidth describes data-carrying capacity over time. Ping helps measure round-trip time, not download or upload capacity.";
+
+        }
+
+    });
+
+});
+
+
+
 
 
 
