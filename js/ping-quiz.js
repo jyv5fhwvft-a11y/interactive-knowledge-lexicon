@@ -262,6 +262,51 @@ question6Options.forEach((button, index) => {
 });
 
 
+// ==========================================
+// QUESTION 7: UNDERSTANDING NETWORK CONNECTIVITY
+// ==========================================
+
+// Find the Question 7 container.
+const question7 = document.getElementById("question-7");
+
+// Find all four answer buttons.
+const question7Options = question7.querySelectorAll(".quiz-option");
+
+// Find the feedback area.
+const question7Feedback = document.getElementById("question-7-feedback");
+
+// The third answer (C) is correct.
+const correctAnswerIndex7 = 2;
+
+// Check the student's selected answer.
+question7Options.forEach((button, index) => {
+
+    button.addEventListener("click", function () {
+
+        // Prevent another answer from being selected.
+        question7Options.forEach(option => {
+            option.disabled = true;
+        });
+
+        // Check the selected answer.
+        if (index === correctAnswerIndex7) {
+
+            question7Feedback.textContent =
+                "Correct! A successful Ping means the destination responded with an ICMP Echo Reply. It does not guarantee that every application or website on that destination is working.";
+
+        } else {
+
+            question7Feedback.textContent =
+                "Not quite. The correct answer is C. A successful Ping confirms that the destination responded to the ICMP Echo Request. It does not prove that all applications work or that the network has unlimited bandwidth.";
+
+        }
+
+    });
+
+});
+
+
+
 
 
 
