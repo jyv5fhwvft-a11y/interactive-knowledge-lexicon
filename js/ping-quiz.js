@@ -87,4 +87,50 @@ question2Options.forEach((button, index) => {
 });
 
 
+// ==========================================
+// QUESTION 3: PING TIMEOUT VS DNS FAILURE
+// ==========================================
+
+// Find the Question 3 container.
+const question3 = document.getElementById("question-3");
+
+// Find all four answer buttons.
+const question3Options = question3.querySelectorAll(".quiz-option");
+
+// Find the feedback area.
+const question3Feedback = document.getElementById("question-3-feedback");
+
+// The third answer (C) is correct.
+const correctAnswerIndex3 = 2;
+
+// Check the student's selected answer.
+question3Options.forEach((button, index) => {
+
+    button.addEventListener("click", function () {
+
+        // Prevent another answer from being selected.
+        question3Options.forEach(option => {
+            option.disabled = true;
+        });
+
+        // Check the selected answer.
+        if (index === correctAnswerIndex3) {
+
+            question3Feedback.textContent =
+                "Correct! Request timed out means a Ping reply did not arrive within the allowed time. Could not find host means the computer could not resolve the hostname to an IP address.";
+
+        } else {
+
+            question3Feedback.textContent =
+                "Not quite. The correct answer is C. A timeout concerns a missing Ping reply. Could not find host concerns hostname resolution, usually involving DNS.";
+
+        }
+
+    });
+
+});
+
+
+
+
 
