@@ -3304,6 +3304,47 @@ a network connection can carry over a period of time.
     </p>
 
 
+    <h3>15.4 Understanding Ping Results</h3>
+
+    <h4>1. Reply Received</h4>
+
+    <p>
+        The destination responded with an ICMP Echo Reply.
+        This indicates that it is reachable through the tested
+        network path for this Ping exchange.
+    </p>
+
+    <h4>2. Request Timed Out</h4>
+
+    <p>
+        No Ping reply arrived within the allowed time.
+        Possible reasons include network problems,
+        firewall restrictions, or ICMP filtering.
+    </p>
+
+    <h4>3. Could Not Find Host</h4>
+
+    <p>
+        The computer could not resolve the hostname
+        into an IP address. DNS or hostname configuration
+        may need investigation.
+    </p>
+
+    <h4>4. Packet Loss</h4>
+
+    <p>
+        Some Ping requests did not receive replies.
+        Packet loss may indicate network problems,
+        congestion, or ICMP filtering.
+    </p>
+
+    <p>
+        <strong>Remember:</strong> A successful Ping does not
+        guarantee that a website or application is working
+        correctly. Ping tests responses to ICMP messages,
+        not the complete operation of an application.
+    </p>
+
 
     
 
