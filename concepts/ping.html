@@ -2175,6 +2175,7 @@ Request timed out.
         the exact cause of a network problem.
     </p>
 
+    
     <h4>Key Takeaway</h4>
 
     <p>
@@ -2187,30 +2188,145 @@ Request timed out.
 
 </section>
 
-        
 
-    </main>
+<!-- SECTION 12.5: UNDERSTANDING THE SIMULATION -->
 
+<section id="simulation-limitations">
 
-    <footer>
+    <h3>12.5 Understanding the Limitations of Our Ping Simulation</h3>
 
-        <p>Interactive Knowledge Lexicon</p>
+    <p>
+        In Section 8, we explored an interactive Ping
+        simulation. It allowed us to observe how a
+        simulated request travels from one computer
+        to another and how a simulated reply returns.
+    </p>
 
-        <p>Explore. Understand. Experiment.</p>
+    <p>
+        However, it is important to understand that
+        this learning simulation is not the same as
+        performing a real Ping test over a network.
+    </p>
 
-    </footer>
+    <h4>1. What Does Our Simulation Actually Do?</h4>
 
+    <p>
+        Our simulation runs inside a web browser using
+        HTML and JavaScript.
+    </p>
 
-    <!-- LOAD THE PING SIMULATION JAVASCRIPT -->
+    <ul>
+        <li>It displays two example computers.</li>
+        <li>It demonstrates a simulated Ping request.</li>
+        <li>It illustrates a simulated reply.</li>
+        <li>It displays a sample response time.</li>
+        <li>It helps students understand the basic communication process.</li>
+    </ul>
 
-    <script src="../js/ping-simulation.js"></script>
+    <h4>2. Does It Send Real ICMP Packets?</h4>
 
-    <script src="../js/ping-flowchart.js"></script>
+    <p>
+        No. Our current browser-based simulation does
+        not send real ICMP Echo Request packets.
+    </p>
 
-    <script src="../js/ping-sequence.js"></script>
-    
-    
+    <p>
+        It does not contact another computer or verify
+        whether a real network destination is reachable.
+    </p>
+
+    <p>
+        Instead, JavaScript controls what appears on
+        the screen to demonstrate the steps of a Ping test.
+    </p>
+
+    <h4>3. Is the Displayed 25 ms a Real Network Measurement?</h4>
+
+    <p>
+        No. The displayed value of 25 milliseconds
+        is a fixed illustrative value used for teaching.
+    </p>
+
+    <p>
+        It is not measured from an actual network
+        request or reply.
+    </p>
+
+    <p>
+        A real Ping command measures the time between
+        sending an ICMP Echo Request and receiving
+        its corresponding Echo Reply.
+    </p>
+
+    <h4>4. Why Use a Simulation Instead of a Real Ping Test?</h4>
+
+    <p>
+        A simulation allows beginners to understand
+        the communication process without needing
+        to configure a network or use a command-line
+        interface.
+    </p>
+
+    <ul>
+        <li>It makes abstract networking concepts easier to visualize.</li>
+        <li>It allows students to explore the process interactively.</li>
+        <li>It provides a safe and controlled learning environment.</li>
+        <li>It helps students understand the request-and-reply sequence.</li>
+    </ul>
+
+    <h4>5. Simulation vs. Real Ping</h4>
+
+    <ul>
+        <li>
+            <strong>Browser simulation:</strong>
+            Demonstrates the Ping process using programmed
+            visual behavior.
+        </li>
+
+        <li>
+            <strong>Real Ping:</strong>
+            Uses the operating system's networking
+            capabilities to send actual ICMP messages.
+        </li>
+
+        <li>
+            <strong>Simulation response time:</strong>
+            A sample value provided for learning.
+        </li>
+
+        <li>
+            <strong>Real Ping response time:</strong>
+            A measurement based on an actual request
+            and its corresponding reply.
+        </li>
+    </ul>
+
+    <h4>Key Takeaway</h4>
+
+    <p>
+        Our interactive Ping simulation helps us
+        understand how Ping works, but it does not
+        perform a real network test. The displayed
+        25 ms is an illustrative value, not a measured
+        Round-Trip Time.
+    </p>
+
+</section>
+</main>
+
+<footer>
+    <p>Interactive Knowledge Lexicon</p>
+    <p>Explore. Understand. Experiment.</p>
+</footer>
+
+<script src="../js/ping-simulation.js"></script>
+<script src="../js/ping-flowchart.js"></script>
+<script src="../js/ping-sequence.js"></script>
 
 </body>
-
 </html>
+
+    
+    
+    
+
