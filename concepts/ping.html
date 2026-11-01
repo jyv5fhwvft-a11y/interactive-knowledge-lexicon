@@ -2481,6 +2481,69 @@ Request timed out.
     ICMP provides the communication mechanism;
     Ping uses it as a diagnostic tool.
 </p>
+
+    <!-- 13.4 Connection to Routers -->
+<div class="concept-subsection">
+    <h3>13.4 How Is Ping Connected to Routers?</h3>
+
+    <h4>What Is a Router?</h4>
+    <p>
+        A router is a networking device that connects different
+        networks and forwards data between them. It helps data
+        travel from one network to another until it reaches
+        its destination.
+    </p>
+
+    <h4>How Does Ping Use Routers?</h4>
+    <p>
+        When you Ping a device outside your local network,
+        the ICMP Echo Request may travel through one or more
+        routers before reaching the destination.
+    </p>
+
+    <ol>
+        <li>Your computer creates an ICMP Echo Request.</li>
+        <li>The request is sent towards the destination.</li>
+        <li>Your local router forwards it towards the next network.</li>
+        <li>Other routers may forward it along the route.</li>
+        <li>The destination may send an ICMP Echo Reply.</li>
+        <li>The reply travels back towards your computer.</li>
+    </ol>
+
+    <h4>Example</h4>
+    <p>
+        Suppose you enter:
+    </p>
+    <pre><code>ping 8.8.8.8</code></pre>
+
+    <p>
+        If the destination is outside your local network,
+        your computer usually sends the request through its
+        default gateway, which is commonly your local router.
+        Other routers may forward the request across networks
+        towards the destination.
+    </p>
+
+    <h4>Important Connection: Ping and Traceroute</h4>
+    <p>
+        Ping helps test whether a destination responds to
+        ICMP Echo Requests. However, Ping does not normally
+        show every router along the path.
+    </p>
+    <p>
+        Traceroute (called tracert on Windows) is a separate
+        network diagnostic tool that helps reveal the routers
+        or network hops along a route.
+    </p>
+
+    <h4>Key Takeaway</h4>
+    <p>
+        Routers help forward Ping messages between networks.
+        Ping tests the destination's response, while Traceroute
+        helps investigate the path taken by network traffic.
+    </p>
+</div>
+    
 </section>     
         
 </main>
