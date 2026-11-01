@@ -2659,6 +2659,73 @@ Request timed out.
     </p>
 </div>
 
+    <div class="concept-subsection">
+    <h3>13.7 Latency</h3>
+
+    <h4>What Is Latency?</h4>
+    <p>
+       Latency is the delay experienced when data travels through a network from one point to another
+    </p>
+    <p>
+        In simple words, latency tells us how long we wait for a
+        message to reach its destination.
+    </p>
+
+    <h4>How Is Latency Related to Ping?</h4>
+    <p>
+        Ping measures the time taken for an ICMP Echo Request to travel
+        to a destination and for the ICMP Echo Reply to return.
+        This measurement is called Round-Trip Time (RTT).
+    </p>
+
+    <h4>Understanding Round-Trip Time</h4>
+    <ol>
+        <li>Your computer sends an ICMP Echo Request.</li>
+        <li>The request travels through the network.</li>
+        <li>The destination receives the request.</li>
+        <li>The destination sends an ICMP Echo Reply.</li>
+        <li>Your computer receives the reply and measures the elapsed time.</li>
+    </ol>
+
+    <h4>Example</h4>
+    <p>
+        Suppose you run:
+    </p>
+    <pre><code>ping google.com</code></pre>
+    <p>
+        Imagine the result shows:
+    </p>
+    <pre><code>Reply from destination: time=25ms</code></pre>
+    <p>
+        This means the measured round-trip time was approximately
+        25 milliseconds (ms).
+    </p>
+
+    <h4>Low Latency vs. High Latency</h4>
+    <ul>
+        <li><strong>Low latency:</strong> Messages complete their journey quickly.</li>
+        <li><strong>High latency:</strong> Messages take longer to complete their journey.</li>
+    </ul>
+
+    <h4>Latency vs. Bandwidth</h4>
+    <ul>
+        <li><strong>Latency:</strong> How long data takes to travel.</li>
+        <li><strong>Bandwidth:</strong> How much data a network can transfer per unit of time.</li>
+    </ul>
+    <p>
+        A network can have high bandwidth but still experience high latency.
+        These two measurements describe different aspects of network performance.
+    </p>
+
+    <h4>Key Takeaway</h4>
+    <p>
+        Latency describes communication delay. Ping measures round-trip
+        time (RTT), helping us understand how quickly a destination
+        responds to a network request. Lower RTT generally means a
+        faster response, but it does not automatically mean the entire
+        network is fast.
+    </p>
+</div>
     
 </section>     
         
