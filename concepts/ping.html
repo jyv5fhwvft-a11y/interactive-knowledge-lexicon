@@ -2543,6 +2543,64 @@ Request timed out.
         helps investigate the path taken by network traffic.
     </p>
 </div>
+
+    <!-- 13.5 Connection to Packets -->
+<div class="concept-subsection">
+    <h3>13.5 How Is Ping Connected to Packets?</h3>
+
+    <h4>What Is a Network Packet?</h4>
+    <p>
+        A network packet is a formatted unit of data
+        sent from one device to another across a network.
+        It contains information that helps the network
+        deliver the data to the correct destination.
+    </p>
+
+    <h4>How Is Ping Connected to Packets?</h4>
+    <p>
+        When you use Ping, your computer creates an
+        ICMP Echo Request message. This message is
+        carried inside an IP packet so it can travel
+        across an IP network.
+    </p>
+
+    <ol>
+        <li>Your computer creates an ICMP Echo Request message.</li>
+        <li>The message is placed inside an IP packet.</li>
+        <li>The packet travels through the network towards the destination.</li>
+        <li>The destination may return an ICMP Echo Reply message.</li>
+        <li>The reply is carried inside another IP packet.</li>
+        <li>Your computer receives the reply and calculates the round-trip time.</li>
+    </ol>
+
+    <h4>Example</h4>
+    <p>
+        Suppose you enter:
+    </p>
+    <pre><code>ping 8.8.8.8</code></pre>
+
+    <p>
+        Your computer sends an ICMP Echo Request
+        carried inside an IP packet towards 8.8.8.8.
+        If the destination responds, an ICMP Echo Reply
+        is sent back in an IP packet.
+    </p>
+
+    <h4>Why Are Packets Important?</h4>
+    <p>
+        Packets allow data to travel across interconnected
+        networks in manageable units. Routers examine
+        packet information to help forward packets
+        towards their destinations.
+    </p>
+
+    <h4>Key Takeaway</h4>
+    <p>
+        Ping uses ICMP messages carried inside IP packets.
+        The packets travel across the network, allowing
+        Ping to test whether a destination responds.
+    </p>
+</div>
     
 </section>     
         
