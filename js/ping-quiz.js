@@ -130,6 +130,51 @@ question3Options.forEach((button, index) => {
 
 });
 
+// ==========================================
+// QUESTION 4: DNS AND IP ADDRESSES
+// ==========================================
+
+// Find the Question 4 container.
+const question4 = document.getElementById("question-4");
+
+// Find all four answer buttons.
+const question4Options = question4.querySelectorAll(".quiz-option");
+
+// Find the feedback area.
+const question4Feedback = document.getElementById("question-4-feedback");
+
+// The second answer (B) is correct.
+const correctAnswerIndex4 = 1;
+
+// Check the student's selected answer.
+question4Options.forEach((button, index) => {
+
+    button.addEventListener("click", function () {
+
+        // Prevent another answer from being selected.
+        question4Options.forEach(option => {
+            option.disabled = true;
+        });
+
+        // Check the selected answer.
+        if (index === correctAnswerIndex4) {
+
+            question4Feedback.textContent =
+                "Correct! DNS translates a hostname, such as google.com, into an IP address that computers use to communicate across an IP network.";
+
+        } else {
+
+            question4Feedback.textContent =
+                "Not quite. The correct answer is B. DNS helps translate hostnames into IP addresses. It does not measure latency, identify network routes, or measure network speed.";
+
+        }
+
+    });
+
+});
+
+
+
 
 
 
