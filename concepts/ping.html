@@ -2375,6 +2375,58 @@ Request timed out.
         where to direct the request.
     </p>
 
+    <h3>13.2 How Is Ping Connected to DNS?</h3>
+
+<p>
+    DNS stands for Domain Name System. It translates
+    human-friendly domain names, such as google.com,
+    into IP addresses that computers use to communicate.
+</p>
+
+<p>
+    When a user enters a hostname instead of an IP
+    address in Ping, DNS helps the computer find the
+    corresponding IP address.
+</p>
+
+<h4>How Do They Work Together?</h4>
+
+<ol>
+    <li>The user enters a hostname, such as google.com.</li>
+    <li>The computer uses DNS to resolve the hostname into an IP address.</li>
+    <li>If DNS resolution succeeds, Ping obtains the destination IP address.</li>
+    <li>Ping uses that IP address to send ICMP Echo Requests.</li>
+    <li>The destination may respond with ICMP Echo Replies.</li>
+</ol>
+
+<h4>Practical Example</h4>
+
+<pre>ping google.com</pre>
+
+<p>
+    In this example, the computer first needs to
+    resolve google.com into an IP address. Ping then
+    uses that address to send its test messages.
+</p>
+
+<h4>What If DNS Fails?</h4>
+
+<p>
+    If the computer cannot resolve the hostname,
+    Ping may display a message such as
+    "Could not find host." In that situation,
+    Ping cannot proceed using the hostname.
+</p>
+
+<h4>Key Takeaway</h4>
+
+<p>
+    DNS finds the IP address associated with a
+    hostname. Ping uses that IP address to send
+    its ICMP test messages. DNS identifies the
+    destination; Ping tests its response.
+</p>
+
 </section>
 </main>
 
