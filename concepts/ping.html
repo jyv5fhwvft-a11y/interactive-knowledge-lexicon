@@ -2427,7 +2427,62 @@ Request timed out.
     destination; Ping tests its response.
 </p>
 
-</section>
+
+        <h3>13.3 How Is Ping Connected to ICMP?</h3>
+
+<p>
+    ICMP stands for Internet Control Message Protocol.
+    It is a network-layer protocol used by devices to
+    exchange control, diagnostic, and error messages
+    across IP networks.
+</p>
+
+<p>
+    Ping uses ICMP to test whether a destination can
+    be reached and whether it responds to network
+    messages.
+</p>
+
+<h4>How Do They Work Together?</h4>
+
+<ol>
+    <li>The user enters a destination IP address or hostname.</li>
+    <li>If a hostname is entered, DNS may resolve it into an IP address.</li>
+    <li>Ping sends an ICMP Echo Request to the destination.</li>
+    <li>The destination may respond with an ICMP Echo Reply.</li>
+    <li>Ping measures the time taken to receive the reply.</li>
+</ol>
+
+<h4>Practical Example</h4>
+
+<pre>ping 8.8.8.8</pre>
+
+<p>
+    In this example, Ping sends ICMP Echo Requests
+    to the IP address 8.8.8.8. If the destination
+    responds, it sends ICMP Echo Replies back.
+</p>
+
+<h4>What If No Reply Is Received?</h4>
+
+<p>
+    If no Echo Reply arrives, Ping may display
+    a timeout message. This does not always mean
+    the destination is offline. A firewall or
+    network policy may be blocking ICMP messages.
+</p>
+
+<h4>Key Takeaway</h4>
+
+<p>
+    ICMP provides the message types Ping uses
+    to test network reachability. Ping sends
+    Echo Requests and waits for Echo Replies.
+    ICMP provides the communication mechanism;
+    Ping uses it as a diagnostic tool.
+</p>
+</section>     
+        
 </main>
 
 <footer>
@@ -2438,6 +2493,8 @@ Request timed out.
 <script src="../js/ping-simulation.js"></script>
 <script src="../js/ping-flowchart.js"></script>
 <script src="../js/ping-sequence.js"></script>
+
+    
 
 </body>
 </html>
