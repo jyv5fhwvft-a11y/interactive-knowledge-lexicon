@@ -42,3 +42,49 @@ question1Options.forEach((button, index) => {
     });
 
 });
+
+// ==========================================
+// QUESTION 2: WEBSITE AVAILABILITY
+// ==========================================
+
+// Find the Question 2 container.
+const question2 = document.getElementById("question-2");
+
+// Find all four answer buttons.
+const question2Options = question2.querySelectorAll(".quiz-option");
+
+// Find the feedback area.
+const question2Feedback = document.getElementById("question-2-feedback");
+
+// The third answer (C) is correct.
+const correctAnswerIndex2 = 2;
+
+// Check the student's selected answer.
+question2Options.forEach((button, index) => {
+
+    button.addEventListener("click", function () {
+
+        // Prevent another answer from being selected.
+        question2Options.forEach(option => {
+            option.disabled = true;
+        });
+
+        // Check the selected answer.
+        if (index === correctAnswerIndex2) {
+
+            question2Feedback.textContent =
+                "Correct! A successful Ping only confirms that the destination responds to ICMP messages. It does not guarantee that the website or its application is working correctly.";
+
+        } else {
+
+            question2Feedback.textContent =
+                "Not quite. The correct answer is C. Ping tests whether a destination responds to ICMP messages. A website can still experience application or server problems even when Ping succeeds.";
+
+        }
+
+    });
+
+});
+
+
+
