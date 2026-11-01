@@ -3267,6 +3267,43 @@ a network connection can carry over a period of time.
         This does not always mean the destination is offline.
     </p>
 
+    
+    <h3>15.3 Important Ping Commands</h3>
+
+    <h4>1. Ping an IP Address</h4>
+
+    <pre><code>ping 8.8.8.8</code></pre>
+
+    <p>
+        Tests whether the destination IP address responds
+        to ICMP Echo Requests.
+    </p>
+
+    <h4>2. Ping a Hostname</h4>
+
+    <pre><code>ping google.com</code></pre>
+
+    <p>
+        Uses DNS to resolve the hostname into an IP address
+        when necessary, then tests whether that destination responds.
+    </p>
+
+    <h4>3. Ping the Local Computer</h4>
+
+    <pre><code>ping 127.0.0.1</code></pre>
+
+    <p>
+        Tests the local computer's TCP/IP networking software
+        using the loopback address. It does not test the
+        physical network connection or internet access.
+    </p>
+
+    <p>
+        <strong>Remember:</strong> These commands help investigate
+        different parts of network communication.
+    </p>
+
+
 
     
 
