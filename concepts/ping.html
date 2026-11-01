@@ -2296,7 +2296,8 @@ Request timed out.
 
         <li>
             <strong>Real Ping response time:</strong>
-            A measurement based on an actual request
+            A 
+            measurement based on an actual request
             and its corresponding reply.
         </li>
     </ul>
@@ -2309,6 +2310,69 @@ Request timed out.
         perform a real network test. The displayed
         25 ms is an illustrative value, not a measured
         Round-Trip Time.
+    </p>
+
+</section>
+
+        <!-- ================================== -->
+<!-- SECTION 13: CONNECTIONS TO OTHER CONCEPTS -->
+<!-- ================================== -->
+
+<section id="ping-connections">
+
+    <h2>13. Connections to Other Concepts</h2>
+
+    <p>
+        Ping is not an isolated networking tool. It works with several
+        important networking concepts, including IP addresses, ICMP,
+        DNS, routers, packets, and network connectivity.
+    </p>
+
+    <p>
+        Understanding how these concepts connect helps us understand
+        how computers communicate and how network problems can be
+        investigated.
+    </p>
+
+        <h3>13.1 How Is Ping Connected to IP Addresses?</h3>
+
+    <p>
+        An IP address is a numerical address used to
+        identify a device or network interface on an
+        IP network.
+    </p>
+
+    <p>
+        Ping uses IP addressing to send its test messages
+        toward the intended destination.
+    </p>
+
+    <h4>How Do They Work Together?</h4>
+
+    <ol>
+        <li>The user specifies a destination using an IP address or hostname.</li>
+        <li>If a hostname is entered, DNS may resolve it into an IP address.</li>
+        <li>Ping uses the resulting destination IP address to send its ICMP Echo Request.</li>
+        <li>The destination may send an ICMP Echo Reply.</li>
+    </ol>
+
+    <h4>Practical Example</h4>
+
+    <pre>ping 8.8.8.8</pre>
+
+    <p>
+        In this example, 8.8.8.8 is the destination
+        IP address. The computer attempts to send
+        ICMP Echo Requests to that address.
+    </p>
+
+    <h4>Key Takeaway</h4>
+
+    <p>
+        IP addressing tells Ping where to send its
+        test messages. Without identifying the
+        destination, the computer would not know
+        where to direct the request.
     </p>
 
 </section>
