@@ -303,6 +303,52 @@ question7Options.forEach((button, index) => {
 
     });
 
+    
+// ==========================================
+// QUESTION 8: UNDERSTANDING PACKET LOSS
+// ==========================================
+
+// Find the Question 8 container.
+const question8 = document.getElementById("question-8");
+
+// Find all four answer buttons.
+const question8Options = question8.querySelectorAll(".quiz-option");
+
+// Find the feedback area.
+const question8Feedback = document.getElementById("question-8-feedback");
+
+// The third answer (C) is correct.
+const correctAnswerIndex8 = 2;
+
+// Check the student's selected answer.
+question8Options.forEach((button, index) => {
+
+    button.addEventListener("click", function () {
+
+        // Prevent another answer from being selected.
+        question8Options.forEach(option => {
+            option.disabled = true;
+        });
+
+        // Check the selected answer.
+        if (index === correctAnswerIndex8) {
+
+            question8Feedback.textContent =
+                "Correct! Packet loss means that some packets do not reach their destination or their replies do not return. Ping can help identify possible packet loss by comparing requests sent with replies received.";
+
+        } else {
+
+            question8Feedback.textContent =
+                "Not quite. The correct answer is C. Ping can reveal possible packet loss when some requests receive no replies. However, firewalls or ICMP filtering can also cause missing replies.";
+
+        }
+
+    });
+
+});
+
+    
+
 });
 
 
