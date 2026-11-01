@@ -352,6 +352,51 @@ question8Options.forEach((button, index) => {
 });
 
 
+// ==========================================
+// QUESTION 9: PRACTICAL DNS TROUBLESHOOTING
+// ==========================================
+
+// Find the Question 9 container.
+const question9 = document.getElementById("question-9");
+
+// Find all four answer buttons.
+const question9Options = question9.querySelectorAll(".quiz-option");
+
+// Find the feedback area.
+const question9Feedback = document.getElementById("question-9-feedback");
+
+// The second answer (B) is correct.
+const correctAnswerIndex9 = 1;
+
+// Check the student's selected answer.
+question9Options.forEach((button, index) => {
+
+    button.addEventListener("click", function () {
+
+        // Prevent another answer from being selected.
+        question9Options.forEach(option => {
+            option.disabled = true;
+        });
+
+        // Check the selected answer.
+        if (index === correctAnswerIndex9) {
+
+            question9Feedback.textContent =
+                "Correct! The successful Ping to 8.8.8.8 shows that an external IP destination responded. The 'Could not find host' message for google.com points to a hostname resolution problem, usually involving DNS.";
+
+        } else {
+
+            question9Feedback.textContent =
+                "Not quite. The correct answer is B. Since 8.8.8.8 responded, the computer can reach that external IP destination. The hostname error points toward a DNS resolution problem.";
+
+        }
+
+    });
+
+});
+
+
+
 
 
 
