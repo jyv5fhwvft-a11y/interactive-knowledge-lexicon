@@ -218,6 +218,51 @@ question5Options.forEach((button, index) => {
 });
 
 
+// ==========================================
+// QUESTION 6: ROLE OF ROUTERS
+// ==========================================
+
+// Find the Question 6 container.
+const question6 = document.getElementById("question-6");
+
+// Find all four answer buttons.
+const question6Options = question6.querySelectorAll(".quiz-option");
+
+// Find the feedback area.
+const question6Feedback = document.getElementById("question-6-feedback");
+
+// The fourth answer (D) is correct.
+const correctAnswerIndex6 = 3;
+
+// Check the student's selected answer.
+question6Options.forEach((button, index) => {
+
+    button.addEventListener("click", function () {
+
+        // Prevent another answer from being selected.
+        question6Options.forEach(option => {
+            option.disabled = true;
+        });
+
+        // Check the selected answer.
+        if (index === correctAnswerIndex6) {
+
+            question6Feedback.textContent =
+                "Correct! Routers forward IP packets between networks, helping a Ping request travel toward a destination outside the local network.";
+
+        } else {
+
+            question6Feedback.textContent =
+                "Not quite. The correct answer is D. Routers forward IP packets toward their destinations. DNS translates hostnames, and Ping measures response time.";
+
+        }
+
+    });
+
+});
+
+
+
 
 
 
