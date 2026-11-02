@@ -1686,3 +1686,153 @@ header p:last-child {
         padding-left: 32px;
     }
 }
+
+
+/* =========================================
+   22. SECTION 12 — LIMITATIONS AND TROUBLESHOOTING
+========================================= */
+
+/* Subsection headings */
+#limitations-troubleshooting h3,
+#ping-limitations h3,
+#ping-failure-reasons h3,
+#troubleshooting-checklist h3,
+#simulation-limitations h3 {
+    color: var(--color-navy);
+    background: #EFF6FF;
+    border-left: 5px solid var(--color-blue);
+    border-radius: var(--radius-medium);
+    padding: 15px 18px;
+    margin-top: 24px;
+    line-height: 1.5;
+}
+
+/* Numbered topic headings */
+#limitations-troubleshooting h4,
+#ping-limitations h4,
+#ping-failure-reasons h4,
+#troubleshooting-checklist h4,
+#simulation-limitations h4 {
+    color: var(--color-navy);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Explanatory paragraphs */
+#limitations-troubleshooting p,
+#ping-limitations p,
+#ping-failure-reasons p,
+#troubleshooting-checklist p,
+#simulation-limitations p {
+    line-height: 1.8;
+}
+
+/* Lists and their items */
+#limitations-troubleshooting ul,
+#ping-limitations ul,
+#ping-failure-reasons ul,
+#troubleshooting-checklist ul,
+#simulation-limitations ul {
+    background: #F8FAFC;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    padding: 18px 20px 18px 42px;
+    margin: 16px 0;
+}
+
+#limitations-troubleshooting li,
+#ping-limitations li,
+#ping-failure-reasons li,
+#troubleshooting-checklist li,
+#simulation-limitations li {
+    margin: 10px 0;
+    line-height: 1.7;
+}
+
+#limitations-troubleshooting li strong,
+#ping-limitations li strong,
+#ping-failure-reasons li strong,
+#troubleshooting-checklist li strong,
+#simulation-limitations li strong {
+    color: var(--color-navy);
+}
+
+/* Key takeaway headings */
+#limitations-troubleshooting h4:last-of-type,
+#ping-limitations h4:last-of-type,
+#ping-failure-reasons h4:last-of-type,
+#troubleshooting-checklist h4:last-of-type,
+#simulation-limitations h4:last-of-type {
+    background: #F0FDFA;
+    color: #115E59;
+    border-left: 5px solid var(--color-teal);
+    border-radius: var(--radius-medium);
+    padding: 13px 16px;
+}
+
+/* Key takeaway explanations */
+#limitations-troubleshooting h4:last-of-type + p,
+#ping-limitations h4:last-of-type + p,
+#ping-failure-reasons h4:last-of-type + p,
+#troubleshooting-checklist h4:last-of-type + p,
+#simulation-limitations h4:last-of-type + p {
+    background: #F0FDFA;
+    border: 1px solid #99F6E4;
+    border-left: 5px solid var(--color-teal);
+    border-radius: var(--radius-medium);
+    padding: 18px;
+    color: #115E59;
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+/* Troubleshooting command examples */
+#troubleshooting-checklist pre {
+    background: #102A43;
+    color: #FFFFFF;
+    border-radius: var(--radius-medium);
+    padding: 17px 20px;
+    margin: 14px 0;
+    overflow-x: auto;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Important and why explanations */
+#troubleshooting-checklist p strong,
+#ping-failure-reasons p strong {
+    color: var(--color-blue);
+}
+
+/* Special troubleshooting reminder */
+#troubleshooting-checklist h4:last-of-type + p,
+#troubleshooting-checklist h4:last-of-type + p + p {
+    line-height: 1.8;
+}
+
+/* Mobile adjustments */
+@media (max-width: 650px) {
+    #limitations-troubleshooting h3,
+    #ping-limitations h3,
+    #ping-failure-reasons h3,
+    #troubleshooting-checklist h3,
+    #simulation-limitations h3 {
+        padding: 13px 14px;
+    }
+
+    #limitations-troubleshooting ul,
+    #ping-limitations ul,
+    #ping-failure-reasons ul,
+    #troubleshooting-checklist ul,
+    #simulation-limitations ul {
+        padding-left: 32px;
+    }
+
+    #troubleshooting-checklist pre {
+        font-size: 0.85rem;
+        padding: 14px;
+    }
+}
+
