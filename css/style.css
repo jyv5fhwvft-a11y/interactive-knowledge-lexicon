@@ -299,15 +299,18 @@ body {
 /* 7. Footer */
 
 footer {
-    padding: 22px 15px;
-    background: #173b67;
-    color: white;
+    padding: 28px 15px;
+    background: var(--color-navy);
+    color: var(--color-white);
     text-align: center;
+    border-top: 3px solid var(--color-teal);
 }
 
 footer p {
     margin: 0;
+    font-family: var(--font-body);
     font-size: 14px;
+    line-height: 1.7;
 }
 
 
