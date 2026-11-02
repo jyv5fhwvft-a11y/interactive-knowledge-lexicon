@@ -282,7 +282,10 @@ body {
 .learning-section p {
     max-width: 800px;
     margin: 20px auto;
+    color: var(--color-slate);
+    font-family: var(--font-body);
     font-size: 17px;
+    line-height: 1.8;
 }
 
 
