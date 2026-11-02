@@ -668,6 +668,127 @@ header p:last-child {
 }
 
 
+/* =========================================
+   16. SECTION 6 — COMPONENTS AND ARCHITECTURE
+========================================= */
+
+/* Section introduction */
+#components-architecture h3:first-of-type + p {
+    background: #EFF6FF;
+    border-left: 5px solid var(--color-blue);
+    border-radius: var(--radius-medium);
+    padding: 18px 22px;
+    margin: 12px 0 28px;
+}
+
+/* Seven component headings */
+#components-architecture h3:nth-of-type(n+2):nth-of-type(-n+8) {
+    background: #F1F5F9;
+    border-left: 5px solid var(--color-blue);
+    border-radius: var(--radius-small);
+    padding: 13px 18px;
+    margin-top: 30px;
+    margin-bottom: 12px;
+}
+
+/* Component descriptions */
+#components-architecture h3:nth-of-type(n+2):nth-of-type(-n+8) + p {
+    color: var(--color-slate);
+    padding: 8px 12px;
+    margin: 8px 0 12px;
+}
+
+/* Component responsibility lists */
+#components-architecture h3:nth-of-type(n+2):nth-of-type(-n+8) + p + ul {
+    background: #F8FAFC;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    padding: 17px 20px 17px 42px;
+    margin-top: 10px;
+}
+
+#components-architecture h3:nth-of-type(n+2):nth-of-type(-n+8) + p + ul li {
+    padding: 6px 0;
+    color: var(--color-navy);
+}
+
+#components-architecture h3:nth-of-type(n+2):nth-of-type(-n+8) + p + ul li::marker {
+    color: var(--color-teal);
+}
+
+/* How the components work together */
+#components-architecture h3:nth-of-type(9) + p {
+    background: #EFF6FF;
+    border-left: 5px solid var(--color-blue);
+    border-radius: var(--radius-medium);
+    padding: 17px 22px;
+}
+
+#components-architecture h3:nth-of-type(9) + p + ol {
+    background: #F1F5F9;
+    border: 1px solid var(--color-border);
+    border-left: 5px solid var(--color-teal);
+    border-radius: var(--radius-medium);
+    padding: 20px 20px 20px 48px;
+}
+
+#components-architecture h3:nth-of-type(9) + p + ol li {
+    padding: 8px 0;
+    color: var(--color-navy);
+}
+
+/* Architecture diagram introduction */
+#components-architecture h3:nth-of-type(10) + p {
+    color: var(--color-slate);
+    margin-bottom: 14px;
+}
+
+/* Architecture diagram */
+#components-architecture pre {
+    background: #102A43;
+    color: #E2E8F0;
+    border: 1px solid #334E68;
+    border-radius: var(--radius-large);
+    padding: 22px;
+    overflow-x: auto;
+    font-family: var(--font-code);
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre;
+}
+
+/* Architectural relationships */
+#components-architecture h3:nth-of-type(11) + p,
+#components-architecture h3:nth-of-type(11) + p + p,
+#components-architecture h3:nth-of-type(11) + p + p + p {
+    background: #F0FDFA;
+    border-left: 5px solid var(--color-teal);
+    border-radius: var(--radius-medium);
+    padding: 16px 20px;
+    margin: 12px 0;
+}
+
+/* Key architectural takeaway */
+#components-architecture h3:nth-of-type(12) + p {
+    background: #F0FDFA;
+    border: 1px solid #99F6E4;
+    border-left: 5px solid var(--color-teal);
+    border-radius: var(--radius-medium);
+    padding: 22px;
+    color: var(--color-navy);
+    font-weight: 600;
+}
+
+/* Small-screen diagram readability */
+@media (max-width: 650px) {
+    #components-architecture pre {
+        font-size: 11px;
+        padding: 14px;
+    }
+}
+
+
+
 
 
 
