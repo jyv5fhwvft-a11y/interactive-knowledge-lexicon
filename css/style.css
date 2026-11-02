@@ -248,12 +248,15 @@ body {
 
 .category-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(23, 59, 103, 0.12);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-blue);
 }
 
 .category-card h3 {
-    color: #2563a6;
+    color: var(--color-blue);
+    font-family: var(--font-heading);
     font-size: 21px;
+    font-weight: 700;
     margin-top: 0;
 }
 
