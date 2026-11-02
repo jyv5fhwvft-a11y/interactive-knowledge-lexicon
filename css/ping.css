@@ -1110,6 +1110,279 @@ header p:last-child {
     }
 }
 
+/* =========================================
+   19. SECTION 9 — FLOWCHART AND SEQUENCE
+========================================= */
+
+/* Main introductions */
+#interactive-flowchart > p,
+#sequence-diagram > p {
+    background: #EFF6FF;
+    border-left: 5px solid var(--color-blue);
+    border-radius: var(--radius-medium);
+    padding: 17px 22px;
+    margin: 14px 0 25px;
+}
+
+/* Flowchart workspace */
+#ping-flowchart {
+    background: #F8FAFC;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    padding: 26px;
+    margin-top: 22px;
+}
+
+/* Flowchart heading */
+#ping-flowchart > h3 {
+    margin-top: 0;
+    color: var(--color-navy);
+}
+
+/* Step counter */
+#flowchart-step-counter {
+    display: inline-block;
+    background: #DBEAFE;
+    color: var(--color-blue);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Flowchart visual area */
+#flowchart-visual {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    padding: 25px;
+    margin: 20px 0;
+    text-align: center;
+    min-height: 130px;
+}
+
+/* Flowchart nodes */
+#flowchart-visual .flowchart-node {
+    background: #EFF6FF;
+    border: 2px solid #BFDBFE;
+    border-radius: var(--radius-medium);
+    padding: 18px;
+    margin: 10px auto;
+    max-width: 520px;
+    transition: background .25s ease, border-color .25s ease;
+}
+
+/* Active flowchart node */
+#flowchart-visual .flowchart-node.active {
+    background: #DBEAFE;
+    border-color: var(--color-blue);
+    box-shadow: var(--shadow-card);
+}
+
+/* Node headings */
+#flowchart-visual .flowchart-node h4 {
+    color: var(--color-navy);
+    margin: 0 0 8px;
+}
+
+/* Node descriptions */
+#flowchart-visual .flowchart-node p {
+    margin: 0;
+    color: var(--color-slate);
+}
+
+/* Flowchart explanation panel */
+#flowchart-explanation {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-left: 5px solid var(--color-teal);
+    border-radius: var(--radius-medium);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#flowchart-explanation h4 {
+    color: var(--color-teal);
+    margin-top: 0;
+}
+
+#flowchart-explanation p {
+    margin-bottom: 0;
+}
+
+/* Flowchart navigation controls */
+#flowchart-controls,
+#sequence-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+/* Flowchart and sequence buttons */
+#flowchart-controls button,
+#flowchart-decision button,
+#sequence-controls button {
+    background: var(--color-blue);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-medium);
+    padding: 12px 20px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .25s ease, transform .25s ease;
+}
+
+#flowchart-controls button:hover,
+#flowchart-decision button:hover,
+#sequence-controls button:hover {
+    background: var(--color-navy);
+    transform: translateY(-2px);
+}
+
+/* Decision panel */
+#flowchart-decision {
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    border-left: 5px solid var(--color-amber);
+    border-radius: var(--radius-medium);
+    padding: 20px;
+    margin: 22px 0;
+    text-align: center;
+}
+
+#flowchart-decision h4 {
+    color: var(--color-navy);
+    margin-top: 0;
+}
+
+/* Sequence diagram workspace */
+#sequence-diagram {
+    margin-top: 35px;
+}
+
+/* Sequence diagram heading */
+#sequence-diagram > h3 {
+    color: var(--color-navy);
+}
+
+/* Sequence participants layout */
+#sequence-participants {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 16px;
+    margin: 25px 0;
+}
+
+/* Individual participant cards */
+#sequence-participants .sequence-participant {
+    flex: 1;
+    min-width: 0;
+    background: var(--color-white);
+    border: 1px solid #BFDBFE;
+    border-top: 5px solid var(--color-blue);
+    border-radius: var(--radius-medium);
+    padding: 20px 14px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+}
+
+/* Participant headings */
+.sequence-participant h4 {
+    color: var(--color-navy);
+    margin: 0 0 12px;
+}
+
+/* Participant descriptions */
+.sequence-participant p {
+    font-size: 14px;
+    margin: 7px 0;
+}
+
+/* Sequence message area */
+#sequence-message-area {
+    background: #F8FAFC;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    padding: 24px;
+    margin-top: 25px;
+}
+
+#sequence-message-area > h4 {
+    color: var(--color-navy);
+    margin-top: 0;
+}
+
+/* Individual sequence messages */
+#sequence-messages .sequence-message {
+    background: var(--color-white);
+    border: 1px solid #BFDBFE;
+    border-left: 5px solid var(--color-blue);
+    border-radius: var(--radius-medium);
+    padding: 20px;
+    margin: 14px 0;
+}
+
+#sequence-messages .sequence-message h4 {
+    color: var(--color-blue);
+    margin-top: 0;
+}
+
+#sequence-messages .sequence-message p:last-child {
+    background: #EFF6FF;
+    border-radius: var(--radius-small);
+    padding: 12px;
+    color: var(--color-navy);
+    font-weight: 600;
+}
+
+/* Sequence message counter */
+#sequence-step-counter {
+    color: var(--color-teal);
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    margin: 5px 0;
+}
+
+/* Keyboard focus visibility */
+#ping-flowchart button:focus-visible,
+#sequence-diagram button:focus-visible {
+    outline: 3px solid var(--color-teal);
+    outline-offset: 4px;
+}
+
+/* Small-screen layout */
+@media (max-width: 650px) {
+    #ping-flowchart,
+    #sequence-message-area {
+        padding: 17px 13px;
+    }
+
+    #sequence-participants {
+        flex-direction: column;
+    }
+
+    #sequence-participants .sequence-participant {
+        width: 100%;
+    }
+
+    #flowchart-controls,
+    #sequence-controls {
+        flex-direction: column;
+    }
+
+    #flowchart-controls button,
+    #sequence-controls button {
+        width: 100%;
+    }
+}
+
 
 
 
