@@ -156,7 +156,9 @@ body {
 
 .search-section {
     text-align: center;
-    padding: 55px 20px;
+    padding: 70px 20px;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .search-section h2,
