@@ -211,3 +211,77 @@ main section h4 {
 }
 
 
+/* =========================================
+   9. PROFESSIONAL PING PAGE HEADER
+========================================= */
+
+header {
+    background: var(--color-navy);
+    color: var(--color-white);
+    padding: 65px 24px;
+    text-align: center;
+}
+
+/* Concept identification */
+
+header p:first-child {
+    color: #5EEAD4;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Main concept title */
+
+header h1 {
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 18px 0 10px;
+}
+
+/* Concept question */
+
+header h2 {
+    color: #BFDBFE;
+    font-size: 23px;
+    font-weight: 500;
+    margin: 0 0 18px;
+}
+
+/* Introductory description */
+
+header p:last-child {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #E2E8F0;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* Mobile and tablet adjustment */
+
+@media (max-width: 650px) {
+    header {
+        padding: 48px 20px;
+    }
+
+    header h1 {
+        font-size: 40px;
+    }
+
+    header h2 {
+        font-size: 19px;
+    }
+
+    header p:last-child {
+        font-size: 15px;
+    }
+}
+
+
+
+
