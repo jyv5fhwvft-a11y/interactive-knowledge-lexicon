@@ -87,13 +87,14 @@ body {
 }
 
 .navbar nav a {
-    color: white;
+    color: var(--color-white);
     text-decoration: none;
     font-size: 16px;
+    transition: color 0.2s ease;
 }
 
 .navbar nav a:hover {
-    color: #a9d5ff;
+    color: var(--color-teal);
 }
 
 
