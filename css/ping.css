@@ -787,6 +787,137 @@ header p:last-child {
     }
 }
 
+/* =========================================
+   17. SECTION 7 — HOW PING WORKS
+========================================= */
+
+/* Section introduction */
+#working-mechanism > p:first-of-type {
+    background: #EFF6FF;
+    border-left: 5px solid var(--color-blue);
+    border-radius: var(--radius-medium);
+    padding: 18px 22px;
+    margin: 14px 0 28px;
+}
+
+/* Nine process step headings */
+#working-mechanism h3:nth-of-type(n+1):nth-of-type(-n+9) {
+    background: #F1F5F9;
+    border-left: 5px solid var(--color-blue);
+    border-radius: var(--radius-small);
+    padding: 14px 18px;
+    margin-top: 32px;
+    margin-bottom: 14px;
+}
+
+/* Explanatory paragraphs within process steps */
+#working-mechanism h3:nth-of-type(n+1):nth-of-type(-n+9) + p {
+    background: #F8FAFC;
+    border-left: 3px solid var(--color-border);
+    border-radius: var(--radius-small);
+    padding: 14px 18px;
+    margin: 10px 0;
+}
+
+/* Additional paragraphs following explanations */
+#working-mechanism h3:nth-of-type(n+1):nth-of-type(-n+9) + p + p {
+    margin: 10px 0 18px;
+}
+
+/* Command example label */
+#working-mechanism h3:first-of-type + p + p strong {
+    color: var(--color-blue);
+}
+
+/* Terminal command */
+#working-mechanism h3:first-of-type + p + p + pre {
+    background: #102A43;
+    color: #5EEAD4;
+    border: 1px solid #334E68;
+    border-radius: var(--radius-medium);
+    padding: 18px 22px;
+    font-family: var(--font-code);
+    font-size: 15px;
+    overflow-x: auto;
+}
+
+/* Lists explaining each process step */
+#working-mechanism h3:nth-of-type(n+1):nth-of-type(-n+9) + p + ul,
+#working-mechanism h3:nth-of-type(n+1):nth-of-type(-n+9) + p + p + ul,
+#working-mechanism h3:nth-of-type(9) + p + p + p + ul {
+    background: #F8FAFC;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    padding: 18px 20px 18px 42px;
+    margin: 12px 0 20px;
+}
+
+/* Process list items */
+#working-mechanism li {
+    padding: 6px 0;
+}
+
+#working-mechanism li::marker {
+    color: var(--color-teal);
+}
+
+/* RTT example label */
+#working-mechanism h3:nth-of-type(8) + p + p strong {
+    color: var(--color-blue);
+}
+
+/* RTT calculation example */
+#working-mechanism h3:nth-of-type(8) + p + p + ul {
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-left: 5px solid var(--color-blue);
+    border-radius: var(--radius-medium);
+    padding: 18px 20px 18px 42px;
+}
+
+/* No-reply reminder */
+#working-mechanism h3:nth-of-type(9) + p + p + p + ul + p {
+    background: #FFFBEB;
+    border-left: 5px solid var(--color-amber);
+    border-radius: var(--radius-medium);
+    padding: 17px 22px;
+    color: var(--color-navy);
+    font-weight: 500;
+}
+
+/* Complete process diagram */
+#working-mechanism h3:nth-of-type(10) ~ pre {
+    background: #102A43;
+    color: #E2E8F0;
+    border: 1px solid #334E68;
+    border-radius: var(--radius-large);
+    padding: 22px;
+    overflow-x: auto;
+    font-family: var(--font-code);
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre;
+}
+
+/* Key working mechanism takeaway */
+#working-mechanism h3:nth-of-type(11) + p {
+    background: #F0FDFA;
+    border: 1px solid #99F6E4;
+    border-left: 5px solid var(--color-teal);
+    border-radius: var(--radius-medium);
+    padding: 22px;
+    color: var(--color-navy);
+    font-weight: 600;
+}
+
+/* Mobile diagram readability */
+@media (max-width: 650px) {
+    #working-mechanism pre {
+        font-size: 11px;
+        padding: 14px;
+    }
+}
+
 
 
 
