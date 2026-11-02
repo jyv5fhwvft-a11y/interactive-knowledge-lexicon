@@ -134,16 +134,21 @@ body {
 
 .explore-button {
     display: inline-block;
-    padding: 13px 28px;
-    background: #2563a6;
-    color: white;
+    padding: 14px 30px;
+    background: var(--color-blue);
+    color: var(--color-white);
     text-decoration: none;
-    border-radius: 7px;
-    font-weight: bold;
+    border-radius: var(--radius-small);
+    font-family: var(--font-body);
+    font-weight: 600;
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow-card);
 }
 
 .explore-button:hover {
-    background: #173b67;
+    background: var(--color-navy);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
 }
 
 
