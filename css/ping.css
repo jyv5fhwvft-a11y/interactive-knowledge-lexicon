@@ -1384,6 +1384,195 @@ header p:last-child {
 }
 
 
+/* =========================================
+   20. SECTION 10 — PRACTICAL EXAMPLE
+========================================= */
+
+/* Section introductions and explanatory text */
+#practical-example > p,
+#troubleshooting-investigation > p,
+#ping-results > p {
+    line-height: 1.8;
+}
+
+/* Alex's real-world problem */
+#practical-example {
+    border-top: 5px solid var(--color-blue);
+}
+
+#practical-example h3 {
+    color: var(--color-blue);
+}
+
+#practical-example h4 {
+    color: var(--color-navy);
+    margin-top: 25px;
+}
+
+/* Situation list */
+#practical-example ul {
+    background: #F1F5F9;
+    border-radius: var(--radius-medium);
+    padding: 20px 20px 20px 42px;
+}
+
+#practical-example li {
+    margin: 9px 0;
+    line-height: 1.6;
+}
+
+/* Main troubleshooting question */
+#practical-example h4:last-of-type + p {
+    background: #EFF6FF;
+    border-left: 5px solid var(--color-blue);
+    border-radius: var(--radius-medium);
+    padding: 20px;
+    color: var(--color-navy);
+    font-weight: 600;
+}
+
+/* Investigation workspace */
+#troubleshooting-investigation {
+    border-top: 5px solid var(--color-teal);
+}
+
+#troubleshooting-investigation h3 {
+    color: var(--color-navy);
+}
+
+#troubleshooting-investigation h4 {
+    background: #EFF6FF;
+    border-left: 4px solid var(--color-blue);
+    border-radius: var(--radius-small);
+    padding: 12px 16px;
+    color: var(--color-navy);
+    margin-top: 25px;
+}
+
+/* Command-line examples */
+#troubleshooting-investigation pre {
+    background: #102A43;
+    color: #E0F2FE;
+    border: 1px solid #334E68;
+    border-radius: var(--radius-medium);
+    padding: 20px;
+    margin: 15px 0;
+    overflow-x: auto;
+    font-family: var(--font-code);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Investigation lists */
+#troubleshooting-investigation ul {
+    background: #F8FAFC;
+    border-radius: var(--radius-medium);
+    padding: 18px 20px 18px 42px;
+}
+
+#troubleshooting-investigation li {
+    margin: 9px 0;
+    line-height: 1.6;
+}
+
+/* Important reminder */
+#troubleshooting-investigation h4:last-of-type + p {
+    background: #FFFBEB;
+    border-left: 5px solid var(--color-amber);
+    border-radius: var(--radius-medium);
+    padding: 18px;
+}
+
+/* Ping results section */
+#ping-results {
+    border-top: 5px solid var(--color-blue);
+}
+
+#ping-results h3 {
+    color: var(--color-navy);
+}
+
+/* Scenario headings */
+#ping-results h4 {
+    background: #EFF6FF;
+    border-left: 5px solid var(--color-blue);
+    border-radius: var(--radius-medium);
+    padding: 14px 18px;
+    margin-top: 28px;
+    color: var(--color-navy);
+}
+
+/* Scenario command labels */
+#ping-results p strong {
+    color: var(--color-blue);
+}
+
+/* Terminal output panels */
+#ping-results pre {
+    background: #102A43;
+    color: #A7F3D0;
+    border: 1px solid #334E68;
+    border-radius: var(--radius-medium);
+    padding: 20px;
+    margin: 14px 0 22px;
+    overflow-x: auto;
+    font-family: var(--font-code);
+    font-size: 14px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+/* Scenario interpretation lists */
+#ping-results ul {
+    background: #F8FAFC;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    padding: 20px 20px 20px 42px;
+}
+
+#ping-results li {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+/* Technical note */
+#ping-results h4:nth-of-type(4) {
+    background: #FFFBEB;
+    border-left-color: var(--color-amber);
+}
+
+/* Key takeaway */
+#ping-results h4:last-of-type {
+    background: #F0FDFA;
+    border-left-color: var(--color-teal);
+}
+
+#ping-results h4:last-of-type + p {
+    background: #F0FDFA;
+    border: 1px solid #99F6E4;
+    border-radius: var(--radius-medium);
+    padding: 20px;
+    color: #115E59;
+    font-weight: 600;
+}
+
+/* Mobile adjustments */
+@media (max-width: 650px) {
+    #troubleshooting-investigation pre,
+    #ping-results pre {
+        padding: 15px;
+        font-size: 13px;
+    }
+
+    #practical-example ul,
+    #troubleshooting-investigation ul,
+    #ping-results ul {
+        padding-left: 34px;
+    }
+}
+
+
+
 
 
 
