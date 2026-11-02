@@ -111,10 +111,14 @@ body {
 }
 
 .hero h1 {
-    color: #173b67;
+    color: var(--color-navy);
+    font-family: var(--font-heading);
     font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
     margin-bottom: 15px;
 }
+
 
 .hero p {
     max-width: 750px;
