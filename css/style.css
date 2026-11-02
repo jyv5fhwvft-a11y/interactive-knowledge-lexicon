@@ -72,8 +72,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 18px 8%;
-    background: #173b67;
-    color: white;
+    background: var(--color-navy);
+    color: var(--color-white);
 }
 
 .logo {
