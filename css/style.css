@@ -105,8 +105,8 @@ body {
     padding: 85px 20px;
     background: linear-gradient(
         135deg,
-        #e1efff,
-        #f0f4f8
+        var(--color-white),
+        var(--color-background)
     );
 }
 
