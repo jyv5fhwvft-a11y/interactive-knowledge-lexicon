@@ -223,9 +223,9 @@ body {
 /* 5. Knowledge categories */
 
 .categories {
-    padding: 55px 8%;
+    padding: 75px 8%;
     text-align: center;
-    background: #ffffff;
+    background: var(--color-background);
 }
 
 .category-container {
