@@ -918,6 +918,198 @@ header p:last-child {
     }
 }
 
+/* =========================================
+   18. SECTION 8 — INTERACTIVE PING SIMULATION
+========================================= */
+
+/* Simulation introduction */
+#interactive-simulation > p:first-of-type,
+#interactive-simulation > p:nth-of-type(2) {
+    background: #EFF6FF;
+    border-left: 5px solid var(--color-blue);
+    border-radius: var(--radius-medium);
+    padding: 17px 22px;
+    margin: 12px 0;
+}
+
+/* Learning objective */
+#interactive-simulation > p:nth-of-type(3) {
+    background: #F0FDFA;
+    border: 1px solid #99F6E4;
+    border-left: 5px solid var(--color-teal);
+    border-radius: var(--radius-medium);
+    padding: 18px 22px;
+    margin: 18px 0 28px;
+}
+
+#interactive-simulation > p:nth-of-type(3) strong {
+    color: var(--color-teal);
+}
+
+/* Simulation workspace */
+#ping-simulation {
+    background: #F8FAFC;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    padding: 28px;
+    margin-top: 25px;
+}
+
+/* Workspace heading */
+#ping-simulation h3 {
+    color: var(--color-navy);
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+/* Workspace introduction */
+#ping-simulation > p:first-of-type {
+    color: var(--color-slate);
+    margin-bottom: 26px;
+}
+
+/* Computer network layout */
+#computer-network {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin: 25px 0;
+}
+
+/* Source and destination computer cards */
+#computer-network .computer {
+    flex: 1;
+    min-width: 0;
+    background: var(--color-white);
+    border: 2px solid #BFDBFE;
+    border-radius: var(--radius-large);
+    padding: 22px 16px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+}
+
+/* Computer card headings */
+#computer-network .computer h4 {
+    color: var(--color-navy);
+    font-size: 17px;
+    margin: 0 0 14px;
+}
+
+/* Computer card descriptions */
+#computer-network .computer p {
+    margin: 7px 0;
+    color: var(--color-slate);
+}
+
+/* Computer names */
+#computer-network .computer p:first-of-type {
+    color: var(--color-blue);
+    font-weight: 700;
+    font-size: 17px;
+}
+
+/* Central network connection */
+#network-connection {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: var(--radius-medium);
+    padding: 16px 10px;
+}
+
+/* Network connection label */
+#network-connection p:first-child {
+    color: var(--color-navy);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Request and reply directions */
+#network-connection p:nth-child(2) {
+    color: var(--color-blue);
+    font-weight: 700;
+    font-size: 17px;
+}
+
+#network-connection p:nth-child(3) {
+    color: var(--color-teal);
+    font-weight: 700;
+    font-size: 17px;
+}
+
+/* Simulation status panel */
+#ping-status {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-left: 5px solid var(--color-amber);
+    border-radius: var(--radius-medium);
+    padding: 16px 20px;
+    margin: 25px 0 18px;
+    color: var(--color-navy);
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Send Ping button */
+#sendPingButton {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    margin: 20px auto 5px;
+    padding: 15px 24px;
+    background: var(--color-blue);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-medium);
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: var(--shadow-card);
+    transition: background .25s ease, transform .25s ease,
+                box-shadow .25s ease;
+}
+
+#sendPingButton:hover {
+    background: var(--color-navy);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+#sendPingButton:focus-visible {
+    outline: 3px solid var(--color-teal);
+    outline-offset: 4px;
+}
+
+/* Small-screen simulation layout */
+@media (max-width: 650px) {
+    #ping-simulation {
+        padding: 18px 14px;
+    }
+
+    #computer-network {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    #computer-network .computer {
+        width: 100%;
+    }
+
+    #network-connection {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #sendPingButton {
+        max-width: 100%;
+    }
+}
+
 
 
 
