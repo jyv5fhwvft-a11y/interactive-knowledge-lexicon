@@ -283,5 +283,51 @@ header p:last-child {
 }
 
 
+/* =========================================
+   10. KNOWLEDGE ASSESSMENT NAVIGATION
+========================================= */
+
+.quiz-navigation {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 35px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.quiz-navigation a {
+    display: inline-block;
+    padding: 13px 26px;
+    background: var(--color-blue);
+    color: var(--color-white);
+    border-radius: var(--radius-medium);
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: var(--shadow-card);
+    transition: all 0.25s ease;
+}
+
+.quiz-navigation a:hover {
+    background: var(--color-navy);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Smaller-screen adjustment */
+
+@media (max-width: 650px) {
+    .quiz-navigation a {
+        width: 100%;
+        max-width: 320px;
+        padding: 13px 18px;
+    }
+}
+
+
+
+
 
 
