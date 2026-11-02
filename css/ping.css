@@ -1841,17 +1841,24 @@ header p:last-child {
    23. SECTION 13 — CONNECTIONS TO OTHER CONCEPTS
 ========================================= */
 
-/* Introduction */
-#ping-connections > p:first-of-type {
+/* Introduction paragraphs */
+#ping-connections > p:nth-of-type(-n+2) {
     line-height: 1.8;
+    padding: 15px 18px;
+    margin: 16px 0;
+}
+
+#ping-connections > p:first-of-type {
     background: #F8FAFC;
     border-left: 4px solid var(--color-blue);
     border-radius: var(--radius-medium);
-    padding: 15px 18px;
-    margin: 16px 0 24px;
 }
 
-/* Concept connection cards */
+#ping-connections > p:nth-of-type(2) {
+    color: var(--color-slate);
+}
+
+/* Existing concept connection cards */
 #ping-connections .concept-subsection,
 #ping-connections .connection-subsection {
     background: #FFFFFF;
@@ -1862,7 +1869,7 @@ header p:last-child {
     box-shadow: 0 3px 12px rgba(16, 42, 67, 0.05);
 }
 
-/* Concept headings */
+/* All eight concept headings */
 #ping-connections h3 {
     color: var(--color-navy);
     background: #EFF6FF;
@@ -1870,10 +1877,11 @@ header p:last-child {
     border-radius: var(--radius-medium);
     padding: 15px 18px;
     margin-top: 28px;
+    margin-bottom: 18px;
     line-height: 1.5;
 }
 
-/* Headings inside connection cards */
+/* Headings inside existing cards */
 #ping-connections .concept-subsection h3,
 #ping-connections .connection-subsection h3 {
     margin-top: 0;
@@ -1887,9 +1895,10 @@ header p:last-child {
     line-height: 1.5;
 }
 
-/* Paragraphs */
+/* Paragraph readability */
 #ping-connections p {
     line-height: 1.8;
+    margin-bottom: 14px;
 }
 
 /* Ordered and unordered lists */
