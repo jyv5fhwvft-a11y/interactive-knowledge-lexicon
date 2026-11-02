@@ -419,19 +419,20 @@ header p:last-child {
     color: var(--color-blue);
 }
 
-/* Technical command and sample output */
-#technical-explanation h3:nth-of-type(8) ~ p strong {
+
+/* TECHNICAL COMMAND */
+#technical-explanation .technical-command strong {
     display: inline-block;
-    background: #102A43;
-    color: #FFFFFF;
-    padding: 8px 14px;
+    background: var(--color-navy);
+    color: var(--color-white);
+    padding: 12px 18px;
     border-radius: var(--radius-small);
     font-family: var(--font-code);
     font-weight: 500;
 }
 
-/* Technical takeaway */
-#technical-explanation h3:last-of-type + p {
+/* TECHNICAL TAKEAWAY */
+#technical-explanation .technical-takeaway {
     background: #F0FDFA;
     border: 1px solid #99F6E4;
     border-left: 5px solid var(--color-teal);
@@ -440,6 +441,7 @@ header p:last-child {
     color: var(--color-navy);
     font-weight: 600;
 }
+
 
 
 
