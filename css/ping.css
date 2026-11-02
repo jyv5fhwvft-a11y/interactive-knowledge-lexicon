@@ -326,6 +326,58 @@ header p:last-child {
     }
 }
 
+/* =========================================
+   11. ANALOGY AND MENTAL MODEL
+========================================= */
+
+/* Everyday analogy */
+#analogy-mental-model h3:first-of-type + p,
+#analogy-mental-model h3:first-of-type + p + p {
+    background: #EFF6FF;
+    border-left: 4px solid var(--color-blue);
+    padding: 16px 20px;
+    margin: 12px 0;
+    border-radius: var(--radius-small);
+}
+
+/* Mapping the analogy to computer networking */
+#analogy-mental-model h3:nth-of-type(2) + ul {
+    background: #F1F5F9;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    padding: 20px 20px 20px 42px;
+}
+
+#analogy-mental-model h3:nth-of-type(2) + ul li {
+    margin-bottom: 10px;
+}
+
+#analogy-mental-model h3:nth-of-type(2) + ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* Limitations and important qualifications */
+#analogy-mental-model h3:nth-of-type(3) + p,
+#analogy-mental-model h3:nth-of-type(3) + p + p {
+    background: #FFFBEB;
+    border-left: 4px solid var(--color-amber);
+    padding: 16px 20px;
+    margin: 12px 0;
+    border-radius: var(--radius-small);
+}
+
+/* Key takeaway */
+#analogy-mental-model h3:nth-of-type(4) + p {
+    background: #F0FDFA;
+    border: 1px solid #99F6E4;
+    border-left: 5px solid var(--color-teal);
+    padding: 20px;
+    margin-top: 12px;
+    border-radius: var(--radius-medium);
+    color: var(--color-navy);
+    font-weight: 600;
+}
+
 
 
 
