@@ -2,7 +2,48 @@
    INTERACTIVE KNOWLEDGE LEXICON
    Complete Homepage Design
 ===================================== */
+/* =====================================
+   IKL DESIGN SYSTEM
+   Brand and visual foundations
+===================================== */
 
+:root {
+    /* Brand colors */
+    --color-navy: #102A43;
+    --color-blue: #2563EB;
+    --color-teal: #0D9488;
+
+    /* Background colors */
+    --color-background: #F8FAFC;
+    --color-white: #FFFFFF;
+
+    /* Supporting colors */
+    --color-amber: #F59E0B;
+    --color-slate: #475569;
+    --color-border: #E2E8F0;
+
+    /* Typography */
+    --font-heading: 'Poppins', Arial, sans-serif;
+    --font-body: 'Inter', Arial, sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
+
+    /* Rounded corners */
+    --radius-small: 8px;
+    --radius-medium: 14px;
+    --radius-large: 20px;
+
+    /* Shadows */
+    --shadow-card: 0 6px 20px rgba(16, 42, 67, 0.08);
+    --shadow-hover: 0 12px 28px rgba(16, 42, 67, 0.14);
+
+    /* Spacing */
+    --space-small: 12px;
+    --space-medium: 24px;
+    --space-large: 48px;
+
+    /* Layout */
+    --content-width: 1200px;
+}
 
 /* 1. Basic page settings */
 
