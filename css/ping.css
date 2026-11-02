@@ -170,3 +170,44 @@ footer {
     }
 }
 
+
+/* =========================================
+   8. PROFESSIONAL LESSON SECTION CARDS
+========================================= */
+
+main section {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.25s ease,
+                border-color 0.25s ease;
+}
+
+main section:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-blue);
+}
+
+/* Improve spacing between section headings */
+
+main section h2 {
+    margin-top: 0;
+    margin-bottom: 22px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--color-border);
+}
+
+/* Keep smaller headings visually organized */
+
+main section h3 {
+    margin-top: 26px;
+    margin-bottom: 10px;
+}
+
+main section h4 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+
