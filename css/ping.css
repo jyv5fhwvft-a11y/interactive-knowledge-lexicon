@@ -1968,3 +1968,138 @@ header p:last-child {
         padding: 14px;
     }
 }
+
+/* =========================================
+   24. SECTION 14 — KNOWLEDGE ASSESSMENT
+========================================= */
+
+/* Quiz question cards */
+#knowledge-assessment .quiz-question {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    padding: 24px;
+    margin: 24px 0;
+    box-shadow: 0 3px 12px rgba(16, 42, 67, 0.05);
+}
+
+/* Question headings */
+#knowledge-assessment .quiz-question h3 {
+    color: var(--color-navy);
+    font-size: 1.08rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+/* Question text */
+#knowledge-assessment .quiz-question p {
+    color: var(--color-slate);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+/* Answer choices layout */
+#knowledge-assessment .quiz-options {
+    display: grid;
+    gap: 12px;
+    margin: 18px 0;
+}
+
+/* Individual answer buttons */
+#knowledge-assessment .quiz-option {
+    width: 100%;
+    text-align: left;
+    background: #F8FAFC;
+    color: var(--color-navy);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    padding: 15px 18px;
+    font: inherit;
+    line-height: 1.6;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover effect */
+#knowledge-assessment .quiz-option:not(:disabled):hover {
+    background: #EFF6FF;
+    border-color: var(--color-blue);
+}
+
+/* Disabled answer choices */
+#knowledge-assessment .quiz-option:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+/* Selected correct answer */
+#knowledge-assessment .quiz-option.is-correct-option {
+    background: #DCFCE7;
+    border: 2px solid #16A34A;
+    color: #166534;
+    font-weight: 600;
+}
+
+/* Selected incorrect answer */
+#knowledge-assessment .quiz-option.is-incorrect-option {
+    background: #FEE2E2;
+    border: 2px solid #DC2626;
+    color: #991B1B;
+    font-weight: 600;
+}
+
+/* Feedback area */
+#knowledge-assessment .quiz-feedback {
+    padding: 16px;
+    margin-top: 16px;
+    border-radius: var(--radius-medium);
+    line-height: 1.8;
+}
+
+/* Correct feedback */
+#knowledge-assessment .quiz-feedback.is-correct {
+    background: #F0FDF4;
+    border-left: 5px solid #16A34A;
+    color: #166534;
+}
+
+/* Incorrect feedback */
+#knowledge-assessment .quiz-feedback.is-incorrect {
+    background: #FEF2F2;
+    border-left: 5px solid #DC2626;
+    color: #991B1B;
+}
+
+/* Try Again button */
+#knowledge-assessment .quiz-retry-button {
+    display: block;
+    margin-top: 16px;
+    padding: 11px 20px;
+    background: var(--color-blue);
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--radius-medium);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Try Again hover */
+#knowledge-assessment .quiz-retry-button:hover {
+    background: var(--color-navy);
+}
+
+/* Mobile adjustments */
+@media (max-width: 650px) {
+    #knowledge-assessment .quiz-question {
+        padding: 16px;
+    }
+
+    #knowledge-assessment .quiz-option {
+        padding: 13px 14px;
+    }
+
+    #knowledge-assessment .quiz-feedback {
+        padding: 13px;
+    }
+}
