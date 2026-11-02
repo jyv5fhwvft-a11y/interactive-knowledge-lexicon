@@ -119,3 +119,54 @@ pre {
         font-size: 15px;
     }
 }
+
+/* =========================================
+   7. PAGE-WIDE READING LAYOUT
+========================================= */
+
+header,
+main,
+footer {
+    width: 100%;
+}
+
+header {
+    padding: 45px 24px;
+    text-align: center;
+}
+
+main {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 30px 32px;
+}
+
+main section {
+    width: 100%;
+    margin: 0 auto 35px;
+    padding: 28px;
+}
+
+footer {
+    padding: 28px 20px;
+    text-align: center;
+}
+
+/* Balanced spacing on smaller screens */
+
+@media (max-width: 650px) {
+    header {
+        padding: 35px 20px;
+    }
+
+    main {
+        padding: 20px 18px;
+    }
+
+    main section {
+        padding: 20px 16px;
+        margin-bottom: 25px;
+    }
+}
+
