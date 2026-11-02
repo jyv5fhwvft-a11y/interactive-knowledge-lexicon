@@ -336,6 +336,21 @@ footer p {
         font-size: 16px;
     }
 
+   .learning-section {
+    padding: 55px 18px;
+}
+
+.learning-section h2 {
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.learning-section p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 16px auto;
+}
+
     .category-container {
         grid-template-columns: 1fr;
     }
