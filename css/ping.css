@@ -565,6 +565,110 @@ header p:last-child {
 }
 
 
+/* =========================================
+   15. SECTION 4 — BEGINNER EXPLANATION
+========================================= */
+
+/* Why we need Ping */
+#beginner-explanation h3:first-of-type + p,
+#beginner-explanation h3:first-of-type + p + p {
+    background: #EFF6FF;
+    border-left: 5px solid var(--color-blue);
+    border-radius: var(--radius-medium);
+    padding: 17px 22px;
+    margin: 12px 0;
+}
+
+/* How Ping helps */
+#beginner-explanation h3:first-of-type + p + p + p {
+    background: #F0FDFA;
+    border-left: 5px solid var(--color-teal);
+    border-radius: var(--radius-medium);
+    padding: 17px 22px;
+    margin: 12px 0 28px;
+}
+
+/* When people use Ping */
+#beginner-explanation h3:nth-of-type(2) + ul {
+    background: #F1F5F9;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    padding: 20px 20px 20px 42px;
+}
+
+#beginner-explanation h3:nth-of-type(2) + ul li {
+    padding: 7px 0;
+}
+
+#beginner-explanation h3:nth-of-type(2) + ul li::marker {
+    color: var(--color-teal);
+}
+
+/* Five steps of Ping */
+#beginner-explanation h3:nth-of-type(3) + ol {
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-left: 5px solid var(--color-blue);
+    border-radius: var(--radius-medium);
+    padding: 22px 22px 22px 48px;
+}
+
+#beginner-explanation h3:nth-of-type(3) + ol li {
+    padding: 8px 0;
+    color: var(--color-navy);
+}
+
+/* Understanding Ping results */
+#beginner-explanation h3:nth-of-type(4) + p {
+    background: #F0FDFA;
+    border-left: 5px solid var(--color-teal);
+    border-radius: var(--radius-medium);
+    padding: 17px 22px;
+    margin: 12px 0;
+}
+
+#beginner-explanation h3:nth-of-type(4) + p + p {
+    background: #FFFBEB;
+    border-left: 5px solid var(--color-amber);
+    border-radius: var(--radius-medium);
+    padding: 17px 22px;
+    margin: 12px 0 28px;
+}
+
+/* Beginner vocabulary */
+#beginner-explanation h3:nth-of-type(5) + ul {
+    background: #F8FAFC;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    padding: 20px 20px 20px 42px;
+}
+
+#beginner-explanation h3:nth-of-type(5) + ul li {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+#beginner-explanation h3:nth-of-type(5) + ul li:last-child {
+    border-bottom: none;
+}
+
+#beginner-explanation h3:nth-of-type(5) + ul strong {
+    color: var(--color-blue);
+}
+
+/* Key takeaway */
+#beginner-explanation h3:nth-of-type(6) + p {
+    background: #F0FDFA;
+    border: 1px solid #99F6E4;
+    border-left: 5px solid var(--color-teal);
+    border-radius: var(--radius-medium);
+    padding: 22px;
+    color: var(--color-navy);
+    font-weight: 600;
+}
+
+
+
 
 
 
