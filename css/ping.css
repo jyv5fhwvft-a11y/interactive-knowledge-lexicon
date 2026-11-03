@@ -2752,6 +2752,194 @@ footer p {
     transition: all 0.25s ease;
 }
 
+/* =========================================
+   SECTION 2 — INTERACTIVE FRIEND ANALOGY
+   ========================================= */
+
+#friend-analogy {
+    margin: 30px 0;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(16, 42, 67, 0.06);
+}
+
+#friend-analogy > h3 {
+    color: #102A43;
+    margin-top: 0;
+}
+
+#friend-analogy > p {
+    color: #475569;
+    line-height: 1.7;
+}
+
+#friend-analogy .friend-analogy-scene {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    align-items: center;
+    gap: 18px;
+    margin: 26px 0;
+}
+
+#friend-analogy .friend-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 18px 10px;
+    text-align: center;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+}
+
+#friend-analogy .friend-home-icon {
+    font-size: 38px;
+}
+
+#friend-analogy .friend-home strong {
+    color: #102A43;
+    font-size: 16px;
+}
+
+#friend-analogy .friend-home span {
+    color: #64748B;
+    font-size: 12px;
+}
+
+#friend-analogy .friend-message-route {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+#friend-analogy .friend-message,
+#friend-analogy .friend-reply {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+#friend-analogy .friend-message {
+    color: #1D4ED8;
+    background: #EFF6FF;
+    border: 1px solid #93C5FD;
+}
+
+#friend-analogy .friend-reply {
+    color: #166534;
+    background: #DCFCE7;
+    border: 1px solid #86EFAC;
+}
+
+#friend-analogy .friend-route-line {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background: #CBD5E1;
+    border-radius: 10px;
+}
+
+#friend-analogy .friend-message-dot {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background: #2563EB;
+    border: 3px solid #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #2563EB;
+    transform: translate(-50%, -50%);
+}
+
+#friend-analogy .friend-analogy-explanation {
+    margin-top: 24px;
+    padding: 18px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+}
+
+#friend-analogy #friend-step-number {
+    color: #2563EB;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+#friend-analogy #friend-step-title {
+    color: #102A43;
+    margin: 8px 0;
+}
+
+#friend-analogy #friend-step-description {
+    color: #475569;
+    line-height: 1.7;
+}
+
+#friend-analogy .friend-analogy-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#friend-analogy .friend-analogy-controls button {
+    padding: 10px 16px;
+    color: #FFFFFF;
+    background: #2563EB;
+    border: none;
+    border-radius: 9px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#friend-analogy .friend-analogy-controls button:hover {
+    background: #1D4ED8;
+}
+
+#friend-analogy .friend-analogy-controls button:focus-visible {
+    outline: 3px solid #0D9488;
+    outline-offset: 3px;
+}
+
+#friend-analogy .friend-analogy-status {
+    margin-top: 14px;
+    text-align: center;
+    color: #64748B;
+    font-size: 13px;
+}
+
+/* Smaller screens */
+
+@media (max-width: 600px) {
+    #friend-analogy {
+        padding: 16px;
+    }
+
+    #friend-analogy .friend-analogy-scene {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    #friend-analogy .friend-message-route {
+        width: 100%;
+    }
+
+    #friend-analogy .friend-analogy-controls button {
+        flex: 1 1 40%;
+    }
+}
+
 
 
 
