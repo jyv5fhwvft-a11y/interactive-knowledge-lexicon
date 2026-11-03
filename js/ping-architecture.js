@@ -105,6 +105,30 @@
                 routeMessages[currentStage];
         }
 
+       
+        // Find the three network components.
+        const routeNodes = architecture.querySelectorAll(".route-node");
+
+        // Distinguish the outgoing request from the returning reply.
+        if (routePacket) {
+            const isReply = currentStage >= 4;
+
+            routePacket.classList.toggle("request-packet", !isReply);
+            routePacket.classList.toggle("reply-packet", isReply);
+        }
+
+        // Highlight the component currently involved.
+        const activeNodeIndexes = [0, 0, 1, 2, 1, 0];
+
+        routeNodes.forEach(function (node, index) {
+            const isActive = index === activeNodeIndexes[currentStage];
+            const isReply = currentStage >= 4;
+
+            node.classList.toggle("route-active", isActive && !isReply);
+            node.classList.toggle("reply-active", isActive && isReply);
+        });
+
+
 
         previousButton.disabled = currentStage === 0;
         nextButton.disabled = currentStage === stages.length - 1;
