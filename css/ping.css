@@ -2602,6 +2602,43 @@ footer p {
 }
 
 
+/* =========================================
+   SECTION 6.3 — REQUEST AND REPLY HIGHLIGHTS
+   ========================================= */
+
+/* Outgoing ICMP Echo Request */
+
+#ping-architecture .route-packet.request-packet {
+    background: #2563EB;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+/* Returning ICMP Echo Reply */
+
+#ping-architecture .route-packet.reply-packet {
+    background: #0D9488;
+    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.2);
+}
+
+/* Highlight the active network component */
+
+#ping-architecture .route-node.route-active {
+    border-color: #2563EB;
+    background: #EFF6FF;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    transform: translateY(-3px);
+}
+
+/* Active component during the reply journey */
+
+#ping-architecture .route-node.reply-active {
+    border-color: #0D9488;
+    background: #F0FDFA;
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+}
+
+
+
 
 
 
