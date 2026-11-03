@@ -2737,6 +2737,21 @@ footer p {
     transition: all 0.25s ease;
 }
 
+/* =========================================
+   SECTION 6.3 — ICMP REQUEST HIGHLIGHT
+   ========================================= */
+
+#ping-architecture #architecture-icmp-type {
+    display: inline-block;
+    padding: 10px 14px;
+    color: #1D4ED8;
+    background: #EFF6FF;
+    border: 2px solid #3B82F6;
+    border-radius: 10px;
+    font-weight: 800;
+    transition: all 0.25s ease;
+}
+
 
 
 
