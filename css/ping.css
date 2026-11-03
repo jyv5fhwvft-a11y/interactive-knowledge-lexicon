@@ -3309,6 +3309,142 @@ footer p {
     }
 }
 
+/* =========================================
+   SECTION 5 — INTERACTIVE RTT CALCULATION LAB
+   ========================================= */
+
+#rtt-calculation-lab {
+    margin: 28px 0;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(16, 42, 67, 0.07);
+}
+
+#rtt-calculation-lab > h3 {
+    margin-top: 0;
+    color: #102A43;
+}
+
+#rtt-calculation-lab > p {
+    color: #475569;
+    line-height: 1.7;
+}
+
+.rtt-input-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 22px 0;
+}
+
+.rtt-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rtt-input-group label {
+    color: #102A43;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.rtt-input-group input {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    color: #102A43;
+    background: #F8FAFC;
+    border: 2px solid #CBD5E1;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.rtt-input-group input:focus {
+    outline: 3px solid #BFDBFE;
+    border-color: #2563EB;
+}
+
+.rtt-calculate-button {
+    display: inline-block;
+    min-height: 48px;
+    padding: 12px 22px;
+    color: #FFFFFF;
+    background: #2563EB;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.rtt-calculate-button:hover {
+    background: #1D4ED8;
+}
+
+.rtt-calculate-button:focus-visible {
+    outline: 3px solid #93C5FD;
+    outline-offset: 3px;
+}
+
+.rtt-calculation-result {
+    margin-top: 22px;
+    padding: 20px;
+    background: #EFF6FF;
+    border-left: 5px solid #2563EB;
+    border-radius: 10px;
+}
+
+.rtt-calculation-result > p:first-child {
+    margin-top: 0;
+    color: #1D4ED8;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.rtt-calculation-result h4 {
+    margin: 8px 0;
+    color: #102A43;
+    font-size: 2rem;
+}
+
+.rtt-calculation-result p {
+    color: #475569;
+    line-height: 1.7;
+}
+
+.rtt-calculation-status {
+    margin-bottom: 0;
+    color: #64748B;
+    font-size: 0.9rem;
+}
+
+/* SECTION 5 — MOBILE LAYOUT */
+
+@media (max-width: 600px) {
+    #rtt-calculation-lab {
+        padding: 16px;
+    }
+
+    .rtt-input-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rtt-calculate-button {
+        width: 100%;
+    }
+
+    .rtt-calculation-result {
+        padding: 16px;
+    }
+}
+
 
 
 
