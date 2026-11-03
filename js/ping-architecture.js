@@ -64,6 +64,15 @@
     // Display the selected stage.
     function showStage(index) {
         currentStage = Math.max(0, Math.min(index, stages.length - 1));
+               // Update the ICMP message shown in the packet inspector.
+        const icmpType = document.getElementById("architecture-icmp-type");
+
+        if (icmpType) {
+            icmpType.textContent =
+                currentStage <= 3
+                    ? "ICMP Echo Request"
+                    : "ICMP Echo Reply";
+        }
 
         stages.forEach(function (stage, stageIndex) {
             stage.classList.toggle("active", stageIndex === currentStage);
