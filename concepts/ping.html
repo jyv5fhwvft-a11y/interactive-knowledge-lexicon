@@ -656,6 +656,91 @@
                 response time for that particular test.
             </p>
 
+            <!-- SECTION 5 — INTERACTIVE RTT CALCULATION LAB -->
+
+<div class="rtt-calculation-lab" id="rtt-calculation-lab">
+
+    <h3>Explore Round-Trip Time (RTT)</h3>
+
+    <p>
+        Experiment with the time at which a Ping request
+        is sent and the time at which its reply arrives.
+        Calculate the difference to discover the RTT.
+    </p>
+
+    <div class="rtt-input-grid">
+
+        <div class="rtt-input-group">
+            <label for="rtt-request-time">
+                Request Sent At (ms)
+            </label>
+
+            <input
+                type="number"
+                id="rtt-request-time"
+                value="0"
+                min="0"
+                step="1"
+            >
+        </div>
+
+        <div class="rtt-input-group">
+            <label for="rtt-reply-time">
+                Reply Received At (ms)
+            </label>
+
+            <input
+                type="number"
+                id="rtt-reply-time"
+                value="25"
+                min="0"
+                step="1"
+            >
+        </div>
+
+    </div>
+
+    <button
+        type="button"
+        id="rtt-calculate-button"
+        class="rtt-calculate-button"
+    >
+        Calculate RTT
+    </button>
+
+    <div
+        class="rtt-calculation-result"
+        id="rtt-calculation-result"
+        aria-live="polite"
+    >
+
+        <p id="rtt-result-label">
+            Example calculation
+        </p>
+
+        <h4 id="rtt-result-value">
+            25 ms
+        </h4>
+
+        <p id="rtt-result-explanation">
+            The reply arrived 25 milliseconds after
+            the request was sent.
+        </p>
+
+    </div>
+
+    <p
+        class="rtt-calculation-status"
+        id="rtt-calculation-status"
+        aria-live="polite"
+    >
+        Change the values and calculate again.
+    </p>
+
+</div>
+
+<!-- END SECTION 5 — INTERACTIVE RTT CALCULATION LAB -->
+
             <h3>5.6 What Happens Behind the Scenes?</h3>
 
             <ol>
