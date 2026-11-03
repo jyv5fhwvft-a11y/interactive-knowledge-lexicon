@@ -195,19 +195,16 @@ function searchConcepts() {
 
     resultCard.appendChild(description);
 
-    // Create the learning action label
-
+        // Create a clear button to open the concept lesson
     if (concept.page !== null) {
-
-        const action = document.createElement("p");
-
+        const action = document.createElement("a");
         action.className = "result-action";
-
-        action.textContent = "Explore this concept →";
-
+        action.href = concept.page;
+        action.textContent = "Open " + concept.name + " Lesson →";
         resultCard.appendChild(action);
-
     }
+
+   
 
     // Add the completed card to the search results
 
