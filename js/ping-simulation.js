@@ -1,107 +1,213 @@
-
 // ==========================================
 // INTERACTIVE KNOWLEDGE LEXICON
-// PING SIMULATION
+// PING SIMULATION — SECTION 8
 // ==========================================
 
-// Find the simulation elements on the page
+(function () {
+    function initializePingSimulation() {
+        const sendPingButton = document.getElementById("sendPingButton");
+        const pingStatus = document.getElementById("ping-status");
+        const destinationInput = document.getElementById("ping-destination-input");
+        const networkCondition = document.getElementById("ping-network-condition");
+        const terminalOutput = document.getElementById("ping-terminal-output");
 
-const sendPingButton = document.getElementById("sendPingButton");
-
-const pingStatus = document.getElementById("ping-status");
-
-
-// Check that the required elements exist
-
-if (sendPingButton && pingStatus) {
-
-    // Prevent repeated clicks while simulation is running
-
-    let simulationRunning = false;
-
-
-    // Start the Ping simulation when the button is clicked
-
-    sendPingButton.addEventListener("click", function() {
-
-        if (simulationRunning) {
+        // Stop safely if this page does not contain the simulator.
+        if (
+            !sendPingButton ||
+            !pingStatus ||
+            !destinationInput ||
+            !networkCondition ||
+            !terminalOutput
+        ) {
             return;
         }
 
-        simulationRunning = true;
+        let simulationRunning = false;
 
-        sendPingButton.disabled = true;
+        const wait = (milliseconds) =>
+            new Promise((resolve) => setTimeout(resolve, milliseconds));
 
+        function isValidIPv4(address) {
+            const parts = address.split(".");
 
-        // Stage 1: Prepare the request
+            if (parts.length !== 4) {
+                return false;
+            }
 
-        pingStatus.textContent =
-            "Step 1: Computer A is preparing an ICMP Echo Request.";
+            return parts.every((part) => {
+                if (!/^\d{1,3}$/.test(part)) {
+                    return false;
+                }
 
+                const number = Number(part);
 
-        // Stage 2: Send the request
+                return number >= 0 && number <= 255;
+            });
+        }
 
-        setTimeout(function() {
+        function addTerminalLine(lines, message) {
+            lines.push(message);
+            terminalOutput.textContent = lines.join("\n");
+        }
 
-            pingStatus.textContent =
-                "Step 2: The Echo Request is travelling through the network.";
+        function getProbeResult(condition, probeIndex) {
+            const responseTimes = {
+                normal: [24, 25, 27, 24],
+                slow: [176, 192, 181, 185],
+                "packet-loss": [25, 0, 40, 0],
+                unavailable: [0, 0, 0, 0]
+            };
 
+            const time = responseTimes[condition][probeIndex];
 
-        // Stage 3: Destination receives the request
+            return {
+                received: time > 0,
+                time: time
+            };
+        }
 
-        setTimeout(function() {
+        async function runSimulation() {
+            if (simulationRunning) {
+                return;
+            }
 
-            pingStatus.textContent =
-                "Step 3: Computer B has received the Echo Request.";
+            const destination = destinationInput.value.trim();
+            const condition = networkCondition.value;
 
+            if (!isValidIPv4(destination)) {
+                pingStatus.textContent =
+                    "Please enter a valid IPv4 address, such as 8.8.8.8.";
 
-        // Stage 4: Destination prepares the reply
+                terminalOutput.textContent =
+                    "SIMULATION ONLY — no real network packets are sent.\n\n" +
+                    "Error: The destination must be a valid IPv4 address.";
 
-        setTimeout(function() {
+                return;
+            }
 
-            pingStatus.textContent =
-                "Step 4: Computer B is preparing an ICMP Echo Reply.";
+            simulationRunning = true;
+            sendPingButton.disabled = true;
 
+            const lines = [
+                "SIMULATION ONLY — no real network packets are sent.",
+                "",
+                "Pinging " + destination + " with 32 bytes of data:",
+                ""
+            ];
 
-        // Stage 5: Reply travels back
+            terminalOutput.textContent = lines.join("\n");
 
-        setTimeout(function() {
+            const receivedTimes = [];
+            const totalProbes = 4;
 
-            pingStatus.textContent =
-                "Step 5: The Echo Reply is travelling back to Computer A.";
+            try {
+                for (let index = 0; index < totalProbes; index++) {
+                    const probeNumber = index + 1;
 
+                    pingStatus.textContent =
+                        "Probe " + probeNumber + " of 4: Computer A is preparing an ICMP Echo Request.";
 
-        // Stage 6: Source receives the reply
+                    await wait(450);
 
-        setTimeout(function() {
+                    pingStatus.textContent =
+                        "Probe " + probeNumber + " of 4: The request is travelling through the network.";
 
-            pingStatus.textContent =
-                "Step 6: Computer A received the Echo Reply successfully!";
+                    await wait(450);
 
+                    const result = getProbeResult(condition, index);
 
-        // Display simulated result
+                    if (result.received) {
+                        pingStatus.textContent =
+                            "Probe " + probeNumber + " of 4: The destination replied. The Echo Reply is returning to Computer A.";
 
-        setTimeout(function() {
+                        await wait(450);
 
-            pingStatus.textContent =
-                "Ping successful! Simulated round-trip time: 25 ms.";
+                        addTerminalLine(
+                            lines,
+                            "Reply from " + destination +
+                            ": bytes=32 time=" + result.time + "ms TTL=117"
+                        );
 
-            sendPingButton.disabled = false;
+                        receivedTimes.push(result.time);
+                    } else {
+                        pingStatus.textContent =
+                            "Probe " + probeNumber + " of 4: No reply arrived before the simulated timeout.";
 
-            simulationRunning = false;
+                        await wait(450);
 
-        }, 1500);
+                        addTerminalLine(lines, "Request timed out.");
+                    }
+                }
 
-        }, 1500);
+                const receivedCount = receivedTimes.length;
+                const lostCount = totalProbes - receivedCount;
+                const lossPercentage = (lostCount / totalProbes) * 100;
 
-        }, 1500);
+                addTerminalLine(lines, "");
+                addTerminalLine(lines, "Ping statistics for " + destination + ":");
+                addTerminalLine(
+                    lines,
+                    "    Packets: Sent = " + totalProbes +
+                    ", Received = " + receivedCount +
+                    ", Lost = " + lostCount +
+                    " (" + lossPercentage + "% loss)"
+                );
 
-        }, 1500);
+                if (receivedCount > 0) {
+                    const minimum = Math.min(...receivedTimes);
+                    const maximum = Math.max(...receivedTimes);
+                    const average = Math.round(
+                        receivedTimes.reduce((sum, time) => sum + time, 0) /
+                        receivedCount
+                    );
 
-        }, 1500);
+                    addTerminalLine(lines, "");
+                    addTerminalLine(
+                        lines,
+                        "Approximate round trip times in milli-seconds:"
+                    );
+                    addTerminalLine(
+                        lines,
+                        "    Minimum = " + minimum +
+                        "ms, Maximum = " + maximum +
+                        "ms, Average = " + average + "ms"
+                    );
+                }
 
-        }, 1500);
+                if (condition === "unavailable") {
+                    pingStatus.textContent =
+                        "Simulation complete: no replies were received. This does not prove that a real device is switched off.";
+                } else if (condition === "packet-loss") {
+                    pingStatus.textContent =
+                        "Simulation complete: some probes received replies and some were lost. Packet loss can make communication unreliable.";
+                } else if (condition === "slow") {
+                    pingStatus.textContent =
+                        "Simulation complete: all probes received replies, but the higher RTT values show a slower response.";
+                } else {
+                    pingStatus.textContent =
+                        "Simulation complete: all four probes received replies with low simulated response times.";
+                }
 
-    });
+                addTerminalLine(lines, "");
+                addTerminalLine(
+                    lines,
+                    "End of simulated Ping experiment."
+                );
 
-}
+            } finally {
+                sendPingButton.disabled = false;
+                simulationRunning = false;
+            }
+        }
+
+        sendPingButton.addEventListener("click", runSimulation);
+
+        terminalOutput.setAttribute("aria-live", "polite");
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initializePingSimulation);
+    } else {
+        initializePingSimulation();
+    }
+})();
