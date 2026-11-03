@@ -72,6 +72,39 @@
         stepCount.textContent = "Step " + (currentStage + 1) + " of " + stages.length;
         stepTitle.textContent = explanations[currentStage].title;
         stepDescription.textContent = explanations[currentStage].description;
+       
+        // Move the packet marker along the network route.
+        const routePacket = architecture.querySelector(
+            "#architecture-route-packet"
+        );
+
+        const routeDirection = architecture.querySelector(
+            "#architecture-route-direction"
+        );
+
+        // Packet positions for the six learning stages.
+        const routePositions = [10, 10, 50, 90, 50, 10];
+
+        // Explanation displayed above the packet route.
+        const routeMessages = [
+            "Source is preparing the Echo Request.",
+            "ICMP Echo Request is placed inside an IP packet.",
+            "Echo Request is travelling through the network.",
+            "Destination has received the Echo Request.",
+            "Echo Reply is travelling back towards the source.",
+            "Echo Reply has returned. The source calculates RTT."
+        ];
+
+        if (routePacket) {
+            routePacket.style.left =
+                routePositions[currentStage] + "%";
+        }
+
+        if (routeDirection) {
+            routeDirection.textContent =
+                routeMessages[currentStage];
+        }
+
 
         previousButton.disabled = currentStage === 0;
         nextButton.disabled = currentStage === stages.length - 1;
