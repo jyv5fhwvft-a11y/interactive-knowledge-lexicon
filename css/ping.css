@@ -3445,6 +3445,112 @@ footer p {
     }
 }
 
+/* ========================================= */
+/* SECTION 6.1 — INTERACTIVE COMPONENT EXPLORER */
+/* ========================================= */
+
+.ping-component-explorer {
+    margin: 30px 0;
+    padding: 24px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+}
+
+.ping-component-explorer > h3 {
+    color: #102A43;
+    margin-top: 0;
+}
+
+.ping-component-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.ping-component-button {
+    padding: 15px;
+    text-align: left;
+    color: #1E3A8A;
+    background: #FFFFFF;
+    border: 1px solid #BFDBFE;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.ping-component-button:hover {
+    background: #EFF6FF;
+    border-color: #2563EB;
+}
+
+.ping-component-button.is-selected {
+    color: #FFFFFF;
+    background: #2563EB;
+    border-color: #2563EB;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.ping-component-button:focus-visible {
+    outline: 3px solid #0D9488;
+    outline-offset: 3px;
+}
+
+.ping-component-explanation {
+    padding: 22px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-left: 5px solid #2563EB;
+    border-radius: 12px;
+}
+
+.ping-component-explanation > p:first-child {
+    color: #0D9488;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.ping-component-explanation h4 {
+    color: #102A43;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+#ping-component-details {
+    margin-top: 16px;
+    color: #475569;
+    line-height: 1.7;
+}
+
+#ping-component-details ul {
+    padding-left: 22px;
+}
+
+.ping-component-status {
+    margin-top: 14px;
+    color: #64748B;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .ping-component-options {
+        grid-template-columns: 1fr;
+    }
+
+    .ping-component-explorer {
+        padding: 16px;
+    }
+}
+
+/* END SECTION 6.1 — INTERACTIVE COMPONENT EXPLORER */
+
 
 
 
