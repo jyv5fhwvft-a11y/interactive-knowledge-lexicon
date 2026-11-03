@@ -3790,6 +3790,86 @@ footer p {
 
 /* END SECTION 7 — PING TIMEOUT OUTCOME */
 
+/* ========================================= */
+/* SECTION 8 — INTERACTIVE SIMULATOR SETTINGS */
+/* ========================================= */
+
+.ping-simulation-settings {
+    margin: 25px 0;
+    padding: 22px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+}
+
+.ping-simulation-settings h3 {
+    color: #102A43;
+    margin-top: 0;
+}
+
+.simulation-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.simulation-input-group label {
+    color: #334155;
+    font-weight: 700;
+}
+
+.simulation-input-group input,
+.simulation-input-group select {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 13px;
+    color: #102A43;
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-radius: 9px;
+    font-size: 15px;
+}
+
+.simulation-input-group input:focus,
+.simulation-input-group select:focus {
+    outline: 3px solid rgba(37, 99, 235, 0.2);
+    border-color: #2563EB;
+}
+
+/* SIMULATED TERMINAL */
+
+.ping-terminal {
+    margin-top: 24px;
+    padding: 20px;
+    color: #E2E8F0;
+    background: #0F172A;
+    border: 1px solid #334155;
+    border-radius: 12px;
+}
+
+.ping-terminal h3 {
+    margin-top: 0;
+    color: #93C5FD;
+}
+
+.ping-terminal pre {
+    min-height: 65px;
+    margin: 0;
+    padding: 14px;
+    overflow-x: auto;
+    color: #86EFAC;
+    background: #020617;
+    border-radius: 8px;
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* END SECTION 8 — INTERACTIVE SIMULATOR SETTINGS */
+
 
 
 
