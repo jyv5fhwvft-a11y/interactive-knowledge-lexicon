@@ -465,6 +465,79 @@
                 are blocked.
             </p>
 
+            <!-- SECTION 4 — INTERACTIVE PING RESULT EXPLORER -->
+
+<div class="ping-result-explorer" id="ping-result-explorer">
+
+    <h3>Explore What Ping Results Mean</h3>
+
+    <p>
+        Choose a result to discover what it tells you
+        about network communication.
+    </p>
+
+    <div class="ping-result-options">
+
+        <button type="button"
+                class="ping-result-button"
+                data-result="success"
+                aria-pressed="false">
+
+            <span class="ping-result-icon">✓</span>
+
+            <span class="ping-result-button-text">
+                Reply Received
+            </span>
+
+        </button>
+
+        <button type="button"
+                class="ping-result-button"
+                data-result="failure"
+                aria-pressed="false">
+
+            <span class="ping-result-icon">?</span>
+
+            <span class="ping-result-button-text">
+                No Reply Received
+            </span>
+
+        </button>
+
+    </div>
+
+    <div class="ping-result-explanation"
+         id="ping-result-explanation"
+         aria-live="polite">
+
+        <p id="ping-result-label">
+            Choose a result above
+        </p>
+
+        <h4 id="ping-result-title">
+            What can Ping tell us?
+        </h4>
+
+        <p id="ping-result-description">
+            Select either outcome to explore
+            what it means.
+        </p>
+
+        <div id="ping-result-extra">
+        </div>
+
+    </div>
+
+    <p class="ping-result-status"
+       id="ping-result-status"
+       aria-live="polite">
+        Ready to explore.
+    </p>
+
+</div>
+
+<!-- END SECTION 4 — INTERACTIVE PING RESULT EXPLORER -->
+
             <h3>Important Beginner Vocabulary</h3>
 
             <ul>
