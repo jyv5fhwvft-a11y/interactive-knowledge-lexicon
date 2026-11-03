@@ -2469,5 +2469,139 @@ footer p {
 }
 
 
+/* =========================================
+   SECTION 6.3 — PACKET ROUTE VISUAL
+   ========================================= */
+
+#ping-architecture .architecture-route {
+    margin: 28px 0;
+    padding: 22px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+}
+
+#ping-architecture .architecture-route h4 {
+    margin: 0 0 12px;
+    color: #102A43;
+    text-align: center;
+    font-size: 19px;
+}
+
+#ping-architecture .route-direction {
+    color: #2563EB;
+    font-weight: 700;
+    text-align: center;
+    min-height: 24px;
+}
+
+#ping-architecture .route-track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 120px;
+    padding: 0 4%;
+}
+
+/* Connecting line behind the route nodes */
+
+#ping-architecture .route-track::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 4px;
+    background: #CBD5E1;
+    border-radius: 4px;
+    transform: translateY(-50%);
+}
+
+/* Source, router and destination */
+
+#ping-architecture .route-node {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 110px;
+    min-height: 82px;
+    padding: 8px;
+    background: #F8FAFC;
+    border: 2px solid #E2E8F0;
+    border-radius: 12px;
+    color: #102A43;
+    text-align: center;
+    font-size: 13px;
+}
+
+#ping-architecture .route-node-icon {
+    font-size: 27px;
+    line-height: 1.2;
+}
+
+/* Packet marker */
+
+#ping-architecture .route-packet {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 10%;
+    width: 18px;
+    height: 18px;
+    background: #2563EB;
+    border: 3px solid #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    font-size: 0;
+    transform: translate(-50%, -50%);
+    transition: left 0.8s ease;
+}
+
+/* Explanation beneath the route */
+
+#ping-architecture .route-caption {
+    margin: 12px 0 0;
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Smaller screens */
+
+@media (max-width: 600px) {
+    #ping-architecture .architecture-route {
+        padding: 14px 8px;
+    }
+
+    #ping-architecture .route-track {
+        min-height: 105px;
+        padding: 0 2%;
+    }
+
+    #ping-architecture .route-node {
+        width: 88px;
+        min-height: 76px;
+        padding: 5px;
+        font-size: 11px;
+    }
+
+    #ping-architecture .route-node-icon {
+        font-size: 23px;
+    }
+
+    #ping-architecture .route-packet {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+
+
 
 
