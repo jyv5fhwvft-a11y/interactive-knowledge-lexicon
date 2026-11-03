@@ -3551,6 +3551,225 @@ footer p {
 
 /* END SECTION 6.1 — INTERACTIVE COMPONENT EXPLORER */
 
+/* ========================================= */
+/* SECTION 7 — INTERACTIVE PING PACKET JOURNEY */
+/* ========================================= */
+
+.ping-journey-explorer {
+    margin: 32px 0;
+    padding: 24px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+}
+
+.ping-journey-explorer > h3 {
+    color: #102A43;
+    margin-top: 0;
+}
+
+.ping-journey-progress {
+    margin: 24px 0;
+}
+
+#journey-step-number {
+    color: #1D4ED8;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.journey-progress-track {
+    height: 9px;
+    overflow: hidden;
+    background: #E2E8F0;
+    border-radius: 20px;
+}
+
+.journey-progress-fill {
+    width: 11.11%;
+    height: 100%;
+    background: #2563EB;
+    border-radius: 20px;
+    transition: width 0.35s ease;
+}
+
+.ping-journey-route {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 8px;
+    margin: 30px 0;
+}
+
+.journey-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 105px;
+    padding: 12px 6px;
+    color: #475569;
+    background: #FFFFFF;
+    border: 2px solid #CBD5E1;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.journey-node span {
+    font-size: 28px;
+}
+
+.journey-node strong {
+    font-size: 13px;
+}
+
+.journey-node.is-active {
+    color: #1D4ED8;
+    background: #EFF6FF;
+    border-color: #2563EB;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+#journey-destination.is-reply-active {
+    color: #166534;
+    background: #DCFCE7;
+    border-color: #22C55E;
+}
+
+.journey-route-line {
+    position: relative;
+    height: 4px;
+    background: #CBD5E1;
+    border-radius: 10px;
+}
+
+.journey-packet {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background: #2563EB;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: left 0.5s ease,
+                background 0.3s ease,
+                opacity 0.3s ease;
+}
+
+.journey-packet.is-visible {
+    opacity: 1;
+}
+
+.journey-packet.is-reply {
+    background: #16A34A;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.ping-journey-explanation {
+    padding: 22px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-left: 5px solid #2563EB;
+    border-radius: 12px;
+}
+
+.ping-journey-explanation > p:first-child {
+    color: #0D9488;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+}
+
+.ping-journey-explanation h4 {
+    color: #102A43;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+#journey-stage-details {
+    margin-top: 16px;
+    color: #475569;
+    line-height: 1.7;
+}
+
+#journey-stage-details ul {
+    padding-left: 22px;
+}
+
+.ping-journey-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.ping-journey-controls button {
+    padding: 11px 18px;
+    color: #FFFFFF;
+    background: #2563EB;
+    border: none;
+    border-radius: 9px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.ping-journey-controls button:hover {
+    background: #1D4ED8;
+}
+
+.ping-journey-controls button:focus-visible {
+    outline: 3px solid #0D9488;
+    outline-offset: 3px;
+}
+
+.ping-journey-controls button:disabled {
+    background: #CBD5E1;
+    color: #64748B;
+    cursor: not-allowed;
+}
+
+.ping-journey-status {
+    margin-top: 14px;
+    color: #64748B;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .ping-journey-explorer {
+        padding: 16px;
+    }
+
+    .ping-journey-route {
+        gap: 4px;
+    }
+
+    .journey-node {
+        min-height: 90px;
+        padding: 8px 3px;
+    }
+
+    .journey-node span {
+        font-size: 22px;
+    }
+
+    .journey-node strong {
+        font-size: 11px;
+    }
+
+    .ping-journey-controls button {
+        flex: 1 1 40%;
+    }
+}
+
+/* END SECTION 7 — INTERACTIVE PING PACKET JOURNEY */
+
 
 
 
