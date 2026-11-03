@@ -3000,6 +3000,170 @@ footer p {
     cursor: not-allowed;
 }
 
+/* =========================================
+   SECTION 3 — ANALOGY-TO-NETWORK TRANSLATOR
+   ========================================= */
+
+#analogy-translator {
+    margin: 30px 0;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(16, 42, 67, 0.06);
+}
+
+#analogy-translator > h3 {
+    margin-top: 0;
+    color: #102A43;
+}
+
+#analogy-translator > p {
+    color: #475569;
+    line-height: 1.7;
+}
+
+/* Mapping buttons */
+
+#analogy-translator .analogy-translator-mappings {
+    display: grid;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+#analogy-translator .analogy-map-button {
+    display: grid;
+    grid-template-columns: 38px 1fr 24px 1fr;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    color: #102A43;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+#analogy-translator .analogy-map-button:hover {
+    background: #EFF6FF;
+    border-color: #93C5FD;
+    transform: translateY(-2px);
+}
+
+#analogy-translator .analogy-map-button:focus-visible {
+    outline: 3px solid #0D9488;
+    outline-offset: 3px;
+}
+
+#analogy-translator .analogy-map-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    color: #FFFFFF;
+    background: #2563EB;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+#analogy-translator .analogy-map-label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#analogy-translator .analogy-map-arrow {
+    color: #64748B;
+    font-size: 20px;
+    text-align: center;
+}
+
+#analogy-translator .analogy-map-technical {
+    padding: 9px 10px;
+    color: #166534;
+    background: #DCFCE7;
+    border: 1px solid #BBF7D0;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Selected mapping */
+
+#analogy-translator .analogy-map-button.is-selected {
+    background: #EFF6FF;
+    border: 2px solid #2563EB;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+#analogy-translator .analogy-map-button.is-selected .analogy-map-number {
+    background: #0D9488;
+}
+
+/* Explanation panel */
+
+#analogy-translator .analogy-translator-explanation {
+    margin-top: 24px;
+    padding: 20px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+}
+
+#analogy-translator #analogy-map-step {
+    color: #2563EB;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+#analogy-translator #analogy-map-title {
+    margin: 8px 0;
+    color: #102A43;
+}
+
+#analogy-translator #analogy-map-description {
+    color: #475569;
+    line-height: 1.7;
+}
+
+/* Status message */
+
+#analogy-translator .analogy-translator-status {
+    margin-top: 14px;
+    color: #64748B;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* iPad and mobile layout */
+
+@media (max-width: 600px) {
+    #analogy-translator {
+        padding: 16px;
+    }
+
+    #analogy-translator .analogy-map-button {
+        grid-template-columns: 34px 1fr;
+        gap: 10px;
+    }
+
+    #analogy-translator .analogy-map-arrow {
+        display: none;
+    }
+
+    #analogy-translator .analogy-map-technical {
+        grid-column: 2;
+    }
+}
+
 
 
 
