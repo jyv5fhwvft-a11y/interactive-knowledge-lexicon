@@ -15,26 +15,7 @@ let learningMessage = "Explore. Understand. Experiment.";
 console.log(learningMessage);
 
 
-// ==================================
-// FIRST VISIBLE JAVASCRIPT TEST
-// ==================================
 
-const testMessage = document.createElement("p");
-
-testMessage.textContent =
-    "JavaScript is running successfully!";
-
-testMessage.style.backgroundColor = "#e0f2fe";
-testMessage.style.color = "#173b67";
-testMessage.style.padding = "15px";
-testMessage.style.textAlign = "center";
-testMessage.style.fontWeight = "bold";
-
-const footer = document.querySelector("footer");
-
-if (footer) {
-    footer.before(testMessage);
-}
 
 
 // ==================================
