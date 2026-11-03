@@ -2219,3 +2219,36 @@ header p:last-child {
         padding: 14px;
     }
 }
+/* =========================================
+   26. PROFESSIONAL PING PAGE FOOTER
+========================================= */
+
+footer {
+    background: var(--color-navy);
+    color: var(--color-white);
+    border-top: 3px solid var(--color-teal);
+    padding: 28px 15px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footer-brand {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footer-credit {
+    margin-top: 8px;
+    color: #5EEAD4;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+
