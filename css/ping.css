@@ -3164,6 +3164,151 @@ footer p {
     }
 }
 
+/* =========================================
+   SECTION 4 — INTERACTIVE PING RESULT EXPLORER
+   ========================================= */
+
+#ping-result-explorer {
+    margin: 28px 0;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(16, 42, 67, 0.07);
+}
+
+#ping-result-explorer > h3 {
+    margin-top: 0;
+    color: #102A43;
+}
+
+#ping-result-explorer > p {
+    color: #475569;
+    line-height: 1.7;
+}
+
+.ping-result-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 22px 0;
+}
+
+.ping-result-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 70px;
+    padding: 16px;
+    color: #102A43;
+    background: #F8FAFC;
+    border: 2px solid #E2E8F0;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ping-result-button:hover {
+    border-color: #2563EB;
+    background: #EFF6FF;
+}
+
+.ping-result-button:focus-visible {
+    outline: 3px solid #93C5FD;
+    outline-offset: 3px;
+}
+
+.ping-result-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    color: #475569;
+    background: #E2E8F0;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.ping-result-button[data-result="success"].is-selected {
+    background: #F0FDF4;
+    border-color: #22C55E;
+}
+
+.ping-result-button[data-result="success"].is-selected .ping-result-icon {
+    color: #166534;
+    background: #DCFCE7;
+}
+
+.ping-result-button[data-result="failure"].is-selected {
+    background: #FFF7ED;
+    border-color: #F59E0B;
+}
+
+.ping-result-button[data-result="failure"].is-selected .ping-result-icon {
+    color: #92400E;
+    background: #FEF3C7;
+}
+
+.ping-result-explanation {
+    margin-top: 20px;
+    padding: 20px;
+    background: #F8FAFC;
+    border-left: 5px solid #2563EB;
+    border-radius: 10px;
+}
+
+.ping-result-explanation > p:first-child {
+    color: #2563EB;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.ping-result-explanation h4 {
+    margin: 8px 0;
+    color: #102A43;
+    font-size: 1.15rem;
+}
+
+.ping-result-explanation p {
+    color: #475569;
+    line-height: 1.7;
+}
+
+.ping-result-status {
+    margin-bottom: 0;
+    color: #64748B;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* SECTION 4 — RESULT EXPLORER MOBILE LAYOUT */
+
+@media (max-width: 600px) {
+    #ping-result-explorer {
+        padding: 16px;
+    }
+
+    .ping-result-options {
+        grid-template-columns: 1fr;
+    }
+
+    .ping-result-button {
+        min-height: 62px;
+    }
+
+    .ping-result-explanation {
+        padding: 16px;
+    }
+}
+
 
 
 
