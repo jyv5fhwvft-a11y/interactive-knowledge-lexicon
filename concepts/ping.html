@@ -944,6 +944,87 @@
                 <li>The measured time is reported as RTT.</li>
             </ul>
 
+            <!-- SECTION 6.1 — INTERACTIVE COMPONENT EXPLORER -->
+
+<div class="ping-component-explorer" id="ping-component-explorer">
+
+    <h3>Explore the Components of Ping</h3>
+
+    <p>
+        Select a component to discover its responsibility
+        and how it contributes to the Ping process.
+    </p>
+
+    <div class="ping-component-options">
+
+        <button type="button" class="ping-component-button"
+                data-component="source" aria-pressed="false">
+            01. Source Computer
+        </button>
+
+        <button type="button" class="ping-component-button"
+                data-component="destination" aria-pressed="false">
+            02. Destination Computer
+        </button>
+
+        <button type="button" class="ping-component-button"
+                data-component="ip" aria-pressed="false">
+            03. IP Layer
+        </button>
+
+        <button type="button" class="ping-component-button"
+                data-component="icmp" aria-pressed="false">
+            04. ICMP
+        </button>
+
+        <button type="button" class="ping-component-button"
+                data-component="routers" aria-pressed="false">
+            05. Routers
+        </button>
+
+        <button type="button" class="ping-component-button"
+                data-component="transmission" aria-pressed="false">
+            06. Network Transmission
+        </button>
+
+        <button type="button" class="ping-component-button"
+                data-component="echo" aria-pressed="false">
+            07. Echo Request and Echo Reply
+        </button>
+
+    </div>
+
+    <div class="ping-component-explanation"
+         id="ping-component-explanation"
+         aria-live="polite">
+
+        <p id="ping-component-label">
+            Select a component above
+        </p>
+
+        <h4 id="ping-component-title">
+            Discover how Ping works
+        </h4>
+
+        <p id="ping-component-description">
+            Each component has a different responsibility
+            in the communication process.
+        </p>
+
+        <div id="ping-component-details"></div>
+
+    </div>
+
+    <p class="ping-component-status"
+       id="ping-component-status"
+       aria-live="polite">
+        Ready to explore.
+    </p>
+
+</div>
+
+<!-- END SECTION 6.1 — INTERACTIVE COMPONENT EXPLORER -->
+
             <h3>6.2 How Do These Components Work Together?</h3>
 
             <p>
