@@ -2638,6 +2638,92 @@ footer p {
 }
 
 
+/* =========================================
+   SECTION 6.3 — EXPANDABLE PACKET INSPECTOR
+   ========================================= */
+
+#ping-architecture .packet-inspector {
+    margin: 28px 0;
+    padding: 20px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(16, 42, 67, 0.05);
+}
+
+#ping-architecture .packet-inspector summary {
+    color: #102A43;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 4px;
+}
+
+#ping-architecture .packet-inspector summary:hover {
+    color: #2563EB;
+}
+
+#ping-architecture .packet-inspector summary:focus-visible {
+    outline: 3px solid #2563EB;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+#ping-architecture .packet-inspector > p {
+    color: #475569;
+    line-height: 1.7;
+    margin: 14px 0 18px;
+}
+
+#ping-architecture .packet-layer {
+    padding: 18px;
+    margin-top: 14px;
+    border-radius: 12px;
+    border: 1px solid;
+}
+
+#ping-architecture .ip-layer {
+    background: #EFF6FF;
+    border-color: #BFDBFE;
+}
+
+#ping-architecture .icmp-layer {
+    background: #F0FDFA;
+    border-color: #99F6E4;
+}
+
+#ping-architecture .packet-layer h4 {
+    margin: 0 0 12px;
+    color: #102A43;
+    font-size: 16px;
+}
+
+#ping-architecture .packet-layer p {
+    color: #334155;
+    line-height: 1.6;
+    margin: 8px 0;
+    overflow-wrap: anywhere;
+}
+
+#ping-architecture .packet-layer .packet-note {
+    color: #64748B;
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+    #ping-architecture .packet-inspector {
+        padding: 15px;
+    }
+
+    #ping-architecture .packet-layer {
+        padding: 14px;
+    }
+}
+
+
+
 
 
 
