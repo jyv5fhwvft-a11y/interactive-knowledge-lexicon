@@ -67,11 +67,14 @@
                // Update the ICMP message shown in the packet inspector.
         const icmpType = document.getElementById("architecture-icmp-type");
 
-        if (icmpType) {
-            icmpType.textContent =
-                currentStage <= 3
-                    ? "ICMP Echo Request"
-                    : "ICMP Echo Reply";
+              if (icmpType) {
+            const isReply = currentStage >= 4;
+
+            icmpType.textContent = isReply
+                ? "ICMP Echo Reply"
+                : "ICMP Echo Request";
+
+            icmpType.classList.toggle("icmp-reply-active", isReply);
         }
 
         stages.forEach(function (stage, stageIndex) {
