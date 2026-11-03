@@ -3770,6 +3770,26 @@ footer p {
 
 /* END SECTION 7 — INTERACTIVE PING PACKET JOURNEY */
 
+/* SECTION 7 — PING TIMEOUT OUTCOME */
+
+.ping-journey-explorer.journey-timeout
+.ping-journey-explanation {
+    background: #FFFBEB;
+    border-color: #F59E0B;
+}
+
+.ping-journey-explorer.journey-timeout
+.ping-journey-explanation h4 {
+    color: #92400E;
+}
+
+.ping-journey-explorer.journey-timeout
+#journey-stage-label {
+    color: #B45309;
+}
+
+/* END SECTION 7 — PING TIMEOUT OUTCOME */
+
 
 
 
