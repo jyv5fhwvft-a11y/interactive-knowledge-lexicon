@@ -631,51 +631,100 @@
                 the major components.
             </p>
 
-            <pre>
-+---------------------------+
-|      SOURCE COMPUTER      |
-|                           |
-|       Ping Command        |
-|             |             |
-|       ICMP Echo Request   |
-+-------------+-------------+
-              |
-              v
-+---------------------------+
-|          IP LAYER          |
-|                           |
-| Source and Destination IP |
-|      Addresses            |
-+-------------+-------------+
-              |
-              v
-+---------------------------+
-|     NETWORK TRANSMISSION  |
-|                           |
-|    Links and Routers      |
-+-------------+-------------+
-              |
-              v
-+---------------------------+
-|   DESTINATION COMPUTER    |
-|                           |
-|   Processes ICMP Request  |
-|             |             |
-|     ICMP Echo Reply       |
-+-------------+-------------+
-              |
-              v
-       REPLY RETURNS
-       TOWARD SOURCE
-            |
-            v
-+---------------------------+
-|      SOURCE COMPUTER      |
-|                           |
-|       Calculates RTT      |
-|       Displays Result     |
-+---------------------------+
-            </pre>
+   
+<div id="ping-architecture" class="architecture-container">
+
+    <div class="architecture-stages">
+
+        <div class="architecture-stage active" data-stage="0">
+            <span class="stage-number">1</span>
+            <h4>Source Computer</h4>
+            <p>Starts the Ping command.</p>
+            <span class="stage-detail">ICMP Echo Request is created.</span>
+        </div>
+
+        <div class="architecture-arrow">↓</div>
+
+        <div class="architecture-stage" data-stage="1">
+            <span class="stage-number">2</span>
+            <h4>IP Layer</h4>
+            <p>Prepares the IP packet.</p>
+            <span class="stage-detail">The ICMP message is carried inside the IP packet.</span>
+        </div>
+
+        <div class="architecture-arrow">↓</div>
+
+        <div class="architecture-stage" data-stage="2">
+            <span class="stage-number">3</span>
+            <h4>Network and Routers</h4>
+            <p>Forward the packet towards its destination.</p>
+            <span class="stage-detail">Routers forward packets when routing is required.</span>
+        </div>
+
+        <div class="architecture-arrow">↓</div>
+
+        <div class="architecture-stage" data-stage="3">
+            <span class="stage-number">4</span>
+            <h4>Destination Computer</h4>
+            <p>Receives and processes the request.</p>
+            <span class="stage-detail">If permitted, it generates an ICMP Echo Reply.</span>
+        </div>
+
+        <div class="architecture-arrow">↑</div>
+
+        <div class="architecture-stage" data-stage="4">
+            <span class="stage-number">5</span>
+            <h4>Reply Returns</h4>
+            <p>The Echo Reply travels back towards the source.</p>
+            <span class="stage-detail">The return path may differ from the outgoing path.</span>
+        </div>
+
+        <div class="architecture-arrow">↓</div>
+
+        <div class="architecture-stage" data-stage="5">
+            <span class="stage-number">6</span>
+            <h4>Source Calculates RTT</h4>
+            <p>Measures the elapsed round-trip time.</p>
+            <span class="stage-detail">Ping displays the result.</span>
+        </div>
+
+    </div>
+
+    <div class="architecture-explanation" aria-live="polite">
+        <p id="architecture-step-count">Step 1 of 6</p>
+        <h4 id="architecture-step-title">Source Computer</h4>
+        <p id="architecture-step-description">
+            The source computer starts the Ping command
+            and creates an ICMP Echo Request.
+        </p>
+    </div>
+
+    <div class="architecture-controls">
+
+        <button type="button" id="architecture-previous">
+            ← Previous
+        </button>
+
+        <button type="button" id="architecture-play">
+            ▶ Play
+        </button>
+
+        <button type="button" id="architecture-next">
+            Next →
+        </button>
+
+        <button type="button" id="architecture-reset">
+            ↺ Reset
+        </button>
+
+    </div>
+
+    <p id="architecture-status" aria-live="polite">
+        Explore the six stages of Ping communication.
+    </p>
+
+</div>
+
 
             <h3>6.4 Important Architectural Relationship</h3>
 
