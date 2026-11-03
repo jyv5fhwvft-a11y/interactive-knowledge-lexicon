@@ -1703,11 +1703,76 @@
                     Waiting to start the Ping simulation.
                 </p>
 
+                <!-- SECTION 8 — SIMULATION SETTINGS -->
+
+<div class="ping-simulation-settings">
+
+    <h3>8.2 Configure Your Ping Experiment</h3>
+
+    <div class="simulation-input-group">
+
+        <label for="ping-destination-input">
+            Destination IP Address
+        </label>
+
+        <input
+            type="text"
+            id="ping-destination-input"
+            value="8.8.8.8"
+            placeholder="Example: 8.8.8.8"
+        >
+
+    </div>
+
+    <div class="simulation-input-group">
+
+        <label for="ping-network-condition">
+            Choose a Network Condition
+        </label>
+
+        <select id="ping-network-condition">
+
+            <option value="normal">
+                Normal Network
+            </option>
+
+            <option value="slow">
+                Slow Network
+            </option>
+
+            <option value="packet-loss">
+                Packet Loss
+            </option>
+
+            <option value="unavailable">
+                Destination Unavailable
+            </option>
+
+        </select>
+
+    </div>
+
+</div>
+
+<!-- END SECTION 8 — SIMULATION SETTINGS -->
+
                 <!-- START PING SIMULATION -->
 
                 <button type="button" id="sendPingButton">
                     SEND PING
                 </button>
+
+                <!-- SECTION 8 — SIMULATED TERMINAL -->
+
+<div class="ping-terminal" id="ping-terminal">
+
+    <h3>Ping Terminal</h3>
+
+    <pre id="ping-terminal-output">Ready to run a simulated Ping experiment...</pre>
+
+</div>
+
+<!-- END SECTION 8 — SIMULATED TERMINAL -->
 
             </div>
 
