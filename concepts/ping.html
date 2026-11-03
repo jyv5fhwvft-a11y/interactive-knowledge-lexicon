@@ -762,6 +762,46 @@
         Explore the six stages of Ping communication.
     </p>
 
+    <details class="packet-inspector">
+
+        <summary>Explore What's Inside the Packet</summary>
+
+        <p>
+            An IP packet carries an ICMP message inside it.
+            Explore the two layers below.
+        </p>
+
+        <div class="packet-layer ip-layer">
+
+            <h4>Outer Layer — IP Header</h4>
+
+            <p>Source IP Address: 192.0.2.10</p>
+
+            <p>Destination IP Address: 203.0.113.8</p>
+
+            <p class="packet-note">
+                These are example addresses reserved for documentation.
+            </p>
+
+        </div>
+
+        <div class="packet-layer icmp-layer">
+
+            <h4>Inner Content — ICMP Message</h4>
+
+            <p id="architecture-icmp-type">
+                ICMP Echo Request
+            </p>
+
+            <p class="packet-note">
+                The ICMP message carries the Ping request or reply.
+            </p>
+
+        </div>
+
+    </details>
+
+    
 </div>
 
 
