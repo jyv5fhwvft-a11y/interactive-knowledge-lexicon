@@ -141,58 +141,80 @@ function searchConcepts() {
 
     matchingConcepts.forEach(function(concept) {
 
-        const resultCard = document.createElement("div");
+    // Create the main concept card
 
-        resultCard.className = "result-card";
+    const resultCard = document.createElement("div");
 
-        // Create the concept name
+    resultCard.className = "result-card";
 
-        const title = document.createElement("h3");
+    // Create the category label
 
-        // Make the title clickable if a page exists
+    const category = document.createElement("span");
 
-        if (concept.page !== null) {
+    category.className = "result-category";
 
-            const conceptLink = document.createElement("a");
+    category.textContent = concept.category;
 
-            conceptLink.href = concept.page;
+    resultCard.appendChild(category);
 
-            conceptLink.textContent = concept.name;
+    // Create the concept title
 
-            title.appendChild(conceptLink);
+    const title = document.createElement("h3");
 
-        } else {
+    title.className = "result-title";
 
-            title.textContent = concept.name;
+    // Create a clickable link when a lesson page exists
 
-        }
+    if (concept.page !== null) {
 
-        // Display the category
+        const conceptLink = document.createElement("a");
 
-        const category = document.createElement("p");
+        conceptLink.href = concept.page;
 
-        category.textContent = "Category: " + concept.category;
+        conceptLink.textContent = concept.name;
 
-        // Display the description
+        conceptLink.className = "result-title-link";
 
-        const description = document.createElement("p");
+        title.appendChild(conceptLink);
 
-        description.textContent = concept.description;
+    } else {
 
-        // Assemble the result card
+        title.textContent = concept.name;
 
-        resultCard.appendChild(title);
+    }
 
-        resultCard.appendChild(category);
+    resultCard.appendChild(title);
 
-        resultCard.appendChild(description);
+    // Create the concept description
 
-        // Add the card to the search results
+    const description = document.createElement("p");
 
-        searchResults.appendChild(resultCard);
+    description.className = "result-description";
 
-    });
+    description.textContent = concept.description;
 
+    resultCard.appendChild(description);
+
+    // Create the learning action label
+
+    if (concept.page !== null) {
+
+        const action = document.createElement("p");
+
+        action.className = "result-action";
+
+        action.textContent = "Explore this concept →";
+
+        resultCard.appendChild(action);
+
+    }
+
+    // Add the completed card to the search results
+
+    searchResults.appendChild(resultCard);
+
+});
+  
 }
 
 
