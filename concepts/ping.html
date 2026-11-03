@@ -1520,6 +1520,103 @@
 +---------------------------+
             </pre>
 
+            <!-- SECTION 7 — INTERACTIVE PING PACKET JOURNEY -->
+
+<div class="ping-journey-explorer" id="ping-journey-explorer">
+
+    <h3>Explore the Complete Ping Packet Journey</h3>
+
+    <p>
+        Follow each stage to understand what happens
+        from the moment Ping starts until a result appears.
+    </p>
+
+    <div class="ping-journey-progress">
+        <p id="journey-step-number">Stage 1 of 9</p>
+
+        <div class="journey-progress-track">
+            <div class="journey-progress-fill"
+                 id="journey-progress-fill"></div>
+        </div>
+    </div>
+
+    <div class="ping-journey-route">
+
+        <div class="journey-node" id="journey-source">
+            <span>💻</span>
+            <strong>Source</strong>
+        </div>
+
+        <div class="journey-route-line">
+            <span class="journey-packet"
+                  id="journey-packet"></span>
+        </div>
+
+        <div class="journey-node" id="journey-network">
+            <span>🌐</span>
+            <strong>Network</strong>
+        </div>
+
+        <div class="journey-route-line">
+        </div>
+
+        <div class="journey-node" id="journey-destination">
+            <span>💻</span>
+            <strong>Destination</strong>
+        </div>
+
+    </div>
+
+    <div class="ping-journey-explanation"
+         aria-live="polite">
+
+        <p id="journey-stage-label">
+            STAGE 1
+        </p>
+
+        <h4 id="journey-stage-title">
+            User Starts Ping
+        </h4>
+
+        <p id="journey-stage-description">
+            The user enters a Ping command to begin
+            testing communication with another device.
+        </p>
+
+        <div id="journey-stage-details"></div>
+
+    </div>
+
+    <div class="ping-journey-controls">
+
+        <button type="button" id="journey-previous">
+            Previous
+        </button>
+
+        <button type="button" id="journey-play">
+            Play
+        </button>
+
+        <button type="button" id="journey-next">
+            Next
+        </button>
+
+        <button type="button" id="journey-reset">
+            Reset
+        </button>
+
+    </div>
+
+    <p id="journey-status"
+       class="ping-journey-status"
+       aria-live="polite">
+        Ready to begin the journey.
+    </p>
+
+</div>
+
+<!-- END SECTION 7 — INTERACTIVE PING PACKET JOURNEY -->
+
             <h3>Key Working Mechanism Takeaway</h3>
 
             <p>
