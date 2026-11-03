@@ -2940,6 +2940,66 @@ footer p {
     }
 }
 
+/* =========================================
+   SECTION 2 — FRIEND ANALOGY ANIMATION STATES
+   ========================================= */
+
+/* Smooth transitions for messages */
+#friend-analogy .friend-message,
+#friend-analogy .friend-reply {
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Dim the message that is not currently active */
+#friend-analogy .friend-message.is-inactive,
+#friend-analogy .friend-reply.is-inactive {
+    opacity: 0.35;
+    transform: scale(0.96);
+}
+
+/* Highlight the active request */
+#friend-analogy .friend-message.is-active {
+    opacity: 1;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.18);
+}
+
+/* Highlight the active reply */
+#friend-analogy .friend-reply.is-active {
+    opacity: 1;
+    box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.18);
+}
+
+/* Smoothly highlight the active house */
+#friend-analogy .friend-home {
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#friend-analogy .friend-home.is-active {
+    border-color: #2563EB;
+    background: #EFF6FF;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+/* Smooth movement of the message dot */
+#friend-analogy .friend-message-dot {
+    transition:
+        left 0.6s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Show when a control is unavailable */
+#friend-analogy .friend-analogy-controls button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
 
 
 
