@@ -170,6 +170,23 @@
 </footer>
     
 <script src="js/script.js"></script>
+
+    <script>
+    // Open the homepage at the top when it loads or refreshes
+    if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+    }
+
+    if (window.location.hash) {
+        history.replaceState(
+            null,
+            "",
+            window.location.pathname + window.location.search
+        );
+    }
+
+    window.scrollTo(0, 0);
+</script>
     
 
 </body>
