@@ -2722,6 +2722,21 @@ footer p {
     }
 }
 
+/* =========================================
+   SECTION 6.3 — ICMP REPLY HIGHLIGHT
+   ========================================= */
+
+#ping-architecture #architecture-icmp-type.icmp-reply-active {
+    display: inline-block;
+    padding: 10px 14px;
+    color: #166534;
+    background: #DCFCE7;
+    border: 2px solid #22C55E;
+    border-radius: 10px;
+    font-weight: 800;
+    transition: all 0.25s ease;
+}
+
 
 
 
