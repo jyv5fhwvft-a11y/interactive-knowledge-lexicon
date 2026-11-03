@@ -279,6 +279,101 @@
                     Round-Trip Time (RTT).</li>
             </ul>
 
+            <!-- SECTION 3 — INTERACTIVE ANALOGY-TO-NETWORK TRANSLATOR -->
+
+<div class="analogy-translator" id="analogy-translator">
+
+    <h3>Explore the Analogy-to-Network Translator</h3>
+
+    <p>
+        Select each part of the friendship analogy to discover
+        what actually happens when computers use Ping.
+    </p>
+
+    <div class="analogy-translator-mappings">
+
+        <button type="button"
+                class="analogy-map-button"
+                data-map="0">
+            <span class="analogy-map-number">01</span>
+            <span class="analogy-map-label">You shout "Hello!"</span>
+            <span class="analogy-map-arrow">→</span>
+            <span class="analogy-map-technical">ICMP Echo Request</span>
+        </button>
+
+        <button type="button"
+                class="analogy-map-button"
+                data-map="1">
+            <span class="analogy-map-number">02</span>
+            <span class="analogy-map-label">Your friend receives it</span>
+            <span class="analogy-map-arrow">→</span>
+            <span class="analogy-map-technical">Destination receives request</span>
+        </button>
+
+        <button type="button"
+                class="analogy-map-button"
+                data-map="2">
+            <span class="analogy-map-number">03</span>
+            <span class="analogy-map-label">Your friend replies</span>
+            <span class="analogy-map-arrow">→</span>
+            <span class="analogy-map-technical">ICMP Echo Reply</span>
+        </button>
+
+        <button type="button"
+                class="analogy-map-button"
+                data-map="3">
+            <span class="analogy-map-number">04</span>
+            <span class="analogy-map-label">You wait for the reply</span>
+            <span class="analogy-map-arrow">→</span>
+            <span class="analogy-map-technical">Waiting for Ping response</span>
+        </button>
+
+        <button type="button"
+                class="analogy-map-button"
+                data-map="4">
+            <span class="analogy-map-number">05</span>
+            <span class="analogy-map-label">The reply reaches you</span>
+            <span class="analogy-map-arrow">→</span>
+            <span class="analogy-map-technical">Response reaches source</span>
+        </button>
+
+        <button type="button"
+                class="analogy-map-button"
+                data-map="5">
+            <span class="analogy-map-number">06</span>
+            <span class="analogy-map-label">You measure the waiting time</span>
+            <span class="analogy-map-arrow">→</span>
+            <span class="analogy-map-technical">Round-Trip Time (RTT)</span>
+        </button>
+
+    </div>
+
+    <div class="analogy-translator-explanation"
+         aria-live="polite">
+
+        <p id="analogy-map-step">Select a connection above</p>
+
+        <h4 id="analogy-map-title">
+            Discover the connection
+        </h4>
+
+        <p id="analogy-map-description">
+            Choose any analogy to see how it relates
+            to real computer networking.
+        </p>
+
+    </div>
+
+    <p class="analogy-translator-status"
+       id="analogy-map-status"
+       aria-live="polite">
+        Ready to explore.
+    </p>
+
+</div>
+
+<!-- END SECTION 3 INTERACTIVE ANALOGY-TO-NETWORK TRANSLATOR -->
+
             <h3>Where Does the Analogy Have Limitations?</h3>
 
             <p>
