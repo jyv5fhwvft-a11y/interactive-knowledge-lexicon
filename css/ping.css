@@ -4095,6 +4095,153 @@ footer p {
 
 /* END SECTION 11 — INTERACTIVE MYTH VS FACT */
 
+/* ========================================== */
+/* SECTION 12.6 — NETWORK DIAGNOSTIC LAB */
+/* ========================================== */
+
+#network-diagnostic-lab {
+    margin-top: 35px;
+}
+
+#network-diagnostic-lab .diagnostic-scenario {
+    padding: 20px;
+    margin: 20px 0;
+    background: #EFF6FF;
+    border-left: 5px solid #2563EB;
+    border-radius: 12px;
+}
+
+#network-diagnostic-lab .diagnostic-scenario h5 {
+    margin-top: 0;
+    color: #1D4ED8;
+    font-size: 1.1rem;
+}
+
+#network-diagnostic-lab .diagnostic-test-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+#network-diagnostic-lab .diagnostic-test-button {
+    padding: 14px 16px;
+    color: #FFFFFF;
+    background: #2563EB;
+    border: 2px solid #2563EB;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#network-diagnostic-lab .diagnostic-test-button:hover {
+    background: #1D4ED8;
+    transform: translateY(-2px);
+}
+
+#network-diagnostic-lab .diagnostic-test-button.active {
+    color: #1E3A8A;
+    background: #DBEAFE;
+    border-color: #1D4ED8;
+}
+
+#network-diagnostic-lab .diagnostic-test-button:focus-visible {
+    outline: 3px solid #F59E0B;
+    outline-offset: 3px;
+}
+
+#network-diagnostic-lab .diagnostic-result-panel {
+    padding: 24px;
+    margin-top: 24px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+#network-diagnostic-lab #diagnostic-test-number {
+    color: #2563EB;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+#network-diagnostic-lab .diagnostic-command-output {
+    padding: 16px;
+    margin: 20px 0;
+    background: #0F172A;
+    border-radius: 10px;
+}
+
+#network-diagnostic-lab .diagnostic-command-output h5 {
+    margin-top: 0;
+    color: #93C5FD;
+}
+
+#network-diagnostic-lab #diagnostic-test-output {
+    overflow-x: auto;
+    color: #86EFAC;
+    font-family: monospace;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+#network-diagnostic-lab #diagnostic-test-meaning {
+    padding: 14px;
+    background: #F1F5F9;
+    border-radius: 9px;
+    line-height: 1.7;
+}
+
+#network-diagnostic-lab #diagnostic-test-takeaway {
+    padding: 14px;
+    color: #115E59;
+    background: #F0FDFA;
+    border-left: 4px solid #0D9488;
+    border-radius: 8px;
+    line-height: 1.7;
+}
+
+#network-diagnostic-lab #diagnostic-lab-status {
+    margin-top: 14px;
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+#network-diagnostic-lab .diagnostic-simulation-note {
+    padding: 14px;
+    margin-top: 20px;
+    color: #92400E;
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    border-radius: 9px;
+    line-height: 1.6;
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+    #network-diagnostic-lab .diagnostic-test-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    #network-diagnostic-lab .diagnostic-result-panel {
+        padding: 16px;
+    }
+
+    #network-diagnostic-lab .diagnostic-test-button {
+        width: 100%;
+    }
+}
+
+/* END SECTION 12.6 — NETWORK DIAGNOSTIC LAB */
+
+
 
 
 
