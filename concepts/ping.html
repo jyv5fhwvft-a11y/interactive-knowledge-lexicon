@@ -4032,6 +4032,66 @@ a network connection can carry over a period of time.
         and learn from the explanation provided.
     </p>
 
+    
+    <!-- ASSESSMENT PROGRESS DASHBOARD -->
+
+    <div class="quiz-dashboard" id="ping-quiz-dashboard"
+         aria-live="polite">
+
+        <div class="quiz-progress-heading">
+            <h3>Assessment Progress</h3>
+
+            <p>
+                <span id="quiz-answered-count">0</span>
+                of 10 questions answered
+            </p>
+        </div>
+
+        <div class="quiz-progress-track"
+             id="quiz-progress-track"
+             role="progressbar"
+             aria-label="Assessment completion"
+             aria-valuemin="0"
+             aria-valuemax="10"
+             aria-valuenow="0">
+
+            <div class="quiz-progress-fill"
+                 id="quiz-progress-fill">
+            </div>
+
+        </div>
+
+        <div class="quiz-score-preview">
+
+            <span>Correct answers so far</span>
+
+            <strong id="quiz-correct-count">0</strong>
+
+        </div>
+
+    </div>
+
+    <!-- FINAL ASSESSMENT SUMMARY -->
+
+    <div class="quiz-final-summary"
+         id="quiz-final-summary"
+         hidden
+         aria-live="polite">
+
+        <h3>Assessment Complete!</h3>
+
+        <p id="quiz-final-score"></p>
+
+        <p id="quiz-performance-message"></p>
+
+        <button type="button"
+                id="quiz-restart-button">
+            Restart Assessment
+        </button>
+
+    </div>
+
+
         <!-- QUESTION 1 -->
 
     <div class="quiz-question" id="question-1">
