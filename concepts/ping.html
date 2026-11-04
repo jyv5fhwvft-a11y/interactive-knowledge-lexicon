@@ -3218,6 +3218,150 @@ Request timed out.
 
 </section>
 
+        <!-- ========================================== -->
+<!-- SECTION 12.6: INTERACTIVE NETWORK DIAGNOSTIC LAB -->
+<!-- ========================================== -->
+
+<section id="network-diagnostic-lab">
+
+    <h3>12.6 Interactive Network Diagnostic Lab</h3>
+
+    <p>
+        Imagine that you are using your computer and
+        suddenly a website refuses to open.
+        Instead of guessing what went wrong, you will
+        investigate the problem using a series of
+        network diagnostic tests.
+    </p>
+
+    <h4>Your Investigation Scenario</h4>
+
+    <div class="diagnostic-scenario">
+        <h5>The Website Is Not Loading</h5>
+
+        <p>
+            Alex is connected to a network, but cannot
+            open a website in the browser.
+            Alex wants to investigate where the
+            communication problem might be occurring.
+        </p>
+
+        <p>
+            Your task is to examine the available test
+            results and identify what they suggest.
+        </p>
+    </div>
+
+    <h4>Choose a Diagnostic Test</h4>
+
+    <p>
+        Select a test below to examine a different
+        part of the network communication process.
+    </p>
+
+    <div class="diagnostic-test-buttons">
+
+        <button
+            type="button"
+            class="diagnostic-test-button"
+            data-diagnostic-test="loopback"
+        >
+            Test 1: Local Computer
+        </button>
+
+        <button
+            type="button"
+            class="diagnostic-test-button"
+            data-diagnostic-test="gateway"
+        >
+            Test 2: Local Gateway
+        </button>
+
+        <button
+            type="button"
+            class="diagnostic-test-button"
+            data-diagnostic-test="external"
+        >
+            Test 3: External IP Address
+        </button>
+
+        <button
+            type="button"
+            class="diagnostic-test-button"
+            data-diagnostic-test="dns"
+        >
+            Test 4: Hostname Resolution
+        </button>
+
+        <button
+            type="button"
+            class="diagnostic-test-button"
+            data-diagnostic-test="website"
+        >
+            Test 5: Website Access
+        </button>
+
+    </div>
+
+    <div
+        class="diagnostic-result-panel"
+        id="diagnostic-result-panel"
+        aria-live="polite"
+    >
+
+        <p id="diagnostic-test-number">
+            Diagnostic Lab Ready
+        </p>
+
+        <h4 id="diagnostic-test-title">
+            Begin Your Investigation
+        </h4>
+
+        <p id="diagnostic-test-description">
+            Select a diagnostic test above to examine
+            its example result.
+        </p>
+
+        <div class="diagnostic-command-output">
+            <h5>Example Test Result</h5>
+
+            <pre id="diagnostic-test-output">Your test result will appear here.</pre>
+        </div>
+
+        <h5>What Does This Result Suggest?</h5>
+
+        <p id="diagnostic-test-meaning">
+            The explanation will appear here after
+            you select a test.
+        </p>
+
+        <h5>What Should You Remember?</h5>
+
+        <p id="diagnostic-test-takeaway">
+            Remember: a diagnostic result provides
+            clues, not necessarily a complete diagnosis.
+        </p>
+
+    </div>
+
+    <p
+        id="diagnostic-lab-status"
+        aria-live="polite"
+    >
+        Network Diagnostic Lab ready.
+    </p>
+
+    <p class="diagnostic-simulation-note">
+        <strong>Learning simulation:</strong>
+        The results in this diagnostic lab are
+        illustrative examples. They do not represent
+        tests performed on a real network.
+    </p>
+
+</section>
+
+<!-- END SECTION 12.6: INTERACTIVE NETWORK DIAGNOSTIC LAB -->
+
         <!-- ================================== -->
 <!-- SECTION 13: CONNECTIONS TO OTHER CONCEPTS -->
 <!-- ================================== -->
