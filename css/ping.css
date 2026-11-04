@@ -3974,6 +3974,127 @@ footer p {
 
 /* END SECTION 10 — INTERACTIVE CASE STUDY */
 
+/* ========================================= */
+/* SECTION 11 — INTERACTIVE MYTH VS FACT */
+/* ========================================= */
+
+.ping-myth-challenge {
+    margin: 30px 0;
+    padding: 24px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+}
+
+.ping-myth-challenge h3 {
+    margin-top: 0;
+    color: #102A43;
+}
+
+.ping-myth-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.ping-myth-button {
+    min-height: 52px;
+    padding: 12px;
+    color: #1D4ED8;
+    background: #FFFFFF;
+    border: 2px solid #BFDBFE;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ping-myth-button:hover {
+    background: #EFF6FF;
+    border-color: #2563EB;
+}
+
+.ping-myth-button.active {
+    color: #FFFFFF;
+    background: #2563EB;
+    border-color: #2563EB;
+}
+
+.ping-myth-result {
+    margin-top: 22px;
+    padding: 20px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+}
+
+.ping-myth-result h4 {
+    color: #102A43;
+}
+
+#ping-myth-number {
+    color: #64748B;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+#ping-myth-verdict {
+    display: inline-block;
+    margin: 12px 0;
+    padding: 10px 15px;
+    color: #92400E;
+    background: #FEF3C7;
+    border: 1px solid #F59E0B;
+    border-radius: 9px;
+    font-weight: 800;
+}
+
+#ping-myth-verdict.myth-correct {
+    color: #166534;
+    background: #DCFCE7;
+    border-color: #22C55E;
+}
+
+#ping-myth-verdict.fact-correct {
+    color: #1D4ED8;
+    background: #EFF6FF;
+    border-color: #3B82F6;
+}
+
+#ping-myth-explanation {
+    line-height: 1.7;
+}
+
+#ping-myth-takeaway {
+    margin-bottom: 0;
+    padding: 15px;
+    color: #134E4A;
+    background: #F0FDFA;
+    border-left: 4px solid #0D9488;
+    border-radius: 8px;
+    line-height: 1.7;
+}
+
+#ping-myth-status {
+    margin-top: 18px;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .ping-myth-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .ping-myth-challenge {
+        padding: 16px;
+    }
+}
+
+/* END SECTION 11 — INTERACTIVE MYTH VS FACT */
+
 
 
 
