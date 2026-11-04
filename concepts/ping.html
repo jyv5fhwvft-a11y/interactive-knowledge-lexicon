@@ -2232,6 +2232,83 @@ Request timed out.
         problem might be.
     </p>
 
+        <!-- SECTION 10 — INTERACTIVE TROUBLESHOOTING INVESTIGATION -->
+
+    <div class="ping-case-study" id="ping-case-study">
+
+        <h3>10.4 Become the Network Investigator</h3>
+
+        <p>
+            You are now the network investigator.
+            Choose Alex's situation, examine the evidence,
+            and decide what you should investigate next.
+        </p>
+
+        <div class="ping-case-buttons">
+
+            <button type="button" class="ping-case-button"
+                    data-case="success">
+                Case 1: Both Tests Succeed
+            </button>
+
+            <button type="button" class="ping-case-button"
+                    data-case="dns">
+                Case 2: DNS Resolution Fails
+            </button>
+
+            <button type="button" class="ping-case-button"
+                    data-case="timeout">
+                Case 3: Both Tests Time Out
+            </button>
+
+        </div>
+
+        <div class="ping-case-evidence">
+
+            <h4 id="ping-case-title">
+                Your Investigation Begins Here
+            </h4>
+
+            <p id="ping-case-description">
+                Select one of the three cases above
+                to examine Alex's network problem.
+            </p>
+
+            <div class="ping-case-terminal">
+
+                <pre id="ping-case-output">Waiting for you to select a case...</pre>
+
+            </div>
+
+            <div class="ping-case-analysis" aria-live="polite">
+
+                <h4>What Does the Evidence Tell You?</h4>
+
+                <p id="ping-case-meaning">
+                    Your analysis will appear here.
+                </p>
+
+                <h4>What Should You Investigate Next?</h4>
+
+                <p id="ping-case-next">
+                    Your next investigation step will appear here.
+                </p>
+
+            </div>
+
+        </div>
+
+        <p id="ping-case-status" class="ping-case-status"
+           aria-live="polite">
+            Investigation ready.
+        </p>
+
+    </div>
+
+    <!-- END SECTION 10 — INTERACTIVE TROUBLESHOOTING INVESTIGATION -->
+
+</section>
+
 </section>
 
         
