@@ -3870,6 +3870,110 @@ footer p {
 
 /* END SECTION 8 — INTERACTIVE SIMULATOR SETTINGS */
 
+/* ========================================= */
+/* SECTION 10 — INTERACTIVE CASE STUDY */
+/* ========================================= */
+
+.ping-case-study {
+    margin: 30px 0;
+    padding: 24px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+}
+
+.ping-case-study h3 {
+    margin-top: 0;
+    color: #102A43;
+}
+
+.ping-case-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.ping-case-button {
+    min-height: 52px;
+    padding: 12px;
+    color: #1D4ED8;
+    background: #FFFFFF;
+    border: 2px solid #BFDBFE;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ping-case-button:hover {
+    background: #EFF6FF;
+    border-color: #2563EB;
+}
+
+.ping-case-button.active {
+    color: #FFFFFF;
+    background: #2563EB;
+    border-color: #2563EB;
+}
+
+.ping-case-evidence {
+    margin-top: 22px;
+    padding: 20px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+}
+
+.ping-case-evidence h4 {
+    color: #102A43;
+}
+
+.ping-case-terminal {
+    margin: 16px 0;
+    padding: 16px;
+    background: #0F172A;
+    border-radius: 10px;
+}
+
+.ping-case-terminal pre {
+    margin: 0;
+    color: #86EFAC;
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    overflow-x: auto;
+}
+
+.ping-case-analysis {
+    margin-top: 18px;
+    padding: 18px;
+    background: #EFF6FF;
+    border-left: 4px solid #2563EB;
+    border-radius: 8px;
+}
+
+.ping-case-status {
+    margin-top: 18px;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media (max-width: 650px) {
+    .ping-case-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .ping-case-study {
+        padding: 16px;
+    }
+}
+
+/* END SECTION 10 — INTERACTIVE CASE STUDY */
+
 
 
 
