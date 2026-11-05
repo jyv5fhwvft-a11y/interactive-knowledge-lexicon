@@ -4431,6 +4431,510 @@ footer p {
 
 /* END SECTION 13.9 CSS */
 
+/* ==========================================
+   SECTION 15 — ENHANCED QUICK REVISION
+   ========================================== */
+
+/* Introduction */
+#quick-revision .qr-introduction {
+    max-width: 760px;
+    margin: 0 auto 30px;
+    text-align: center;
+    line-height: 1.8;
+    color: var(--color-slate);
+}
+
+/* 15.1 — Concept cards */
+#quick-revision .qr-concept-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 24px 0 36px;
+}
+
+#quick-revision .qr-concept-card {
+    padding: 22px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-card);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#quick-revision .qr-concept-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+#quick-revision .qr-card-icon {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 30px;
+}
+
+#quick-revision .qr-concept-card h4 {
+    margin: 0 0 10px;
+    color: var(--color-navy);
+}
+
+#quick-revision .qr-concept-card p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* 15.2 — Interactive stepper */
+#quick-revision .qr-stepper {
+    margin: 24px 0;
+    padding: 24px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-card);
+}
+
+#quick-revision .qr-step-tabs {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+#quick-revision .qr-step-tab {
+    min-height: 72px;
+    padding: 10px 6px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
+    background: var(--color-background);
+    color: var(--color-navy);
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#quick-revision .qr-step-tab span {
+    display: block;
+    margin: 0 auto 6px;
+    font-weight: 700;
+}
+
+#quick-revision .qr-step-tab.is-active {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+    color: white;
+}
+
+#quick-revision .qr-step-tab:focus-visible,
+#quick-revision .qr-step-controls button:focus-visible,
+#quick-revision .qr-copy-button:focus-visible {
+    outline: 3px solid var(--color-amber);
+    outline-offset: 3px;
+}
+
+#quick-revision .qr-step-detail {
+    min-height: 180px;
+    padding: 24px;
+    border-radius: var(--radius-medium);
+    background: var(--color-background);
+}
+
+#quick-revision #qr-step-count {
+    color: var(--color-blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#quick-revision .qr-step-detail h4 {
+    color: var(--color-navy);
+    font-size: 20px;
+}
+
+#quick-revision .qr-step-example {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: var(--radius-small);
+    background: #EAF2FF;
+    color: var(--color-navy);
+    font-family: var(--font-code);
+}
+
+#quick-revision .qr-step-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+#quick-revision .qr-step-controls button {
+    padding: 11px 18px;
+    border: 0;
+    border-radius: var(--radius-small);
+    background: var(--color-blue);
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#quick-revision .qr-step-controls button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Notes and tips */
+#quick-revision .qr-important-note,
+#quick-revision .qr-tip {
+    margin: 20px 0 30px;
+    padding: 18px 20px;
+    border-radius: var(--radius-medium);
+    line-height: 1.7;
+}
+
+#quick-revision .qr-important-note {
+    border-left: 5px solid var(--color-amber);
+    background: #FFF8E8;
+}
+
+#quick-revision .qr-tip {
+    border-left: 5px solid var(--color-teal);
+    background: #EAF8F6;
+}
+
+/* 15.3 — Command cards */
+#quick-revision .qr-command-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 24px 0;
+}
+
+#quick-revision .qr-command-card {
+    padding: 22px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-card);
+}
+
+#quick-revision .qr-command-card h4 {
+    color: var(--color-navy);
+}
+
+#quick-revision .qr-command-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 16px 0;
+    padding: 14px;
+    border-radius: var(--radius-small);
+    background: #102A43;
+}
+
+#quick-revision .qr-command-box code {
+    color: #FFFFFF;
+    overflow-wrap: anywhere;
+}
+
+#quick-revision .qr-copy-button {
+    padding: 9px 12px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--color-blue);
+    color: white;
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#quick-revision .qr-command-caption {
+    color: var(--color-slate);
+    font-size: 14px;
+}
+
+/* 15.4 — Result cards */
+#quick-revision .qr-result-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 24px 0;
+}
+
+#quick-revision .qr-result-card {
+    padding: 22px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: var(--color-white);
+    box-shadow: var(--shadow-card);
+}
+
+#quick-revision .qr-result-icon {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+#quick-revision .qr-result-success {
+    border-top: 4px solid var(--color-teal);
+}
+
+#quick-revision .qr-result-success .qr-result-icon {
+    background: #E4F6F1;
+    color: #087C69;
+}
+
+#quick-revision .qr-result-warning {
+    border-top: 4px solid var(--color-amber);
+}
+
+#quick-revision .qr-result-warning .qr-result-icon {
+    background: #FFF4D9;
+    color: #9A6500;
+}
+
+#quick-revision .qr-result-error {
+    border-top: 4px solid #DC6262;
+}
+
+#quick-revision .qr-result-error .qr-result-icon {
+    background: #FCEAEA;
+    color: #B42323;
+}
+
+#quick-revision .qr-result-loss {
+    border-top: 4px solid var(--color-blue);
+}
+
+#quick-revision .qr-result-loss .qr-result-icon {
+    background: #EAF2FF;
+    color: var(--color-blue);
+}
+
+#quick-revision .qr-result-card strong {
+    display: block;
+    margin-top: 14px;
+    color: var(--color-navy);
+}
+
+/* 15.5 — Comparison panels */
+#quick-revision .qr-comparison-list {
+    display: grid;
+    gap: 18px;
+    margin: 24px 0;
+}
+
+#quick-revision .qr-comparison-card {
+    padding: 22px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: var(--color-white);
+    box-shadow: var(--shadow-card);
+}
+
+#quick-revision .qr-comparison-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+#quick-revision .qr-comparison-side {
+    padding: 16px;
+    border-radius: var(--radius-small);
+    background: var(--color-background);
+}
+
+#quick-revision .qr-comparison-label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--color-blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+}
+
+#quick-revision .qr-comparison-side p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+#quick-revision .qr-comparison-note {
+    margin-bottom: 0;
+    color: var(--color-slate);
+    font-size: 14px;
+}
+
+/* 15.6 — Revision checklist */
+#quick-revision .qr-checklist {
+    margin: 24px 0;
+    padding: 24px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    background: var(--color-white);
+    box-shadow: var(--shadow-card);
+}
+
+#quick-revision .qr-checklist-progress {
+    margin-bottom: 22px;
+}
+
+#quick-revision .qr-progress-heading {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+    color: var(--color-navy);
+}
+
+#quick-revision .qr-progress-track {
+    height: 12px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--color-border);
+}
+
+#quick-revision .qr-progress-fill {
+    width: 0%;
+    height: 100%;
+    border-radius: 20px;
+    background: var(--color-teal);
+    transition: width 0.3s ease;
+}
+
+#quick-revision .qr-check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 13px 4px;
+    border-bottom: 1px solid var(--color-border);
+    cursor: pointer;
+    line-height: 1.6;
+}
+
+#quick-revision .qr-check-item input {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 auto;
+    margin-top: 3px;
+    accent-color: var(--color-teal);
+}
+
+#quick-revision .qr-check-item:has(input:checked) span {
+    color: var(--color-slate);
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+#quick-revision .qr-checklist-complete {
+    margin: 20px 0 0;
+    padding: 16px;
+    border-radius: var(--radius-small);
+    background: #E4F6F1;
+    color: #087C69;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Final thought */
+#quick-revision .qr-final-thought {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 30px;
+    padding: 24px;
+    border-radius: var(--radius-large);
+    background: #EAF2FF;
+    border: 1px solid #C9DCFF;
+}
+
+#quick-revision .qr-final-icon {
+    font-size: 30px;
+}
+
+#quick-revision .qr-final-thought strong {
+    color: var(--color-navy);
+}
+
+#quick-revision .qr-final-thought p {
+    margin-bottom: 0;
+    line-height: 1.8;
+}
+
+/* Tablet and iPad layout */
+@media (max-width: 850px) {
+    #quick-revision .qr-concept-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #quick-revision .qr-step-tabs {
+        gap: 6px;
+    }
+
+    #quick-revision .qr-step-tab {
+        font-size: 12px;
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    #quick-revision .qr-concept-grid,
+    #quick-revision .qr-command-grid,
+    #quick-revision .qr-result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #quick-revision .qr-stepper,
+    #quick-revision .qr-checklist {
+        padding: 16px;
+    }
+
+    #quick-revision .qr-step-tabs {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    #quick-revision .qr-step-tab {
+        min-height: 64px;
+        padding: 8px 3px;
+        font-size: 10px;
+    }
+
+    #quick-revision .qr-step-tab span {
+        font-size: 13px;
+    }
+
+    #quick-revision .qr-comparison-columns {
+        grid-template-columns: 1fr;
+    }
+
+    #quick-revision .qr-command-box {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    #quick-revision .qr-final-thought {
+        padding: 18px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    #quick-revision .qr-concept-card,
+    #quick-revision .qr-progress-fill {
+        transition: none;
+    }
+
+    #quick-revision .qr-concept-card:hover {
+        transform: none;
+    }
+}
+
 
 
 
