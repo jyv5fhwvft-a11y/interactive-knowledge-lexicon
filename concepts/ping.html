@@ -4477,197 +4477,633 @@ a network connection can carry over a period of time.
 
     <h2>15. Quick Revision</h2>
 
-    <p>
-        Let's review the most important concepts
-        we learned about Ping. This section provides
-        a quick summary to help you remember how
-        Ping works and how it helps us troubleshoot
-        network communication.
+    <p class="qr-introduction">
+        Let's bring together the most important concepts
+        we learned about Ping. Use these visual summaries,
+        interactive steps and revision checks to strengthen
+        your understanding of network connectivity.
     </p>
 
-    
+    <!-- 15.1 PING AT A GLANCE -->
+
     <h3>15.1 Ping at a Glance</h3>
 
-    <ul>
-        <li><strong>Meaning:</strong> Ping is a network diagnostic utility used to test connectivity between devices.</li>
-        <li><strong>Purpose:</strong> Tests whether a destination responds over an IP network.</li>
-        <li><strong>Protocol:</strong> Internet Control Message Protocol (ICMP).</li>
-        <li><strong>Request:</strong> ICMP Echo Request.</li>
-        <li><strong>Response:</strong> ICMP Echo Reply.</li>
-        <li><strong>Measurement:</strong> Round-trip time (RTT).</li>
-        <li><strong>Common use:</strong> Basic network connectivity troubleshooting.</li>
-    </ul>
+    <p>
+        Think of these seven ideas as the building blocks
+        of everything you learned about Ping.
+    </p>
 
-    
+    <div class="qr-concept-grid">
+
+        <article class="qr-concept-card">
+            <span class="qr-card-icon" aria-hidden="true">📡</span>
+            <h4>Meaning</h4>
+            <p>
+                A network diagnostic utility used to test
+                connectivity between devices.
+            </p>
+        </article>
+
+        <article class="qr-concept-card">
+            <span class="qr-card-icon" aria-hidden="true">🎯</span>
+            <h4>Purpose</h4>
+            <p>
+                Checks whether a destination responds
+                to network probes.
+            </p>
+        </article>
+
+        <article class="qr-concept-card">
+            <span class="qr-card-icon" aria-hidden="true">🌐</span>
+            <h4>Protocol</h4>
+            <p>
+                Internet Control Message Protocol (ICMP),
+                or ICMPv6 for IPv6.
+            </p>
+        </article>
+
+        <article class="qr-concept-card">
+            <span class="qr-card-icon" aria-hidden="true">📤</span>
+            <h4>Request</h4>
+            <p>
+                ICMP Echo Request sent by the
+                source device.
+            </p>
+        </article>
+
+        <article class="qr-concept-card">
+            <span class="qr-card-icon" aria-hidden="true">📥</span>
+            <h4>Response</h4>
+            <p>
+                ICMP Echo Reply returned when
+                the destination responds.
+            </p>
+        </article>
+
+        <article class="qr-concept-card">
+            <span class="qr-card-icon" aria-hidden="true">⏱️</span>
+            <h4>Measurement</h4>
+            <p>
+                Round-trip time (RTT): the time
+                for a request and reply.
+            </p>
+        </article>
+
+        <article class="qr-concept-card">
+            <span class="qr-card-icon" aria-hidden="true">🔧</span>
+            <h4>Common Use</h4>
+            <p>
+                Basic network connectivity
+                troubleshooting.
+            </p>
+        </article>
+
+    </div>
+
+
+    <!-- 15.2 HOW PING WORKS -->
+
     <h3>15.2 How Ping Works — Five Simple Steps</h3>
 
-    <ol>
-        <li><strong>Identify the destination:</strong> The user enters an IP address or hostname.</li>
-
-        <li><strong>Resolve the hostname:</strong> If a hostname is used, DNS helps find its IP address.</li>
-
-        <li><strong>Send a request:</strong> The source computer sends an ICMP Echo Request.</li>
-
-        <li><strong>Receive a reply:</strong> If the destination responds, it sends an ICMP Echo Reply.</li>
-
-        <li><strong>Calculate the RTT:</strong> Ping measures the time taken for the request and reply to complete the round trip.</li>
-    </ol>
-
     <p>
-        <strong>Remember:</strong> If no reply arrives within
-        the allowed time, Ping may report a request timeout.
-        This does not always mean the destination is offline.
+        Follow the five stages to understand how a Ping
+        test travels from your computer to its destination
+        and back.
     </p>
 
-    
+    <div class="qr-stepper" id="qr-stepper">
+
+        <div class="qr-step-tabs"
+             role="group"
+             aria-label="Choose a Ping process step">
+
+            <button type="button"
+                    class="qr-step-tab is-active"
+                    data-step="0"
+                    aria-pressed="true">
+                <span>1</span>
+                Destination
+            </button>
+
+            <button type="button"
+                    class="qr-step-tab"
+                    data-step="1"
+                    aria-pressed="false">
+                <span>2</span>
+                Resolution
+            </button>
+
+            <button type="button"
+                    class="qr-step-tab"
+                    data-step="2"
+                    aria-pressed="false">
+                <span>3</span>
+                Request
+            </button>
+
+            <button type="button"
+                    class="qr-step-tab"
+                    data-step="3"
+                    aria-pressed="false">
+                <span>4</span>
+                Reply
+            </button>
+
+            <button type="button"
+                    class="qr-step-tab"
+                    data-step="4"
+                    aria-pressed="false">
+                <span>5</span>
+                RTT
+            </button>
+
+        </div>
+
+        <div class="qr-step-detail"
+             aria-live="polite"
+             aria-atomic="true">
+
+            <p id="qr-step-count">STEP 1 OF 5</p>
+
+            <h4 id="qr-step-title">
+                Identify the destination
+            </h4>
+
+            <p id="qr-step-description">
+                The user enters the IP address or hostname
+                of the device they want to test.
+            </p>
+
+            <p class="qr-step-example" id="qr-step-example">
+                Example: ping google.com
+            </p>
+
+        </div>
+
+        <div class="qr-step-controls">
+
+            <button type="button"
+                    id="qr-step-previous"
+                    disabled>
+                ← Previous
+            </button>
+
+            <button type="button"
+                    id="qr-step-next">
+                Next Step →
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="qr-important-note">
+        <strong>Remember:</strong>
+        If no reply arrives within the allowed time,
+        Ping may report a request timeout. This does not
+        automatically mean the destination is offline.
+    </div>
+
+
+    <!-- 15.3 IMPORTANT PING COMMANDS -->
+
     <h3>15.3 Important Ping Commands</h3>
 
-    <h4>1. Ping an IP Address</h4>
-
-    <pre><code>ping 8.8.8.8</code></pre>
-
     <p>
-        Tests whether the destination IP address responds
-        to ICMP Echo Requests.
+        These three commands help investigate different
+        parts of network communication.
     </p>
 
-    <h4>2. Ping a Hostname</h4>
+    <div class="qr-command-grid">
 
-    <pre><code>ping google.com</code></pre>
+        <article class="qr-command-card">
 
-    <p>
-        Uses DNS to resolve the hostname into an IP address
-        when necessary, then tests whether that destination responds.
+            <h4>1. Ping an IP Address</h4>
+
+            <p>
+                Tests whether a destination IP address
+                responds to ICMP Echo Requests.
+            </p>
+
+            <div class="qr-command-box">
+                <code id="qr-command-ip">ping 8.8.8.8</code>
+
+                <button type="button"
+                        class="qr-copy-button"
+                        data-copy-target="qr-command-ip">
+                    Copy command
+                </button>
+            </div>
+
+            <p class="qr-command-caption">
+                Tests communication with a specified IP address.
+            </p>
+
+        </article>
+
+        <article class="qr-command-card">
+
+            <h4>2. Ping a Hostname</h4>
+
+            <p>
+                Uses hostname resolution, commonly through DNS,
+                to find the destination IP address when needed.
+            </p>
+
+            <div class="qr-command-box">
+                <code id="qr-command-host">ping google.com</code>
+
+                <button type="button"
+                        class="qr-copy-button"
+                        data-copy-target="qr-command-host">
+                    Copy command
+                </button>
+            </div>
+
+            <p class="qr-command-caption">
+                Tests communication using a hostname.
+            </p>
+
+        </article>
+
+        <article class="qr-command-card">
+
+            <h4>3. Ping the Local Computer</h4>
+
+            <p>
+                Uses the loopback address to test the local
+                computer's networking stack.
+            </p>
+
+            <div class="qr-command-box">
+                <code id="qr-command-loopback">ping 127.0.0.1</code>
+
+                <button type="button"
+                        class="qr-copy-button"
+                        data-copy-target="qr-command-loopback">
+                    Copy command
+                </button>
+            </div>
+
+            <p class="qr-command-caption">
+                Does not test the physical network connection
+                or internet access.
+            </p>
+
+        </article>
+
+    </div>
+
+    <p class="qr-tip">
+        <strong>Tip:</strong>
+        A hostname may be resolved using DNS, a local
+        hosts file or cached information, depending on
+        the computer's configuration.
     </p>
 
-    <h4>3. Ping the Local Computer</h4>
 
-    <pre><code>ping 127.0.0.1</code></pre>
-
-    <p>
-        Tests the local computer's TCP/IP networking software
-        using the loopback address. It does not test the
-        physical network connection or internet access.
-    </p>
-
-    <p>
-        <strong>Remember:</strong> These commands help investigate
-        different parts of network communication.
-    </p>
-
+    <!-- 15.4 UNDERSTANDING PING RESULTS -->
 
     <h3>15.4 Understanding Ping Results</h3>
 
-    <h4>1. Reply Received</h4>
-
     <p>
-        The destination responded with an ICMP Echo Reply.
-        This indicates that it is reachable through the tested
-        network path for this Ping exchange.
+        Different Ping results provide different clues
+        about what may be happening in a network.
     </p>
 
-    <h4>2. Request Timed Out</h4>
+    <div class="qr-result-grid">
 
-    <p>
-        No Ping reply arrived within the allowed time.
-        Possible reasons include network problems,
-        firewall restrictions, or ICMP filtering.
-    </p>
+        <article class="qr-result-card qr-result-success">
 
-    <h4>3. Could Not Find Host</h4>
+            <span class="qr-result-icon" aria-hidden="true">✓</span>
 
-    <p>
-        The computer could not resolve the hostname
-        into an IP address. DNS or hostname configuration
-        may need investigation.
-    </p>
+            <h4>1. Reply Received</h4>
 
-    <h4>4. Packet Loss</h4>
+            <p>
+                The destination returned an ICMP Echo Reply.
+                This indicates that it responded to the
+                tested Ping exchange.
+            </p>
 
-    <p>
-        Some Ping requests did not receive replies.
-        Packet loss may indicate network problems,
-        congestion, or ICMP filtering.
-    </p>
+            <strong>What it suggests:</strong>
+            <p>
+                The destination is reachable for this
+                particular ICMP exchange.
+            </p>
 
-    <p>
-        <strong>Remember:</strong> A successful Ping does not
-        guarantee that a website or application is working
-        correctly. Ping tests responses to ICMP messages,
-        not the complete operation of an application.
-    </p>
+        </article>
 
+        <article class="qr-result-card qr-result-warning">
+
+            <span class="qr-result-icon" aria-hidden="true">⏳</span>
+
+            <h4>2. Request Timed Out</h4>
+
+            <p>
+                No Ping reply arrived within the allowed time.
+            </p>
+
+            <strong>Possible reasons:</strong>
+            <p>
+                Network problems, firewall restrictions,
+                ICMP filtering or an unavailable destination.
+            </p>
+
+        </article>
+
+        <article class="qr-result-card qr-result-error">
+
+            <span class="qr-result-icon" aria-hidden="true">!</span>
+
+            <h4>3. Could Not Find Host</h4>
+
+            <p>
+                The computer could not resolve the hostname
+                into an IP address.
+            </p>
+
+            <strong>What to investigate:</strong>
+            <p>
+                DNS settings, hostname spelling and
+                local name-resolution configuration.
+            </p>
+
+        </article>
+
+        <article class="qr-result-card qr-result-loss">
+
+            <span class="qr-result-icon" aria-hidden="true">↗</span>
+
+            <h4>4. Packet Loss</h4>
+
+            <p>
+                Some Ping requests did not receive replies.
+            </p>
+
+            <strong>Possible reasons:</strong>
+            <p>
+                Network congestion, connectivity problems
+                or ICMP filtering.
+            </p>
+
+        </article>
+
+    </div>
+
+    <div class="qr-important-note">
+        <strong>Important distinction:</strong>
+        A successful Ping does not guarantee that a website
+        or application is working correctly. Ping tests
+        responses to ICMP messages, not the complete
+        operation of an application.
+    </div>
+
+
+    <!-- 15.5 IMPORTANT DIFFERENCES -->
 
     <h3>15.5 Important Differences to Remember</h3>
 
-    <h4>1. Ping vs. Traceroute</h4>
-
-    <ul>
-        <li><strong>Ping:</strong> Tests whether a destination responds to ICMP Echo Requests.</li>
-        <li><strong>Traceroute:</strong> Shows the network path and intermediate routers toward a destination.</li>
-    </ul>
-
-    <h4>2. Latency vs. Bandwidth</h4>
-
-    <ul>
-        <li><strong>Latency:</strong> Measures communication delay, often observed through Ping's round-trip time.</li>
-        <li><strong>Bandwidth:</strong> Describes how much data a network connection can carry over time.</li>
-    </ul>
-
-    <h4>3. Request Timed Out vs. Could Not Find Host</h4>
-
-    <ul>
-        <li><strong>Request timed out:</strong> No Ping reply arrived within the allowed time.</li>
-        <li><strong>Could not find host:</strong> The computer could not resolve the hostname into an IP address.</li>
-    </ul>
-
-    <h4>4. Successful Ping vs. Successful Website Access</h4>
-
-    <ul>
-        <li><strong>Successful Ping:</strong> The destination responded to an ICMP Echo Request.</li>
-        <li><strong>Successful website access:</strong> The website's web service and application are working well enough to provide the requested content.</li>
-    </ul>
-
     <p>
-        <strong>Remember:</strong> These concepts describe
-        different aspects of networking. Understanding
-        their differences helps us troubleshoot problems
-        more accurately.
+        These comparisons help prevent common networking
+        misunderstandings.
     </p>
 
-    
+    <div class="qr-comparison-list">
+
+        <article class="qr-comparison-card">
+
+            <h4>1. Ping vs. Traceroute</h4>
+
+            <div class="qr-comparison-columns">
+
+                <div class="qr-comparison-side">
+                    <span class="qr-comparison-label">PING</span>
+                    <p>
+                        Tests whether a destination responds
+                        to ICMP Echo Requests.
+                    </p>
+                </div>
+
+                <div class="qr-comparison-side">
+                    <span class="qr-comparison-label">TRACEROUTE</span>
+                    <p>
+                        Reveals responding network hops
+                        along the path toward a destination.
+                    </p>
+                </div>
+
+            </div>
+
+            <p class="qr-comparison-note">
+                Some routers may not respond to traceroute probes.
+            </p>
+
+        </article>
+
+
+        <article class="qr-comparison-card">
+
+            <h4>2. Latency vs. Bandwidth</h4>
+
+            <div class="qr-comparison-columns">
+
+                <div class="qr-comparison-side">
+                    <span class="qr-comparison-label">LATENCY</span>
+                    <p>
+                        Describes communication delay.
+                        Ping helps observe round-trip time.
+                    </p>
+                </div>
+
+                <div class="qr-comparison-side">
+                    <span class="qr-comparison-label">BANDWIDTH</span>
+                    <p>
+                        Describes how much data a connection
+                        can carry over time.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="qr-comparison-card">
+
+            <h4>3. Request Timed Out vs. Could Not Find Host</h4>
+
+            <div class="qr-comparison-columns">
+
+                <div class="qr-comparison-side">
+                    <span class="qr-comparison-label">REQUEST TIMED OUT</span>
+                    <p>
+                        No Ping reply arrived within
+                        the allowed time.
+                    </p>
+                </div>
+
+                <div class="qr-comparison-side">
+                    <span class="qr-comparison-label">COULD NOT FIND HOST</span>
+                    <p>
+                        The computer could not resolve
+                        the hostname into an IP address.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="qr-comparison-card">
+
+            <h4>4. Successful Ping vs. Successful Website Access</h4>
+
+            <div class="qr-comparison-columns">
+
+                <div class="qr-comparison-side">
+                    <span class="qr-comparison-label">SUCCESSFUL PING</span>
+                    <p>
+                        The destination responded to
+                        an ICMP Echo Request.
+                    </p>
+                </div>
+
+                <div class="qr-comparison-side">
+                    <span class="qr-comparison-label">SUCCESSFUL WEBSITE ACCESS</span>
+                    <p>
+                        The web service and application
+                        provide the requested content.
+                    </p>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+    <p class="qr-tip">
+        <strong>Remember:</strong>
+        These concepts describe different aspects of
+        networking. Understanding their differences
+        helps us troubleshoot more accurately.
+    </p>
+
+
+    <!-- 15.6 FINAL KEY TAKEAWAYS -->
+
     <h3>15.6 Final Key Takeaways</h3>
 
-    <ul>
-        <li>Ping is a network diagnostic utility.</li>
-
-        <li>Ping uses ICMP Echo Request and Echo Reply messages.</li>
-
-        <li>Ping helps test whether a destination responds.</li>
-
-        <li>DNS translates hostnames into IP addresses.</li>
-
-        <li>Routers forward packets between networks.</li>
-
-        <li>Latency describes communication delay.</li>
-
-        <li>Bandwidth describes data-carrying capacity over time.</li>
-
-        <li>Ping reports round-trip time and can help identify missing replies.</li>
-
-        <li>A timeout does not always mean a device is offline.</li>
-
-        <li>A successful Ping does not guarantee that an application works.</li>
-    </ul>
-
     <p>
-        <strong>Final thought:</strong> Ping is a simple but
-        valuable tool for understanding network connectivity
-        and investigating communication problems.
+        Check off each point as you revise it.
+        Your progress indicator will help you see
+        how much of the lesson you have reviewed.
     </p>
 
+    <div class="qr-checklist" id="qr-checklist">
+
+        <div class="qr-checklist-progress">
+
+            <div class="qr-progress-heading">
+                <strong>Revision progress</strong>
+                <span id="qr-progress-count">0 of 10 completed</span>
+            </div>
+
+            <div class="qr-progress-track"
+                 role="progressbar"
+                 aria-label="Quick revision progress"
+                 aria-valuemin="0"
+                 aria-valuemax="10"
+                 aria-valuenow="0"
+                 id="qr-progress-bar">
+
+                <div class="qr-progress-fill"
+                     id="qr-progress-fill"></div>
+
+            </div>
+
+        </div>
+
+        <label class="qr-check-item">
+            <input type="checkbox">
+            <span>Ping is a network diagnostic utility.</span>
+        </label>
+
+        <label class="qr-check-item">
+            <input type="checkbox">
+            <span>Ping uses ICMP Echo Request and Echo Reply messages.</span>
+        </label>
+
+        <label class="qr-check-item">
+            <input type="checkbox">
+            <span>Ping helps test whether a destination responds.</span>
+        </label>
+
+        <label class="qr-check-item">
+            <input type="checkbox">
+            <span>DNS commonly helps resolve hostnames into IP addresses.</span>
+        </label>
+
+        <label class="qr-check-item">
+            <input type="checkbox">
+            <span>Routers forward packets between networks.</span>
+        </label>
+
+        <label class="qr-check-item">
+            <input type="checkbox">
+            <span>Latency describes communication delay.</span>
+        </label>
+
+        <label class="qr-check-item">
+            <input type="checkbox">
+            <span>Bandwidth describes data-carrying capacity over time.</span>
+        </label>
+
+        <label class="qr-check-item">
+            <input type="checkbox">
+            <span>Ping reports round-trip time and can reveal missing replies.</span>
+        </label>
+
+        <label class="qr-check-item">
+            <input type="checkbox">
+            <span>A timeout does not always mean a device is offline.</span>
+        </label>
+
+        <label class="qr-check-item">
+            <input type="checkbox">
+            <span>A successful Ping does not guarantee that an application works.</span>
+        </label>
+
+        <p class="qr-checklist-complete"
+           id="qr-checklist-complete"
+           hidden>
+            Excellent! You have reviewed all ten key takeaways.
+        </p>
+
+    </div>
+
+    <div class="qr-final-thought">
+
+        <span class="qr-final-icon" aria-hidden="true">💡</span>
+
+        <div>
+            <strong>Final thought</strong>
+
+            <p>
+                Ping is a simple but valuable tool for
+                understanding network connectivity and
+                investigating communication problems.
+                Its real value comes from interpreting
+                the results correctly.
+            </p>
+        </div>
+
+    </div>
 
 </section>
+
+        
 
         
 </main>
