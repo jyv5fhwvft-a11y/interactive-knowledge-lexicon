@@ -1632,6 +1632,415 @@
 <!-- ================================================== -->
 
 
+<!-- ================================================== -->
+<!-- SECTION 6: COMPONENTS AND ARCHITECTURE             -->
+<!-- Concept: IKL-OS-002 — Process                     -->
+<!-- Purpose: Explain process-management components    -->
+<!-- and provide an interactive PCB component explorer.-->
+<!-- ================================================== -->
+
+<section id="components-architecture" class="concept-section">
+
+    <!-- BLOCK 6.1: SECTION HEADING -->
+
+    <h2>6. Components and Architecture</h2>
+
+    <p>
+        A process is not simply a program running on a computer.
+        The operating system must maintain information about
+        the process so that it can identify it, manage its
+        execution, and coordinate its use of resources.
+    </p>
+
+
+    <!-- BLOCK 6.2: INTRODUCTION TO PROCESS MANAGEMENT -->
+
+    <h3>6.1 How Does the Operating System Manage a Process?</h3>
+
+    <p>
+        Imagine a computer running a web browser, a music player,
+        and a file manager at the same time.
+    </p>
+
+    <p>
+        The operating system must distinguish these processes
+        and keep track of their individual execution states,
+        CPU requirements, memory information, and resources.
+    </p>
+
+    <p>
+        To do this, the operating system maintains management
+        information associated with each process.
+    </p>
+
+    <div class="concept-note">
+
+        <h4>Central Concept: Process Control Block (PCB)</h4>
+
+        <p>
+            A <strong>Process Control Block (PCB)</strong> is
+            an operating-system data structure that contains
+            information used to manage a particular process.
+        </p>
+
+        <p>
+            Think of it as the operating system's management
+            record for that process.
+        </p>
+
+    </div>
+
+
+    <!-- BLOCK 6.3: PURPOSE OF THE PCB -->
+
+    <h3>6.2 Why Does the Operating System Need a PCB?</h3>
+
+    <p>
+        Without process-management information, the operating
+        system would have difficulty keeping track of individual
+        processes and managing their execution.
+    </p>
+
+    <p>
+        The PCB helps the operating system maintain information
+        needed for tasks such as:
+    </p>
+
+    <ul>
+
+        <li>
+            Identifying a particular process.
+        </li>
+
+        <li>
+            Tracking whether the process is ready, running,
+            or waiting.
+        </li>
+
+        <li>
+            Preserving processor execution information.
+        </li>
+
+        <li>
+            Managing CPU scheduling information.
+        </li>
+
+        <li>
+            Keeping track of memory-management information.
+        </li>
+
+        <li>
+            Managing associated input/output and other resources.
+        </li>
+
+    </ul>
+
+
+    <!-- BLOCK 6.4: INTERACTIVE EXPLORER INTRODUCTION -->
+
+    <h3>6.3 Explore the Information Associated with a PCB</h3>
+
+    <p>
+        The following interactive explorer introduces seven
+        learning categories of process-management information.
+    </p>
+
+    <p>
+        Select a component to see its purpose and the information
+        it represents.
+    </p>
+
+    <p>
+        These are educational categories, not a universal
+        physical layout. Different operating systems may
+        organise process-management information differently.
+    </p>
+
+    <p>
+    For this interactive explorer, input/output and
+    accounting information are combined into one
+    learning category, even though Section 5 introduces
+    them separately.
+</p>
+
+
+    <!-- BLOCK 6.5: INTERACTIVE PCB COMPONENT EXPLORER -->
+
+    <div id="process-component-explorer"
+         class="component-explorer"
+         aria-label="Interactive Process Control Block component explorer">
+
+        <!-- BLOCK 6.5.1: COMPONENT SELECTION CONTROLS -->
+
+        <div class="component-explorer-controls">
+
+            <button type="button"
+                    class="component-explorer-button is-selected"
+                    data-component-key="pid"
+                    aria-pressed="true">
+                Process ID
+            </button>
+
+            <button type="button"
+                    class="component-explorer-button"
+                    data-component-key="state"
+                    aria-pressed="false">
+                Process State
+            </button>
+
+            <button type="button"
+                    class="component-explorer-button"
+                    data-component-key="program-counter"
+                    aria-pressed="false">
+                Program Counter
+            </button>
+
+            <button type="button"
+                    class="component-explorer-button"
+                    data-component-key="cpu-registers"
+                    aria-pressed="false">
+                CPU Registers
+            </button>
+
+            <button type="button"
+                    class="component-explorer-button"
+                    data-component-key="scheduling"
+                    aria-pressed="false">
+                Scheduling Information
+            </button>
+
+            <button type="button"
+                    class="component-explorer-button"
+                    data-component-key="memory"
+                    aria-pressed="false">
+                Memory Information
+            </button>
+
+            <button type="button"
+                    class="component-explorer-button"
+                    data-component-key="io-accounting"
+                    aria-pressed="false">
+                I/O and Accounting
+            </button>
+
+        </div>
+
+        <!-- END BLOCK 6.5.1 -->
+
+
+        <!-- BLOCK 6.5.2: COMPONENT INFORMATION DISPLAY -->
+
+        <div class="component-explorer-display"
+             aria-live="polite">
+
+            <p data-explorer-label
+               class="component-explorer-label">
+                Component 01
+            </p>
+
+            <h3 data-explorer-title>
+                Process ID (PID)
+            </h3>
+
+            <p data-explorer-description>
+                The Process ID is a number the operating system
+                uses to identify a process.
+            </p>
+
+            <div data-explorer-details
+                 class="component-explorer-details">
+
+                <ul>
+                    <li>Each active process has an identifier.</li>
+                    <li>The operating system uses the PID to distinguish processes.</li>
+                    <li>System tools can display a process using its PID.</li>
+                    <li>A PID may be reused after a process terminates.</li>
+                </ul>
+
+            </div>
+
+            <p data-explorer-status
+               class="component-explorer-status"
+               role="status">
+                Process ID (PID) selected.
+            </p>
+
+        </div>
+
+        <!-- END BLOCK 6.5.2 -->
+
+    </div>
+
+    <!-- END BLOCK 6.5 -->
+
+
+    <!-- BLOCK 6.6: HOW THE INFORMATION WORKS TOGETHER -->
+
+    <h3>6.4 How Do These Components Work Together?</h3>
+
+    <p>
+        The information associated with a process serves
+        different purposes, but the operating system uses
+        it together to manage execution.
+    </p>
+
+    <div class="concept-comparison">
+
+        <div class="comparison-item">
+
+            <h4>Identity and State</h4>
+
+            <p>
+                The PID identifies the process, while its
+                state describes its current execution situation.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Processor Execution</h4>
+
+            <p>
+                The program counter and saved CPU register
+                information help preserve the execution context.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>CPU Scheduling</h4>
+
+            <p>
+                Scheduling information helps the operating
+                system decide when a process should receive
+                CPU time.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Memory Management</h4>
+
+            <p>
+                Memory-management information helps the
+                operating system manage the process's
+                address space.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Input/Output and Accounting</h4>
+
+            <p>
+                These categories help track associated
+                resources, files, and resource usage.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- BLOCK 6.7: PCB VERSUS PROCESS MEMORY -->
+
+    <h3>6.5 Is the PCB the Same as the Process's Memory?</h3>
+
+    <p>
+        No. The PCB and the process address space are
+        related to process management, but they are
+        different things.
+    </p>
+
+    <ul>
+
+        <li>
+            <strong>PCB:</strong>
+            Contains operating-system management
+            information about the process.
+        </li>
+
+        <li>
+            <strong>Process address space:</strong>
+            Provides the process with its organised
+            view of memory.
+        </li>
+
+        <li>
+            <strong>CPU registers:</strong>
+            Are hardware storage locations inside
+            the processor.
+        </li>
+
+    </ul>
+
+    <div class="concept-note">
+
+        <h4>Important Technical Distinction</h4>
+
+        <p>
+            The PCB is not the process's entire memory,
+            and it is not the CPU itself.
+        </p>
+
+        <p>
+            Some PCB information may refer to other
+            structures or resources used to manage
+            the process. This does not mean that all
+            of those structures are physically stored
+            inside the PCB.
+        </p>
+
+    </div>
+
+
+    <!-- BLOCK 6.8: SECTION SUMMARY -->
+
+    <h3>6.6 Section Summary</h3>
+
+    <p>
+        The operating system maintains information
+        about each process so that it can identify
+        the process, track its state, preserve
+        execution information, and manage its
+        resource requirements.
+    </p>
+
+    <p>
+        The Process Control Block is a central
+        concept for understanding how this
+        process-management information is organised.
+    </p>
+
+
+    <!-- BLOCK 6.9: SECTION LEARNING OUTCOME -->
+
+    <div class="concept-note">
+
+        <h4>What You Should Understand</h4>
+
+        <ul>
+            <li>What a Process Control Block represents.</li>
+            <li>Why the operating system maintains process information.</li>
+            <li>The purpose of the seven PCB learning categories.</li>
+            <li>How process-management information supports execution.</li>
+            <li>The difference between a PCB and a process address space.</li>
+        </ul>
+
+    </div>
+
+    <!-- END BLOCK 6.9 -->
+
+</section>
+
+<!-- ================================================== -->
+<!-- END SECTION 6                                     -->
+<!-- ================================================== -->
+
 
 
 
