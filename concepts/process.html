@@ -2593,6 +2593,218 @@
 
 <!-- END SECTION 7 -->
 
+        
+<!-- =========================================================
+     SECTION 8 — INTERACTIVE PROCESS LIFECYCLE SIMULATION
+     Concept 002: Process — A Program in Execution
+     Allows learners to control a process through its lifecycle.
+     ========================================================= -->
+
+<section id="interactive-simulation" class="concept-section">
+
+    <h2>8. Interactive Simulation: Control a Process</h2>
+
+    <p>
+        You have learned how a process moves through its five basic
+        states. Now you will control a process yourself.
+    </p>
+
+    <p>
+        Imagine that you are the operating system. Your job is to
+        create a process, give it CPU time, manage its waiting periods,
+        and eventually terminate it.
+    </p>
+
+    <div class="concept-note">
+        <strong>Your mission:</strong>
+        Use the controls below to move one process through its lifecycle.
+        Observe how its state changes and why each transition occurs.
+    </div>
+
+    <!-- SIMULATION INTRODUCTION -->
+
+    <h3>8.1 Meet Your Process</h3>
+
+    <p>
+        You will control one example process named
+        <strong>Process A — Web Browser</strong>.
+        Start by creating it, then decide what should happen next.
+    </p>
+
+    <!-- SIMULATION STATUS -->
+
+    <div class="process-sim-panel">
+
+        <div class="process-sim-status">
+
+            <div class="process-sim-status-item">
+                <span class="process-sim-label">PROCESS</span>
+                <strong>Process A</strong>
+                <span>Web Browser</span>
+            </div>
+
+            <div class="process-sim-status-item">
+                <span class="process-sim-label">CURRENT STATE</span>
+                <strong id="processSimState">New</strong>
+            </div>
+
+            <div class="process-sim-status-item">
+                <span class="process-sim-label">CPU STATUS</span>
+                <strong id="processSimCPU">Available</strong>
+            </div>
+
+        </div>
+
+        <!-- PROCESS STATE VISUALISATION -->
+
+        <h4>Process Lifecycle</h4>
+
+        <div class="process-sim-states">
+
+            <div class="process-sim-state active" data-state="new">
+                <span>1</span>
+                <strong>New</strong>
+            </div>
+
+            <div class="process-sim-state" data-state="ready">
+                <span>2</span>
+                <strong>Ready</strong>
+            </div>
+
+            <div class="process-sim-state" data-state="running">
+                <span>3</span>
+                <strong>Running</strong>
+            </div>
+
+            <div class="process-sim-state" data-state="waiting">
+                <span>4</span>
+                <strong>Waiting</strong>
+            </div>
+
+            <div class="process-sim-state" data-state="terminated">
+                <span>5</span>
+                <strong>Terminated</strong>
+            </div>
+
+        </div>
+
+        <!-- SIMULATION EXPLANATION -->
+
+        <div class="process-sim-explanation" aria-live="polite">
+
+            <h4 id="processSimHeading">The process has not been created yet.</h4>
+
+            <p id="processSimExplanation">
+                Select Create Process to ask the operating system
+                to create Process A.
+            </p>
+
+        </div>
+
+        <!-- SIMULATION CONTROLS -->
+
+        <h4>Control the Process</h4>
+
+        <p>
+            Choose an action. The simulation will only allow actions
+            that are valid for the process's current state.
+        </p>
+
+        <div class="process-sim-controls">
+
+            <button type="button"
+                class="process-sim-button"
+                data-action="create">
+                Create Process
+            </button>
+
+            <button type="button"
+                class="process-sim-button"
+                data-action="dispatch"
+                disabled>
+                Dispatch to CPU
+            </button>
+
+            <button type="button"
+                class="process-sim-button"
+                data-action="request-io"
+                disabled>
+                Request I/O
+            </button>
+
+            <button type="button"
+                class="process-sim-button"
+                data-action="complete-io"
+                disabled>
+                Complete I/O
+            </button>
+
+            <button type="button"
+                class="process-sim-button"
+                data-action="time-slice"
+                disabled>
+                Time Slice Expires
+            </button>
+
+            <button type="button"
+                class="process-sim-button"
+                data-action="terminate"
+                disabled>
+                Finish Execution
+            </button>
+
+            <button type="button"
+                class="process-sim-reset"
+                data-action="reset">
+                Reset Simulation
+            </button>
+
+        </div>
+
+        <!-- EVENT HISTORY -->
+
+        <h4>What Has Happened?</h4>
+
+        <ol id="processSimHistory" class="process-sim-history" aria-live="polite">
+            <li>Simulation ready. Process A has not yet been created.</li>
+        </ol>
+
+    </div>
+
+    <!-- LEARNING GUIDANCE -->
+
+    <h3>8.2 What Should You Observe?</h3>
+
+    <ul>
+        <li>Creating a process moves it from New to Ready.</li>
+        <li>Dispatching it moves it from Ready to Running.</li>
+        <li>Requesting I/O moves it from Running to Waiting.</li>
+        <li>Completing I/O moves it from Waiting to Ready.</li>
+        <li>When its time slice expires, it can return from Running to Ready.</li>
+        <li>Finishing execution moves it from Running to Terminated.</li>
+    </ul>
+
+    <div class="concept-note">
+        <strong>Think like an operating system:</strong>
+        Why does a process waiting for I/O leave the CPU?
+        Why does a process returning from Waiting enter Ready rather
+        than immediately entering Running?
+    </div>
+
+    <h3>8.3 Important Simulation Note</h3>
+
+    <p>
+        This is a simplified five-state teaching model. It represents
+        one process and one CPU at a time. Real operating systems manage
+        many processes and may use additional states, scheduling rules,
+        and more complex resource-management mechanisms.
+    </p>
+
+</section>
+
+<!-- END SECTION 8 -->
+
+
 
 
 
