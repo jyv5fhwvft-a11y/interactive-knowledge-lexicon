@@ -1095,6 +1095,210 @@ body {
 
 }
 
+
+/* =========================================================
+   19. PROCESS DIAGRAMS — SECTION 9
+   Concept 002: Process
+   ========================================================= */
+
+/* Diagram cards */
+
+.process-diagram-card {
+    width: 100%;
+    min-width: 0;
+
+    margin: 26px 0;
+    padding: 24px;
+
+    background: #F8FAFC;
+
+    border: 1px solid var(--process-border);
+    border-radius: var(--process-radius-large);
+
+    box-shadow: var(--process-shadow);
+}
+
+.process-diagram-card > h4 {
+    margin: 0 0 8px;
+
+    color: var(--process-navy);
+
+    font-size: 19px;
+    line-height: 1.4;
+    font-weight: 750;
+}
+
+.process-diagram-caption {
+    margin: 0 0 18px !important;
+
+    color: var(--process-muted) !important;
+
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+}
+
+/* Horizontally scrollable diagram area */
+
+.process-diagram-scroll {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 18px 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    background: var(--process-white);
+
+    border: 1px solid var(--process-border);
+    border-radius: var(--process-radius-medium);
+}
+
+/* Keep the lifecycle diagram readable */
+
+.process-lifecycle-svg {
+    display: block;
+
+    width: 100%;
+    min-width: 900px;
+    max-width: none;
+
+    height: auto;
+}
+
+/* Lifecycle state labels */
+
+.process-lifecycle-svg .diagram-state-label {
+    fill: var(--process-navy);
+
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+}
+
+/* Lifecycle transition labels */
+
+.process-lifecycle-svg .diagram-arrow-label {
+    fill: var(--process-text);
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 650;
+}
+
+/* Lifecycle legend */
+
+.process-lifecycle-svg .diagram-legend-heading {
+    fill: var(--process-navy);
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+}
+
+.process-lifecycle-svg .diagram-legend-text {
+    fill: var(--process-muted);
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Keep the sequence diagram at its designed width */
+
+.process-sequence-svg {
+    display: block;
+
+    width: 100%;
+    min-width: 1080px;
+    max-width: none;
+
+    height: auto;
+}
+
+/* Sequence diagram participant headers */
+
+.process-sequence-svg .sequence-participant rect {
+    fill: var(--process-blue-light);
+
+    stroke: var(--process-blue);
+    stroke-width: 2;
+}
+
+.process-sequence-svg .sequence-participant text {
+    fill: var(--process-navy);
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+}
+
+/* Vertical participant lifelines */
+
+.process-sequence-svg .sequence-lifelines path {
+    fill: none;
+
+    stroke: #94A3B8;
+    stroke-width: 1.5;
+    stroke-dasharray: 6 6;
+}
+
+/* Horizontal messages between participants */
+
+.process-sequence-svg .sequence-message {
+    fill: none;
+
+    stroke: var(--process-blue);
+    stroke-width: 2.5;
+}
+
+/* Sequence message descriptions */
+
+.process-sequence-svg .sequence-label {
+    fill: var(--process-text);
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 650;
+}
+
+/* Tablet and iPad spacing */
+
+@media (max-width: 900px) {
+    .process-diagram-card {
+        padding: 20px;
+    }
+}
+
+/* Narrow mobile screens */
+
+@media (max-width: 600px) {
+    .process-diagram-card {
+        padding: 16px;
+    }
+
+    .process-diagram-card > h4 {
+        font-size: 17px;
+    }
+
+    .process-diagram-caption {
+        font-size: 13px !important;
+    }
+}
+
+/* =========================================================
+   END OF SECTION 19 — PROCESS DIAGRAMS
+   ========================================================= */
+
+
 /* =========================================================
    END OF PROCESS STYLESHEET
    ========================================================= */
