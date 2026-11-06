@@ -724,6 +724,378 @@ body {
 }
 
 
+
+
+
+/* =========================================================
+   18. INTERACTIVE PROCESS LIFECYCLE SIMULATION
+   Concept 002 — Section 8
+   ========================================================= */
+
+/* Main simulation panel */
+
+.process-sim-panel {
+    width: 100%;
+    margin: 26px 0;
+    padding: 26px;
+
+    background: #F8FAFC;
+
+    border: 1px solid var(--process-border);
+    border-radius: var(--process-radius-large);
+
+    box-shadow: var(--process-shadow);
+}
+
+
+/* Process and CPU status */
+
+.process-sim-status {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+
+    margin-bottom: 30px;
+}
+
+.process-sim-status-item {
+    min-width: 0;
+    padding: 17px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    background: var(--process-white);
+
+    border: 1px solid var(--process-border);
+    border-radius: var(--process-radius-medium);
+}
+
+.process-sim-label {
+    color: var(--process-muted);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+.process-sim-status-item strong {
+    color: var(--process-navy);
+
+    font-size: 18px;
+    overflow-wrap: anywhere;
+}
+
+.process-sim-status-item span:last-child {
+    color: var(--process-muted);
+    font-size: 13px;
+}
+
+
+/* Lifecycle state display */
+
+.process-sim-states {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin: 18px 0 28px;
+}
+
+.process-sim-state {
+    min-width: 0;
+    min-height: 105px;
+
+    padding: 15px 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    color: var(--process-muted);
+    background: var(--process-white);
+
+    border: 2px solid var(--process-border);
+    border-radius: var(--process-radius-medium);
+
+    text-align: center;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.process-sim-state span {
+    width: 29px;
+    height: 29px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--process-navy);
+    background: var(--process-blue-light);
+
+    border-radius: 50%;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.process-sim-state strong {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.process-sim-state.active {
+    color: var(--process-white);
+    background: var(--process-blue);
+
+    border-color: var(--process-blue);
+
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18);
+}
+
+.process-sim-state.active span {
+    color: var(--process-navy);
+    background: var(--process-white);
+}
+
+.process-sim-state.active strong {
+    color: var(--process-white);
+}
+
+
+/* Explanation panel */
+
+.process-sim-explanation {
+    margin: 22px 0;
+    padding: 22px;
+
+    background: var(--process-teal-light);
+
+    border-left: 5px solid var(--process-teal);
+    border-radius: var(--process-radius-small);
+}
+
+.process-sim-explanation h4 {
+    margin: 0 0 10px;
+
+    color: var(--process-navy);
+
+    font-size: 18px;
+}
+
+.process-sim-explanation p {
+    margin: 0;
+
+    color: var(--process-text);
+
+    line-height: 1.75;
+}
+
+
+/* Simulation controls */
+
+.process-sim-controls {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin: 18px 0 28px;
+}
+
+.process-sim-button,
+.process-sim-reset {
+    width: 100%;
+    min-height: 52px;
+
+    padding: 13px 16px;
+
+    border: 1px solid var(--process-blue);
+    border-radius: var(--process-radius-small);
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.process-sim-button {
+    color: var(--process-white);
+    background: var(--process-blue);
+}
+
+.process-sim-button:not(:disabled):hover {
+    background: var(--process-navy);
+    border-color: var(--process-navy);
+}
+
+.process-sim-button:disabled {
+    color: #94A3B8;
+    background: #E2E8F0;
+
+    border-color: #CBD5E1;
+
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.process-sim-reset {
+    grid-column: 1 / -1;
+
+    color: var(--process-navy);
+    background: var(--process-white);
+
+    border-color: var(--process-border);
+}
+
+.process-sim-reset:hover {
+    color: var(--process-white);
+    background: var(--process-navy);
+
+    border-color: var(--process-navy);
+}
+
+.process-sim-button:focus-visible,
+.process-sim-reset:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.35);
+    outline-offset: 3px;
+}
+
+
+/* Event history */
+
+.process-sim-history {
+    margin: 16px 0 0;
+    padding: 18px 18px 18px 42px;
+
+    background: var(--process-white);
+
+    border: 1px solid var(--process-border);
+    border-radius: var(--process-radius-medium);
+}
+
+.process-sim-history li {
+    margin-bottom: 12px;
+    padding-left: 5px;
+
+    color: var(--process-text);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.process-sim-history li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Tablet layout */
+
+@media (max-width: 900px) {
+
+    .process-sim-panel {
+        padding: 20px;
+    }
+
+    .process-sim-states {
+        gap: 7px;
+    }
+
+    .process-sim-state {
+        padding: 12px 5px;
+    }
+
+}
+
+
+/* Mobile and narrow iPad layout */
+
+@media (max-width: 600px) {
+
+    .process-sim-panel {
+        padding: 15px;
+    }
+
+    .process-sim-status {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .process-sim-status-item {
+        padding: 14px;
+    }
+
+    .process-sim-states {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+    }
+
+    .process-sim-state {
+        min-height: 90px;
+    }
+
+    .process-sim-state:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .process-sim-controls {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .process-sim-reset {
+        grid-column: auto;
+    }
+
+    .process-sim-explanation {
+        padding: 17px;
+    }
+
+    .process-sim-history {
+        padding: 15px 14px 15px 35px;
+    }
+
+}
+
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .process-sim-state,
+    .process-sim-button,
+    .process-sim-reset {
+        transition: none;
+    }
+
+}
+
 /* =========================================================
    END OF PROCESS STYLESHEET
    ========================================================= */
+
