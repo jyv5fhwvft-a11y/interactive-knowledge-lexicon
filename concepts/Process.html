@@ -964,6 +964,674 @@
 
 <!-- END SECTION 4: BEGINNER EXPLANATION -->
 
+        
+<!-- ================================================== -->
+<!-- SECTION 5: TECHNICAL EXPLANATION                   -->
+<!-- ================================================== -->
+
+<section id="technical-explanation" class="concept-section">
+
+    <!-- BLOCK 5.1: SECTION HEADING -->
+
+    <h2>5. Technical Explanation</h2>
+
+    <!-- BLOCK 5.2: INTRODUCTION -->
+
+    <h3>5.1 What Happens Inside a Process?</h3>
+
+    <p>
+        So far, we have understood that a process is
+        an executing instance of a program.
+        Now let's examine how the operating system
+        represents, tracks, and manages that process
+        internally.
+    </p>
+
+    <p>
+        A process is more than the program instructions
+        currently being executed. It also has an
+        execution state, memory space, resources,
+        and management information.
+    </p>
+
+    <p>
+        The operating system maintains information
+        about each process so that it can schedule
+        execution, manage resources, and resume
+        a process when necessary.
+    </p>
+
+    <!-- BLOCK 5.3: PROCESS CONTROL BLOCK -->
+
+    <h3>5.2 Process Control Block (PCB)</h3>
+
+    <p>
+        A <strong>Process Control Block (PCB)</strong>
+        is an operating-system data structure that
+        stores important information about a process.
+    </p>
+
+    <p>
+        Think of the PCB as the operating system's
+        management record for a particular process.
+        It helps the operating system identify the
+        process, track its state, and manage its
+        execution.
+    </p>
+
+    <p>
+        Each process has an associated process
+        management record. The exact organisation
+        and fields of this record depend on the
+        operating system.
+    </p>
+
+    <div class="concept-note">
+
+        <h4>Important Technical Distinction</h4>
+
+        <p>
+            The PCB is not the program itself.
+            It is operating-system information
+            maintained to manage the process.
+        </p>
+
+    </div>
+
+    <!-- BLOCK 5.4: PCB INFORMATION -->
+
+    <h3>5.3 What Information Does a PCB Contain?</h3>
+
+    <p>
+        A PCB can contain several categories of
+        information. The following are common
+        teaching categories used to understand
+        its responsibilities.
+    </p>
+
+    <ul>
+
+        <li>
+            <strong>Process identification:</strong>
+            Information such as the Process ID (PID)
+            used to identify the process.
+        </li>
+
+        <li>
+            <strong>Process state:</strong>
+            Information indicating whether the process
+            is new, ready, running, waiting, or terminated.
+        </li>
+
+        <li>
+            <strong>Program counter:</strong>
+            The address of the next instruction
+            the process should execute when resumed.
+        </li>
+
+        <li>
+            <strong>CPU registers:</strong>
+            Saved processor register values needed
+            to restore the process's execution context.
+        </li>
+
+        <li>
+            <strong>CPU scheduling information:</strong>
+            Information such as priority and
+            scheduling-queue relationships.
+        </li>
+
+        <li>
+            <strong>Memory management information:</strong>
+            Information used to manage the process's
+            address space, such as page-table references
+            or related memory-management data.
+        </li>
+
+        <li>
+            <strong>Input/output and file information:</strong>
+            Information about resources associated
+            with the process, such as open files
+            and allocated I/O resources.
+        </li>
+
+        <li>
+            <strong>Accounting information:</strong>
+            Information such as CPU time consumed
+            and other resource-usage records.
+        </li>
+
+    </ul>
+
+    <p>
+        These categories explain the kinds of
+        information an operating system may maintain.
+        They do not imply that every operating system
+        stores every item in one identical PCB structure.
+    </p>
+
+    <!-- BLOCK 5.5: PROCESS IDENTIFICATION -->
+
+    <h3>5.4 Process ID (PID)</h3>
+
+    <p>
+        A <strong>Process ID (PID)</strong> is a
+        numerical identifier assigned to a process
+        by the operating system.
+    </p>
+
+    <p>
+        The operating system uses the PID to
+        distinguish one process from another
+        while managing running processes.
+    </p>
+
+    <p>
+        For example, a system may have processes
+        running for a web browser, a music player,
+        and a file manager. Each process can have
+        its own PID.
+    </p>
+
+    <div class="concept-comparison">
+
+        <div class="comparison-item">
+
+            <h4>Process A</h4>
+
+            <p>
+                PID: 1204
+            </p>
+
+            <p>
+                Example: Web browser process.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Process B</h4>
+
+            <p>
+                PID: 2380
+            </p>
+
+            <p>
+                Example: Music player process.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Process C</h4>
+
+            <p>
+                PID: 3516
+            </p>
+
+            <p>
+                Example: File manager process.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="concept-note">
+
+        <h4>Remember</h4>
+
+        <p>
+            A PID identifies a process. It is not
+            the process's memory address, program
+            instructions, or execution state.
+        </p>
+
+        <p>
+            PIDs may be reused by the operating
+            system after a process terminates.
+        </p>
+
+    </div>
+
+    <!-- BLOCK 5.6: PROGRAM COUNTER -->
+
+    <h3>5.5 Program Counter (PC)</h3>
+
+    <p>
+        The <strong>Program Counter (PC)</strong>
+        is a processor register that holds the
+        address of the next instruction to execute.
+    </p>
+
+    <p>
+        It helps the processor know where to
+        continue executing instructions.
+    </p>
+
+    <p>
+        Imagine a program containing thousands
+        of instructions. The processor executes
+        them as part of the program's execution.
+        The program counter identifies the next
+        instruction address in that execution flow.
+    </p>
+
+    <p>
+        When the operating system switches a
+        process out, the necessary program-counter
+        value is saved as part of its execution
+        context so that execution can resume
+        at the appropriate point later.
+    </p>
+
+    <div class="concept-note">
+
+        <h4>Bookmark Analogy</h4>
+
+        <p>
+            The program counter is similar to a
+            bookmark that identifies where you
+            should continue reading a book.
+        </p>
+
+        <p>
+            The bookmark is only an analogy.
+            Technically, the program counter stores
+            an instruction address, not a physical
+            bookmark or a page number.
+        </p>
+
+    </div>
+
+    <!-- BLOCK 5.7: CPU REGISTERS -->
+
+    <h3>5.6 CPU Registers</h3>
+
+    <p>
+        <strong>CPU registers</strong> are small,
+        high-speed storage locations inside the
+        processor. They hold values that the
+        processor needs while executing instructions.
+    </p>
+
+    <p>
+        A process's execution may depend on
+        several register values, including
+        data values, addresses, and processor
+        status information.
+    </p>
+
+    <p>
+        During a context switch, the operating
+        system saves the relevant processor
+        state and restores the state required
+        by the process being switched in.
+    </p>
+
+    <ul>
+
+        <li>
+            <strong>General-purpose registers:</strong>
+            Hold temporary data, addresses,
+            and intermediate results.
+        </li>
+
+        <li>
+            <strong>Program counter:</strong>
+            Identifies the next instruction address.
+        </li>
+
+        <li>
+            <strong>Stack pointer:</strong>
+            Identifies the current position of
+            the active stack.
+        </li>
+
+        <li>
+            <strong>Processor status information:</strong>
+            Records condition and control information
+            used by the processor.
+        </li>
+
+    </ul>
+
+    <div class="concept-note">
+
+        <h4>Important Distinction</h4>
+
+        <p>
+            Registers are physically part of the CPU.
+            Their saved values are part of the
+            execution context that the operating
+            system manages when switching processes.
+        </p>
+
+    </div>
+
+    <!-- BLOCK 5.8: PROCESS EXECUTION CONTEXT -->
+
+    <h3>5.7 What Is a Process Execution Context?</h3>
+
+    <p>
+        The <strong>execution context</strong>
+        is the information needed to describe
+        the current execution state of a process
+        and allow its execution to continue correctly.
+    </p>
+
+    <p>
+        This includes relevant processor state,
+        such as register values and the program
+        counter, along with other operating-system
+        information needed to manage the process.
+    </p>
+
+    <p>
+        When a process is interrupted or switched
+        out, the operating system preserves the
+        necessary state. When the process is
+        scheduled again, the appropriate state
+        is restored.
+    </p>
+
+    <h4>Why Is Execution Context Important?</h4>
+
+    <ul>
+        <li>It allows a process to resume correctly.</li>
+        <li>It supports switching between processes.</li>
+        <li>It preserves the process's execution progress.</li>
+        <li>It helps the operating system coordinate CPU use.</li>
+    </ul>
+
+    <!-- BLOCK 5.9: PROCESS ADDRESS SPACE -->
+
+    <h3>5.8 Process Address Space</h3>
+
+    <p>
+        A process also has an associated
+        <strong>address space</strong>.
+        This is the range of memory addresses
+        that the process can use, subject to
+        the operating system's memory protection
+        and management rules.
+    </p>
+
+    <p>
+        In modern operating systems, a process
+        commonly uses a virtual address space.
+        Virtual addresses are translated by
+        the system's memory-management hardware
+        and operating-system mechanisms into
+        locations in physical memory.
+    </p>
+
+    <p>
+        This arrangement helps provide memory
+        protection and gives each process its
+        own organised view of memory.
+    </p>
+
+    <!-- BLOCK 5.10: MEMORY REGIONS -->
+
+    <h3>5.9 Common Regions of a Process Address Space</h3>
+
+    <p>
+        A typical process address space can
+        contain several logical regions.
+        Their exact arrangement depends on
+        the operating system, architecture,
+        and program.
+    </p>
+
+    <ul>
+
+        <li>
+            <strong>Text / Code segment:</strong>
+            Contains the program's executable
+            instructions.
+        </li>
+
+        <li>
+            <strong>Data segment:</strong>
+            Contains global and static variables
+            that have been initialised.
+        </li>
+
+        <li>
+            <strong>BSS segment:</strong>
+            Contains global and static variables
+            that are uninitialised or initially
+            zero-initialised.
+        </li>
+
+        <li>
+            <strong>Heap:</strong>
+            Provides memory used for dynamic
+            allocation while the program runs.
+        </li>
+
+        <li>
+            <strong>Stack:</strong>
+            Supports function calls, local
+            variables, return information,
+            and other call-related data.
+        </li>
+
+    </ul>
+
+    <div class="concept-note">
+
+        <h4>Important Memory Concept</h4>
+
+        <p>
+            The heap and stack are different
+            memory regions with different
+            purposes.
+        </p>
+
+        <p>
+            The heap is commonly used for
+            dynamically allocated memory.
+            The stack supports function-call
+            execution and related local data.
+        </p>
+
+        <p>
+            These are logical regions of a
+            process's address space. They
+            should not be confused with separate
+            physical memory chips.
+        </p>
+
+    </div>
+
+    <!-- BLOCK 5.11: PROCESS MEMORY SUMMARY -->
+
+    <h3>5.10 Understanding the Process Memory Layout</h3>
+
+    <p>
+        The following is a simplified conceptual
+        view of common regions in a process's
+        virtual address space. It is not a
+        universal physical memory arrangement.
+    </p>
+
+    <div class="concept-comparison">
+
+        <div class="comparison-item">
+
+            <h4>Higher Address Region</h4>
+
+            <p>
+                Stack
+            </p>
+
+            <p>
+                Function calls and local data.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Dynamic Memory Region</h4>
+
+            <p>
+                Heap
+            </p>
+
+            <p>
+                Dynamically allocated memory.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Initialised Data Region</h4>
+
+            <p>
+                Data
+            </p>
+
+            <p>
+                Initialised global and static variables.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Uninitialised Data Region</h4>
+
+            <p>
+                BSS
+            </p>
+
+            <p>
+                Uninitialised or zero-initialised
+                global and static variables.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Code Region</h4>
+
+            <p>
+                Text / Code
+            </p>
+
+            <p>
+                Executable program instructions.
+            </p>
+
+        </div>
+
+    </div>
+
+    <p>
+        The arrangement above is a teaching
+        representation. Actual address-space
+        layouts can differ, and additional
+        regions such as shared libraries,
+        memory-mapped files, and other mappings
+        may also be present.
+    </p>
+
+    <!-- BLOCK 5.12: HOW THE PCB AND ADDRESS SPACE RELATE -->
+
+    <h3>5.11 How Do the PCB and Process Memory Work Together?</h3>
+
+    <p>
+        The PCB and the process address space
+        serve different but related purposes.
+    </p>
+
+    <ul>
+
+        <li>
+            The PCB contains operating-system
+            management information about the process.
+        </li>
+
+        <li>
+            The process address space provides
+            the process with its organised view
+            of memory.
+        </li>
+
+        <li>
+            Memory-management information helps
+            the operating system and hardware
+            manage and protect that address space.
+        </li>
+
+        <li>
+            Execution-context information helps
+            preserve the processor state needed
+            to resume the process.
+        </li>
+
+    </ul>
+
+    <p>
+        Together, these mechanisms allow the
+        operating system to manage a process
+        as it executes, waits, resumes, and
+        eventually terminates.
+    </p>
+
+    <!-- BLOCK 5.13: TECHNICAL SUMMARY -->
+
+    <div class="concept-note">
+
+        <h4>Technical Summary</h4>
+
+        <p>
+            A process is an executing instance
+            of a program with an associated
+            address space, execution state,
+            and operating-system-managed resources.
+        </p>
+
+        <p>
+            The PCB stores management information.
+            The PID identifies the process.
+            The program counter and CPU registers
+            contribute to its execution context.
+            Its address space organises the memory
+            available to it.
+        </p>
+
+    </div>
+
+    <!-- BLOCK 5.14: SECTION LEARNING OUTCOME -->
+
+    <h3>5.12 What You Should Understand</h3>
+
+    <p>
+        By the end of this section, you should
+        be able to explain the purpose of a PCB,
+        identify the role of a PID, program counter,
+        and CPU registers, describe execution
+        context, and recognise the common regions
+        of a process address space.
+    </p>
+
+</section>
+
+<!-- END SECTION 5: TECHNICAL EXPLANATION -->
+
+<!-- ================================================== -->
+<!-- END SECTION 5                                     -->
+<!-- ================================================== -->
+
+
 
 
 
