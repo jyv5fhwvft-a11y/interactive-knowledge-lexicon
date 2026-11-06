@@ -7,6 +7,7 @@
    - Interactive process lifecycle flowchart
    - Integrated time-slice alternative route
    - Guided 12-step sequence diagram
+   - Orange highlighting for I/O messages (steps 5–9)
 
    Section 8 is not modified.
    ========================================================= */
@@ -517,9 +518,6 @@
 
         /* -------------------------------------------------
            5B. ALTERNATIVE TIME-SLICE ROUTE
-
-           This is a complete alternative journey.
-           It does not pass through the Waiting state.
            ------------------------------------------------- */
 
         const timeSliceFlowSteps = [
@@ -727,6 +725,91 @@
             )
         );
 
+        /* -------------------------------------------------
+           6A. CREATE ORANGE ARROWHEAD FOR I/O MESSAGES
+
+           Message steps 5–9 are the I/O-related messages.
+           Their lines and arrowheads will be orange.
+
+           The remaining messages keep their original colour.
+           ------------------------------------------------- */
+
+        const svgNamespace =
+            "http://www.w3.org/2000/svg";
+
+        const sequenceDefs = sequenceSvg.querySelector("defs");
+
+        if (sequenceDefs && messagePaths.length >= 9) {
+
+            let orangeMarker = sequenceSvg.querySelector(
+                "#iklSequenceArrowOrange"
+            );
+
+            if (!orangeMarker) {
+
+                orangeMarker = document.createElementNS(
+                    svgNamespace,
+                    "marker"
+                );
+
+                orangeMarker.setAttribute(
+                    "id",
+                    "iklSequenceArrowOrange"
+                );
+
+                orangeMarker.setAttribute("markerWidth", "9");
+                orangeMarker.setAttribute("markerHeight", "9");
+
+                orangeMarker.setAttribute(
+                    "viewBox",
+                    "0 0 9 8"
+                );
+
+                orangeMarker.setAttribute("refX", "8");
+                orangeMarker.setAttribute("refY", "4");
+                orangeMarker.setAttribute("orient", "auto");
+
+                orangeMarker.setAttribute(
+                    "markerUnits",
+                    "strokeWidth"
+                );
+
+                const arrowHead = document.createElementNS(
+                    svgNamespace,
+                    "path"
+                );
+
+                arrowHead.setAttribute(
+                    "d",
+                    "M0,0 L9,4 L0,8 Z"
+                );
+
+                arrowHead.setAttribute(
+                    "fill",
+                    "#D97706"
+                );
+
+                orangeMarker.appendChild(arrowHead);
+                sequenceDefs.appendChild(orangeMarker);
+            }
+
+            /* Array positions 4–8 represent steps 5–9. */
+
+            messagePaths.slice(4, 9).forEach(function (path) {
+
+                path.style.setProperty(
+                    "stroke",
+                    "#D97706",
+                    "important"
+                );
+
+                path.setAttribute(
+                    "marker-end",
+                    "url(#iklSequenceArrowOrange)"
+                );
+            });
+        }
+
         const sequenceSteps = [
             {
                 title: "Place process in Ready queue",
@@ -812,7 +895,7 @@
         });
 
         /* -------------------------------------------------
-           6A. REVEAL MESSAGES AND LABELS
+           6B. REVEAL MESSAGES AND LABELS
            ------------------------------------------------- */
 
         function renderSequenceStep(index) {
@@ -884,7 +967,7 @@
         }
 
         /* -------------------------------------------------
-           6B. CREATE SEQUENCE ANIMATION PANEL
+           6C. CREATE SEQUENCE ANIMATION PANEL
            ------------------------------------------------- */
 
         const validSequence =
