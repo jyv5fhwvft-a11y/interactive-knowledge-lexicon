@@ -110,7 +110,7 @@ body {
 .concept-eyebrow {
     margin: 0 0 14px;
 
-    color: #93C5FD;
+        color: var(--process-teal);
 
     font-size: 13px;
     font-weight: 700;
