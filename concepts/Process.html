@@ -1,0 +1,982 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- BLOCK 1: DOCUMENT CHARACTER ENCODING -->
+    <meta charset="UTF-8">
+
+    <!-- BLOCK 2: RESPONSIVE PAGE CONFIGURATION -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- BLOCK 3: PAGE TITLE -->
+    <title>Process — Interactive Knowledge Lexicon</title>
+
+    <!-- BLOCK 4: PROCESS PAGE STYLESHEET -->
+    <link rel="stylesheet" href="../css/process.css">
+
+</head>
+
+<body>
+
+    <!-- BLOCK 5: MAIN PAGE CONTAINER -->
+    <main class="concept-page">
+
+      
+<!-- ================================================== -->
+<!-- BLOCK 8: PROCESS CONCEPT IDENTITY AND PAGE HEADER  -->
+<!-- ================================================== -->
+
+<header class="concept-header">
+
+    <!-- BLOCK 8.1: CONCEPT CLASSIFICATION -->
+
+    <p class="concept-eyebrow">
+        OPERATING SYSTEMS
+        <span>|</span>
+        CONCEPT 002
+    </p>
+
+    <!-- BLOCK 8.2: MAIN CONCEPT TITLE -->
+
+    <h1>Process</h1>
+
+    <!-- BLOCK 8.3: CONCEPT SUBTITLE -->
+
+    <p class="concept-subtitle">
+        A Program in Execution
+    </p>
+
+    <!-- BLOCK 8.4: GUIDING QUESTION -->
+
+    <p class="concept-guiding-question">
+        What happens when a computer actually runs a program?
+    </p>
+
+    <!-- BLOCK 8.5: INTRODUCTION -->
+
+    <div class="concept-introduction">
+
+        <p>
+            A process is a program that is currently
+            executing on a computer.
+        </p>
+
+        <p>
+            When you open an application, the operating
+            system creates and manages a process so that
+            the program can use the computer's resources,
+            such as the CPU and memory.
+        </p>
+
+    </div>
+
+</header>
+
+<!-- END BLOCK 8: PROCESS CONCEPT IDENTITY AND PAGE HEADER -->
+
+      
+<!-- ================================================== -->
+<!-- SECTION 1: CONCEPT IDENTITY AND DEFINITION         -->
+<!-- ================================================== -->
+
+<section id="concept-identity" class="concept-section">
+
+    <!-- BLOCK 1.1: SECTION HEADING -->
+
+    <h2>1. Concept Identity and Definition</h2>
+
+    <!-- BLOCK 1.2: CONCEPT IDENTIFICATION -->
+
+    <div class="concept-identity-card">
+
+        <p><strong>Concept ID:</strong> IKL-OS-002</p>
+
+        <p><strong>Concept:</strong> Process</p>
+
+        <p><strong>Subject:</strong> Operating Systems</p>
+
+        <p><strong>Technical category:</strong> Process Management</p>
+
+    </div>
+
+    <!-- BLOCK 1.3: FORMAL DEFINITION -->
+
+    <h3>1.1 What Is a Process?</h3>
+
+    <p>
+        A process is an instance of a program in execution.
+        It is an active entity managed by the operating
+        system, with its own execution state, allocated
+        resources, and information needed to control
+        its progress.
+    </p>
+
+    <!-- BLOCK 1.4: PROGRAM VERSUS PROCESS -->
+
+    <h3>1.2 Program vs. Process</h3>
+
+    <p>
+        A program and a process are related, but they
+        are not the same thing.
+    </p>
+
+    <div class="concept-comparison">
+
+        <div class="comparison-item">
+
+            <h4>Program</h4>
+
+            <p>
+                A program is a set of instructions stored
+                as a file that tells a computer what to do.
+            </p>
+
+            <ul>
+                <li>Passive set of instructions.</li>
+                <li>Stored on a storage device.</li>
+                <li>Does not execute by itself.</li>
+            </ul>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Process</h4>
+
+            <p>
+                A process is a running instance of a
+                program that the operating system manages.
+            </p>
+
+            <ul>
+                <li>Active execution entity.</li>
+                <li>Uses CPU and memory resources.</li>
+                <li>Has a current execution state.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- BLOCK 1.5: WHY A PROCESS EXISTS -->
+
+    <h3>1.3 Why Does the Operating System Create Processes?</h3>
+
+    <p>
+        The operating system uses processes to manage
+        running programs and coordinate their access
+        to computer resources.
+    </p>
+
+    <ul>
+        <li>Tracks each running program.</li>
+        <li>Allocates and manages resources.</li>
+        <li>Controls when processes use the CPU.</li>
+        <li>Maintains information needed to resume execution.</li>
+        <li>Helps isolate processes from one another.</li>
+    </ul>
+
+    <!-- BLOCK 1.6: IMPORTANT DISTINCTION -->
+
+    <div class="concept-note">
+
+        <h4>Important Concept</h4>
+
+        <p>
+            One program can have multiple process instances.
+            For example, opening the same application more
+            than once can create multiple processes.
+        </p>
+
+    </div>
+
+    <!-- BLOCK 1.7: SECTION LEARNING OUTCOME -->
+
+    <h3>1.4 What You Should Understand</h3>
+
+    <p>
+        By the end of this section, you should be able to
+        explain what a process is, distinguish a program
+        from a process, and describe why an operating
+        system needs to manage processes.
+    </p>
+
+</section>
+
+<!-- END SECTION 1: CONCEPT IDENTITY AND DEFINITION -->
+
+      
+<!-- ================================================== -->
+<!-- SECTION 2: PROCESS EXPLAINED LIKE YOU ARE FIVE     -->
+<!-- ================================================== -->
+
+<section id="first-grader-explanation" class="concept-section">
+
+    <!-- BLOCK 2.1: SECTION HEADING -->
+
+    <h2>2. Process Explained Like You're Five</h2>
+
+    <!-- BLOCK 2.2: SIMPLE EXPLANATION -->
+
+    <h3>2.1 What Is a Process?</h3>
+
+    <p>
+        Imagine you have a colouring book.
+        The book contains pictures waiting to be coloured.
+    </p>
+
+    <p>
+        When the book is sitting on your table,
+        nobody is colouring it. It is simply there,
+        waiting to be used.
+    </p>
+
+    <p>
+        But when you pick up your crayons and start
+        colouring a picture, something is happening.
+        You are now doing an activity.
+    </p>
+
+    <p>
+        A computer works in a similar way.
+        A program is like the colouring book:
+        it contains instructions waiting to be used.
+        When the computer starts running those
+        instructions, it creates a process.
+    </p>
+
+    <!-- BLOCK 2.3: THREE SIMPLE STEPS -->
+
+    <h3>2.2 How Does a Program Become a Process?</h3>
+
+    <ol>
+
+        <li>
+            <strong>First: A program exists.</strong>
+
+            <p>
+                The program contains instructions
+                stored on the computer.
+            </p>
+        </li>
+
+        <li>
+            <strong>Second: You open the program.</strong>
+
+            <p>
+                You click an application, such as
+                Calculator, to start using it.
+            </p>
+        </li>
+
+        <li>
+            <strong>Third: The operating system manages
+            its execution.</strong>
+
+            <p>
+                The operating system creates and manages
+                a process so the application can run.
+            </p>
+        </li>
+
+    </ol>
+
+    <!-- BLOCK 2.4: EVERYDAY COMPUTER EXAMPLE -->
+
+    <h3>2.3 An Everyday Example: Opening Calculator</h3>
+
+    <p>
+        Imagine tapping the Calculator application
+        on your computer.
+    </p>
+
+    <ul>
+        <li>The Calculator program is stored on your computer.</li>
+        <li>You open the Calculator application.</li>
+        <li>The operating system starts managing its execution.</li>
+        <li>A Calculator process runs and uses computer resources.</li>
+        <li>You can now perform calculations.</li>
+    </ul>
+
+    <!-- BLOCK 2.5: IMPORTANT SIMPLE DISTINCTION -->
+
+    <div class="concept-note">
+
+        <h4>Remember This Simple Difference</h4>
+
+        <p>
+            A program is the instructions.
+            A process is those instructions being executed.
+        </p>
+
+        <p>
+            Program = What the computer is told to do.
+        </p>
+
+        <p>
+            Process = The running activity managed
+            by the operating system.
+        </p>
+
+    </div>
+
+    <!-- BLOCK 2.6: QUICK UNDERSTANDING CHECK -->
+
+    <h3>2.4 Can You Understand the Difference?</h3>
+
+    <p>
+        If Calculator is stored on your computer
+        but you have not opened it, is it already
+        running as a process?
+    </p>
+
+    <p>
+        <strong>Answer:</strong> No. The stored application
+        is a program. A process is created when the
+        operating system starts managing an execution
+        instance of that program.
+    </p>
+
+</section>
+
+<!-- END SECTION 2: PROCESS EXPLAINED LIKE YOU ARE FIVE -->
+
+      
+<!-- ================================================== -->
+<!-- SECTION 3: ANALOGY AND MENTAL MODEL                -->
+<!-- ================================================== -->
+
+<section id="analogy-mental-model" class="concept-section">
+
+    <!-- BLOCK 3.1: SECTION HEADING -->
+
+    <h2>3. Analogy and Mental Model</h2>
+
+    <!-- BLOCK 3.2: INTRODUCTION TO THE ANALOGY -->
+
+    <h3>3.1 Imagine a Busy Restaurant Kitchen</h3>
+
+    <p>
+        Imagine a restaurant kitchen where several
+        customers have placed food orders.
+    </p>
+
+    <p>
+        The kitchen has chefs, cooking stations,
+        ingredients, equipment, and orders waiting
+        to be prepared.
+    </p>
+
+    <p>
+        The kitchen manager must organise the work,
+        decide which order should be prepared next,
+        provide the required resources, and keep
+        track of each order.
+    </p>
+
+    <p>
+        An operating system performs a comparable
+        management role for running programs.
+        It manages processes and coordinates their
+        use of computer resources.
+    </p>
+
+    <!-- BLOCK 3.3: RESTAURANT ANALOGY COMPONENTS -->
+
+    <h3>3.2 Understanding the Restaurant Analogy</h3>
+
+    <div class="concept-comparison">
+
+        <div class="comparison-item">
+
+            <h4>Restaurant Kitchen</h4>
+
+            <ul>
+                <li>Food recipe</li>
+                <li>Customer order</li>
+                <li>Chef preparing food</li>
+                <li>Kitchen manager</li>
+                <li>Cooking station</li>
+                <li>Order waiting to be prepared</li>
+                <li>Completed food order</li>
+            </ul>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Computer System</h4>
+
+            <ul>
+                <li>Program instructions</li>
+                <li>Request to run a program</li>
+                <li>Process executing instructions</li>
+                <li>Operating system</li>
+                <li>CPU and memory resources</li>
+                <li>Process waiting for CPU time</li>
+                <li>Terminated process</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- BLOCK 3.4: HOW THE ANALOGY WORKS -->
+
+    <h3>3.3 Follow One Order Through the Kitchen</h3>
+
+    <ol>
+
+        <li>
+            <strong>A recipe exists.</strong>
+
+            <p>
+                A recipe contains instructions for
+                preparing a dish. Similarly, a program
+                contains instructions for a computer.
+            </p>
+        </li>
+
+        <li>
+            <strong>A customer places an order.</strong>
+
+            <p>
+                The restaurant receives a request
+                to prepare a dish. Similarly, a user
+                may request that an application run.
+            </p>
+        </li>
+
+        <li>
+            <strong>A chef starts preparing the order.</strong>
+
+            <p>
+                The chef actively follows the recipe.
+                Similarly, a process is an executing
+                instance of a program.
+            </p>
+        </li>
+
+        <li>
+            <strong>The kitchen manager coordinates the work.</strong>
+
+            <p>
+                The manager organises the kitchen.
+                Similarly, the operating system manages
+                processes and their access to resources.
+            </p>
+        </li>
+
+        <li>
+            <strong>The order may need to wait.</strong>
+
+            <p>
+                A chef may wait for an ingredient or
+                equipment. Similarly, a process may wait
+                for an event, input/output operation,
+                or another required resource.
+            </p>
+        </li>
+
+        <li>
+            <strong>The order is completed.</strong>
+
+            <p>
+                The finished dish leaves the kitchen.
+                Similarly, a process terminates when
+                its execution ends.
+            </p>
+        </li>
+
+    </ol>
+
+    <!-- BLOCK 3.5: CONNECTING THE ANALOGY TO REAL CONCEPTS -->
+
+    <h3>3.4 The Real Operating-System Concepts</h3>
+
+    <p>
+        The restaurant analogy helps us understand
+        the basic idea. Now let's connect it to the
+        actual technical concepts.
+    </p>
+
+    <ul>
+        <li>
+            <strong>Program:</strong>
+            A stored set of instructions.
+        </li>
+
+        <li>
+            <strong>Process:</strong>
+            An executing instance of a program.
+        </li>
+
+        <li>
+            <strong>Operating system:</strong>
+            Software that manages processes and
+            coordinates system resources.
+        </li>
+
+        <li>
+            <strong>CPU:</strong>
+            The processor that executes program instructions.
+        </li>
+
+        <li>
+            <strong>Memory:</strong>
+            Stores the instructions and data needed
+            while a process runs.
+        </li>
+
+        <li>
+            <strong>Process scheduling:</strong>
+            The operating system's method of deciding
+            which ready process gets CPU time.
+        </li>
+
+        <li>
+            <strong>Waiting state:</strong>
+            A process is waiting for an event or
+            resource before it can continue.
+        </li>
+
+        <li>
+            <strong>Termination:</strong>
+            The process has finished executing.
+        </li>
+    </ul>
+
+    <!-- BLOCK 3.6: IMPORTANT LIMITATION OF THE ANALOGY -->
+
+    <div class="concept-note">
+
+        <h4>Important: An Analogy Is Not the Actual Mechanism</h4>
+
+        <p>
+            A restaurant kitchen helps us imagine how
+            work is organised, but a computer does not
+            operate exactly like a restaurant.
+        </p>
+
+        <p>
+            A chef is a person who makes decisions.
+            A CPU is an electronic processor that
+            executes machine instructions.
+        </p>
+
+        <p>
+            The operating system uses scheduling
+            algorithms, data structures, memory
+            management, and hardware mechanisms.
+            It does not manage processes by behaving
+            like a human kitchen manager.
+        </p>
+
+    </div>
+
+    <!-- BLOCK 3.7: SECOND MENTAL MODEL -->
+
+    <h3>3.5 A Second Mental Model: Your Desk and a Bookmark</h3>
+
+    <p>
+        Imagine reading a book at your desk.
+        You stop reading to answer the telephone.
+        Before leaving, you place a bookmark on the
+        page where you stopped.
+    </p>
+
+    <p>
+        When you return, the bookmark helps you
+        continue from the correct place.
+    </p>
+
+    <p>
+        A computer process also has execution
+        information that allows the operating system
+        to resume it after it stops running on the CPU.
+    </p>
+
+    <p>
+        During a context switch, the operating system
+        saves the necessary execution state of one
+        process and restores the saved state of another.
+    </p>
+
+    <!-- BLOCK 3.8: ANALOGY SUMMARY -->
+
+    <div class="concept-note">
+
+        <h4>Remember the Two Mental Models</h4>
+
+        <p>
+            <strong>Restaurant kitchen:</strong>
+            Helps explain process execution,
+            resource coordination, scheduling,
+            waiting, and completion.
+        </p>
+
+        <p>
+            <strong>Book and bookmark:</strong>
+            Helps explain why execution state
+            must be saved and restored.
+        </p>
+
+    </div>
+
+    <!-- BLOCK 3.9: SECTION LEARNING OUTCOME -->
+
+    <h3>3.6 What You Should Understand</h3>
+
+    <p>
+        You should now understand that a process
+        is an executing instance of a program,
+        that the operating system manages processes,
+        and that a process may run, wait, resume,
+        or terminate during its lifetime.
+    </p>
+
+</section>
+
+<!-- END SECTION 3: ANALOGY AND MENTAL MODEL -->
+
+      
+<!-- ================================================== -->
+<!-- SECTION 4: BEGINNER EXPLANATION                    -->
+<!-- ================================================== -->
+
+<section id="beginner-explanation" class="concept-section">
+
+    <!-- BLOCK 4.1: SECTION HEADING -->
+
+    <h2>4. Beginner Explanation</h2>
+
+    <!-- BLOCK 4.2: INTRODUCTION -->
+
+    <h3>4.1 What Actually Happens When You Open an Application?</h3>
+
+    <p>
+        When you open an application, the computer
+        does more than simply display a window.
+        The operating system must prepare the
+        application for execution and manage the
+        resources it needs.
+    </p>
+
+    <p>
+        The running instance of the application
+        is represented by a process.
+    </p>
+
+    <!-- BLOCK 4.3: PROCESS CREATION -->
+
+    <h3>4.2 How Does the Operating System Create a Process?</h3>
+
+    <ol>
+
+        <li>
+            <strong>You request an application.</strong>
+
+            <p>
+                You click an application icon or
+                otherwise request that a program run.
+            </p>
+        </li>
+
+        <li>
+            <strong>The operating system receives the request.</strong>
+
+            <p>
+                The operating system handles the request
+                and begins the process-creation procedure.
+            </p>
+        </li>
+
+        <li>
+            <strong>The operating system prepares the process.</strong>
+
+            <p>
+                It establishes the process's execution
+                environment, creates the necessary
+                management information, and arranges
+                its memory and resource requirements.
+            </p>
+        </li>
+
+        <li>
+            <strong>The process becomes ready to execute.</strong>
+
+            <p>
+                Once the required preparation is complete,
+                the process can enter the Ready state
+                and wait for CPU time.
+            </p>
+        </li>
+
+        <li>
+            <strong>The CPU executes its instructions.</strong>
+
+            <p>
+                When the scheduler selects the process,
+                it can run on a CPU.
+            </p>
+        </li>
+
+    </ol>
+
+    <!-- BLOCK 4.4: WHAT A PROCESS NEEDS -->
+
+    <h3>4.3 What Does a Process Need to Run?</h3>
+
+    <p>
+        A process needs several things to execute
+        correctly. The operating system manages
+        and coordinates these resources.
+    </p>
+
+    <div class="concept-comparison">
+
+        <div class="comparison-item">
+
+            <h4>CPU</h4>
+
+            <p>
+                Executes the instructions belonging
+                to the process.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Memory</h4>
+
+            <p>
+                Holds the instructions, data, and
+                execution information needed by
+                the running program.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Operating-System Information</h4>
+
+            <p>
+                Keeps track of the process's identity,
+                state, resources, and execution context.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Input and Output</h4>
+
+            <p>
+                Allows the process to interact with
+                devices, files, and other system services.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- BLOCK 4.5: PROCESS STATES -->
+
+    <h3>4.4 Why Does a Process Have Different States?</h3>
+
+    <p>
+        A process does not use the CPU continuously
+        from the moment it starts until it finishes.
+        During its lifetime, it can move between
+        different states.
+    </p>
+
+    <ul>
+
+        <li>
+            <strong>New:</strong>
+            The operating system is creating the process.
+        </li>
+
+        <li>
+            <strong>Ready:</strong>
+            The process is prepared to execute
+            and is waiting for CPU time.
+        </li>
+
+        <li>
+            <strong>Running:</strong>
+            The process is currently executing
+            on a CPU.
+        </li>
+
+        <li>
+            <strong>Waiting / Blocked:</strong>
+            The process is waiting for an event
+            or operation to complete, such as
+            an input/output operation.
+        </li>
+
+        <li>
+    <strong>Terminated:</strong>
+    The process has finished execution
+    or has been terminated by the operating system.
+</li>
+
+    </ul>
+
+    <!-- BLOCK 4.6: READY VERSUS WAITING -->
+
+    <div class="concept-note">
+
+        <h4>Important: Ready Is Not the Same as Waiting</h4>
+
+        <p>
+            A Ready process is waiting for an opportunity
+            to use the CPU.
+        </p>
+
+        <p>
+            A Waiting process is waiting for an event
+            or resource, such as completion of an
+            input/output operation.
+        </p>
+
+        <p>
+            This distinction is essential for understanding
+            process scheduling and process management.
+        </p>
+
+    </div>
+
+    <!-- BLOCK 4.7: MULTIPLE PROCESSES -->
+
+    <h3>4.5 How Can a Computer Run Multiple Processes?</h3>
+
+    <p>
+        Imagine opening a web browser, playing music,
+        and downloading a file at the same time.
+    </p>
+
+    <p>
+        Each activity may involve one or more processes.
+        The operating system coordinates their execution
+        and resource use.
+    </p>
+
+    <p>
+        On a system with one CPU core, the operating
+        system can switch between processes rapidly,
+        giving the impression that several processes
+        are running simultaneously.
+    </p>
+
+    <p>
+        On a system with multiple CPU cores, different
+        processes can also execute at the same time
+        on different cores.
+    </p>
+
+    <!-- BLOCK 4.8: CONTEXT SWITCHING -->
+
+    <h3>4.6 What Happens When the CPU Switches Processes?</h3>
+
+    <p>
+        The CPU does not necessarily execute one
+        process until it finishes before starting
+        another.
+    </p>
+
+    <p>
+        The operating system can temporarily stop
+        one process from using the CPU and allow
+        another ready process to execute.
+    </p>
+
+    <p>
+        This change is called a
+        <strong>context switch</strong>.
+    </p>
+
+    <p>
+        During a context switch, the operating system
+        saves the necessary execution information
+        of the process being switched out and restores
+        the saved execution information of the process
+        being switched in.
+    </p>
+
+    <!-- BLOCK 4.9: PROCESS LIFETIME -->
+
+    <h3>4.7 What Happens When a Process Finishes?</h3>
+
+    <p>
+        When a process completes its work or is
+        terminated, the operating system performs
+        the necessary cleanup.
+    </p>
+
+    <ul>
+        <li>Records that the process has terminated.</li>
+        <li>Releases resources that are no longer needed.</li>
+        <li>Closes or cleans up associated resources as appropriate.</li>
+        <li>Updates process-management information.</li>
+    </ul>
+
+    <!-- BLOCK 4.10: BEGINNER SUMMARY -->
+
+    <div class="concept-note">
+
+        <h4>Beginner Summary</h4>
+
+        <p>
+            A process is a running instance of a program.
+            The operating system creates and manages it,
+            provides access to resources, controls its
+            execution, and handles its termination.
+        </p>
+
+        <p>
+            During its lifetime, a process may be ready,
+            running, or waiting. It may also be paused
+            and resumed through context switching.
+        </p>
+
+    </div>
+
+    <!-- BLOCK 4.11: SECTION LEARNING OUTCOME -->
+
+    <h3>4.8 What You Should Understand</h3>
+
+    <p>
+        By the end of this section, you should be able
+        to describe how a process is created, identify
+        the resources it needs, explain its main states,
+        and understand why the operating system switches
+        between processes.
+    </p>
+
+</section>
+
+<!-- END SECTION 4: BEGINNER EXPLANATION -->
+
+
+
+
+
+        
+
+    </main>
+
+    <!-- BLOCK 6: SHARED COMPONENT EXPLORER ENGINE -->
+    <script src="../js/component-explorer-engine.js"></script>
+
+    <!-- BLOCK 7: PROCESS-SPECIFIC COMPONENT DATA -->
+    <script src="../js/process-component-explorer.js"></script>
+
+</body>
+</html>
