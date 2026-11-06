@@ -2808,6 +2808,895 @@
 
 
 
+<!-- =========================================================
+     SECTION 9 — FLOWCHART AND SEQUENCE DIAGRAM
+     Concept 002: Process — A Program in Execution
+     ========================================================= -->
+
+<section id="process-diagrams" class="concept-section">
+
+    <h2>9. Flowchart and Sequence Diagram</h2>
+
+    <p>
+        You have learned the five process states and controlled
+        a process through its lifecycle. Now let's connect these
+        ideas using two visual diagrams.
+    </p>
+
+    <p>
+        The flowchart explains how a process moves between states.
+        The sequence diagram explains how operating-system
+        components coordinate those movements.
+    </p>
+
+
+    <!-- =====================================================
+         9.1 PROCESS LIFECYCLE FLOWCHART
+         ===================================================== -->
+
+    <h3>9.1 Process Lifecycle Flowchart</h3>
+
+    <p>
+        This flowchart represents the journey of a process
+        from creation to termination.
+    </p>
+
+    <div class="process-diagram-card">
+
+        <h4>How a Process Moves Through Its Five States</h4>
+
+        <p class="process-diagram-caption">
+            Follow the arrows to understand each state transition.
+        </p>
+
+        <div class="process-diagram-scroll">
+
+            <svg
+                class="process-lifecycle-svg"
+                viewBox="0 0 900 540"
+                role="img"
+                aria-labelledby="lifecycleTitle lifecycleDescription"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <title id="lifecycleTitle">
+                    Five-state process lifecycle flowchart
+                </title>
+
+                <desc id="lifecycleDescription">
+                    A process moves from New to Ready, from Ready
+                    to Running, and from Running to Terminated.
+                    A running process can move to Waiting after
+                    requesting I/O or return to Ready when its
+                    CPU time slice expires. A waiting process
+                    returns to Ready after I/O completion.
+                </desc>
+
+                <defs>
+
+                    <!-- BLUE ARROW: NORMAL TRANSITIONS -->
+
+                    <marker
+                        id="processArrowBlue"
+                        markerWidth="10"
+                        markerHeight="10"
+                        refX="8"
+                        refY="5"
+                        orient="auto">
+
+                        <path
+                            d="M0,0 L10,5 L0,10 Z"
+                            fill="#2563EB"/>
+
+                    </marker>
+
+
+                    <!-- TEAL ARROW: TIME SLICE -->
+
+                    <marker
+                        id="processArrowTeal"
+                        markerWidth="10"
+                        markerHeight="10"
+                        refX="8"
+                        refY="5"
+                        orient="auto">
+
+                        <path
+                            d="M0,0 L10,5 L0,10 Z"
+                            fill="#0D9488"/>
+
+                    </marker>
+
+
+                    <!-- ORANGE ARROW: TERMINATION -->
+
+                    <marker
+                        id="processArrowOrange"
+                        markerWidth="10"
+                        markerHeight="10"
+                        refX="8"
+                        refY="5"
+                        orient="auto">
+
+                        <path
+                            d="M0,0 L10,5 L0,10 Z"
+                            fill="#D97706"/>
+
+                    </marker>
+
+                </defs>
+
+
+                <!-- NEW TO READY -->
+
+                <path
+                    d="M180 105 H300"
+                    fill="none"
+                    stroke="#2563EB"
+                    stroke-width="3"
+                    marker-end="url(#processArrowBlue)"/>
+
+                <text
+                    x="240"
+                    y="87"
+                    text-anchor="middle"
+                    class="diagram-arrow-label">
+                    Created
+                </text>
+
+
+                <!-- READY TO RUNNING -->
+
+                <path
+                    d="M450 105 H570"
+                    fill="none"
+                    stroke="#2563EB"
+                    stroke-width="3"
+                    marker-end="url(#processArrowBlue)"/>
+
+                <text
+                    x="510"
+                    y="87"
+                    text-anchor="middle"
+                    class="diagram-arrow-label">
+                    Dispatch
+                </text>
+
+
+                <!-- RUNNING TO WAITING -->
+
+                <path
+                    d="M645 150 V270"
+                    fill="none"
+                    stroke="#2563EB"
+                    stroke-width="3"
+                    marker-end="url(#processArrowBlue)"/>
+
+                <text
+                    x="660"
+                    y="215"
+                    class="diagram-arrow-label">
+                    I/O request
+                </text>
+
+
+                <!-- WAITING TO READY -->
+
+                <path
+                    d="M570 310 H375 V150"
+                    fill="none"
+                    stroke="#2563EB"
+                    stroke-width="3"
+                    marker-end="url(#processArrowBlue)"/>
+
+                <text
+                    x="465"
+                    y="295"
+                    text-anchor="middle"
+                    class="diagram-arrow-label">
+                    I/O complete
+                </text>
+
+
+                <!-- RUNNING TO READY: TIME SLICE -->
+
+                <path
+                    d="M645 65 V40 H375 V65"
+                    fill="none"
+                    stroke="#0D9488"
+                    stroke-width="3"
+                    stroke-dasharray="7 5"
+                    marker-end="url(#processArrowTeal)"/>
+
+                <text
+                    x="510"
+                    y="27"
+                    text-anchor="middle"
+                    class="diagram-arrow-label">
+                    Time slice expires
+                </text>
+
+
+                <!-- RUNNING TO TERMINATED -->
+
+                <path
+                    d="M720 105 H750"
+                    fill="none"
+                    stroke="#D97706"
+                    stroke-width="3"
+                    marker-end="url(#processArrowOrange)"/>
+
+                <text
+                    x="735"
+                    y="55"
+                    text-anchor="middle"
+                    class="diagram-arrow-label">
+                    Finish
+                </text>
+
+
+                <!-- NEW STATE -->
+
+                <rect
+                    x="30"
+                    y="65"
+                    width="150"
+                    height="80"
+                    rx="14"
+                    fill="#EFF6FF"
+                    stroke="#2563EB"
+                    stroke-width="2"/>
+
+                <text
+                    x="105"
+                    y="112"
+                    text-anchor="middle"
+                    class="diagram-state-label">
+                    NEW
+                </text>
+
+
+                <!-- READY STATE -->
+
+                <rect
+                    x="300"
+                    y="65"
+                    width="150"
+                    height="80"
+                    rx="14"
+                    fill="#EFF6FF"
+                    stroke="#2563EB"
+                    stroke-width="2"/>
+
+                <text
+                    x="375"
+                    y="112"
+                    text-anchor="middle"
+                    class="diagram-state-label">
+                    READY
+                </text>
+
+
+                <!-- RUNNING STATE -->
+
+                <rect
+                    x="570"
+                    y="65"
+                    width="150"
+                    height="80"
+                    rx="14"
+                    fill="#D1FAE5"
+                    stroke="#0D9488"
+                    stroke-width="2"/>
+
+                <text
+                    x="645"
+                    y="112"
+                    text-anchor="middle"
+                    class="diagram-state-label">
+                    RUNNING
+                </text>
+
+
+                <!-- WAITING STATE -->
+
+                <rect
+                    x="570"
+                    y="270"
+                    width="150"
+                    height="80"
+                    rx="14"
+                    fill="#FFFBEB"
+                    stroke="#D97706"
+                    stroke-width="2"/>
+
+                <text
+                    x="645"
+                    y="317"
+                    text-anchor="middle"
+                    class="diagram-state-label">
+                    WAITING
+                </text>
+
+
+                <!-- TERMINATED STATE -->
+
+                <rect
+                    x="750"
+                    y="65"
+                    width="140"
+                    height="80"
+                    rx="14"
+                    fill="#F1F5F9"
+                    stroke="#64748B"
+                    stroke-width="2"/>
+
+                <text
+                    x="820"
+                    y="112"
+                    text-anchor="middle"
+                    class="diagram-state-label">
+                    TERMINATED
+                </text>
+
+
+                <!-- LEGEND -->
+
+                <text
+                    x="40"
+                    y="430"
+                    class="diagram-legend-heading">
+                    HOW TO READ THIS DIAGRAM
+                </text>
+
+                <text
+                    x="40"
+                    y="465"
+                    class="diagram-legend-text">
+                    Blue arrow: normal state transition
+                </text>
+
+                <text
+                    x="40"
+                    y="490"
+                    class="diagram-legend-text">
+                    Teal dashed arrow: CPU time slice expires
+                </text>
+
+                <text
+                    x="40"
+                    y="515"
+                    class="diagram-legend-text">
+                    Orange arrow: process execution finishes
+                </text>
+
+            </svg>
+
+        </div>
+
+        <div class="concept-note">
+
+            <strong>Important observation:</strong>
+
+            A process does not move directly from Waiting to Running.
+            It first returns to Ready. The CPU scheduler must select
+            it before it can execute again.
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         9.2 PROCESS EXECUTION SEQUENCE DIAGRAM
+         ===================================================== -->
+
+    <h3>9.2 Process Execution Sequence Diagram</h3>
+
+    <p>
+        A process does not manage its execution independently.
+        Different operating-system components coordinate to decide
+        when it receives CPU time and how it handles I/O.
+    </p>
+
+    <div class="process-diagram-card">
+
+        <h4>How Operating-System Components Coordinate</h4>
+
+        <p class="process-diagram-caption">
+            Time flows from top to bottom. Horizontal arrows
+            represent messages or actions between components.
+        </p>
+
+        <div class="process-diagram-scroll">
+
+            <svg
+                class="process-sequence-svg"
+                viewBox="0 0 1080 940"
+                role="img"
+                aria-labelledby="sequenceTitle sequenceDescription"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <title id="sequenceTitle">
+                    Process execution sequence diagram
+                </title>
+
+                <desc id="sequenceDescription">
+                    The operating-system kernel places a process
+                    in the Ready queue. The scheduler selects it,
+                    and the dispatcher performs a context switch.
+                    The process executes, requests I/O, and enters
+                    Waiting. The I/O device later sends a completion
+                    interrupt to the kernel. The kernel returns the
+                    process to Ready, after which it can be selected
+                    and dispatched again. Termination is illustrated
+                    separately in the lifecycle flowchart.
+                </desc>
+
+                <defs>
+
+                    <marker
+                        id="sequenceArrow"
+                        markerWidth="9"
+                        markerHeight="9"
+                        refX="8"
+                        refY="4"
+                        orient="auto">
+
+                        <path
+                            d="M0,0 L9,4 L0,8 Z"
+                            fill="#2563EB"/>
+
+                    </marker>
+
+                </defs>
+
+
+                <!-- PARTICIPANT HEADERS -->
+
+                <g class="sequence-participant">
+
+                    <!-- PROCESS -->
+
+                    <rect
+                        x="20"
+                        y="25"
+                        width="140"
+                        height="55"
+                        rx="9"/>
+
+                    <text
+                        x="90"
+                        y="58"
+                        text-anchor="middle">
+                        PROCESS
+                    </text>
+
+
+                    <!-- OPERATING SYSTEM KERNEL -->
+
+                    <rect
+                        x="200"
+                        y="25"
+                        width="140"
+                        height="55"
+                        rx="9"/>
+
+                    <text
+                        x="270"
+                        y="49"
+                        text-anchor="middle">
+                        OS KERNEL
+                    </text>
+
+
+                    <!-- SCHEDULER -->
+
+                    <rect
+                        x="380"
+                        y="25"
+                        width="140"
+                        height="55"
+                        rx="9"/>
+
+                    <text
+                        x="450"
+                        y="58"
+                        text-anchor="middle">
+                        SCHEDULER
+                    </text>
+
+
+                    <!-- DISPATCHER -->
+
+                    <rect
+                        x="560"
+                        y="25"
+                        width="140"
+                        height="55"
+                        rx="9"/>
+
+                    <text
+                        x="630"
+                        y="58"
+                        text-anchor="middle">
+                        DISPATCHER
+                    </text>
+
+
+                    <!-- CPU -->
+
+                    <rect
+                        x="740"
+                        y="25"
+                        width="140"
+                        height="55"
+                        rx="9"/>
+
+                    <text
+                        x="810"
+                        y="58"
+                        text-anchor="middle">
+                        CPU
+                    </text>
+
+
+                    <!-- I/O DEVICE -->
+
+                    <rect
+                        x="920"
+                        y="25"
+                        width="140"
+                        height="55"
+                        rx="9"/>
+
+                    <text
+                        x="990"
+                        y="58"
+                        text-anchor="middle">
+                        I/O DEVICE
+                    </text>
+
+                </g>
+
+
+                <!-- PARTICIPANT LIFELINES -->
+
+                <g class="sequence-lifelines">
+
+                    <path d="M90 80 V900"/>
+                    <path d="M270 80 V900"/>
+                    <path d="M450 80 V900"/>
+                    <path d="M630 80 V900"/>
+                    <path d="M810 80 V900"/>
+                    <path d="M990 80 V900"/>
+
+                </g>
+
+
+                <!-- STEP 1: PLACE IN READY QUEUE -->
+
+                <path
+                    d="M270 145 H450"
+                    class="sequence-message"
+                    marker-end="url(#sequenceArrow)"/>
+
+                <text
+                    x="360"
+                    y="133"
+                    text-anchor="middle"
+                    class="sequence-label">
+                    Add process to Ready queue
+                </text>
+
+
+                <!-- STEP 2: SCHEDULER SELECTS PROCESS -->
+
+                <path
+                    d="M450 210 H630"
+                    class="sequence-message"
+                    marker-end="url(#sequenceArrow)"/>
+
+                <text
+                    x="540"
+                    y="198"
+                    text-anchor="middle"
+                    class="sequence-label">
+                    Select process
+                </text>
+
+
+                <!-- STEP 3: DISPATCH PROCESS -->
+
+                <path
+                    d="M630 275 H810"
+                    class="sequence-message"
+                    marker-end="url(#sequenceArrow)"/>
+
+                <text
+                    x="720"
+                    y="263"
+                    text-anchor="middle"
+                    class="sequence-label">
+                    Context switch and dispatch
+                </text>
+
+
+                <!-- STEP 4: EXECUTION BEGINS -->
+
+                <path
+                    d="M810 340 H90"
+                    class="sequence-message"
+                    marker-end="url(#sequenceArrow)"/>
+
+                <text
+                    x="450"
+                    y="328"
+                    text-anchor="middle"
+                    class="sequence-label">
+                    CPU begins process execution
+                </text>
+
+
+                <!-- STEP 5: PROCESS REQUESTS I/O -->
+
+                <path
+                    d="M90 405 H270"
+                    class="sequence-message"
+                    marker-end="url(#sequenceArrow)"/>
+
+                <text
+                    x="180"
+                    y="393"
+                    text-anchor="middle"
+                    class="sequence-label">
+                    Request I/O
+                </text>
+
+
+                <!-- STEP 6: PROCESS ENTERS WAITING -->
+
+                <path
+                    d="M270 470 H450"
+                    class="sequence-message"
+                    marker-end="url(#sequenceArrow)"/>
+
+                <text
+                    x="360"
+                    y="458"
+                    text-anchor="middle"
+                    class="sequence-label">
+                    Process enters Waiting
+                </text>
+
+
+                <!-- STEP 7: START I/O OPERATION -->
+
+                <path
+                    d="M270 535 H990"
+                    class="sequence-message"
+                    marker-end="url(#sequenceArrow)"/>
+
+                <text
+                    x="630"
+                    y="523"
+                    text-anchor="middle"
+                    class="sequence-label">
+                    Start I/O operation
+                </text>
+
+
+                <!-- STEP 8: I/O COMPLETION INTERRUPT -->
+
+                <path
+                    d="M990 600 H270"
+                    class="sequence-message"
+                    marker-end="url(#sequenceArrow)"/>
+
+                <text
+                    x="630"
+                    y="588"
+                    text-anchor="middle"
+                    class="sequence-label">
+                    I/O completion interrupt
+                </text>
+
+
+                <!-- STEP 9: RETURN PROCESS TO READY -->
+
+                <path
+                    d="M270 665 H450"
+                    class="sequence-message"
+                    marker-end="url(#sequenceArrow)"/>
+
+                <text
+                    x="360"
+                    y="653"
+                    text-anchor="middle"
+                    class="sequence-label">
+                    Mark process Ready; enqueue
+                </text>
+
+
+                <!-- STEP 10: SELECT PROCESS AGAIN -->
+
+                <path
+                    d="M450 730 H630"
+                    class="sequence-message"
+                    marker-end="url(#sequenceArrow)"/>
+
+                <text
+                    x="540"
+                    y="718"
+                    text-anchor="middle"
+                    class="sequence-label">
+                    Select process again
+                </text>
+
+
+                <!-- STEP 11: DISPATCH AGAIN -->
+
+                <path
+                    d="M630 795 H810"
+                    class="sequence-message"
+                    marker-end="url(#sequenceArrow)"/>
+
+                <text
+                    x="720"
+                    y="783"
+                    text-anchor="middle"
+                    class="sequence-label">
+                    Dispatch again
+                </text>
+
+
+                <!-- STEP 12: RESUME EXECUTION -->
+
+                <path
+                    d="M810 860 H90"
+                    class="sequence-message"
+                    marker-end="url(#sequenceArrow)"/>
+
+                <text
+                    x="450"
+                    y="848"
+                    text-anchor="middle"
+                    class="sequence-label">
+                    CPU resumes process execution
+                </text>
+
+            </svg>
+
+        </div>
+
+        <div class="concept-note">
+
+            <strong>Important clarification:</strong>
+
+            The OS kernel handles process-state changes and I/O
+            completion. The scheduler selects a Ready process,
+            while the dispatcher performs the context switch
+            and transfers CPU control.
+
+            <p>
+                While this process waits for I/O, the CPU can
+                execute another Ready process. This simplified
+                diagram follows one process and does not show
+                that concurrent activity.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         9.3 UNDERSTANDING THE TWO DIAGRAMS
+         ===================================================== -->
+
+    <h3>9.3 What Is the Difference Between These Diagrams?</h3>
+
+    <div class="concept-comparison">
+
+        <div class="comparison-item">
+
+            <h4>Lifecycle Flowchart</h4>
+
+            <p>
+                Focuses on the process's states and the conditions
+                that move it from one state to another.
+            </p>
+
+            <p>
+                <strong>Question answered:</strong>
+                Where can a process move next?
+            </p>
+
+        </div>
+
+
+        <div class="comparison-item">
+
+            <h4>Sequence Diagram</h4>
+
+            <p>
+                Focuses on interactions between the process,
+                kernel and operating-system components over time.
+            </p>
+
+            <p>
+                <strong>Question answered:</strong>
+                Who communicates or acts, and in what order?
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         9.4 KEY LEARNING POINTS
+         ===================================================== -->
+
+    <h3>9.4 Key Learning Points</h3>
+
+    <ul>
+
+        <li>
+            A process moves through different states during its lifetime.
+        </li>
+
+        <li>
+            The operating-system kernel manages process-state changes.
+        </li>
+
+        <li>
+            The CPU scheduler selects a process from the Ready queue.
+        </li>
+
+        <li>
+            The dispatcher performs the context switch and transfers
+            CPU control to the selected process.
+        </li>
+
+        <li>
+            A process requesting I/O enters the Waiting state.
+        </li>
+
+        <li>
+            I/O completion allows the kernel to return the process
+            to the Ready state.
+        </li>
+
+        <li>
+            A running process may return to Ready when its time slice expires.
+        </li>
+
+        <li>
+            A process enters Terminated when its execution finishes.
+        </li>
+
+    </ul>
+
+
+    <div class="concept-note">
+
+        <strong>Think like an operating-system designer:</strong>
+
+        If a process is waiting for a slow disk operation,
+        should the CPU remain idle until that operation finishes?
+
+        <p>
+            No. The operating system can schedule another Ready
+            process while the first process waits. This improves
+            CPU utilization.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- END SECTION 9 -->
+
 
 
         
