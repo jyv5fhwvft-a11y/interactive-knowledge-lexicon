@@ -693,6 +693,37 @@ body {
 }
 
 
+/* 17. PROCESS FOOTER — IKL BRAND IDENTITY
+   --------------------------------------------------------- */
+
+.concept-footer {
+    width: 100%;
+    margin-top: 40px;
+    padding: 30px 20px;
+
+    background: var(--process-navy);
+    color: var(--process-white);
+
+    text-align: center;
+}
+
+.concept-footer .footer-brand {
+    margin: 0 0 10px;
+    color: var(--process-white);
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.concept-footer .footer-credit {
+    margin: 0;
+    color: var(--process-teal);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
 /* =========================================================
    END OF PROCESS STYLESHEET
    ========================================================= */
