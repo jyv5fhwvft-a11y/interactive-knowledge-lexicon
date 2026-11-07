@@ -5193,6 +5193,308 @@
 <!-- END SECTION 13: CONNECTIONS TO OTHER OPERATING-SYSTEM CONCEPTS -->
 
         
+<!-- ==========================================
+     SECTION 14: KNOWLEDGE ASSESSMENT
+========================================== -->
+
+<section class="content-section" id="knowledge-assessment">
+
+  <div class="section-header">
+    <p class="section-label">PROCESS MANAGEMENT | SECTION 14</p>
+    <h2>Knowledge Assessment</h2>
+    <p>
+      Test your understanding of processes, process states,
+      scheduling, memory management, and the relationships
+      between operating-system concepts.
+    </p>
+  </div>
+
+  <div class="concept-note">
+    <h3>How to Complete This Assessment</h3>
+    <p>
+      Read each question carefully and select the single best answer.
+      After considering your answer, open the explanation to check
+      your understanding.
+    </p>
+    <p><strong>Total questions:</strong> 10</p>
+  </div>
+
+  <!-- QUESTION 1 -->
+  <article class="assessment-question">
+    <h3>Question 1 — Program versus Process</h3>
+    <p>
+      Which statement best explains the difference between a
+      program and a process?
+    </p>
+    <ol type="A">
+      <li>A program is an executing application, while a process is a file stored on disk.</li>
+      <li>A program is a set of stored instructions, while a process is an instance of a program in execution.</li>
+      <li>A program manages CPU scheduling, while a process manages physical memory.</li>
+      <li>A program and a process are exactly the same thing.</li>
+    </ol>
+    <details>
+      <summary>Reveal answer and explanation</summary>
+      <p><strong>Correct answer: B</strong></p>
+      <p>
+        A program is a passive collection of instructions stored
+        in a file. When the operating system executes it, a process
+        is created. Multiple processes can be running instances
+        of the same program.
+      </p>
+    </details>
+  </article>
+
+  <!-- QUESTION 2 -->
+  <article class="assessment-question">
+    <h3>Question 2 — Process versus Thread</h3>
+    <p>
+      Which statement correctly describes the relationship between
+      threads belonging to the same process?
+    </p>
+    <ol type="A">
+      <li>Every thread has its own completely separate process address space.</li>
+      <li>Threads share the process's address space and resources, but each thread has its own execution context and stack.</li>
+      <li>Threads belonging to the same process must execute one after another.</li>
+      <li>Threads do not require CPU scheduling.</li>
+    </ol>
+    <details>
+      <summary>Reveal answer and explanation</summary>
+      <p><strong>Correct answer: B</strong></p>
+      <p>
+        Threads within a process generally share resources such as
+        memory and open files. However, each thread maintains its
+        own execution state, including its registers and stack.
+      </p>
+    </details>
+  </article>
+
+  <!-- QUESTION 3 -->
+  <article class="assessment-question">
+    <h3>Question 3 — Process Control Block (PCB)</h3>
+    <p>
+      What is the primary purpose of a Process Control Block (PCB)?
+    </p>
+    <ol type="A">
+      <li>To store the complete source code of a program.</li>
+      <li>To permanently store a process's files on a storage device.</li>
+      <li>To maintain information the operating system needs to manage and track a process.</li>
+      <li>To increase the physical speed of the CPU.</li>
+    </ol>
+    <details>
+      <summary>Reveal answer and explanation</summary>
+      <p><strong>Correct answer: C</strong></p>
+      <p>
+        The PCB is an operating-system data structure containing
+        process information such as its process ID, current state,
+        scheduling information, and saved execution context.
+        It helps the operating system manage the process.
+      </p>
+    </details>
+  </article>
+
+  <!-- QUESTION 4 -->
+  <article class="assessment-question">
+    <h3>Question 4 — Ready versus Waiting</h3>
+    <p>
+      A process has finished waiting for an I/O operation. The I/O
+      completion event has been handled by the operating system.
+      What state will the process normally enter next?
+    </p>
+    <ol type="A">
+      <li>New</li>
+      <li>Ready</li>
+      <li>Terminated</li>
+      <li>Running</li>
+    </ol>
+    <details>
+      <summary>Reveal answer and explanation</summary>
+      <p><strong>Correct answer: B</strong></p>
+      <p>
+        Once the required I/O operation completes, the process can
+        continue when CPU time becomes available. It normally moves
+        from Waiting to Ready. It does not automatically become
+        Running because another process may currently be using
+        the CPU.
+      </p>
+    </details>
+  </article>
+
+  <!-- QUESTION 5 -->
+  <article class="assessment-question">
+    <h3>Question 5 — Scheduler versus Dispatcher</h3>
+    <p>
+      What is the difference between the CPU scheduler and
+      the dispatcher?
+    </p>
+    <ol type="A">
+      <li>The scheduler selects a process to run; the dispatcher gives control of the CPU to the selected process.</li>
+      <li>The scheduler manages files; the dispatcher manages memory.</li>
+      <li>The scheduler creates programs; the dispatcher terminates them.</li>
+      <li>Both perform exactly the same function.</li>
+    </ol>
+    <details>
+      <summary>Reveal answer and explanation</summary>
+      <p><strong>Correct answer: A</strong></p>
+      <p>
+        The scheduler selects a process from the Ready queue
+        according to the scheduling policy. The dispatcher performs
+        the steps needed to transfer CPU control to that process,
+        including the relevant context-switching work.
+      </p>
+    </details>
+  </article>
+
+  <!-- QUESTION 6 -->
+  <article class="assessment-question">
+    <h3>Question 6 — Context Switching</h3>
+    <p>
+      What happens during a context switch between two processes?
+    </p>
+    <ol type="A">
+      <li>The operating system deletes both processes and creates new ones.</li>
+      <li>The CPU permanently transfers all memory from one process to another.</li>
+      <li>The operating system saves the execution context of the current process and restores the context of another process.</li>
+      <li>Both processes execute simultaneously on a single CPU core.</li>
+    </ol>
+    <details>
+      <summary>Reveal answer and explanation</summary>
+      <p><strong>Correct answer: C</strong></p>
+      <p>
+        A context switch allows the CPU to stop executing one
+        process and resume another. The operating system saves
+        the outgoing process's relevant execution information
+        and restores the incoming process's context.
+        This activity has overhead.
+      </p>
+    </details>
+  </article>
+
+  <!-- QUESTION 7 -->
+  <article class="assessment-question">
+    <h3>Question 7 — Process Memory Management</h3>
+    <p>
+      Why does an operating system use separate virtual address
+      spaces for processes?
+    </p>
+    <ol type="A">
+      <li>To ensure every process uses the same physical memory addresses.</li>
+      <li>To provide memory isolation and help prevent one process from accessing another process's memory without permission.</li>
+      <li>To eliminate the need for physical RAM.</li>
+      <li>To allow every process to control the Memory Management Unit directly.</li>
+    </ol>
+    <details>
+      <summary>Reveal answer and explanation</summary>
+      <p><strong>Correct answer: B</strong></p>
+      <p>
+        Separate virtual address spaces provide processes with
+        their own protected memory views. Hardware mechanisms
+        such as the Memory Management Unit (MMU), working with
+        operating-system-managed memory structures, help translate
+        addresses and enforce memory protection.
+      </p>
+    </details>
+  </article>
+
+  <!-- QUESTION 8 -->
+  <article class="assessment-question">
+    <h3>Question 8 — Interrupts and I/O Completion</h3>
+    <p>
+      A device finishes an I/O operation and generates an interrupt.
+      What is the operating system's role in handling this event?
+    </p>
+    <ol type="A">
+      <li>Automatically terminate the process that requested the operation.</li>
+      <li>Immediately execute the waiting process without scheduling.</li>
+      <li>Handle the interrupt and, when appropriate, update the waiting process so it can become Ready.</li>
+      <li>Restart the entire computer.</li>
+    </ol>
+    <details>
+      <summary>Reveal answer and explanation</summary>
+      <p><strong>Correct answer: C</strong></p>
+      <p>
+        An interrupt notifies the CPU that an event needs attention.
+        The operating system handles the event and may move the
+        associated process from Waiting to Ready. The scheduler
+        determines when it gets CPU time.
+      </p>
+    </details>
+  </article>
+
+  <!-- QUESTION 9 -->
+  <article class="assessment-question">
+    <h3>Question 9 — Inter-Process Communication (IPC)</h3>
+    <p>
+      Two processes use a shared-memory region to exchange
+      information. What additional concern must they consider
+      if both can access the same data concurrently?
+    </p>
+    <ol type="A">
+      <li>They must use separate physical CPUs.</li>
+      <li>They must prevent either process from entering the Ready state.</li>
+      <li>They must ensure that the shared memory is permanently read-only.</li>
+      <li>They may need synchronization to prevent race conditions.</li>
+    </ol>
+    <details>
+      <summary>Reveal answer and explanation</summary>
+      <p><strong>Correct answer: D</strong></p>
+      <p>
+        Shared memory allows processes to exchange information
+        efficiently. However, concurrent access can produce
+        race conditions when operations interfere with one another.
+        Synchronization mechanisms such as mutexes and semaphores
+        help coordinate access.
+      </p>
+    </details>
+  </article>
+
+  <!-- QUESTION 10 -->
+  <article class="assessment-question">
+    <h3>Question 10 — Applying the Process Lifecycle</h3>
+    <p>
+      A text editor requests a synchronous, blocking file read
+      through a system call. The required data is not immediately
+      available, so the operating system must wait for storage I/O.
+      Which sequence best describes what can happen?
+    </p>
+    <ol type="A">
+      <li>Running → Terminated → New</li>
+      <li>Running → Waiting → Ready → Running</li>
+      <li>Ready → New → Waiting → Terminated</li>
+      <li>Waiting → Running → New → Ready</li>
+    </ol>
+    <details>
+      <summary>Reveal answer and explanation</summary>
+      <p><strong>Correct answer: B</strong></p>
+      <p>
+        The process is Running when it requests the read operation.
+        If it must wait for the I/O, it enters Waiting. After the
+        I/O completes and the operating system handles the
+        completion event, it becomes Ready. It can return to
+        Running when selected by the scheduler and given CPU time.
+      </p>
+    </details>
+  </article>
+
+  <!-- ASSESSMENT TAKEAWAY -->
+  <div class="concept-note">
+    <h3>Assessment Complete — What Have You Learned?</h3>
+    <p>
+      You have reviewed the fundamental relationships between
+      programs, processes, threads, scheduling, memory management,
+      interrupts, and inter-process communication.
+    </p>
+    <p>
+      Understanding these connections will help you see how an
+      operating system coordinates processes and shares hardware
+      resources safely and efficiently.
+    </p>
+  </div>
+
+</section>
+
+<!-- END OF SECTION 14 -->
+
+        
         
 
     </main>
