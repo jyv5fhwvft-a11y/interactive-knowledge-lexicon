@@ -5494,7 +5494,481 @@
 
 <!-- END OF SECTION 14 -->
 
+
         
+<!-- =========================================================
+     SECTION 15: QUICK REVISION AND KEY TAKEAWAYS
+     ========================================================= -->
+
+<section id="process-revision" class="concept-section">
+
+    <h2>15. Quick Revision and Key Takeaways</h2>
+
+    <div class="concept-note">
+        <h3>Bringing Everything Together</h3>
+
+        <p>
+            You have explored processes, their lifecycle,
+            internal structure, management, scheduling and
+            relationships with other operating-system concepts.
+        </p>
+
+        <p>
+            This final section brings the essential ideas together.
+            Use it to revise important terminology, connect related
+            concepts and check your understanding of process management.
+        </p>
+    </div>
+
+    <!-- 15.1 PROCESS AT A GLANCE -->
+
+    <div class="concept-note">
+        <h3>15.1 Process at a Glance</h3>
+
+        <p>
+            A <strong>process</strong> is a program in execution.
+            It is an active instance of a program, with its own
+            address space, execution resources and one or more threads.
+        </p>
+
+        <p><strong>Remember:</strong></p>
+
+        <ul>
+            <li>A program is passive; a process is active.</li>
+            <li>A process has its own address space and managed resources.</li>
+            <li>A process contains one or more threads of execution.</li>
+            <li>Each thread has its own execution context and stack.</li>
+            <li>The operating system manages processes and their resources.</li>
+            <li>Multiple processes can make progress concurrently.</li>
+            <li>Multiple threads may execute in parallel on different CPU cores.</li>
+        </ul>
+    </div>
+
+    <!-- 15.2 ESSENTIAL TERMINOLOGY -->
+
+    <div class="concept-note">
+        <h3>15.2 Essential Terminology</h3>
+
+        <ul>
+            <li>
+                <strong>Program:</strong>
+                A stored set of instructions that can be executed.
+            </li>
+
+            <li>
+                <strong>Process:</strong>
+                An executing instance of a program, with its
+                associated execution environment and resources.
+            </li>
+
+            <li>
+                <strong>Process ID (PID):</strong>
+                An identifier assigned to a process by the
+                operating system.
+            </li>
+
+            <li>
+                <strong>Process Control Block (PCB):</strong>
+                An operating-system data structure containing
+                information needed to manage a process.
+            </li>
+
+            <li>
+                <strong>Thread:</strong>
+                An execution unit within a process.
+            </li>
+
+            <li>
+                <strong>Context Switch:</strong>
+                The operation of saving one execution context
+                and restoring another so that a different
+                process or thread can execute.
+            </li>
+
+            <li>
+                <strong>Scheduler:</strong>
+                The operating-system component that selects
+                an eligible process or thread for CPU execution.
+            </li>
+
+            <li>
+                <strong>Dispatcher:</strong>
+                The component that transfers CPU control
+                to the selected execution unit.
+            </li>
+
+            <li>
+                <strong>Inter-Process Communication (IPC):</strong>
+                Mechanisms that allow processes to exchange
+                information and coordinate their activities.
+            </li>
+
+            <li>
+                <strong>Program Counter (PC):</strong>
+                A register in a thread's execution context
+                that holds the address of its next instruction.
+            </li>
+        </ul>
+    </div>
+
+    <!-- 15.3 PROCESS LIFECYCLE -->
+
+    <div class="concept-note">
+        <h3>15.3 Process Lifecycle Revision</h3>
+
+        <p>
+            A process moves through different states during
+            its lifetime. The operating system tracks these
+            states to manage execution.
+        </p>
+
+        <ul>
+            <li>
+                <strong>New:</strong>
+                The process is being created.
+            </li>
+
+            <li>
+                <strong>Ready:</strong>
+                The process is prepared to execute and is
+                waiting for CPU allocation.
+            </li>
+
+            <li>
+                <strong>Running:</strong>
+                A thread belonging to the process is currently
+                executing on a CPU.
+            </li>
+
+            <li>
+                <strong>Waiting (Blocked):</strong>
+                The process cannot continue until a required
+                event occurs, such as completion of an I/O operation.
+            </li>
+
+            <li>
+                <strong>Terminated:</strong>
+                The process has finished or has been stopped.
+            </li>
+        </ul>
+
+        <h4>Important State Transitions</h4>
+
+        <ul>
+            <li>
+                <strong>New → Ready:</strong>
+                The process is admitted into the ready state.
+            </li>
+
+            <li>
+                <strong>Ready → Running:</strong>
+                The dispatcher gives the selected process CPU time.
+            </li>
+
+            <li>
+                <strong>Running → Ready:</strong>
+                The running process is pre-empted or its
+                allocated time slice expires.
+            </li>
+
+            <li>
+                <strong>Running → Waiting:</strong>
+                The process must wait for an event or operation,
+                such as an I/O request, to complete.
+            </li>
+
+            <li>
+                <strong>Waiting → Ready:</strong>
+                The required event occurs and the process becomes
+                eligible for CPU scheduling again.
+            </li>
+
+            <li>
+                <strong>Running → Terminated:</strong>
+                The process finishes or is terminated.
+            </li>
+        </ul>
+
+        <p>
+            <strong>Key distinction:</strong>
+            A process in the Ready state is waiting for CPU time.
+            A process in the Waiting state is waiting for an event.
+        </p>
+    </div>
+
+    <!-- 15.4 HOW PROCESS MANAGEMENT WORKS -->
+
+    <div class="concept-note">
+        <h3>15.4 How the Operating System Manages Processes</h3>
+
+        <ol>
+            <li>
+                <strong>Process Creation:</strong>
+                The operating system creates a process and
+                establishes the address space and resources
+                required for its execution.
+            </li>
+
+            <li>
+                <strong>Process Tracking:</strong>
+                The operating system maintains process information,
+                including its state, identifier and management data.
+            </li>
+
+            <li>
+                <strong>CPU Scheduling:</strong>
+                The scheduler selects an eligible process or
+                thread for execution.
+            </li>
+
+            <li>
+                <strong>Context Switching:</strong>
+                The operating system saves the execution context
+                of one process or thread and restores another.
+            </li>
+
+            <li>
+                <strong>Memory Management:</strong>
+                The operating system manages process address spaces,
+                memory allocation and protection, with hardware
+                support such as the Memory Management Unit (MMU).
+            </li>
+
+            <li>
+                <strong>Communication:</strong>
+                Processes exchange information using IPC mechanisms
+                such as pipes, message queues, sockets and shared memory.
+            </li>
+
+            <li>
+                <strong>Process Termination:</strong>
+                The operating system performs the necessary cleanup
+                and releases resources associated with the process.
+            </li>
+        </ol>
+    </div>
+
+    <!-- 15.5 IMPORTANT COMPARISONS -->
+
+    <div class="concept-note">
+        <h3>15.5 Important Comparisons to Remember</h3>
+
+        <h4>Program vs Process</h4>
+
+        <ul>
+            <li><strong>Program:</strong> Stored instructions.</li>
+            <li><strong>Process:</strong> An executing instance of a program.</li>
+        </ul>
+
+        <h4>Process vs Thread</h4>
+
+        <ul>
+            <li>
+                <strong>Process:</strong>
+                An executing program with its own address space
+                and managed resources.
+            </li>
+            <li>
+                <strong>Thread:</strong>
+                An execution unit within a process.
+            </li>
+            <li>
+                Threads in the same process share its address
+                space and many process resources.
+            </li>
+            <li>
+                Each thread has its own execution context,
+                including its registers and stack.
+            </li>
+        </ul>
+
+        <h4>Ready vs Waiting</h4>
+
+        <ul>
+            <li><strong>Ready:</strong> Waiting for CPU allocation.</li>
+            <li><strong>Waiting:</strong> Waiting for an event or operation to complete.</li>
+        </ul>
+
+        <h4>Scheduler vs Dispatcher</h4>
+
+        <ul>
+            <li><strong>Scheduler:</strong> Selects the next eligible execution unit.</li>
+            <li><strong>Dispatcher:</strong> Transfers CPU control to the selected unit.</li>
+        </ul>
+
+        <h4>Program Counter vs Process ID</h4>
+
+        <ul>
+            <li>
+                <strong>Program Counter:</strong>
+                Holds the address of the next instruction
+                for a particular thread.
+            </li>
+            <li>
+                <strong>Process ID:</strong>
+                Identifies a process within the operating system.
+            </li>
+        </ul>
+    </div>
+
+    <!-- 15.6 OPERATING-SYSTEM RELATIONSHIPS -->
+
+    <div class="concept-note">
+        <h3>15.6 Connections to Other Operating-System Concepts</h3>
+
+        <ul>
+            <li>
+                <strong>Memory Management:</strong>
+                Provides processes with managed address spaces
+                and memory protection.
+            </li>
+
+            <li>
+                <strong>CPU Scheduling:</strong>
+                Determines which eligible process or thread
+                receives CPU time.
+            </li>
+
+            <li>
+                <strong>Interrupts:</strong>
+                Allow the processor to respond to events,
+                including hardware events.
+            </li>
+
+            <li>
+                <strong>System Calls:</strong>
+                Provide a controlled interface through which
+                programs request operating-system services.
+            </li>
+
+            <li>
+                <strong>File System:</strong>
+                Provides mechanisms for storing, accessing
+                and managing files.
+            </li>
+
+            <li>
+                <strong>IPC:</strong>
+                Enables processes to communicate and coordinate.
+            </li>
+
+            <li>
+                <strong>Synchronization:</strong>
+                Helps coordinate access to shared resources
+                and prevent problems such as race conditions.
+            </li>
+        </ul>
+    </div>
+
+    <!-- 15.7 COMMON MISCONCEPTIONS -->
+
+    <div class="concept-note">
+        <h3>15.7 Common Misconceptions to Avoid</h3>
+
+        <ul>
+            <li>
+                A program and a process are not the same thing.
+            </li>
+
+            <li>
+                A Ready process is not currently executing.
+            </li>
+
+            <li>
+                A Waiting process is not simply waiting for CPU time.
+            </li>
+
+            <li>
+                A process and a thread are not interchangeable terms.
+            </li>
+
+            <li>
+                A context switch does not mean that a process
+                has terminated.
+            </li>
+
+            <li>
+                Concurrency does not always mean that multiple
+                tasks execute at the exact same instant.
+            </li>
+
+            <li>
+                Processes do not automatically share all their
+                memory with one another.
+            </li>
+
+            <li>
+                An interrupt does not automatically mean that
+                the interrupted process will immediately run again.
+            </li>
+
+            <li>
+                A process can contain multiple threads, and
+                a thread is the unit of execution scheduled
+                on a CPU.
+            </li>
+        </ul>
+    </div>
+
+    <!-- 15.8 FINAL REVISION CHECKLIST -->
+
+    <div class="concept-note">
+        <h3>15.8 Final Revision Checklist</h3>
+
+        <p>
+            Before moving on, make sure you can explain
+            each of the following in your own words.
+        </p>
+
+        <ul>
+            <li>What is a process, and why does an OS need it?</li>
+            <li>How is a process different from a program?</li>
+            <li>What information does a PCB contain?</li>
+            <li>What are the five basic process states?</li>
+            <li>How does a process move between states?</li>
+            <li>What happens during a context switch?</li>
+            <li>What is the difference between a scheduler and dispatcher?</li>
+            <li>How are processes and threads related?</li>
+            <li>How does the OS manage process memory?</li>
+            <li>How can processes communicate with one another?</li>
+            <li>What happens when a process terminates?</li>
+        </ul>
+    </div>
+
+    <!-- 15.9 THE BIG PICTURE -->
+
+    <div class="concept-note">
+        <h3>15.9 The Big Picture: Why Processes Matter</h3>
+
+        <p>
+            A computer runs many programs and performs many
+            activities. The operating system needs a way to
+            organise, track, schedule and control their execution.
+        </p>
+
+        <p>
+            Processes provide an important abstraction for this
+            work. They allow the operating system to manage
+            executing programs, coordinate their access to
+            resources, protect their memory and support
+            communication between them.
+        </p>
+
+        <p>
+            <strong>Final takeaway:</strong>
+            Process management is one of the central responsibilities
+            of an operating system. It helps turn a collection of
+            competing programs into an organised and manageable
+            computing environment.
+        </p>
+    </div>
+
+</section>
+
+<!-- END SECTION 15: QUICK REVISION AND KEY TAKEAWAYS -->
+
+
+
         
 
     </main>
