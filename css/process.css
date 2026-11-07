@@ -1300,6 +1300,96 @@ body {
 
 
 /* =========================================================
+   19.1 SEQUENCE DIAGRAM — ARROW COLOUR LEGEND
+   ========================================================= */
+
+.sequence-arrow-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 28px;
+
+    margin: 16px 0 24px;
+    padding: 16px 20px;
+
+    background: #FFFFFF;
+
+    border: 1px solid var(--process-border);
+    border-radius: var(--process-radius-medium);
+}
+
+.sequence-arrow-legend .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-width: 0;
+
+    color: var(--process-text);
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.sequence-arrow-legend .legend-item strong {
+    color: var(--process-navy);
+}
+
+.sequence-arrow-legend .legend-line {
+    position: relative;
+
+    display: inline-block;
+    flex: 0 0 34px;
+
+    width: 34px;
+    height: 3px;
+
+    border-radius: 3px;
+}
+
+.sequence-arrow-legend .legend-line::after {
+    content: "";
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.sequence-arrow-legend .legend-blue {
+    color: var(--process-blue);
+    background: var(--process-blue);
+}
+
+.sequence-arrow-legend .legend-orange {
+    color: #D97706;
+    background: #D97706;
+}
+
+@media (max-width: 600px) {
+    .sequence-arrow-legend {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+
+        padding: 15px;
+    }
+
+    .sequence-arrow-legend .legend-item {
+        font-size: 13px;
+    }
+}
+
+
+
+/* =========================================================
    END OF PROCESS STYLESHEET
    ========================================================= */
 
