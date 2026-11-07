@@ -4445,6 +4445,336 @@
 
 <!-- END SECTION 11: COMMON MISTAKES AND MISCONCEPTIONS -->
 
+        <!-- =========================================================
+     SECTION 12: ADVANTAGES AND LIMITATIONS OF PROCESSES
+     ========================================================= -->
+
+<section id="advantages-limitations" class="concept-section">
+
+    <h2>12. Advantages and Limitations of Processes</h2>
+
+    <div class="concept-note">
+        <h3>Understanding the Trade-Off</h3>
+
+        <p>
+            Processes make multitasking, isolation, resource management,
+            and responsive computing possible. However, creating and
+            managing processes also requires memory, CPU time, and
+            coordination.
+        </p>
+
+        <p>
+            Understanding both sides helps us see why processes are
+            essential to modern operating systems and why they must
+            be managed carefully.
+        </p>
+    </div>
+
+
+    <!-- 12.1 ADVANTAGES OF PROCESSES -->
+
+    <h3>12.1 Advantages of Processes</h3>
+
+    <p>
+        Processes provide several important benefits that help an
+        operating system manage running applications.
+    </p>
+
+    <div class="concept-comparison">
+
+        <div class="comparison-item">
+            <h4>1. Multitasking</h4>
+
+            <p><strong>How it helps:</strong></p>
+
+            <ul>
+                <li>Allows multiple applications to execute during overlapping periods.</li>
+                <li>The operating system schedules CPU time among processes.</li>
+                <li>Multiple processes can execute simultaneously on different CPU cores.</li>
+            </ul>
+
+            <p>
+                <strong>Example:</strong> Listening to music while browsing
+                the internet.
+            </p>
+        </div>
+
+
+        <div class="comparison-item">
+            <h4>2. Process Isolation</h4>
+
+            <p><strong>How it helps:</strong></p>
+
+            <ul>
+                <li>Processes generally have separate virtual address spaces.</li>
+                <li>Memory protection helps prevent unauthorized access between processes.</li>
+                <li>Problems in one process are less likely to directly affect another.</li>
+            </ul>
+
+            <p>
+                <strong>Example:</strong> A crash in a text editor does not
+                necessarily crash a music player.
+            </p>
+        </div>
+
+
+        <div class="comparison-item">
+            <h4>3. Better Resource Management</h4>
+
+            <p><strong>How it helps:</strong></p>
+
+            <ul>
+                <li>The operating system manages CPU allocation.</li>
+                <li>It coordinates memory and I/O resource usage.</li>
+                <li>It manages competing requests from different processes.</li>
+            </ul>
+
+            <p>
+                <strong>Example:</strong> The scheduler selects which ready
+                process receives CPU time.
+            </p>
+        </div>
+
+
+        <div class="comparison-item">
+            <h4>4. Improved Responsiveness</h4>
+
+            <p><strong>How it helps:</strong></p>
+
+            <ul>
+                <li>A process waiting for blocking I/O can enter the Waiting state.</li>
+                <li>The CPU can then execute another ready process.</li>
+                <li>This helps the system remain productive while operations are pending.</li>
+            </ul>
+
+            <p>
+                <strong>Example:</strong> A browser waiting for a file
+                operation while another application continues running.
+            </p>
+        </div>
+
+
+        <div class="comparison-item">
+            <h4>5. Controlled Execution</h4>
+
+            <p><strong>How it helps:</strong></p>
+
+            <ul>
+                <li>Every process has an identifiable lifecycle.</li>
+                <li>The operating system tracks process states.</li>
+                <li>It can create, schedule, suspend, resume, and terminate processes.</li>
+            </ul>
+
+            <p>
+                <strong>Example:</strong> The operating system can terminate
+                an unresponsive application.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- 12.2 LIMITATIONS AND CHALLENGES -->
+
+    <h3>12.2 Limitations and Challenges of Processes</h3>
+
+    <p>
+        Although processes provide important benefits, managing them
+        introduces costs and technical challenges.
+    </p>
+
+    <div class="concept-comparison">
+
+        <div class="comparison-item">
+            <h4>1. Process Creation Overhead</h4>
+
+            <p><strong>Why it is a limitation:</strong></p>
+
+            <ul>
+                <li>Creating a process requires operating-system operations.</li>
+                <li>The OS establishes process-management structures and resources.</li>
+                <li>Creation consumes time and memory.</li>
+            </ul>
+
+            <p>
+                <strong>Example:</strong> Starting a new application requires
+                more work than simply continuing an existing process.
+            </p>
+        </div>
+
+
+        <div class="comparison-item">
+            <h4>2. Context-Switching Overhead</h4>
+
+            <p><strong>Why it is a limitation:</strong></p>
+
+            <ul>
+                <li>The OS saves the current process's execution context.</li>
+                <li>It restores the context of another process.</li>
+                <li>This switching consumes CPU time without directly advancing either application's work.</li>
+            </ul>
+
+            <p>
+                <strong>Example:</strong> Frequent switching between processes
+                can add unnecessary overhead.
+            </p>
+        </div>
+
+
+        <div class="comparison-item">
+            <h4>3. Memory Consumption</h4>
+
+            <p><strong>Why it is a limitation:</strong></p>
+
+            <ul>
+                <li>Processes require memory for execution and management.</li>
+                <li>Multiple processes can increase total memory demand.</li>
+                <li>Some memory may be shared, so the cost is not always fully duplicated.</li>
+            </ul>
+
+            <p>
+                <strong>Example:</strong> Opening many memory-intensive
+                applications can put pressure on available RAM.
+            </p>
+        </div>
+
+
+        <div class="comparison-item">
+            <h4>4. Inter-Process Communication Complexity</h4>
+
+            <p><strong>Why it is a limitation:</strong></p>
+
+            <ul>
+                <li>Processes sometimes need to exchange information.</li>
+                <li>Communication requires mechanisms such as pipes, sockets, or shared memory.</li>
+                <li>Designing and managing communication can be complicated.</li>
+            </ul>
+
+            <p>
+                <strong>Example:</strong> Two separate applications exchanging
+                information through a communication channel.
+            </p>
+        </div>
+
+
+        <div class="comparison-item">
+            <h4>5. Synchronization Problems</h4>
+
+            <p><strong>Why it is a limitation:</strong></p>
+
+            <ul>
+                <li>Processes may access shared resources.</li>
+                <li>Poor coordination can produce race conditions.</li>
+                <li>Incorrect resource coordination can also lead to deadlocks.</li>
+            </ul>
+
+            <p>
+                <strong>Example:</strong> Two processes attempting to update
+                the same shared data at the same time.
+            </p>
+        </div>
+
+
+        <div class="comparison-item">
+            <h4>6. Resource Contention</h4>
+
+            <p><strong>Why it is a limitation:</strong></p>
+
+            <ul>
+                <li>Processes compete for limited resources.</li>
+                <li>CPU time, memory, storage, and I/O devices may become bottlenecks.</li>
+                <li>Heavy competition can reduce overall system performance.</li>
+            </ul>
+
+            <p>
+                <strong>Example:</strong> Several demanding applications
+                competing for CPU time.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- 12.3 ADVANTAGES VS LIMITATIONS -->
+
+    <h3>12.3 Advantages vs Limitations — Quick Comparison</h3>
+
+    <p>
+        The following table summarises the benefits processes provide
+        and the costs or challenges associated with managing them.
+    </p>
+
+    <div class="table-responsive">
+
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Advantages</th>
+                    <th scope="col">Limitations</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Supports multitasking</td>
+                    <td>Requires management overhead</td>
+                </tr>
+
+                <tr>
+                    <td>Provides memory isolation</td>
+                    <td>Requires memory resources</td>
+                </tr>
+
+                <tr>
+                    <td>Improves responsiveness</td>
+                    <td>Context switching consumes CPU time</td>
+                </tr>
+
+                <tr>
+                    <td>Enables resource management</td>
+                    <td>Processes compete for resources</td>
+                </tr>
+
+                <tr>
+                    <td>Supports controlled execution</td>
+                    <td>Communication and synchronization add complexity</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <!-- 12.4 IMPORTANT TAKEAWAY -->
+
+    <h3>12.4 Important Takeaway</h3>
+
+    <div class="concept-note">
+
+        <p>
+            Processes provide the operating system with a structured
+            way to manage running programs. They support multitasking,
+            protection, resource management, and responsiveness.
+        </p>
+
+        <p>
+            However, these benefits come with costs: process creation,
+            memory consumption, context switching, communication,
+            synchronization, and resource competition.
+        </p>
+
+        <p>
+            <strong>The central lesson:</strong> Processes make modern
+            multitasking systems possible, but effective process
+            management requires balancing their benefits against
+            their overhead.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- END SECTION 12: ADVANTAGES AND LIMITATIONS OF PROCESSES -->
         
 
     </main>
