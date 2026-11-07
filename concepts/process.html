@@ -3720,6 +3720,334 @@
 
 
 
+<!-- ================================================== -->
+<!-- SECTION 10: PRACTICAL EXAMPLE                     -->
+<!-- ================================================== -->
+
+<section id="practical-example" class="concept-section">
+
+    <h2>10. Practical Example</h2>
+
+    <!-- BLOCK 10.1: INTRODUCING THE SCENARIO -->
+
+    <h3>10.1 A Real-Life Scenario: Opening a Text Editor</h3>
+
+    <p>
+        Imagine Alex opens a text editor to write a document.
+        The application may look like one simple window, but
+        behind that window the operating system is managing
+        a process and coordinating its use of computer resources.
+    </p>
+
+    <p>
+        Let's follow this process from the moment the application
+        starts until it finishes executing.
+    </p>
+
+
+    <!-- BLOCK 10.2: FOLLOWING THE PROCESS LIFECYCLE -->
+
+    <h3>10.2 Follow the Process Through Its Lifetime</h3>
+
+    <ol>
+
+        <li>
+            <strong>Alex opens the text editor — New.</strong>
+
+            <p>
+                The operating system begins creating a process
+                for the application. The process starts in the
+                New state while the operating system prepares
+                the information and resources needed for execution.
+            </p>
+        </li>
+
+        <li>
+            <strong>The process becomes Ready.</strong>
+
+            <p>
+                The process has been prepared for execution.
+                It enters the Ready state and waits for the
+                CPU scheduler to select it.
+            </p>
+        </li>
+
+        <li>
+            <strong>The process starts Running.</strong>
+
+            <p>
+                The scheduler selects the process. The dispatcher
+                performs the necessary context switch and transfers
+                CPU control to it. The text editor begins executing
+                its instructions.
+            </p>
+        </li>
+
+        <li>
+            <strong>Alex opens an existing document — Waiting.</strong>
+
+            <p>
+                In this simplified example, the text editor requests
+                data from storage using a blocking I/O operation.
+                The process must wait for that operation to complete,
+                so it enters the Waiting state.
+            </p>
+        </li>
+
+        <li>
+            <strong>The operating system schedules other work.</strong>
+
+            <p>
+                While the text editor waits, it does not need to
+                occupy the CPU. The scheduler can select another
+                process from the Ready queue so the CPU can continue
+                doing useful work.
+            </p>
+        </li>
+
+        <li>
+            <strong>The I/O operation completes — Ready.</strong>
+
+            <p>
+                The storage operation completes and the device
+                notifies the operating system. The kernel handles
+                the completion event and moves the waiting process
+                back to the Ready state.
+            </p>
+        </li>
+
+        <li>
+            <strong>The process runs again — Running.</strong>
+
+            <p>
+                The process does not immediately receive the CPU
+                just because its I/O operation has completed.
+                It must wait until the scheduler selects it again.
+                The dispatcher then restores the necessary execution
+                context, allowing the text editor to continue.
+            </p>
+        </li>
+
+        <li>
+            <strong>Alex closes the application — Terminated.</strong>
+
+            <p>
+                When the application exits, its process enters
+                the Terminated state. The operating system performs
+                the necessary cleanup and releases resources that
+                are no longer needed.
+            </p>
+        </li>
+
+    </ol>
+
+
+    <!-- BLOCK 10.3: PROCESS JOURNEY SUMMARY -->
+
+    <h3>10.3 Visualising the Process Journey</h3>
+
+    <p>
+        The following simplified sequence shows the states
+        experienced by the text editor process in this example.
+    </p>
+
+    <div class="concept-note">
+
+        <p><strong>NEW</strong></p>
+
+        <p>
+            ↓ The operating system creates the process
+        </p>
+
+        <p><strong>READY</strong></p>
+
+        <p>
+            ↓ The scheduler selects the process
+        </p>
+
+        <p><strong>RUNNING</strong></p>
+
+        <p>
+            ↓ The process requests blocking file I/O
+        </p>
+
+        <p><strong>WAITING</strong></p>
+
+        <p>
+            ↓ The I/O operation completes
+        </p>
+
+        <p><strong>READY</strong></p>
+
+        <p>
+            ↓ The scheduler selects the process again
+        </p>
+
+        <p><strong>RUNNING</strong></p>
+
+        <p>
+            ↓ The application exits
+        </p>
+
+        <p><strong>TERMINATED</strong></p>
+
+    </div>
+
+    <div class="concept-note">
+
+        <strong>Important observation:</strong>
+
+        A process that finishes waiting for I/O returns to
+        Ready, not directly to Running. It must be selected
+        by the CPU scheduler before it can execute again.
+
+    </div>
+
+
+    <!-- BLOCK 10.4: RESOURCES USED BY THE PROCESS -->
+
+    <h3>10.4 What Does the Operating System Manage?</h3>
+
+    <p>
+        While Alex uses the text editor, several operating-system
+        components and hardware resources contribute to its execution.
+    </p>
+
+    <div class="concept-comparison">
+
+        <div class="comparison-item">
+
+            <h4>CPU</h4>
+
+            <p>
+                Executes the instructions belonging to the
+                text editor process.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Memory</h4>
+
+            <p>
+                Holds the program's code, working data,
+                and information needed during execution.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>CPU Scheduler</h4>
+
+            <p>
+                Selects a process from the Ready queue
+                to receive CPU time.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Dispatcher</h4>
+
+            <p>
+                Performs the context switch and transfers
+                CPU control to the selected process.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Storage Device</h4>
+
+            <p>
+                Provides the requested document data
+                when the process performs file I/O.
+            </p>
+
+        </div>
+
+        <div class="comparison-item">
+
+            <h4>Operating-System Kernel</h4>
+
+            <p>
+                Manages process-state changes and handles
+                important events such as I/O completion.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- BLOCK 10.5: WHAT WE LEARN FROM THE EXAMPLE -->
+
+    <h3>10.5 What Does This Example Teach Us?</h3>
+
+    <ul>
+
+        <li>
+            An application running on a computer is represented
+            by one or more processes.
+        </li>
+
+        <li>
+            A process moves between different states during
+            its lifetime.
+        </li>
+
+        <li>
+            The CPU scheduler decides which Ready process
+            receives CPU time.
+        </li>
+
+        <li>
+            A process may wait for I/O without occupying
+            the CPU.
+        </li>
+
+        <li>
+            After I/O completes, a process returns to Ready
+            and must be scheduled again.
+        </li>
+
+        <li>
+            When execution ends, the operating system
+            performs the necessary cleanup.
+        </li>
+
+    </ul>
+
+
+    <!-- BLOCK 10.6: IMPORTANT TECHNICAL QUALIFICATION -->
+
+    <div class="concept-note">
+
+        <h4>Important: This Is a Simplified Example</h4>
+
+        <p>
+            Real operating systems use techniques such as
+            caching, buffering, asynchronous I/O, and other
+            mechanisms to handle file operations.
+        </p>
+
+        <p>
+            Not every file operation causes a process to enter
+            the Waiting state. The example deliberately uses
+            a blocking I/O operation to demonstrate the
+            relationship between I/O and process states.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- END SECTION 10: PRACTICAL EXAMPLE -->
+
         
 
     </main>
