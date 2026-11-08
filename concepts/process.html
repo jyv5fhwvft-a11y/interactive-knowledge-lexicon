@@ -4273,13 +4273,10 @@ to finish.
 
   
 
-
-        
 <!-- =========================================================
      SECTION 7 — WORKING MECHANISM
      Concept 002: Process — A Program in Execution
      Explains the process lifecycle from creation to termination.
-     Uses existing page classes only; no new JavaScript required.
      ========================================================= -->
 
 <section id="working-mechanism" class="concept-section">
@@ -4288,39 +4285,47 @@ to finish.
 
     <p>
         A process does not simply appear and immediately use the CPU.
-        It moves through a series of stages during its lifetime.
-        The operating system manages these stages so that multiple
-        processes can share the computer's resources in an organised way.
+        During its lifetime, it passes through different stages.
+        The operating system manages these stages and coordinates
+        access to resources such as CPU time, memory and input/output.
     </p>
 
     <p>
-        In this section, we will follow a process from the moment it is
-        created until it finishes its work.
+        In this section, we will follow a process from its creation
+        through execution and waiting, until its termination.
     </p>
+
+    <div class="concept-note">
+        <strong>One important distinction:</strong>
+        The five-state process model is a simplified teaching model.
+        Modern operating systems generally schedule individual threads
+        for CPU execution. We will first learn the traditional process
+        lifecycle, then connect it to the process-and-thread relationship.
+    </div>
 
     <!-- BLOCK 7.1 — INTRODUCTION TO THE PROCESS LIFECYCLE -->
 
     <h3>7.1 Understanding the Process Lifecycle</h3>
 
     <p>
-        The <strong>process lifecycle</strong> describes the different
-        states a process can enter while it exists in an operating system.
-        A process may be waiting for the CPU, actively executing instructions,
-        waiting for an event, or finishing its execution.
+        The <strong>process lifecycle</strong> describes the stages
+        a process passes through while it exists in an operating system.
+        A process may be newly created, ready to execute, running,
+        waiting for an event, or terminated.
     </p>
 
     <p>
-        To understand this lifecycle, imagine opening a web browser.
-        The operating system must create a process, prepare it for execution,
-        give it CPU time, manage its waiting periods, and eventually clean up
-        when the process finishes.
+        Imagine opening a web browser. The operating system must
+        create the necessary process or processes, prepare their
+        execution environments, manage their access to CPU time,
+        handle waiting periods, and eventually clean up when they end.
     </p>
 
     <div class="concept-note">
         <strong>Important idea:</strong>
-        A process changes states during its lifetime. The operating system
-        keeps track of these changes and decides when a process can use
-        the CPU.
+        A process changes its state as different events occur.
+        The operating system manages these changes and determines
+        when its executable threads can receive CPU time.
     </div>
 
     <!-- BLOCK 7.2 — THE FIVE BASIC PROCESS STATES -->
@@ -4329,26 +4334,28 @@ to finish.
 
     <p>
         A commonly taught operating-system model describes a process
-        using five basic states.
+        using five basic states:
     </p>
 
     <ol>
         <li>
             <strong>New:</strong>
-            The process is being created by the operating system.
+            The operating system is creating the process and preparing
+            its required management information and resources.
         </li>
         <li>
             <strong>Ready:</strong>
-            The process is prepared to execute and is waiting for CPU time.
+            The process is prepared to execute. In the simplified model,
+            it is waiting for CPU time.
         </li>
         <li>
             <strong>Running:</strong>
-            The process is currently executing instructions on a CPU.
+            The process is actively executing instructions on a CPU.
         </li>
         <li>
             <strong>Waiting (Blocked):</strong>
-            The process cannot continue until a required event occurs,
-            such as completion of an input/output operation.
+            The process is waiting for an event or operation to complete,
+            such as an input/output operation.
         </li>
         <li>
             <strong>Terminated:</strong>
@@ -4357,19 +4364,27 @@ to finish.
     </ol>
 
     <div class="concept-note">
-        <strong>Remember:</strong>
-        Ready means waiting for the CPU. Waiting means waiting for an event
-        or operation to complete. These two states are not the same.
+        <strong>Remember the difference:</strong>
+        Ready means able to execute but waiting for CPU time.
+        Waiting means unable to continue until a required event
+        or operation is completed.
     </div>
+
+    <p>
+        These five states provide a useful way to understand process
+        behaviour. Real operating systems may track more detailed
+        states, and individual threads may have their own execution states.
+    </p>
 
     <!-- BLOCK 7.3 — PROCESS CREATION -->
 
     <h3>7.3 Stage 1: Process Creation</h3>
 
     <p>
-        Every process begins its life when the operating system creates it.
-        This may happen because a user opens an application or because
-        another process requests the creation of a new process.
+        A process begins its lifetime when the operating system
+        creates it. This may happen because a user opens an application,
+        the operating system starts a service, or another process
+        requests a new process.
     </p>
 
     <p>
@@ -4378,29 +4393,31 @@ to finish.
     </p>
 
     <p>
-        During process creation, the operating system performs the
-        necessary setup. Depending on the operating system and the
-        application, this may include:
+        During process creation, the operating system performs
+        the necessary setup. Depending on the operating system
+        and application, this may include:
     </p>
 
     <ul>
-        <li>Preparing the program's execution environment.</li>
-        <li>Establishing the process's memory address space.</li>
-        <li>Creating the required process-management information.</li>
+        <li>Establishing the process's execution environment.</li>
+        <li>Setting up its virtual address space.</li>
+        <li>Creating process-management information.</li>
         <li>Assigning a process identifier (PID).</li>
-        <li>Setting up the resources needed to begin execution.</li>
+        <li>Preparing required resources and execution threads.</li>
     </ul>
 
     <p>
-        Once the necessary preparation is complete, the process can
-        move into the Ready state.
+        Once the required preparation has been completed, the process
+        may become Ready and its runnable threads can be considered
+        for CPU scheduling.
     </p>
 
     <div class="concept-note">
         <strong>Key point:</strong>
-        A program stored on a storage device is not automatically a running
-        process. The operating system must create and prepare a process
-        before its instructions can execute.
+        A program stored on a storage device is not automatically
+        a running process. The operating system must create a process
+        and prepare its execution environment before its instructions
+        can execute.
     </div>
 
     <!-- BLOCK 7.4 — READY STATE -->
@@ -4408,20 +4425,18 @@ to finish.
     <h3>7.4 Stage 2: Entering the Ready State</h3>
 
     <p>
-        A Ready process has been prepared to execute and is waiting for
-        CPU time. It is not currently using the CPU.
-        It may still request additional resources while it runs.
+        In the simplified five-state model, a Ready process is prepared
+        to execute but is waiting for CPU time. It is not currently
+        executing on the CPU.
     </p>
 
     <p>
-        The operating system keeps track of processes that are ready
-        to execute. These processes are commonly organised in a
+        The operating system keeps track of work that is ready to run.
+        Traditionally, this is explained using a
         <strong>ready queue</strong>.
     </p>
 
-    <p>
-        Imagine that three applications are ready to run:
-    </p>
+    <p>Imagine three applications that have work ready to execute:</p>
 
     <ul>
         <li>Process A: A web browser.</li>
@@ -4430,14 +4445,16 @@ to finish.
     </ul>
 
     <p>
-        All three processes may be ready to execute, but they may have
-        to wait for the CPU to become available.
+        Their runnable threads may compete for CPU time.
+        The scheduler selects which runnable thread should execute next.
     </p>
 
     <div class="concept-note">
         <strong>Important distinction:</strong>
-        A Ready process is waiting for CPU time. It is not waiting for
-        a disk operation, network response, or user input.
+        Ready means waiting for CPU execution. It does not mean waiting
+        for a disk operation, network response, or user input.
+        In modern systems, the ready-to-run scheduling decision
+        generally applies to threads.
     </div>
 
     <!-- BLOCK 7.5 — CPU SCHEDULING AND DISPATCH -->
@@ -4445,20 +4462,21 @@ to finish.
     <h3>7.5 Stage 3: CPU Scheduling and Dispatch</h3>
 
     <p>
-        When the CPU is available, the operating system must decide
-        which ready process should execute next.
+        When CPU execution time becomes available, the operating system
+        must decide which runnable thread should execute next.
     </p>
 
     <p>
-        This decision is made by the <strong>CPU scheduler</strong>.
-        It selects a process from the ready queue according to the
-        scheduling policy being used.
+        The <strong>CPU scheduler</strong> makes this selection
+        according to the scheduling policy being used.
     </p>
 
     <p>
-        After a process has been selected, the <strong>dispatcher</strong>
-        gives that process control of the CPU. This involves carrying out
-        the necessary steps to begin or resume its execution.
+        After a runnable thread has been selected, the
+        <strong>dispatcher</strong> carries out the steps needed
+        to give it control of the CPU. These steps can include
+        restoring its execution context and transferring control
+        to the appropriate instruction.
     </p>
 
     <div class="concept-comparison">
@@ -4466,18 +4484,19 @@ to finish.
 
         <p>
             <strong>CPU Scheduler:</strong>
-            Decides which ready process should run next.
+            Decides which runnable thread should execute next.
         </p>
 
         <p>
             <strong>Dispatcher:</strong>
-            Transfers CPU control to the process selected by the scheduler.
+            Carries out the transfer of CPU control to the selected thread.
         </p>
     </div>
 
     <p>
-        Once the process receives the CPU, it moves from the Ready state
-        to the Running state.
+        In the traditional five-state process model, the transition
+        is represented as Ready to Running. In a modern system,
+        the selected thread executes on behalf of its process.
     </p>
 
     <!-- BLOCK 7.6 — PROCESS EXECUTION -->
@@ -4485,19 +4504,19 @@ to finish.
     <h3>7.6 Stage 4: Process Execution</h3>
 
     <p>
-        A process enters the Running state when its instructions are
-        being executed by the CPU.
+        In the traditional model, a process is described as Running
+        when it is executing instructions on a CPU.
+        More precisely, a thread belonging to that process is
+        executing on the CPU.
     </p>
 
     <p>
-        During execution, the CPU works with information associated
-        with the process. This includes its instructions, memory,
-        and execution state.
+        During execution, the CPU processes instructions using
+        the program's execution environment, memory and current
+        execution context.
     </p>
 
-    <p>
-        The process may perform different kinds of work, such as:
-    </p>
+    <p>The work may include:</p>
 
     <ul>
         <li>Performing calculations.</li>
@@ -4507,22 +4526,20 @@ to finish.
         <li>Responding to user input.</li>
     </ul>
 
-    <p>
-        While running, a process may reach one of several outcomes:
-    </p>
+    <p>During execution, different events may occur:</p>
 
     <ul>
-        <li>It may continue executing its instructions.</li>
-        <li>It may be moved back to the Ready state.</li>
-        <li>It may enter the Waiting state.</li>
-        <li>It may finish and enter the Terminated state.</li>
+        <li>The thread may continue executing.</li>
+        <li>It may be preempted and become Ready again.</li>
+        <li>It may block while waiting for an event.</li>
+        <li>The process may finish when its required execution ends.</li>
     </ul>
 
     <div class="concept-note">
         <strong>Key point:</strong>
-        Running means the process is currently executing on a CPU.
-        It does not mean the process will remain on the CPU continuously
-        until it finishes.
+        Running does not mean a process remains on the CPU continuously
+        until it finishes. Its threads may be interrupted, scheduled
+        again later, or blocked while waiting for an event.
     </div>
 
     <!-- BLOCK 7.7 — WAITING OR BLOCKED STATE -->
@@ -4530,14 +4547,12 @@ to finish.
     <h3>7.7 Stage 5: Entering the Waiting (Blocked) State</h3>
 
     <p>
-        Sometimes a running process needs something that is not
-        immediately available. It may need to wait for an operation
-        or event to complete.
+        Sometimes a running thread needs something that is not
+        immediately available. It may have to wait for an operation
+        or event to complete before continuing.
     </p>
 
-    <p>
-        For example, a process may need to:
-    </p>
+    <p>For example, a thread may need to:</p>
 
     <ul>
         <li>Read data from a storage device.</li>
@@ -4547,14 +4562,14 @@ to finish.
     </ul>
 
     <p>
-        While the required operation is pending, the process cannot
+        While the required operation is pending, the thread cannot
         continue with the instruction that depends on that operation.
-        It therefore enters the Waiting, or Blocked, state.
+        It enters a blocked or waiting state.
     </p>
 
     <p>
-        The operating system can use the CPU to execute another
-        ready process instead of leaving the CPU idle.
+        The operating system can schedule another runnable thread
+        instead of leaving the CPU idle.
     </p>
 
     <div class="concept-comparison">
@@ -4562,14 +4577,22 @@ to finish.
 
         <p>
             <strong>Ready:</strong>
-            The process is able to execute but is waiting for CPU time.
+            The thread is able to execute but is waiting for CPU time.
         </p>
 
         <p>
             <strong>Waiting:</strong>
-            The process cannot continue until a required event or operation
-            is completed.
+            The thread cannot continue until a required event
+            or operation is completed.
         </p>
+    </div>
+
+    <div class="concept-note">
+        <strong>Process and thread connection:</strong>
+        A process can contain multiple threads. One thread may be
+        blocked while another thread belonging to the same process
+        remains able to execute. The simple five-state process model
+        does not show all these individual thread states.
     </div>
 
     <!-- BLOCK 7.8 — CONTEXT SWITCHING -->
@@ -4577,73 +4600,76 @@ to finish.
     <h3>7.8 Stage 6: Context Switching</h3>
 
     <p>
-        A CPU may switch from executing one process to executing another.
-        This change is called a <strong>context switch</strong>.
+        A CPU may stop executing one thread and begin executing another.
+        This operation is called a <strong>context switch</strong>.
     </p>
 
     <p>
-        To understand why this is necessary, imagine that Process A is
-        running and the operating system decides that Process B should
-        execute next.
+        Imagine Thread A is executing and the operating system decides
+        that Thread B should execute next.
     </p>
 
     <p>
         The operating system must preserve the execution information
-        needed by Process A so that it can continue later. It then
-        restores the relevant execution information for Process B.
+        needed by Thread A so it can resume later. It then restores
+        the saved execution context of Thread B.
     </p>
 
-    <p>
-        In a simplified explanation, the steps are:
-    </p>
+    <p>In a simplified explanation, the steps are:</p>
 
     <ol>
-        <li>Process A is currently running.</li>
-        <li>The operating system interrupts or pauses its execution.</li>
-        <li>The relevant execution state of Process A is saved.</li>
-        <li>The relevant execution state of Process B is restored.</li>
-        <li>Process B begins or resumes execution.</li>
+        <li>Thread A is currently executing.</li>
+        <li>The operating system pauses or interrupts its execution.</li>
+        <li>The relevant CPU execution context of Thread A is saved.</li>
+        <li>The relevant saved context of Thread B is restored.</li>
+        <li>Thread B begins or resumes execution.</li>
     </ol>
 
     <div class="concept-note">
         <strong>Important:</strong>
-        A context switch is an operation performed by the operating system.
-        It is not one of the five basic process states.
+        A context switch is an operating-system operation, not one
+        of the five basic process states. A switch may occur between
+        threads in the same process or between threads belonging
+        to different processes.
     </div>
+
+    <p>
+        When a context switch occurs between different processes,
+        the operating system may also need to change process-specific
+        memory-management context. The exact work depends on the
+        operating system and hardware.
+    </p>
 
     <!-- BLOCK 7.9 — RESUMPTION -->
 
     <h3>7.9 Stage 7: Returning from Waiting to Ready</h3>
 
     <p>
-        A process does not remain in the Waiting state forever.
-        When the event or operation it was waiting for is completed,
-        it can become eligible to execute again.
+        A blocked thread does not necessarily remain in the Waiting
+        state forever. When the event or operation it was waiting
+        for is completed, it can become eligible to execute again.
     </p>
 
     <p>
-        For example, suppose a process was waiting for data from
+        For example, suppose a thread was waiting for data from
         a storage device. When the required data becomes available,
-        the operating system can move the process from Waiting
-        to Ready.
+        the operating system can make the thread Ready.
     </p>
 
-    <p>
-        The general sequence is:
-    </p>
+    <p>The general sequence is:</p>
 
     <ol>
         <li>The required operation or event is completed.</li>
-        <li>The process leaves the Waiting state.</li>
-        <li>The process enters the Ready state.</li>
-        <li>The CPU scheduler may select it later.</li>
-        <li>The process returns to the Running state when dispatched.</li>
+        <li>The thread leaves the Waiting state.</li>
+        <li>The thread becomes Ready.</li>
+        <li>The scheduler may select it later.</li>
+        <li>The dispatcher gives it CPU control when selected.</li>
     </ol>
 
     <div class="concept-note">
         <strong>Remember:</strong>
-        A process becoming Ready does not mean it immediately receives
-        the CPU. It must still wait for the scheduler to select it.
+        Becoming Ready does not mean receiving the CPU immediately.
+        The thread must still wait until it is selected for execution.
     </div>
 
     <!-- BLOCK 7.10 — PROCESS TERMINATION -->
@@ -4652,32 +4678,34 @@ to finish.
 
     <p>
         A process eventually reaches the end of its lifetime.
-        This happens when it completes its work or when it is stopped
-        by the operating system or another authorised request.
+        This may happen when it completes its work, when a user
+        closes an application, or when the operating system or
+        another authorised process stops it.
     </p>
 
     <p>
         When a process terminates, the operating system performs
         the necessary cleanup. Depending on the operating system
-        and the circumstances, this may include:
+        and circumstances, this may include:
     </p>
 
     <ul>
         <li>Recording the process's completion status.</li>
         <li>Releasing resources that are no longer needed.</li>
         <li>Cleaning up process-management information.</li>
-        <li>Making memory and other resources available for reuse.</li>
+        <li>Reclaiming memory and other resources for reuse.</li>
     </ul>
 
     <p>
-        The process then enters the <strong>Terminated</strong> state.
+        The process then reaches the <strong>Terminated</strong> state.
     </p>
 
     <div class="concept-note">
         <strong>Key point:</strong>
         Termination marks the end of the process's execution lifecycle.
-        The operating system may still need to complete cleanup and
-        record information about its termination.
+        Some operating systems may retain limited termination information
+        temporarily while completing cleanup or allowing a parent process
+        to collect the exit status.
     </div>
 
     <!-- BLOCK 7.11 — COMPLETE LIFECYCLE EXAMPLE -->
@@ -4685,52 +4713,52 @@ to finish.
     <h3>7.11 Putting Everything Together: A Web Browser Example</h3>
 
     <p>
-        Imagine opening a web browser, visiting a website, waiting for
-        its content to load, and then closing the application.
-        We can use this example to understand how a process moves
-        through its lifecycle.
+        Imagine opening a web browser, visiting a website, waiting
+        for its content to load, and then closing the browser.
+        We can use one simplified process to understand the lifecycle.
     </p>
 
     <ol>
         <li>
             <strong>New:</strong>
             You open the browser, and the operating system creates
-            the required process.
+            a process with the required execution environment.
         </li>
         <li>
             <strong>Ready:</strong>
-            The process has been prepared and waits for CPU time.
+            Its runnable work becomes eligible for CPU scheduling.
         </li>
         <li>
             <strong>Running:</strong>
-            The CPU executes the browser process's instructions.
+            A thread belonging to the process executes browser instructions.
         </li>
         <li>
             <strong>Waiting:</strong>
-            The process may need to wait for a network response
+            A thread may block while waiting for a network response
             or another required operation.
         </li>
         <li>
             <strong>Ready again:</strong>
-            When the required event completes, the process can
-            return to the Ready state.
+            When the required event completes, the thread can become
+            eligible for CPU time again.
         </li>
         <li>
             <strong>Running again:</strong>
-            The scheduler may select the process so it can continue.
+            The scheduler may select the thread so it can continue.
         </li>
         <li>
             <strong>Terminated:</strong>
-            When the process finishes or is closed, it eventually
-            reaches termination.
+            When the process ends, the operating system performs
+            the necessary cleanup.
         </li>
     </ol>
 
     <div class="concept-note">
         <strong>A note about real browsers:</strong>
-        Modern browsers may use multiple processes and threads for
-        different tasks. This example follows one simplified process
-        to make the basic lifecycle easier to understand.
+        Modern browsers commonly use multiple processes and threads
+        for different tasks. Closing a browser window does not always
+        terminate every browser process immediately. This example
+        follows one simplified process to teach the basic lifecycle.
     </div>
 
     <!-- BLOCK 7.12 — PROCESS STATE TRANSITIONS -->
@@ -4738,33 +4766,33 @@ to finish.
     <h3>7.12 Understanding the Main State Transitions</h3>
 
     <p>
-        A process moves between states when particular events occur.
-        In the basic five-state model, the main transitions are:
+        A process changes states when particular events occur.
+        The main transitions in the traditional five-state model are:
     </p>
 
     <ul>
         <li>
             <strong>New → Ready:</strong>
             The operating system has completed the necessary preparation
-            for the process.
+            for the process to become eligible for execution.
         </li>
         <li>
             <strong>Ready → Running:</strong>
-            The scheduler selects the process and the dispatcher
-            gives it CPU control.
+            The scheduler selects runnable work and the dispatcher
+            transfers CPU control to it.
         </li>
         <li>
             <strong>Running → Ready:</strong>
-            The process is moved off the CPU, for example when its
-            time slice expires or it is preempted.
+            The executing work is moved off the CPU, for example
+            when its time slice expires or it is preempted.
         </li>
         <li>
             <strong>Running → Waiting:</strong>
-            The process must wait for an event or operation.
+            The executing thread must wait for an event or operation.
         </li>
         <li>
             <strong>Waiting → Ready:</strong>
-            The event or operation the process was waiting for
+            The event or operation the thread was waiting for
             has completed.
         </li>
         <li>
@@ -4775,9 +4803,11 @@ to finish.
 
     <div class="concept-note">
         <strong>Model limitation:</strong>
-        The five-state model is a simplified teaching model. Real operating
-        systems may use additional states and more detailed rules for
-        process management.
+        These transitions describe the simplified five-state process
+        model. Actual operating systems may use additional states,
+        and modern scheduling decisions generally apply to threads.
+        A process containing multiple threads may therefore have
+        a more complex execution situation than this model shows.
     </div>
 
     <!-- BLOCK 7.13 — SUMMARY -->
@@ -4785,46 +4815,50 @@ to finish.
     <h3>7.13 Section Summary</h3>
 
     <p>
-        A process moves through a managed lifecycle. The operating system
-        creates it, prepares it for execution, schedules it for CPU time,
-        manages periods when it must wait, and handles its termination.
+        A process moves through a managed lifecycle. The operating
+        system creates it, prepares its execution environment,
+        manages its runnable work, handles waiting periods,
+        and performs cleanup when it terminates.
     </p>
 
     <p>
-        The five basic states help us understand this lifecycle:
-        New, Ready, Running, Waiting, and Terminated.
+        The five basic states provide a foundation for understanding
+        this lifecycle:
+        <strong>New, Ready, Running, Waiting, and Terminated.</strong>
     </p>
 
     <p>
-        Scheduling determines which ready process should execute.
-        Context switching allows the CPU to move between processes.
-        When a waiting event completes, a process can return to Ready
-        and compete for CPU time again.
+        CPU scheduling determines which runnable thread should execute.
+        Context switching allows the CPU to move between execution
+        contexts. When a waiting event completes, a blocked thread
+        can become Ready and compete for CPU time again.
     </p>
 
     <!-- BLOCK 7.14 — LEARNING OUTCOMES -->
 
     <h3>7.14 What You Should Now Understand</h3>
 
-    <p>
-        After studying this section, you should be able to:
-    </p>
+    <p>After studying this section, you should be able to:</p>
 
     <ul>
-        <li>Identify the five basic states of a process.</li>
+        <li>Identify the five basic states in the process lifecycle model.</li>
         <li>Explain how a process is created.</li>
         <li>Distinguish between Ready and Waiting.</li>
         <li>Explain the roles of the CPU scheduler and dispatcher.</li>
-        <li>Describe what happens during process execution.</li>
+        <li>Describe what happens during execution.</li>
         <li>Explain why context switching is necessary.</li>
-        <li>Describe how a waiting process returns to Ready.</li>
+        <li>Describe how blocked work becomes Ready again.</li>
         <li>Explain how a process reaches termination.</li>
         <li>Trace a process through its basic lifecycle.</li>
+        <li>Explain why modern operating systems also track thread states.</li>
     </ul>
 
 </section>
 
 <!-- END SECTION 7 -->
+
+
+        
 
         
 <!-- =========================================================
