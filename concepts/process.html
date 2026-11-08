@@ -5171,48 +5171,65 @@ to finish.
 
 
 
-
-        
 <!-- =========================================================
      SECTION 8 — INTERACTIVE PROCESS LIFECYCLE SIMULATION
      Concept 002: Process — A Program in Execution
-     Allows learners to control a process through its lifecycle.
      ========================================================= -->
 
-<section id="interactive-simulation" class="concept-section">
+<section id="interactive-simulation"
+         class="concept-section"
+         aria-labelledby="process-sim-title">
 
-    <h2>8. Interactive Simulation: Control a Process</h2>
+    <h2 id="process-sim-title">
+        8. Interactive Simulation: Control a Process
+    </h2>
 
     <p>
         You have learned how a process moves through its five basic
-        states. Now you will control a process yourself.
+        states. Now it is your turn to act as the operating system
+        and control a process through its lifecycle.
     </p>
 
     <p>
-        Imagine that you are the operating system. Your job is to
-        create a process, give it CPU time, manage its waiting periods,
-        and eventually terminate it.
+        You will create a process, give it CPU time, manage an
+        input/output waiting period, and eventually finish its execution.
     </p>
 
     <div class="concept-note">
-        <strong>Your mission:</strong>
-        Use the controls below to move one process through its lifecycle.
-        Observe how its state changes and why each transition occurs.
+        <h4>Your Mission</h4>
+        <p>
+            Control Process A — a simulated web browser.
+            Choose actions, observe state transitions, and understand
+            why the operating system makes each change.
+        </p>
     </div>
 
-    <!-- SIMULATION INTRODUCTION -->
+    <!-- 8.1 INTRODUCTION -->
 
     <h3>8.1 Meet Your Process</h3>
 
     <p>
-        You will control one example process named
+        Your example process is called
         <strong>Process A — Web Browser</strong>.
-        Start by creating it, then decide what should happen next.
+        The simulation begins at the New state. When you select
+        Create Process, the operating system completes the
+        creation and preparation represented by the New → Ready
+        transition.
     </p>
 
-    <!-- SIMULATION STATUS -->
+    <p>
+        The simulation uses one example process and one simulated CPU.
+        It is a simplified model designed to make each transition visible.
+    </p>
 
-    <div class="process-sim-panel">
+    <!-- 8.2 INTERACTIVE SIMULATION -->
+
+    <h3>8.2 Process Lifecycle Control Centre</h3>
+
+    <div class="process-sim-panel"
+         aria-label="Interactive process lifecycle simulation">
+
+        <!-- PROCESS STATUS -->
 
         <div class="process-sim-status">
 
@@ -5234,44 +5251,65 @@ to finish.
 
         </div>
 
-        <!-- PROCESS STATE VISUALISATION -->
+        <!-- FIVE PROCESS STATES -->
 
-        <h4>Process Lifecycle</h4>
+        <h4>Five-State Process Lifecycle</h4>
 
-        <div class="process-sim-states">
+        <p>
+            The highlighted card shows the process's current state.
+            Watch it change as you use the controls.
+        </p>
 
-            <div class="process-sim-state active" data-state="new">
+        <div class="process-sim-states"
+             role="list"
+             aria-label="Five process lifecycle states">
+
+            <div class="process-sim-state active"
+                 data-state="new"
+                 role="listitem">
                 <span>1</span>
                 <strong>New</strong>
             </div>
 
-            <div class="process-sim-state" data-state="ready">
+            <div class="process-sim-state"
+                 data-state="ready"
+                 role="listitem">
                 <span>2</span>
                 <strong>Ready</strong>
             </div>
 
-            <div class="process-sim-state" data-state="running">
+            <div class="process-sim-state"
+                 data-state="running"
+                 role="listitem">
                 <span>3</span>
                 <strong>Running</strong>
             </div>
 
-            <div class="process-sim-state" data-state="waiting">
+            <div class="process-sim-state"
+                 data-state="waiting"
+                 role="listitem">
                 <span>4</span>
                 <strong>Waiting</strong>
             </div>
 
-            <div class="process-sim-state" data-state="terminated">
+            <div class="process-sim-state"
+                 data-state="terminated"
+                 role="listitem">
                 <span>5</span>
                 <strong>Terminated</strong>
             </div>
 
         </div>
 
-        <!-- SIMULATION EXPLANATION -->
+        <!-- LIVE EXPLANATION -->
 
-        <div class="process-sim-explanation" aria-live="polite">
+        <div class="process-sim-explanation"
+             aria-live="polite"
+             aria-atomic="true">
 
-            <h4 id="processSimHeading">The process has not been created yet.</h4>
+            <h4 id="processSimHeading">
+                The process has not been created yet.
+            </h4>
 
             <p id="processSimExplanation">
                 Select Create Process to ask the operating system
@@ -5280,61 +5318,63 @@ to finish.
 
         </div>
 
-        <!-- SIMULATION CONTROLS -->
+        <!-- LEARNER CONTROLS -->
 
         <h4>Control the Process</h4>
 
         <p>
-            Choose an action. The simulation will only allow actions
-            that are valid for the process's current state.
+            Select an action to move Process A through its lifecycle.
+            Only actions valid for its current state will be available.
         </p>
 
-        <div class="process-sim-controls">
+        <div class="process-sim-controls"
+             role="group"
+             aria-label="Process lifecycle controls">
 
             <button type="button"
-                class="process-sim-button"
-                data-action="create">
+                    class="process-sim-button"
+                    data-action="create">
                 Create Process
             </button>
 
             <button type="button"
-                class="process-sim-button"
-                data-action="dispatch"
-                disabled>
+                    class="process-sim-button"
+                    data-action="dispatch"
+                    disabled>
                 Dispatch to CPU
             </button>
 
             <button type="button"
-                class="process-sim-button"
-                data-action="request-io"
-                disabled>
+                    class="process-sim-button"
+                    data-action="request-io"
+                    disabled>
                 Request I/O
             </button>
 
             <button type="button"
-                class="process-sim-button"
-                data-action="complete-io"
-                disabled>
+                    class="process-sim-button"
+                    data-action="complete-io"
+                    disabled>
                 Complete I/O
             </button>
 
             <button type="button"
-                class="process-sim-button"
-                data-action="time-slice"
-                disabled>
+                    class="process-sim-button"
+                    data-action="time-slice"
+                    disabled>
                 Time Slice Expires
             </button>
 
             <button type="button"
-                class="process-sim-button"
-                data-action="terminate"
-                disabled>
+                    class="process-sim-button"
+                    data-action="terminate"
+                    disabled>
                 Finish Execution
             </button>
 
             <button type="button"
-                class="process-sim-reset"
-                data-action="reset">
+                    class="process-sim-reset"
+                    data-action="reset">
                 Reset Simulation
             </button>
 
@@ -5342,47 +5382,215 @@ to finish.
 
         <!-- EVENT HISTORY -->
 
-        <h4>What Has Happened?</h4>
+        <h4>Process Event History</h4>
 
-        <ol id="processSimHistory" class="process-sim-history" aria-live="polite">
-            <li>Simulation ready. Process A has not yet been created.</li>
+        <p>
+            Every action is recorded below. Follow the history to see
+            the sequence of state transitions.
+        </p>
+
+        <ol id="processSimHistory"
+            class="process-sim-history"
+            aria-live="polite"
+            aria-relevant="additions">
+
+            <li>
+                Simulation ready. Process A has not yet been created.
+            </li>
+
         </ol>
 
     </div>
 
-    <!-- LEARNING GUIDANCE -->
+    <!-- 8.3 GUIDED LEARNING CHALLENGE -->
 
-    <h3>8.2 What Should You Observe?</h3>
+    <h3>8.3 Your First Challenge: Complete the Lifecycle</h3>
+
+    <p>
+        Try to move Process A through this complete example.
+        Select each action in the correct order.
+    </p>
+
+    <div class="concept-comparison">
+
+        <div class="comparison-item">
+            <h4>Challenge A — I/O Operation</h4>
+
+            <ol>
+                <li>Create Process</li>
+                <li>Dispatch to CPU</li>
+                <li>Request I/O</li>
+                <li>Complete I/O</li>
+                <li>Dispatch to CPU again</li>
+                <li>Finish Execution</li>
+            </ol>
+
+            <p>
+                <strong>Learning goal:</strong>
+                Observe how a process enters Waiting and returns
+                to Ready after its I/O operation completes.
+            </p>
+        </div>
+
+        <div class="comparison-item">
+            <h4>Challenge B — Time Slice Expires</h4>
+
+            <ol>
+                <li>Create Process</li>
+                <li>Dispatch to CPU</li>
+                <li>Time Slice Expires</li>
+                <li>Dispatch to CPU again</li>
+                <li>Finish Execution</li>
+            </ol>
+
+            <p>
+                <strong>Learning goal:</strong>
+                Observe how a running process returns to Ready
+                when its allocated CPU time slice expires.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- 8.4 UNDERSTANDING THE TRANSITIONS -->
+
+    <h3>8.4 What Should You Observe?</h3>
 
     <ul>
-        <li>Creating a process moves it from New to Ready.</li>
-        <li>Dispatching it moves it from Ready to Running.</li>
-        <li>Requesting I/O moves it from Running to Waiting.</li>
-        <li>Completing I/O moves it from Waiting to Ready.</li>
-        <li>When its time slice expires, it can return from Running to Ready.</li>
-        <li>Finishing execution moves it from Running to Terminated.</li>
+        <li>
+            <strong>New → Ready:</strong>
+            The operating system creates and prepares the process.
+        </li>
+
+        <li>
+            <strong>Ready → Running:</strong>
+            The scheduler selects the process and the dispatcher
+            gives it CPU control.
+        </li>
+
+        <li>
+            <strong>Running → Waiting:</strong>
+            The process requests an I/O operation and must wait
+            for the required event.
+        </li>
+
+        <li>
+            <strong>Waiting → Ready:</strong>
+            The I/O operation completes, making the process
+            eligible for CPU scheduling again.
+        </li>
+
+        <li>
+            <strong>Running → Ready:</strong>
+            The CPU time slice expires, allowing another eligible
+            process or thread to be scheduled.
+        </li>
+
+        <li>
+            <strong>Running → Terminated:</strong>
+            The process finishes its execution.
+        </li>
     </ul>
 
     <div class="concept-note">
-        <strong>Think like an operating system:</strong>
-        Why does a process waiting for I/O leave the CPU?
-        Why does a process returning from Waiting enter Ready rather
-        than immediately entering Running?
+        <h4>The Most Important Distinction</h4>
+
+        <p>
+            A process returning from Waiting does not immediately
+            become Running. It first enters Ready because it must
+            wait for the scheduler to select it and the dispatcher
+            to give it CPU time.
+        </p>
     </div>
 
-    <h3>8.3 Important Simulation Note</h3>
+    <!-- 8.5 THINK LIKE AN OPERATING SYSTEM -->
+
+    <h3>8.5 Think Like an Operating System</h3>
+
+    <div class="concept-comparison">
+
+        <div class="comparison-item">
+            <h4>Question 1</h4>
+            <p>
+                Why should a process waiting for I/O leave the CPU
+                instead of continuing to occupy it?
+            </p>
+        </div>
+
+        <div class="comparison-item">
+            <h4>Question 2</h4>
+            <p>
+                Why does a process returning from Waiting enter
+                Ready instead of immediately entering Running?
+            </p>
+        </div>
+
+        <div class="comparison-item">
+            <h4>Question 3</h4>
+            <p>
+                What happens to the CPU when the running process's
+                time slice expires?
+            </p>
+        </div>
+
+    </div>
+
+    <!-- 8.6 MODEL LIMITATIONS -->
+
+    <h3>8.6 Important Simulation Limitations</h3>
 
     <p>
-        This is a simplified five-state teaching model. It represents
-        one process and one CPU at a time. Real operating systems manage
-        many processes and may use additional states, scheduling rules,
-        and more complex resource-management mechanisms.
+        This simulation uses a simplified five-state teaching model.
+        It represents one process and one simulated CPU at a time.
     </p>
+
+    <ul>
+        <li>
+            Real operating systems manage many processes and threads.
+        </li>
+
+        <li>
+            Modern operating systems generally schedule threads
+            for CPU execution.
+        </li>
+
+        <li>
+            When this simulation shows the CPU as Available,
+            it means Process A is not using it. Other runnable work
+            could use that CPU.
+        </li>
+
+        <li>
+            Real operating systems use additional scheduling rules,
+            events, interrupts and process-management mechanisms.
+        </li>
+
+    </ul>
+
+    <div class="concept-note">
+        <h4>Final Takeaway</h4>
+
+        <p>
+            A process does not control the CPU whenever it wants.
+            The operating system coordinates its execution,
+            manages its waiting periods, and determines when
+            it can receive CPU time again.
+        </p>
+
+        <p>
+            <strong>
+                You have now experienced the process lifecycle
+                from the operating system's point of view.
+            </strong>
+        </p>
+    </div>
 
 </section>
 
 <!-- END SECTION 8 -->
 
+
+        
 
 
 
