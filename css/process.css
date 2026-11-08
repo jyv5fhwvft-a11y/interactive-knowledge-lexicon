@@ -1861,4 +1861,176 @@ h4 {
    ========================================================= */
 
 
+/* ===================================================== */
+/* SECTION 6 — TWO THREADS, ONE PROCESS SIMULATION       */
+/* File: process.css                                     */
+/* Scope: Simulation only                                */
+/* ===================================================== */
+
+#thread-simulation {
+    margin-top: 24px;
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(16, 42, 67, 0.06);
+}
+
+#thread-simulation h4 {
+    color: #102A43;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+#thread-simulation p {
+    color: #475569;
+    line-height: 1.7;
+}
+
+#thread-simulation .concept-identity-card {
+    margin: 20px 0;
+    padding: 18px;
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 12px;
+}
+
+#thread-simulation .concept-identity-card p {
+    margin: 6px 0;
+    color: #102A43;
+}
+
+#thread-simulation .concept-comparison {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+#thread-simulation .comparison-item {
+    min-width: 0;
+    padding: 18px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+#thread-simulation .comparison-item h4 {
+    margin-top: 0;
+    color: #102A43;
+}
+
+#thread-simulation .comparison-item p {
+    overflow-wrap: anywhere;
+}
+
+#thread-simulation .comparison-item.is-running {
+    background: #F0FDFA;
+    border: 2px solid #0D9488;
+    box-shadow: 0 3px 12px rgba(13, 148, 136, 0.10);
+}
+
+#thread-simulation output {
+    display: inline-block;
+    padding: 3px 8px;
+    color: #1D4ED8;
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 6px;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+#thread-simulation .component-explorer-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px 0;
+}
+
+#thread-simulation .component-explorer-controls button {
+    min-height: 44px;
+    padding: 10px 16px;
+    color: #FFFFFF;
+    background: #2563EB;
+    border: 1px solid #2563EB;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                border-color 0.2s ease;
+}
+
+#thread-simulation .component-explorer-controls button:hover {
+    background: #1D4ED8;
+    border-color: #1D4ED8;
+}
+
+#thread-simulation .component-explorer-controls button:focus-visible {
+    outline: 3px solid #0D9488;
+    outline-offset: 3px;
+}
+
+#thread-simulation #reset-thread-simulation {
+    color: #102A43;
+    background: #FFFFFF;
+    border-color: #CBD5E1;
+}
+
+#thread-simulation #reset-thread-simulation:hover {
+    background: #F1F5F9;
+    border-color: #94A3B8;
+}
+
+#thread-simulation #thread-simulation-message {
+    margin-top: 18px;
+    padding: 14px 16px;
+    color: #115E59;
+    background: #F0FDFA;
+    border-left: 4px solid #0D9488;
+    border-radius: 8px;
+    line-height: 1.7;
+}
+
+#thread-simulation .concept-note {
+    margin-top: 18px;
+    padding: 16px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+}
+
+#thread-simulation .concept-note h4 {
+    margin-top: 0;
+}
+
+@media (max-width: 600px) {
+
+    #thread-simulation {
+        padding: 16px;
+    }
+
+    #thread-simulation .concept-comparison {
+        grid-template-columns: 1fr;
+    }
+
+    #thread-simulation .component-explorer-controls {
+        flex-direction: column;
+    }
+
+    #thread-simulation .component-explorer-controls button {
+        width: 100%;
+    }
+
+}
+
+/* END SECTION 6 THREAD SIMULATION STYLES */
+
+
+
 
