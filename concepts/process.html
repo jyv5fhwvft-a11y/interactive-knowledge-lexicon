@@ -81,131 +81,412 @@
 <!-- SECTION 1: CONCEPT IDENTITY AND DEFINITION         -->
 <!-- ================================================== -->
 
-<section id="concept-identity" class="concept-section">
+<section id="concept-identity" class="concept-section"
+         aria-labelledby="process-section-1-heading">
 
     <!-- BLOCK 1.1: SECTION HEADING -->
 
-    <h2>1. Concept Identity and Definition</h2>
+    <h2 id="process-section-1-heading">
+        1. Concept Identity and Definition
+    </h2>
 
-    <!-- BLOCK 1.2: CONCEPT IDENTIFICATION -->
+    <!-- BLOCK 1.2: CONCEPT IDENTITY -->
 
     <div class="concept-identity-card">
-
         <p><strong>Concept ID:</strong> IKL-OS-002</p>
-
         <p><strong>Concept:</strong> Process</p>
-
         <p><strong>Subject:</strong> Operating Systems</p>
-
-        <p><strong>Technical category:</strong> Process Management</p>
-
+        <p><strong>Topic:</strong> Process Management</p>
     </div>
 
     <!-- BLOCK 1.3: FORMAL DEFINITION -->
 
-    <h3>1.1 What Is a Process?</h3>
+    <h3>What Is a Process?</h3>
 
     <p>
-        A process is an instance of a program in execution.
-        It is an active entity managed by the operating
-        system, with its own execution state, allocated
-        resources, and information needed to control
-        its progress.
+        A <strong>process</strong> is an instance of a program that has
+        been started and is being managed by an operating system.
+        It has its own execution context, address space, one or more
+        threads, and associated resources and management information.
     </p>
+
+    <div class="concept-note">
+        <h4>In Simple Words</h4>
+        <p>
+            A program contains instructions. A process is an instance
+            of that program being managed while it executes or waits
+            to continue execution.
+        </p>
+    </div>
 
     <!-- BLOCK 1.4: PROGRAM VERSUS PROCESS -->
 
-    <h3>1.2 Program vs. Process</h3>
-
-    <p>
-        A program and a process are related, but they
-        are not the same thing.
-    </p>
+    <h3>Program vs Process: What Is the Difference?</h3>
 
     <div class="concept-comparison">
 
         <div class="comparison-item">
-
             <h4>Program</h4>
-
             <p>
-                A program is a set of instructions stored
-                as a file that tells a computer what to do.
+                A program is a passive set of instructions stored
+                in a file.
             </p>
-
             <ul>
-                <li>Passive set of instructions.</li>
-                <li>Stored on a storage device.</li>
-                <li>Does not execute by itself.</li>
+                <li>Exists as stored code</li>
+                <li>Does not execute by itself</li>
+                <li>Waits to be started</li>
             </ul>
-
         </div>
 
         <div class="comparison-item">
-
             <h4>Process</h4>
-
             <p>
-                A process is a running instance of a
-                program that the operating system manages.
+                A process is an active instance of a program
+                managed by the operating system.
             </p>
-
             <ul>
-                <li>Active execution entity.</li>
-                <li>Uses CPU and memory resources.</li>
-                <li>Has a current execution state.</li>
+                <li>Has an execution context</li>
+                <li>Uses memory and other resources</li>
+                <li>Can execute or wait</li>
             </ul>
-
         </div>
 
     </div>
 
-    <!-- BLOCK 1.5: WHY A PROCESS EXISTS -->
+    <!-- BLOCK 1.5: VISUAL 1 - PROGRAM TO PROCESS -->
 
-    <h3>1.3 Why Does the Operating System Create Processes?</h3>
+    <h3>How Does a Program Become a Process?</h3>
+
+    <figure class="process-concept-visual">
+        <svg viewBox="0 0 900 230" role="img"
+             aria-labelledby="process-flow-title process-flow-desc"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <title id="process-flow-title">
+                From program to process
+            </title>
+            <desc id="process-flow-desc">
+                A stored program is started by the operating system,
+                which creates and manages a process.
+            </desc>
+
+            <rect x="20" y="45" width="220" height="130"
+                  rx="14" fill="#E0F2FE" stroke="#2563EB"
+                  stroke-width="2"/>
+            <text x="130" y="92" text-anchor="middle"
+                  font-size="22" font-weight="700" fill="#102A43">
+                PROGRAM
+            </text>
+            <text x="130" y="122" text-anchor="middle"
+                  font-size="15" fill="#475569">
+                Stored instructions
+            </text>
+            <text x="130" y="145" text-anchor="middle"
+                  font-size="14" fill="#475569">
+                Passive
+            </text>
+
+            <path d="M250 110 H325 M310 98 L325 110 L310 122"
+                  fill="none" stroke="#2563EB"
+                  stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round"/>
+
+            <rect x="335" y="45" width="230" height="130"
+                  rx="14" fill="#FFF7ED" stroke="#F59E0B"
+                  stroke-width="2"/>
+            <text x="450" y="88" text-anchor="middle"
+                  font-size="20" font-weight="700" fill="#102A43">
+                OPERATING SYSTEM
+            </text>
+            <text x="450" y="118" text-anchor="middle"
+                  font-size="15" fill="#475569">
+                Starts and manages
+            </text>
+            <text x="450" y="141" text-anchor="middle"
+                  font-size="14" fill="#475569">
+                the process
+            </text>
+
+            <path d="M575 110 H650 M635 98 L650 110 L635 122"
+                  fill="none" stroke="#2563EB"
+                  stroke-width="3" stroke-linecap="round"
+                  stroke-linejoin="round"/>
+
+            <rect x="660" y="45" width="220" height="130"
+                  rx="14" fill="#CCFBF1" stroke="#0D9488"
+                  stroke-width="2"/>
+            <text x="770" y="92" text-anchor="middle"
+                  font-size="22" font-weight="700" fill="#102A43">
+                PROCESS
+            </text>
+            <text x="770" y="122" text-anchor="middle"
+                  font-size="15" fill="#475569">
+                Managed instance
+            </text>
+            <text x="770" y="145" text-anchor="middle"
+                  font-size="14" fill="#475569">
+                Active
+            </text>
+        </svg>
+
+        <figcaption>
+            A program becomes a process when it is started and
+            managed by the operating system.
+        </figcaption>
+    </figure>
+
+    <!-- BLOCK 1.6: WHAT A PROCESS CONTAINS -->
+
+    <h3>What Does a Process Include?</h3>
 
     <p>
-        The operating system uses processes to manage
-        running programs and coordinate their access
-        to computer resources.
+        A process is more than just the program's instructions.
+        The operating system must keep track of several elements
+        so that execution can be managed correctly.
     </p>
 
     <ul>
-        <li>Tracks each running program.</li>
-        <li>Allocates and manages resources.</li>
-        <li>Controls when processes use the CPU.</li>
-        <li>Maintains information needed to resume execution.</li>
-        <li>Helps isolate processes from one another.</li>
+        <li>
+            <strong>Address space:</strong>
+            The memory space associated with the process.
+        </li>
+        <li>
+            <strong>Threads:</strong>
+            One or more execution paths within the process.
+        </li>
+        <li>
+            <strong>Execution context:</strong>
+            Information needed to pause and resume execution,
+            such as processor register values.
+        </li>
+        <li>
+            <strong>Resources:</strong>
+            Resources associated with the process, such as
+            open files and other operating-system objects.
+        </li>
+        <li>
+            <strong>Management information:</strong>
+            Information the operating system maintains about
+            the process, including its identity and state.
+        </li>
     </ul>
 
-    <!-- BLOCK 1.6: IMPORTANT DISTINCTION -->
-
     <div class="concept-note">
-
-        <h4>Important Concept</h4>
-
+        <h4>Important: Process vs Thread</h4>
         <p>
-            One program can have multiple process instances.
-            For example, opening the same application more
-            than once can create multiple processes.
+            A process provides the environment and resources in
+            which its threads operate. The CPU schedules and
+            executes threads, rather than treating the process
+            as one indivisible execution unit.
         </p>
-
     </div>
 
-    <!-- BLOCK 1.7: SECTION LEARNING OUTCOME -->
+    <!-- BLOCK 1.7: VISUAL 2 - MULTIPLE PROCESS INSTANCES -->
 
-    <h3>1.4 What You Should Understand</h3>
+    <h3>Can One Program Have Multiple Processes?</h3>
 
     <p>
-        By the end of this section, you should be able to
-        explain what a process is, distinguish a program
-        from a process, and describe why an operating
-        system needs to manage processes.
+        Yes. A program can be started more than once, creating
+        multiple process instances. Each instance is managed
+        separately by the operating system.
     </p>
+
+    <figure class="process-concept-visual">
+        <svg viewBox="0 0 900 300" role="img"
+             aria-labelledby="instances-title instances-desc"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <title id="instances-title">
+                One program and multiple process instances
+            </title>
+            <desc id="instances-desc">
+                One stored program can be started multiple times,
+                creating separate process instances.
+            </desc>
+
+            <rect x="300" y="15" width="300" height="75"
+                  rx="12" fill="#E0F2FE" stroke="#2563EB"
+                  stroke-width="2"/>
+            <text x="450" y="48" text-anchor="middle"
+                  font-size="21" font-weight="700" fill="#102A43">
+                ONE PROGRAM
+            </text>
+            <text x="450" y="70" text-anchor="middle"
+                  font-size="14" fill="#475569">
+                Stored application
+            </text>
+
+            <path d="M450 90 V125 M150 125 H750
+                     M150 125 V165 M450 125 V165 M750 125 V165"
+                  fill="none" stroke="#2563EB"
+                  stroke-width="2.5"/>
+
+            <rect x="35" y="165" width="230" height="105"
+                  rx="12" fill="#CCFBF1" stroke="#0D9488"
+                  stroke-width="2"/>
+            <text x="150" y="202" text-anchor="middle"
+                  font-size="19" font-weight="700" fill="#102A43">
+                PROCESS 1
+            </text>
+            <text x="150" y="230" text-anchor="middle"
+                  font-size="14" fill="#475569">
+                Separate instance
+            </text>
+
+            <rect x="335" y="165" width="230" height="105"
+                  rx="12" fill="#CCFBF1" stroke="#0D9488"
+                  stroke-width="2"/>
+            <text x="450" y="202" text-anchor="middle"
+                  font-size="19" font-weight="700" fill="#102A43">
+                PROCESS 2
+            </text>
+            <text x="450" y="230" text-anchor="middle"
+                  font-size="14" fill="#475569">
+                Separate instance
+            </text>
+
+            <rect x="635" y="165" width="230" height="105"
+                  rx="12" fill="#CCFBF1" stroke="#0D9488"
+                  stroke-width="2"/>
+            <text x="750" y="202" text-anchor="middle"
+                  font-size="19" font-weight="700" fill="#102A43">
+                PROCESS 3
+            </text>
+            <text x="750" y="230" text-anchor="middle"
+                  font-size="14" fill="#475569">
+                Separate instance
+            </text>
+        </svg>
+
+        <figcaption>
+            Multiple starts can create multiple process instances.
+            Actual application behaviour may vary: some applications
+            reuse an existing process or create additional processes
+            internally.
+        </figcaption>
+    </figure>
+
+    <!-- BLOCK 1.8: ROLE OF THE OPERATING SYSTEM -->
+
+    <h3>Why Does the Operating System Manage Processes?</h3>
+
+    <p>
+        Several programs may need the computer's CPU, memory,
+        storage and input/output devices at the same time.
+        The operating system coordinates their use.
+    </p>
+
+    <figure class="process-concept-visual">
+        <svg viewBox="0 0 900 310" role="img"
+             aria-labelledby="os-management-title os-management-desc"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <title id="os-management-title">
+                Operating system process management
+            </title>
+            <desc id="os-management-desc">
+                The operating system manages process scheduling,
+                memory, protection and input/output.
+            </desc>
+
+            <rect x="300" y="15" width="300" height="75"
+                  rx="14" fill="#102A43"/>
+            <text x="450" y="60" text-anchor="middle"
+                  font-size="23" font-weight="700" fill="#FFFFFF">
+                OPERATING SYSTEM
+            </text>
+
+            <path d="M450 90 V125 M120 125 H780
+                     M120 125 V160 M340 125 V160
+                     M560 125 V160 M780 125 V160"
+                  fill="none" stroke="#2563EB"
+                  stroke-width="2.5"/>
+
+            <rect x="20" y="160" width="200" height="110"
+                  rx="12" fill="#E0F2FE" stroke="#2563EB"
+                  stroke-width="2"/>
+            <text x="120" y="200" text-anchor="middle"
+                  font-size="18" font-weight="700" fill="#102A43">
+                SCHEDULING
+            </text>
+            <text x="120" y="228" text-anchor="middle"
+                  font-size="14" fill="#475569">
+                CPU time
+            </text>
+
+            <rect x="240" y="160" width="200" height="110"
+                  rx="12" fill="#CCFBF1" stroke="#0D9488"
+                  stroke-width="2"/>
+            <text x="340" y="200" text-anchor="middle"
+                  font-size="18" font-weight="700" fill="#102A43">
+                MEMORY
+            </text>
+            <text x="340" y="228" text-anchor="middle"
+                  font-size="14" fill="#475569">
+                Address spaces
+            </text>
+
+            <rect x="460" y="160" width="200" height="110"
+                  rx="12" fill="#FEF3C7" stroke="#F59E0B"
+                  stroke-width="2"/>
+            <text x="560" y="200" text-anchor="middle"
+                  font-size="18" font-weight="700" fill="#102A43">
+                PROTECTION
+            </text>
+            <text x="560" y="228" text-anchor="middle"
+                  font-size="14" fill="#475569">
+                Controlled access
+            </text>
+
+            <rect x="680" y="160" width="200" height="110"
+                  rx="12" fill="#EDE9FE" stroke="#7C3AED"
+                  stroke-width="2"/>
+            <text x="780" y="200" text-anchor="middle"
+                  font-size="18" font-weight="700" fill="#102A43">
+                INPUT / OUTPUT
+            </text>
+            <text x="780" y="228" text-anchor="middle"
+                  font-size="14" fill="#475569">
+                Device operations
+            </text>
+        </svg>
+
+        <figcaption>
+            The operating system coordinates CPU scheduling,
+            memory, protection and input/output for processes.
+        </figcaption>
+    </figure>
+
+    <div class="concept-note">
+        <h4>Understanding Process Isolation</h4>
+        <p>
+            Processes are given controlled memory and resource
+            access so that one process cannot freely interfere
+            with another. Isolation is not absolute: processes
+            can communicate and share selected resources through
+            operating-system mechanisms.
+        </p>
+    </div>
+
+    <!-- BLOCK 1.9: LEARNING OUTCOMES -->
+
+    <h3>What You Should Understand</h3>
+
+    <p>After studying this section, you should be able to:</p>
+
+    <ul>
+        <li>Define a process in operating-system terminology.</li>
+        <li>Distinguish a program from a process.</li>
+        <li>Identify the main elements associated with a process.</li>
+        <li>Explain the relationship between processes and threads.</li>
+        <li>Describe why the operating system manages processes.</li>
+        <li>Explain how one program can have multiple instances.</li>
+    </ul>
 
 </section>
 
 <!-- END SECTION 1: CONCEPT IDENTITY AND DEFINITION -->
+
 
       
 <!-- ================================================== -->
