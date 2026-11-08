@@ -2709,7 +2709,6 @@ to finish.
 
 <!-- END SECTION 4: BEGINNER EXPLANATION -->
 
-      
 
         
 <!-- ================================================== -->
@@ -2745,7 +2744,13 @@ to finish.
         The operating system maintains information
         about each process so that it can schedule
         execution, manage resources, and resume
-        a process when necessary.
+        execution when necessary.
+    </p>
+
+    <p>
+        A process can contain one or more threads.
+        Each thread represents an individual path
+        of execution within that process.
     </p>
 
     <!-- BLOCK 5.3: PROCESS CONTROL BLOCK -->
@@ -2755,22 +2760,39 @@ to finish.
     <p>
         A <strong>Process Control Block (PCB)</strong>
         is an operating-system data structure that
-        stores important information about a process.
+        stores important management information
+        about a process.
     </p>
 
     <p>
         Think of the PCB as the operating system's
         management record for a particular process.
         It helps the operating system identify the
-        process, track its state, and manage its
-        execution.
+        process, track its resources, and manage
+        its overall execution.
     </p>
 
     <p>
-        Each process has an associated process
-        management record. The exact organisation
-        and fields of this record depend on the
-        operating system.
+        A process may contain one or more threads.
+        The operating system therefore needs to
+        maintain information about both the process
+        and its individual threads.
+    </p>
+
+    <p>
+        The PCB contains process-level management
+        information. Thread-specific information,
+        such as the saved program counter and CPU
+        register values, is commonly maintained in
+        separate thread-management structures or
+        related kernel data structures.
+    </p>
+
+    <p>
+        The exact organisation depends on the
+        operating system. Some systems combine
+        certain information into larger management
+        structures, while others organise it separately.
     </p>
 
     <div class="concept-note">
@@ -2778,9 +2800,16 @@ to finish.
         <h4>Important Technical Distinction</h4>
 
         <p>
-            The PCB is not the program itself.
+            The PCB is not the program itself,
+            its memory contents, or the CPU.
+        </p>
+
+        <p>
             It is operating-system information
-            maintained to manage the process.
+            maintained to manage a process. It may
+            also contain references to other structures
+            that help the operating system manage
+            the process's threads and resources.
         </p>
 
     </div>
@@ -2790,10 +2819,11 @@ to finish.
     <h3>5.3 What Information Does a PCB Contain?</h3>
 
     <p>
-        A PCB can contain several categories of
-        information. The following are common
-        teaching categories used to understand
-        its responsibilities.
+        A PCB and its associated operating-system
+        management structures can contain several
+        categories of information. The following
+        are common teaching categories used to
+        understand their responsibilities.
     </p>
 
     <ul>
@@ -2806,26 +2836,25 @@ to finish.
 
         <li>
             <strong>Process state:</strong>
-            Information indicating whether the process
-            is new, ready, running, waiting, or terminated.
+            Information about the process's lifecycle,
+            such as whether it is being created,
+            executing, waiting, or terminated.
+            In multithreaded systems, individual
+            threads also have their own scheduling states.
         </li>
 
         <li>
-            <strong>Program counter:</strong>
-            The address of the next instruction
-            the process should execute when resumed.
-        </li>
-
-        <li>
-            <strong>CPU registers:</strong>
-            Saved processor register values needed
-            to restore the process's execution context.
+            <strong>Thread management:</strong>
+            Information or references associated
+            with the threads belonging to the process.
         </li>
 
         <li>
             <strong>CPU scheduling information:</strong>
-            Information such as priority and
-            scheduling-queue relationships.
+            Information such as scheduling priority
+            and relationships with scheduling queues.
+            Scheduling information may be maintained
+            separately for individual threads.
         </li>
 
         <li>
@@ -2850,12 +2879,36 @@ to finish.
 
     </ul>
 
-    <p>
-        These categories explain the kinds of
-        information an operating system may maintain.
-        They do not imply that every operating system
-        stores every item in one identical PCB structure.
-    </p>
+    <div class="concept-note">
+
+        <h4>Where Are the Program Counter and CPU Registers Stored?</h4>
+
+        <p>
+            The program counter and CPU register values
+            are part of a thread's execution context.
+        </p>
+
+        <p>
+            When a thread is switched out, the operating
+            system preserves the necessary processor state
+            in thread-specific management information
+            or related kernel structures.
+        </p>
+
+        <p>
+            Some introductory operating-system models
+            include these values in the PCB because
+            they describe a process's execution.
+            However, in modern multithreaded systems,
+            treating them as thread-specific is more accurate.
+        </p>
+
+        <p>
+            The exact organisation differs between
+            operating systems.
+        </p>
+
+    </div>
 
     <!-- BLOCK 5.5: PROCESS IDENTIFICATION -->
 
@@ -2950,7 +3003,8 @@ to finish.
     <p>
         The <strong>Program Counter (PC)</strong>
         is a processor register that holds the
-        address of the next instruction to execute.
+        address of the next instruction to execute
+        for the currently running thread.
     </p>
 
     <p>
@@ -2960,18 +3014,27 @@ to finish.
 
     <p>
         Imagine a program containing thousands
-        of instructions. The processor executes
-        them as part of the program's execution.
-        The program counter identifies the next
-        instruction address in that execution flow.
+        of instructions. A thread executes
+        instructions as part of that program's
+        execution. Its program counter identifies
+        the next instruction address in its
+        execution flow.
     </p>
 
     <p>
-        When the operating system switches a
-        process out, the necessary program-counter
-        value is saved as part of its execution
-        context so that execution can resume
-        at the appropriate point later.
+        A process can contain multiple threads.
+        Each thread has its own program-counter
+        value representing its individual
+        execution progress.
+    </p>
+
+    <p>
+        When a thread is interrupted or switched
+        out, the operating system preserves its
+        program-counter value as part of that
+        thread's execution context. When the
+        thread runs again, the appropriate value
+        is restored so execution can continue.
     </p>
 
     <div class="concept-note">
@@ -2982,6 +3045,20 @@ to finish.
             The program counter is similar to a
             bookmark that identifies where you
             should continue reading a book.
+        </p>
+
+        <p>
+            Imagine three people reading different
+            chapters of the same book. Each person
+            needs their own bookmark to remember
+            where they stopped.
+        </p>
+
+        <p>
+            Similarly, threads belonging to one
+            process can execute different instructions
+            and therefore need separate program-counter
+            values.
         </p>
 
         <p>
@@ -3005,17 +3082,27 @@ to finish.
     </p>
 
     <p>
-        A process's execution may depend on
+        A thread's execution may depend on
         several register values, including
         data values, addresses, and processor
         status information.
     </p>
 
     <p>
+        Although the processor has a physical
+        set of registers, each thread needs its
+        own saved register state so that it can
+        resume execution correctly.
+    </p>
+
+    <p>
+        When a thread is running, its current
+        values occupy the processor registers.
         During a context switch, the operating
-        system saves the relevant processor
-        state and restores the state required
-        by the process being switched in.
+        system preserves the relevant register
+        values for the outgoing thread and
+        restores the saved values required
+        by the incoming thread.
     </p>
 
     <ul>
@@ -3034,7 +3121,7 @@ to finish.
         <li>
             <strong>Stack pointer:</strong>
             Identifies the current position of
-            the active stack.
+            the thread's active stack.
         </li>
 
         <li>
@@ -3050,10 +3137,22 @@ to finish.
         <h4>Important Distinction</h4>
 
         <p>
-            Registers are physically part of the CPU.
-            Their saved values are part of the
-            execution context that the operating
-            system manages when switching processes.
+            Threads do not each have a separate
+            physical CPU register set.
+        </p>
+
+        <p>
+            Instead, the processor uses its physical
+            registers for whichever thread is
+            currently executing. The operating
+            system saves and restores the relevant
+            values when switching between threads.
+        </p>
+
+        <p>
+            This is how multiple threads can preserve
+            their individual execution progress
+            while sharing the processor.
         </p>
 
     </div>
@@ -3063,35 +3162,120 @@ to finish.
     <h3>5.7 What Is a Process Execution Context?</h3>
 
     <p>
-        The <strong>execution context</strong>
+        An <strong>execution context</strong>
         is the information needed to describe
-        the current execution state of a process
+        the current execution state of a thread
         and allow its execution to continue correctly.
     </p>
 
     <p>
-        This includes relevant processor state,
-        such as register values and the program
-        counter, along with other operating-system
-        information needed to manage the process.
+        For a thread, this includes relevant
+        processor state, such as:
+    </p>
+
+    <ul>
+
+        <li>Program counter.</li>
+        <li>CPU register values.</li>
+        <li>Stack pointer.</li>
+        <li>Processor status information.</li>
+
+    </ul>
+
+    <p>
+        The operating system also maintains
+        other information needed to manage
+        the thread and its relationship with
+        the process.
     </p>
 
     <p>
-        When a process is interrupted or switched
-        out, the operating system preserves the
-        necessary state. When the process is
-        scheduled again, the appropriate state
-        is restored.
+        A process can contain multiple threads.
+        Each thread has its own execution context,
+        while the threads generally share the
+        process's address space and other
+        process-level resources.
     </p>
+
+    <h4>What Happens During a Context Switch?</h4>
+
+    <p>
+        When the operating system switches the
+        CPU from one thread to another, it must
+        preserve the outgoing thread's necessary
+        execution state and restore the incoming
+        thread's saved state.
+    </p>
+
+    <p>
+        This allows the incoming thread to
+        continue from its own previous
+        execution point.
+    </p>
+
+    <p>
+        A context switch can happen in two
+        important situations:
+    </p>
+
+    <ul>
+
+        <li>
+            <strong>Between threads of the same process:</strong>
+            The CPU switches execution from one
+            thread to another, while both threads
+            continue using the same process
+            address space.
+        </li>
+
+        <li>
+            <strong>Between threads of different processes:</strong>
+            The CPU switches execution to a thread
+            belonging to another process. This may
+            also involve changing the active
+            address space and associated
+            memory-management context.
+        </li>
+
+    </ul>
 
     <h4>Why Is Execution Context Important?</h4>
 
     <ul>
-        <li>It allows a process to resume correctly.</li>
-        <li>It supports switching between processes.</li>
-        <li>It preserves the process's execution progress.</li>
-        <li>It helps the operating system coordinate CPU use.</li>
+
+        <li>It allows a thread to resume correctly.</li>
+        <li>It preserves individual execution progress.</li>
+        <li>It supports switching between threads.</li>
+        <li>It allows multiple threads to share CPU time.</li>
+        <li>It helps the operating system coordinate processor use.</li>
+
     </ul>
+
+    <div class="concept-note">
+
+        <h4>Technical Distinction</h4>
+
+        <p>
+            A process and a thread are not the
+            same thing.
+        </p>
+
+        <p>
+            The process provides the resource-owning
+            environment. The thread provides an
+            individual path of execution within
+            that environment.
+        </p>
+
+        <p>
+            The execution context primarily
+            describes the thread's current
+            processor state, rather than a single
+            shared set of CPU register values
+            for the entire process.
+        </p>
+
+    </div>
 
     <!-- BLOCK 5.9: PROCESS ADDRESS SPACE -->
 
@@ -3120,6 +3304,32 @@ to finish.
         protection and gives each process its
         own organised view of memory.
     </p>
+
+    <p>
+        Threads belonging to the same process
+        generally share that process's address
+        space. This allows them to access shared
+        program code and process data.
+    </p>
+
+    <div class="concept-note">
+
+        <h4>Important Distinction</h4>
+
+        <p>
+            Threads in the same process generally
+            share the process's address space,
+            but each thread has its own execution
+            context and its own stack.
+        </p>
+
+        <p>
+            Shared memory does not mean that
+            every part of a thread's execution
+            state is shared with other threads.
+        </p>
+
+    </div>
 
     <!-- BLOCK 5.10: MEMORY REGIONS -->
 
@@ -3184,6 +3394,14 @@ to finish.
             dynamically allocated memory.
             The stack supports function-call
             execution and related local data.
+        </p>
+
+        <p>
+            Each thread generally has its own
+            stack, while threads belonging to
+            the same process share the process's
+            heap and other shared address-space
+            regions.
         </p>
 
         <p>
@@ -3319,9 +3537,15 @@ to finish.
         </li>
 
         <li>
-            Execution-context information helps
-            preserve the processor state needed
-            to resume the process.
+            Thread-management information
+            preserves the execution state needed
+            to resume individual threads.
+        </li>
+
+        <li>
+            Threads belonging to the same process
+            generally share the process's address
+            space and process-level resources.
         </li>
 
     </ul>
@@ -3329,11 +3553,9 @@ to finish.
     <p>
         Together, these mechanisms allow the
         operating system to manage a process
-        as it executes, waits, resumes, and
-        eventually terminates.
+        and its threads as they execute, wait,
+        resume, and eventually terminate.
     </p>
-
-    <!-- BLOCK 5.13: TECHNICAL SUMMARY -->
 
     <div class="concept-note">
 
@@ -3347,28 +3569,65 @@ to finish.
         </p>
 
         <p>
-            The PCB stores management information.
-            The PID identifies the process.
-            The program counter and CPU registers
-            contribute to its execution context.
-            Its address space organises the memory
-            available to it.
+            The PCB stores process-level management
+            information. The PID identifies the
+            process. Each thread has its own
+            execution context, including its
+            program counter and saved CPU registers.
+            The process address space organises
+            the memory available to the process
+            and is generally shared by its threads.
         </p>
 
     </div>
 
-    <!-- BLOCK 5.14: SECTION LEARNING OUTCOME -->
+    <!-- BLOCK 5.13: SECTION LEARNING OUTCOME -->
 
     <h3>5.12 What You Should Understand</h3>
 
     <p>
         By the end of this section, you should
-        be able to explain the purpose of a PCB,
-        identify the role of a PID, program counter,
-        and CPU registers, describe execution
-        context, and recognise the common regions
-        of a process address space.
+        be able to:
     </p>
+
+    <ul>
+
+        <li>
+            Explain the purpose of a Process
+            Control Block (PCB).
+        </li>
+
+        <li>
+            Identify the role of a Process ID (PID).
+        </li>
+
+        <li>
+            Explain what the program counter
+            and CPU registers do.
+        </li>
+
+        <li>
+            Describe the execution context
+            of an individual thread.
+        </li>
+
+        <li>
+            Explain the relationship between
+            a process and its threads.
+        </li>
+
+        <li>
+            Recognise the common regions of
+            a process's virtual address space.
+        </li>
+
+        <li>
+            Explain how the PCB, thread-management
+            information, and process address space
+            work together.
+        </li>
+
+    </ul>
 
 </section>
 
@@ -3377,6 +3636,10 @@ to finish.
 <!-- ================================================== -->
 <!-- END SECTION 5                                     -->
 <!-- ================================================== -->
+
+
+        
+
 
 
 <!-- ================================================== -->
