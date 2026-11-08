@@ -5592,17 +5592,18 @@ to finish.
 
         
 
-
-
-
 <!-- =========================================================
      SECTION 9 — FLOWCHART AND SEQUENCE DIAGRAM
      Concept 002: Process — A Program in Execution
      ========================================================= -->
 
-<section id="process-diagrams" class="concept-section">
+<section id="process-diagrams"
+         class="concept-section"
+         aria-labelledby="process-diagrams-heading">
 
-    <h2>9. Flowchart and Sequence Diagram</h2>
+    <h2 id="process-diagrams-heading">
+        9. Flowchart and Sequence Diagram
+    </h2>
 
     <p>
         You have learned the five process states and controlled
@@ -5613,9 +5614,8 @@ to finish.
     <p>
         The flowchart explains how a process moves between states.
         The sequence diagram explains how operating-system
-        components coordinate those movements.
+        components coordinate those movements over time.
     </p>
-
 
     <!-- =====================================================
          9.1 PROCESS LIFECYCLE FLOWCHART
@@ -5660,8 +5660,6 @@ to finish.
 
                 <defs>
 
-                    <!-- BLUE ARROW: NORMAL TRANSITIONS -->
-
                     <marker
                         id="processArrowBlue"
                         markerWidth="10"
@@ -5669,15 +5667,10 @@ to finish.
                         refX="8"
                         refY="5"
                         orient="auto">
-
                         <path
                             d="M0,0 L10,5 L0,10 Z"
                             fill="#2563EB"/>
-
                     </marker>
-
-
-                    <!-- TEAL ARROW: TIME SLICE -->
 
                     <marker
                         id="processArrowTeal"
@@ -5686,15 +5679,10 @@ to finish.
                         refX="8"
                         refY="5"
                         orient="auto">
-
                         <path
                             d="M0,0 L10,5 L0,10 Z"
                             fill="#0D9488"/>
-
                     </marker>
-
-
-                    <!-- ORANGE ARROW: TERMINATION -->
 
                     <marker
                         id="processArrowOrange"
@@ -5703,15 +5691,12 @@ to finish.
                         refX="8"
                         refY="5"
                         orient="auto">
-
                         <path
                             d="M0,0 L10,5 L0,10 Z"
                             fill="#D97706"/>
-
                     </marker>
 
                 </defs>
-
 
                 <!-- NEW TO READY -->
 
@@ -5727,9 +5712,8 @@ to finish.
                     y="87"
                     text-anchor="middle"
                     class="diagram-arrow-label">
-                    Created
+                    Admitted
                 </text>
-
 
                 <!-- READY TO RUNNING -->
 
@@ -5748,7 +5732,6 @@ to finish.
                     Dispatch
                 </text>
 
-
                 <!-- RUNNING TO WAITING -->
 
                 <path
@@ -5764,7 +5747,6 @@ to finish.
                     class="diagram-arrow-label">
                     I/O request
                 </text>
-
 
                 <!-- WAITING TO READY -->
 
@@ -5782,7 +5764,6 @@ to finish.
                     class="diagram-arrow-label">
                     I/O complete
                 </text>
-
 
                 <!-- RUNNING TO READY: TIME SLICE -->
 
@@ -5802,7 +5783,6 @@ to finish.
                     Time slice expires
                 </text>
 
-
                 <!-- RUNNING TO TERMINATED -->
 
                 <path
@@ -5819,7 +5799,6 @@ to finish.
                     class="diagram-arrow-label">
                     Finish
                 </text>
-
 
                 <!-- NEW STATE -->
 
@@ -5841,7 +5820,6 @@ to finish.
                     NEW
                 </text>
 
-
                 <!-- READY STATE -->
 
                 <rect
@@ -5861,7 +5839,6 @@ to finish.
                     class="diagram-state-label">
                     READY
                 </text>
-
 
                 <!-- RUNNING STATE -->
 
@@ -5883,7 +5860,6 @@ to finish.
                     RUNNING
                 </text>
 
-
                 <!-- WAITING STATE -->
 
                 <rect
@@ -5904,7 +5880,6 @@ to finish.
                     WAITING
                 </text>
 
-
                 <!-- TERMINATED STATE -->
 
                 <rect
@@ -5924,7 +5899,6 @@ to finish.
                     class="diagram-state-label">
                     TERMINATED
                 </text>
-
 
                 <!-- LEGEND -->
 
@@ -5972,7 +5946,6 @@ to finish.
 
     </div>
 
-
     <!-- =====================================================
          9.2 PROCESS EXECUTION SEQUENCE DIAGRAM
          ===================================================== -->
@@ -6008,14 +5981,13 @@ to finish.
                 </title>
 
                 <desc id="sequenceDescription">
-                    The operating-system kernel places a process
-                    in the Ready queue. The scheduler selects it,
-                    and the dispatcher performs a context switch.
-                    The process executes, requests I/O, and enters
-                    Waiting. The I/O device later sends a completion
-                    interrupt to the kernel. The kernel returns the
-                    process to Ready, after which it can be selected
-                    and dispatched again. Termination is illustrated
+                    The kernel makes a process Ready. The scheduler
+                    selects it, and the dispatcher performs a context
+                    switch. The CPU executes the process. The process
+                    requests I/O and becomes Waiting. The I/O device
+                    signals completion to the kernel. The kernel makes
+                    the process Ready again, and it can later be
+                    selected and dispatched. Termination is shown
                     separately in the lifecycle flowchart.
                 </desc>
 
@@ -6028,21 +6000,28 @@ to finish.
                         refX="8"
                         refY="4"
                         orient="auto">
-
                         <path
                             d="M0,0 L9,4 L0,8 Z"
                             fill="#2563EB"/>
+                    </marker>
 
+                    <marker
+                        id="sequenceArrowOrange"
+                        markerWidth="9"
+                        markerHeight="9"
+                        refX="8"
+                        refY="4"
+                        orient="auto">
+                        <path
+                            d="M0,0 L9,4 L0,8 Z"
+                            fill="#D97706"/>
                     </marker>
 
                 </defs>
 
-
                 <!-- PARTICIPANT HEADERS -->
 
                 <g class="sequence-participant">
-
-                    <!-- PROCESS -->
 
                     <rect
                         x="20"
@@ -6058,9 +6037,6 @@ to finish.
                         PROCESS
                     </text>
 
-
-                    <!-- OPERATING SYSTEM KERNEL -->
-
                     <rect
                         x="200"
                         y="25"
@@ -6074,9 +6050,6 @@ to finish.
                         text-anchor="middle">
                         OS KERNEL
                     </text>
-
-
-                    <!-- SCHEDULER -->
 
                     <rect
                         x="380"
@@ -6092,9 +6065,6 @@ to finish.
                         SCHEDULER
                     </text>
 
-
-                    <!-- DISPATCHER -->
-
                     <rect
                         x="560"
                         y="25"
@@ -6109,9 +6079,6 @@ to finish.
                         DISPATCHER
                     </text>
 
-
-                    <!-- CPU -->
-
                     <rect
                         x="740"
                         y="25"
@@ -6125,9 +6092,6 @@ to finish.
                         text-anchor="middle">
                         CPU
                     </text>
-
-
-                    <!-- I/O DEVICE -->
 
                     <rect
                         x="920"
@@ -6145,7 +6109,6 @@ to finish.
 
                 </g>
 
-
                 <!-- PARTICIPANT LIFELINES -->
 
                 <g class="sequence-lifelines">
@@ -6159,8 +6122,7 @@ to finish.
 
                 </g>
 
-
-                <!-- STEP 1: PLACE IN READY QUEUE -->
+                <!-- STEP 1: PROCESS BECOMES READY -->
 
                 <path
                     d="M270 145 H450"
@@ -6172,9 +6134,8 @@ to finish.
                     y="133"
                     text-anchor="middle"
                     class="sequence-label">
-                    Add process to Ready queue
+                    Process becomes Ready
                 </text>
-
 
                 <!-- STEP 2: SCHEDULER SELECTS PROCESS -->
 
@@ -6188,9 +6149,8 @@ to finish.
                     y="198"
                     text-anchor="middle"
                     class="sequence-label">
-                    Select process
+                    Select Ready process
                 </text>
-
 
                 <!-- STEP 3: DISPATCH PROCESS -->
 
@@ -6204,9 +6164,8 @@ to finish.
                     y="263"
                     text-anchor="middle"
                     class="sequence-label">
-                    Context switch and dispatch
+                    Restore context and dispatch
                 </text>
-
 
                 <!-- STEP 4: EXECUTION BEGINS -->
 
@@ -6220,64 +6179,64 @@ to finish.
                     y="328"
                     text-anchor="middle"
                     class="sequence-label">
-                    CPU begins process execution
+                    CPU executes process instructions
                 </text>
-
 
                 <!-- STEP 5: PROCESS REQUESTS I/O -->
 
                 <path
                     d="M90 405 H270"
                     class="sequence-message"
-                    marker-end="url(#sequenceArrow)"/>
+                    style="stroke:#D97706"
+                    marker-end="url(#sequenceArrowOrange)"/>
 
                 <text
                     x="180"
                     y="393"
                     text-anchor="middle"
                     class="sequence-label">
-                    Request I/O
+                    Request blocking I/O
                 </text>
-
 
                 <!-- STEP 6: PROCESS ENTERS WAITING -->
 
                 <path
                     d="M270 470 H450"
                     class="sequence-message"
-                    marker-end="url(#sequenceArrow)"/>
+                    style="stroke:#D97706"
+                    marker-end="url(#sequenceArrowOrange)"/>
 
                 <text
                     x="360"
                     y="458"
                     text-anchor="middle"
                     class="sequence-label">
-                    Process enters Waiting
+                    Mark process Waiting
                 </text>
-
 
                 <!-- STEP 7: START I/O OPERATION -->
 
                 <path
                     d="M270 535 H990"
                     class="sequence-message"
-                    marker-end="url(#sequenceArrow)"/>
+                    style="stroke:#D97706"
+                    marker-end="url(#sequenceArrowOrange)"/>
 
                 <text
                     x="630"
                     y="523"
                     text-anchor="middle"
                     class="sequence-label">
-                    Start I/O operation
+                    Issue I/O operation
                 </text>
-
 
                 <!-- STEP 8: I/O COMPLETION INTERRUPT -->
 
                 <path
                     d="M990 600 H270"
                     class="sequence-message"
-                    marker-end="url(#sequenceArrow)"/>
+                    style="stroke:#D97706"
+                    marker-end="url(#sequenceArrowOrange)"/>
 
                 <text
                     x="630"
@@ -6287,22 +6246,21 @@ to finish.
                     I/O completion interrupt
                 </text>
 
-
                 <!-- STEP 9: RETURN PROCESS TO READY -->
 
                 <path
                     d="M270 665 H450"
                     class="sequence-message"
-                    marker-end="url(#sequenceArrow)"/>
+                    style="stroke:#D97706"
+                    marker-end="url(#sequenceArrowOrange)"/>
 
                 <text
                     x="360"
                     y="653"
                     text-anchor="middle"
                     class="sequence-label">
-                    Mark process Ready; enqueue
+                    Mark Ready and enqueue
                 </text>
-
 
                 <!-- STEP 10: SELECT PROCESS AGAIN -->
 
@@ -6319,7 +6277,6 @@ to finish.
                     Select process again
                 </text>
 
-
                 <!-- STEP 11: DISPATCH AGAIN -->
 
                 <path
@@ -6332,9 +6289,8 @@ to finish.
                     y="783"
                     text-anchor="middle"
                     class="sequence-label">
-                    Dispatch again
+                    Restore context and dispatch
                 </text>
-
 
                 <!-- STEP 12: RESUME EXECUTION -->
 
@@ -6351,28 +6307,32 @@ to finish.
                     CPU resumes process execution
                 </text>
 
-            
-
-            
             </svg>
-
-            <!-- SEQUENCE DIAGRAM ARROW COLOUR LEGEND -->
-            <div class="sequence-arrow-legend" role="group" aria-label="Sequence diagram arrow colour legend">
-
-                <div class="legend-item">
-                    <span class="legend-line legend-blue"></span>
-                    <span><strong>Blue:</strong> General process and operating-system interactions</span>
-                </div>
-
-                <div class="legend-item">
-                    <span class="legend-line legend-orange"></span>
-                    <span><strong>Orange:</strong> I/O activity and related process state changes (Steps 5–9)</span>
-                </div>
-
-            </div>
 
         </div>
 
+        <!-- SEQUENCE DIAGRAM ARROW COLOUR LEGEND -->
+
+        <div class="sequence-arrow-legend"
+             role="group"
+             aria-label="Sequence diagram arrow colour legend">
+
+            <div class="legend-item">
+                <span class="legend-line legend-blue"></span>
+                <span>
+                    <strong>Blue:</strong>
+                    General process and operating-system interactions
+                </span>
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-line legend-orange"></span>
+                <span>
+                    <strong>Orange:</strong>
+                    I/O activity and related process state changes
+                    (Steps 5–9)
+                </span>
+            </div>
 
         </div>
 
@@ -6380,22 +6340,20 @@ to finish.
 
             <strong>Important clarification:</strong>
 
-            The OS kernel handles process-state changes and I/O
-            completion. The scheduler selects a Ready process,
-            while the dispatcher performs the context switch
-            and transfers CPU control.
+            The OS kernel manages process-state changes and handles
+            I/O completion. The scheduler selects a Ready process,
+            while the dispatcher performs the context switch and
+            transfers CPU control.
 
             <p>
-                While this process waits for I/O, the CPU can
-                execute another Ready process. This simplified
-                diagram follows one process and does not show
-                that concurrent activity.
+                While this process waits for I/O, the CPU can execute
+                another Ready process. This simplified diagram follows
+                one process and does not show that concurrent activity.
             </p>
 
         </div>
 
     </div>
-
 
     <!-- =====================================================
          9.3 UNDERSTANDING THE TWO DIAGRAMS
@@ -6421,7 +6379,6 @@ to finish.
 
         </div>
 
-
         <div class="comparison-item">
 
             <h4>Sequence Diagram</h4>
@@ -6440,7 +6397,6 @@ to finish.
 
     </div>
 
-
     <!-- =====================================================
          9.4 KEY LEARNING POINTS
          ===================================================== -->
@@ -6458,25 +6414,28 @@ to finish.
         </li>
 
         <li>
-            The CPU scheduler selects a process from the Ready queue.
+            The CPU scheduler selects a runnable process or thread
+            from the Ready queue.
         </li>
 
         <li>
             The dispatcher performs the context switch and transfers
-            CPU control to the selected process.
+            CPU control to the selected execution context.
         </li>
 
         <li>
-            A process requesting I/O enters the Waiting state.
+            A process requesting blocking I/O enters the Waiting state
+            in this simplified model.
         </li>
 
         <li>
-            I/O completion allows the kernel to return the process
-            to the Ready state.
+            I/O completion allows the kernel to make the waiting
+            process Ready again.
         </li>
 
         <li>
-            A running process may return to Ready when its time slice expires.
+            A running process may return to Ready when its time slice
+            expires.
         </li>
 
         <li>
@@ -6484,7 +6443,6 @@ to finish.
         </li>
 
     </ul>
-
 
     <div class="concept-note">
 
@@ -6495,15 +6453,29 @@ to finish.
 
         <p>
             No. The operating system can schedule another Ready
-            process while the first process waits. This improves
-            CPU utilization.
+            process or thread while the first process waits.
+            This helps improve CPU utilization.
         </p>
+
+    </div>
+
+    <div class="concept-note">
+
+        <strong>Modern operating-system note:</strong>
+
+        This section uses the classic five-state process model
+        to explain the fundamentals. Modern operating systems
+        generally schedule threads for CPU execution, so the
+        actual scheduling and state-management details can be
+        more complex than this simplified diagram.
 
     </div>
 
 </section>
 
 <!-- END SECTION 9 -->
+
+
 
 
 
