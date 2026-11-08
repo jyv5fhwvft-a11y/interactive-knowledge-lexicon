@@ -2032,5 +2032,999 @@ h4 {
 /* END SECTION 6 THREAD SIMULATION STYLES */
 
 
+/* =========================================================
+   SECTION 7 — COMPLETE VISUAL TEACHING STYLES
+   Concept 002: Process — A Program in Execution
+   Scoped exclusively to #working-mechanism.
+   ========================================================= */
+
+#working-mechanism {
+    --s7-navy: #102A43;
+    --s7-blue: #2563EB;
+    --s7-teal: #0D9488;
+    --s7-amber: #F59E0B;
+    --s7-bg: #F8FAFC;
+    --s7-white: #FFFFFF;
+    --s7-text: #334155;
+    --s7-muted: #64748B;
+    --s7-border: #E2E8F0;
+
+    color: var(--s7-text);
+}
+
+#working-mechanism .s7-intro-journey,
+#working-mechanism .s7-visual-card,
+#working-mechanism .s7-callout {
+    margin: 1.5rem 0;
+}
+
+#working-mechanism .s7-intro-journey {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1.2rem;
+    background: var(--s7-white);
+    border: 1px solid var(--s7-border);
+    border-radius: 16px;
+}
+
+#working-mechanism .s7-journey-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.7rem;
+    text-align: center;
+    color: var(--s7-navy);
+}
+
+#working-mechanism .s7-journey-step span {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #DBEAFE;
+    color: var(--s7-blue);
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+#working-mechanism .s7-journey-step strong {
+    font-size: 0.85rem;
+}
+
+#working-mechanism .s7-journey-arrow {
+    color: var(--s7-blue);
+    font-weight: 800;
+}
+
+#working-mechanism .s7-visual-card {
+    padding: 1.4rem;
+    background: var(--s7-white);
+    border: 1px solid var(--s7-border);
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(16, 42, 67, 0.05);
+}
+
+#working-mechanism .s7-visual-heading {
+    margin-bottom: 1.2rem;
+}
+
+#working-mechanism .s7-visual-number {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    color: var(--s7-blue);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+#working-mechanism .s7-visual-heading h4 {
+    margin: 0;
+    color: var(--s7-navy);
+    font-size: 1.15rem;
+}
+
+#working-mechanism .s7-caption {
+    margin: 1rem 0 0;
+    color: var(--s7-muted);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+#working-mechanism .s7-callout {
+    padding: 1rem 1.2rem;
+    border-left: 4px solid var(--s7-blue);
+    border-radius: 8px;
+    background: #EFF6FF;
+    line-height: 1.65;
+}
+
+#working-mechanism .s7-callout strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--s7-navy);
+}
+
+#working-mechanism .s7-callout-info {
+    border-left-color: var(--s7-blue);
+    background: #EFF6FF;
+}
+
+#working-mechanism .s7-callout-warning {
+    border-left-color: var(--s7-amber);
+    background: #FFFBEB;
+}
+
+#working-mechanism .s7-callout-success {
+    border-left-color: var(--s7-teal);
+    background: #F0FDFA;
+}
+
+/* Five basic states */
+
+#working-mechanism .s7-lifecycle-track {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.6rem;
+}
+
+#working-mechanism .s7-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    min-width: 0;
+    padding: 0.8rem 0.45rem;
+    border: 1px solid var(--s7-border);
+    border-radius: 12px;
+    text-align: center;
+}
+
+#working-mechanism .s7-state strong {
+    color: var(--s7-navy);
+    font-size: 0.9rem;
+}
+
+#working-mechanism .s7-state small {
+    color: var(--s7-muted);
+    font-size: 0.72rem;
+    line-height: 1.35;
+}
+
+#working-mechanism .s7-state-icon {
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+#working-mechanism .s7-new,
+#working-mechanism .s7-new-card {
+    background: #F1F5F9;
+    border-color: #CBD5E1;
+}
+
+#working-mechanism .s7-ready,
+#working-mechanism .s7-ready-card {
+    background: #EFF6FF;
+    border-color: #BFDBFE;
+}
+
+#working-mechanism .s7-running,
+#working-mechanism .s7-running-card {
+    background: #F0FDFA;
+    border-color: #99F6E4;
+}
+
+#working-mechanism .s7-waiting,
+#working-mechanism .s7-waiting-card {
+    background: #FFFBEB;
+    border-color: #FDE68A;
+}
+
+#working-mechanism .s7-terminated,
+#working-mechanism .s7-terminated-card {
+    background: #F8FAFC;
+    border-color: #CBD5E1;
+}
+
+/* State cards */
+
+#working-mechanism .s7-state-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+    margin: 1.3rem 0;
+}
+
+#working-mechanism .s7-state-card {
+    padding: 1.1rem;
+    border: 1px solid var(--s7-border);
+    border-radius: 14px;
+}
+
+#working-mechanism .s7-state-card h4 {
+    margin: 0.35rem 0;
+    color: var(--s7-navy);
+}
+
+#working-mechanism .s7-state-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+#working-mechanism .s7-state-label {
+    color: var(--s7-muted);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+/* Vertical teaching flows */
+
+#working-mechanism .s7-vertical-flow,
+#working-mechanism .s7-execution-flow,
+#working-mechanism .s7-resume-flow,
+#working-mechanism .s7-switch-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+#working-mechanism .s7-flow-step {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    width: 100%;
+    max-width: 540px;
+    padding: 0.9rem;
+    border: 1px solid var(--s7-border);
+    border-radius: 12px;
+    background: var(--s7-bg);
+}
+
+#working-mechanism .s7-flow-step strong,
+#working-mechanism .s7-flow-step small {
+    display: block;
+}
+
+#working-mechanism .s7-flow-step strong {
+    color: var(--s7-navy);
+}
+
+#working-mechanism .s7-flow-step small {
+    margin-top: 0.2rem;
+    color: var(--s7-muted);
+    line-height: 1.4;
+}
+
+#working-mechanism .s7-flow-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: #DBEAFE;
+    color: var(--s7-blue);
+    font-weight: 800;
+}
+
+#working-mechanism .s7-flow-success {
+    border-color: #99F6E4;
+    background: #F0FDFA;
+}
+
+#working-mechanism .s7-down-arrow {
+    color: var(--s7-blue);
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+/* Ready queue */
+
+#working-mechanism .s7-queue {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+#working-mechanism .s7-queue-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    border: 1px solid #BFDBFE;
+    border-radius: 12px;
+    background: #EFF6FF;
+}
+
+#working-mechanism .s7-queue-item > span {
+    display: grid;
+    place-items: center;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--s7-blue);
+    color: white;
+    font-weight: 800;
+}
+
+#working-mechanism .s7-queue-item div {
+    flex: 1;
+}
+
+#working-mechanism .s7-queue-item strong,
+#working-mechanism .s7-queue-item small {
+    display: block;
+}
+
+#working-mechanism .s7-queue-item strong {
+    color: var(--s7-navy);
+}
+
+#working-mechanism .s7-queue-item small {
+    color: var(--s7-muted);
+}
+
+#working-mechanism .s7-queue-item > b {
+    color: var(--s7-blue);
+}
+
+#working-mechanism .s7-queue-output {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    margin: 1rem auto 0;
+    padding: 0.8rem;
+    color: var(--s7-navy);
+    font-size: 0.85rem;
+}
+
+#working-mechanism .s7-queue-arrow {
+    color: var(--s7-blue);
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+#working-mechanism .s7-queue-output strong {
+    padding: 0.55rem 1rem;
+    border-radius: 10px;
+    background: var(--s7-navy);
+    color: white;
+}
+
+/* Scheduler and dispatcher */
+
+#working-mechanism .s7-role-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+#working-mechanism .s7-role-card {
+    padding: 1.2rem;
+    border: 1px solid var(--s7-border);
+    border-radius: 14px;
+}
+
+#working-mechanism .s7-scheduler-card {
+    background: #EFF6FF;
+    border-color: #BFDBFE;
+}
+
+#working-mechanism .s7-dispatcher-card {
+    background: #F0FDFA;
+    border-color: #99F6E4;
+}
+
+#working-mechanism .s7-role-icon {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: white;
+    color: var(--s7-navy);
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+#working-mechanism .s7-role-action {
+    display: block;
+    margin-top: 0.8rem;
+    color: var(--s7-blue);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+#working-mechanism .s7-dispatcher-card .s7-role-action {
+    color: var(--s7-teal);
+}
+
+#working-mechanism .s7-role-card h4 {
+    margin: 0.3rem 0;
+    color: var(--s7-navy);
+}
+
+#working-mechanism .s7-role-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+#working-mechanism .s7-role-question {
+    padding-top: 0.7rem;
+    border-top: 1px solid rgba(100, 116, 139, 0.2);
+    color: var(--s7-navy);
+    font-weight: 700;
+}
+
+#working-mechanism .s7-mini-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+    padding: 0.9rem;
+    border-radius: 12px;
+    background: var(--s7-bg);
+    font-size: 0.78rem;
+    text-align: center;
+}
+
+#working-mechanism .s7-mini-flow b {
+    color: var(--s7-blue);
+}
+
+#working-mechanism .s7-mini-flow-result {
+    color: var(--s7-teal);
+    font-weight: 800;
+}
+
+/* Execution visual */
+
+#working-mechanism .s7-execution-source,
+#working-mechanism .s7-execution-cpu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 460px;
+    padding: 1.2rem;
+    border-radius: 14px;
+    text-align: center;
+}
+
+#working-mechanism .s7-execution-source {
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+}
+
+#working-mechanism .s7-execution-cpu {
+    background: #F0FDFA;
+    border: 1px solid #99F6E4;
+}
+
+#working-mechanism .s7-large-icon {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: var(--s7-blue);
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+
+#working-mechanism .s7-execution-cpu .s7-large-icon {
+    color: var(--s7-teal);
+}
+
+#working-mechanism .s7-execution-source strong,
+#working-mechanism .s7-execution-cpu strong {
+    color: var(--s7-navy);
+}
+
+#working-mechanism .s7-execution-source small,
+#working-mechanism .s7-execution-cpu small {
+    margin-top: 0.3rem;
+    color: var(--s7-muted);
+    line-height: 1.4;
+}
+
+#working-mechanism .s7-execution-outcomes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 460px;
+}
+
+#working-mechanism .s7-outcome-card {
+    padding: 1rem;
+    border: 1px solid var(--s7-border);
+    border-radius: 12px;
+    background: var(--s7-bg);
+}
+
+#working-mechanism .s7-outcome-card span {
+    color: var(--s7-blue);
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+#working-mechanism .s7-outcome-card strong,
+#working-mechanism .s7-outcome-card small {
+    display: block;
+}
+
+#working-mechanism .s7-outcome-card strong {
+    margin: 0.3rem 0;
+    color: var(--s7-navy);
+}
+
+#working-mechanism .s7-outcome-card small {
+    color: var(--s7-muted);
+}
+
+/* Ready vs waiting */
+
+#working-mechanism .s7-ready-wait-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+#working-mechanism .s7-ready-wait-card {
+    padding: 1.2rem;
+    border: 1px solid var(--s7-border);
+    border-radius: 14px;
+}
+
+#working-mechanism .s7-ready-explainer {
+    background: #EFF6FF;
+    border-color: #BFDBFE;
+}
+
+#working-mechanism .s7-wait-explainer {
+    background: #FFFBEB;
+    border-color: #FDE68A;
+}
+
+#working-mechanism .s7-condition {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+
+#working-mechanism .s7-ready-explainer .s7-condition,
+#working-mechanism .s7-ready-explainer .s7-large-icon {
+    color: var(--s7-blue);
+}
+
+#working-mechanism .s7-wait-explainer .s7-condition,
+#working-mechanism .s7-wait-explainer .s7-large-icon {
+    color: #B45309;
+}
+
+#working-mechanism .s7-ready-wait-card h4 {
+    margin: 0.3rem 0;
+    color: var(--s7-navy);
+}
+
+#working-mechanism .s7-ready-wait-card p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+#working-mechanism .s7-ready-wait-card > strong {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    background: white;
+    color: var(--s7-navy);
+    font-size: 0.75rem;
+}
+
+/* Context switching */
+
+#working-mechanism .s7-switch-thread,
+#working-mechanism .s7-switch-action {
+    width: 100%;
+    max-width: 450px;
+    padding: 1rem;
+    border: 1px solid var(--s7-border);
+    border-radius: 12px;
+    text-align: center;
+}
+
+#working-mechanism .s7-thread-a {
+    background: #EFF6FF;
+    border-color: #BFDBFE;
+}
+
+#working-mechanism .s7-thread-b {
+    background: #F0FDFA;
+    border-color: #99F6E4;
+}
+
+#working-mechanism .s7-switch-thread span {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: var(--s7-blue);
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+
+#working-mechanism .s7-thread-b span {
+    color: var(--s7-teal);
+}
+
+#working-mechanism .s7-switch-thread strong,
+#working-mechanism .s7-switch-thread small,
+#working-mechanism .s7-switch-action strong,
+#working-mechanism .s7-switch-action small {
+    display: block;
+}
+
+#working-mechanism .s7-switch-thread strong,
+#working-mechanism .s7-switch-action strong {
+    color: var(--s7-navy);
+}
+
+#working-mechanism .s7-switch-thread small,
+#working-mechanism .s7-switch-action small {
+    margin-top: 0.3rem;
+    color: var(--s7-muted);
+}
+
+#working-mechanism .s7-switch-action {
+    background: var(--s7-bg);
+}
+
+/* Returning from waiting */
+
+#working-mechanism .s7-resume-state,
+#working-mechanism .s7-resume-event {
+    width: 100%;
+    max-width: 440px;
+    padding: 0.9rem;
+    border: 1px solid var(--s7-border);
+    border-radius: 12px;
+    text-align: center;
+}
+
+#working-mechanism .s7-resume-state strong,
+#working-mechanism .s7-resume-state small,
+#working-mechanism .s7-resume-event strong,
+#working-mechanism .s7-resume-event small {
+    display: block;
+}
+
+#working-mechanism .s7-resume-state strong,
+#working-mechanism .s7-resume-event strong {
+    color: var(--s7-navy);
+}
+
+#working-mechanism .s7-resume-state small,
+#working-mechanism .s7-resume-event small {
+    margin-top: 0.25rem;
+    color: var(--s7-muted);
+}
+
+#working-mechanism .s7-resume-event {
+    background: #FFFBEB;
+    border-color: #FDE68A;
+}
+
+/* Termination */
+
+#working-mechanism .s7-termination-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+}
+
+#working-mechanism .s7-termination-grid > div {
+    padding: 1rem;
+    border: 1px solid var(--s7-border);
+    border-radius: 12px;
+    background: var(--s7-bg);
+}
+
+#working-mechanism .s7-termination-grid span {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--s7-blue);
+    font-size: 0.72rem;
+    font-weight: 900;
+}
+
+#working-mechanism .s7-termination-grid strong,
+#working-mechanism .s7-termination-grid small {
+    display: block;
+}
+
+#working-mechanism .s7-termination-grid strong {
+    color: var(--s7-navy);
+}
+
+#working-mechanism .s7-termination-grid small {
+    margin-top: 0.25rem;
+    color: var(--s7-muted);
+    line-height: 1.4;
+}
+
+#working-mechanism .s7-termination-result {
+    max-width: 360px;
+    margin: 1rem auto 0;
+    padding: 1rem;
+    border: 1px solid #CBD5E1;
+    border-radius: 12px;
+    background: #F1F5F9;
+    text-align: center;
+}
+
+#working-mechanism .s7-termination-result strong,
+#working-mechanism .s7-termination-result small {
+    display: block;
+}
+
+#working-mechanism .s7-termination-result strong {
+    color: var(--s7-navy);
+}
+
+#working-mechanism .s7-termination-result small {
+    margin-top: 0.25rem;
+    color: var(--s7-muted);
+}
+
+/* Browser example */
+
+#working-mechanism .s7-browser-timeline {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+}
+
+#working-mechanism .s7-browser-timeline > div {
+    padding: 0.9rem;
+    border: 1px solid var(--s7-border);
+    border-radius: 12px;
+    background: var(--s7-bg);
+}
+
+#working-mechanism .s7-browser-timeline span {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0.5rem;
+    border-radius: 50%;
+    background: #DBEAFE;
+    color: var(--s7-blue);
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+
+#working-mechanism .s7-browser-timeline strong,
+#working-mechanism .s7-browser-timeline small {
+    display: block;
+}
+
+#working-mechanism .s7-browser-timeline strong {
+    color: var(--s7-navy);
+    font-size: 0.87rem;
+}
+
+#working-mechanism .s7-browser-timeline small {
+    margin-top: 0.25rem;
+    color: var(--s7-muted);
+    line-height: 1.4;
+}
+
+/* State transition diagram */
+
+#working-mechanism .s7-transition-diagram {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+#working-mechanism .s7-transition-row {
+    display: grid;
+    grid-template-columns: minmax(75px, 1fr) 25px minmax(75px, 1fr) minmax(110px, 1.6fr);
+    align-items: center;
+    gap: 0.45rem;
+}
+
+#working-mechanism .s7-transition-state {
+    padding: 0.65rem 0.35rem;
+    border: 1px solid var(--s7-border);
+    border-radius: 9px;
+    color: var(--s7-navy);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+#working-mechanism .s7-transition-arrow {
+    color: var(--s7-blue);
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+#working-mechanism .s7-transition-label {
+    color: var(--s7-muted);
+    font-size: 0.76rem;
+    line-height: 1.35;
+}
+
+/* Summary and learning outcomes */
+
+#working-mechanism .s7-summary-strip {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin: 1.2rem 0;
+}
+
+#working-mechanism .s7-summary-strip > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.75rem 0.35rem;
+    border: 1px solid var(--s7-border);
+    border-radius: 10px;
+    background: var(--s7-bg);
+    text-align: center;
+}
+
+#working-mechanism .s7-summary-strip span {
+    color: var(--s7-blue);
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+
+#working-mechanism .s7-summary-strip strong {
+    color: var(--s7-navy);
+    font-size: 0.78rem;
+}
+
+#working-mechanism .s7-outcomes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin: 1.2rem 0;
+}
+
+#working-mechanism .s7-outcomes-list > div {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding: 0.8rem;
+    border: 1px solid var(--s7-border);
+    border-radius: 10px;
+    background: var(--s7-white);
+    line-height: 1.5;
+}
+
+#working-mechanism .s7-outcomes-list span {
+    display: grid;
+    place-items: center;
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #CCFBF1;
+    color: #0F766E;
+    font-weight: 900;
+}
+
+/* Tablet and iPad-friendly layouts */
+
+@media (max-width: 760px) {
+    #working-mechanism .s7-lifecycle-track {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #working-mechanism .s7-browser-timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #working-mechanism .s7-transition-row {
+        grid-template-columns: minmax(70px, 1fr) 20px minmax(70px, 1fr) minmax(90px, 1.2fr);
+    }
+}
+
+/* Smaller mobile screens */
+
+@media (max-width: 520px) {
+    #working-mechanism .s7-visual-card {
+        padding: 1rem;
+    }
+
+    #working-mechanism .s7-state-grid,
+    #working-mechanism .s7-role-grid,
+    #working-mechanism .s7-ready-wait-grid,
+    #working-mechanism .s7-execution-outcomes,
+    #working-mechanism .s7-termination-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #working-mechanism .s7-lifecycle-track {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #working-mechanism .s7-browser-timeline {
+        grid-template-columns: 1fr;
+    }
+
+    #working-mechanism .s7-summary-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #working-mechanism .s7-intro-journey {
+        gap: 0.25rem;
+        padding: 0.8rem;
+    }
+
+    #working-mechanism .s7-journey-step {
+        padding: 0.4rem;
+    }
+
+    #working-mechanism .s7-journey-step strong {
+        font-size: 0.72rem;
+    }
+
+    #working-mechanism .s7-journey-arrow {
+        font-size: 0.75rem;
+    }
+
+    #working-mechanism .s7-mini-flow {
+        flex-direction: column;
+    }
+
+    #working-mechanism .s7-mini-flow b {
+        transform: rotate(90deg);
+    }
+
+    #working-mechanism .s7-transition-row {
+        grid-template-columns: minmax(65px, 1fr) 18px minmax(65px, 1fr);
+    }
+
+    #working-mechanism .s7-transition-label {
+        grid-column: 1 / -1;
+        padding: 0.1rem 0 0.35rem;
+        text-align: center;
+    }
+
+    #working-mechanism .s7-transition-state {
+        font-size: 0.75rem;
+    }
+
+    #working-mechanism .s7-callout {
+        padding: 0.85rem;
+    }
+}
+
+/* =========================================================
+   END SECTION 7 VISUAL STYLES
+   ========================================================= */
+
+
+
 
 
