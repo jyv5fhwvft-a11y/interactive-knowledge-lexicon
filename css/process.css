@@ -3025,6 +3025,251 @@ h4 {
    ========================================================= */
 
 
+/* =========================================================
+   SECTION 5 — PROCESS MEMORY MAP EXPLORER
+   ========================================================= */
+
+.memory-explorer {
+  margin: 28px 0;
+  padding: 24px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(16, 42, 67, 0.06);
+}
+
+.memory-explorer-header {
+  margin-bottom: 22px;
+}
+
+.memory-explorer-header h4 {
+  margin: 0 0 8px;
+  color: #102A43;
+  font-size: 1.2rem;
+}
+
+.memory-explorer-header p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.65;
+}
+
+.memory-explorer-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.memory-map-visual,
+.memory-region-information {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+}
+
+.memory-map-visual {
+  background: #F8FAFC;
+}
+
+.memory-map-label,
+.memory-selection-label {
+  margin: 0 0 14px;
+  color: #475569;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.memory-address-label {
+  padding: 7px 10px;
+  color: #475569;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.memory-region-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.memory-region-button {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  padding: 13px 15px;
+  color: #102A43;
+  text-align: left;
+  background: #FFFFFF;
+  border: 2px solid #E2E8F0;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: border-color 0.2s ease,
+              background-color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.memory-region-button strong {
+  font-size: 0.9rem;
+}
+
+.memory-region-button span {
+  color: #475569;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.memory-region-button:hover {
+  border-color: #2563EB;
+}
+
+.memory-region-button[aria-pressed="true"] {
+  background: #EFF6FF;
+  border-color: #2563EB;
+  box-shadow: inset 4px 0 0 #2563EB;
+}
+
+.memory-region-button:focus-visible,
+.memory-thread-buttons button:focus-visible {
+  outline: 3px solid #0D9488;
+  outline-offset: 3px;
+}
+
+.memory-map-disclaimer {
+  margin: 12px 0 0;
+  color: #64748B;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.memory-region-information {
+  background: #FFFFFF;
+}
+
+.memory-region-information h4 {
+  margin: 0 0 12px;
+  color: #102A43;
+  font-size: 1.15rem;
+}
+
+.memory-region-information > p:not(.memory-selection-label) {
+  color: #475569;
+  line-height: 1.7;
+}
+
+.memory-example-panel,
+.memory-technical-panel,
+.memory-thread-panel {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 9px;
+}
+
+.memory-example-panel {
+  background: #EFF6FF;
+  border-left: 4px solid #2563EB;
+}
+
+.memory-technical-panel {
+  background: #F0FDFA;
+  border-left: 4px solid #0D9488;
+}
+
+.memory-thread-panel {
+  background: #FFFBEB;
+  border-left: 4px solid #F59E0B;
+}
+
+.memory-example-panel h5,
+.memory-technical-panel h5,
+.memory-thread-panel h5 {
+  margin: 0 0 7px;
+  color: #102A43;
+  font-size: 0.9rem;
+}
+
+.memory-example-panel p,
+.memory-technical-panel p,
+.memory-thread-panel p {
+  margin: 0;
+  color: #475569;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.memory-thread-panel[hidden] {
+  display: none !important;
+}
+
+.memory-thread-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.memory-thread-buttons button {
+  padding: 9px 16px;
+  color: #102A43;
+  font-weight: 600;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.memory-thread-buttons button[aria-pressed="true"] {
+  color: #FFFFFF;
+  background: #2563EB;
+  border-color: #2563EB;
+}
+
+.memory-explorer-takeaway {
+  margin-top: 20px;
+  padding: 15px 17px;
+  color: #102A43;
+  background: #F0FDFA;
+  border-left: 4px solid #0D9488;
+  border-radius: 8px;
+  line-height: 1.65;
+}
+
+/* Responsive layout for smaller screens */
+
+@media (max-width: 700px) {
+  .memory-explorer {
+    padding: 16px;
+  }
+
+  .memory-explorer-layout {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .memory-map-visual,
+  .memory-region-information {
+    padding: 14px;
+  }
+}
+
+/* Respect reduced-motion accessibility preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .memory-region-button {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   END SECTION 5 — PROCESS MEMORY MAP EXPLORER
+   ========================================================= */
+
+
+
 
 
 
