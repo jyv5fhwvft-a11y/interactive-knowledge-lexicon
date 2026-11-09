@@ -2710,7 +2710,6 @@ to finish.
 <!-- END SECTION 4: BEGINNER EXPLANATION -->
 
 
-        
 <!-- ================================================== -->
 <!-- SECTION 5: TECHNICAL EXPLANATION                   -->
 <!-- ================================================== -->
@@ -2996,6 +2995,7 @@ to finish.
 
     </div>
 
+    
     <!-- BLOCK 5.6: PROGRAM COUNTER -->
 
     <h3>5.5 Program Counter (PC)</h3>
@@ -3301,8 +3301,8 @@ to finish.
 
     <p>
         This arrangement helps provide memory
-        protection and gives each process its
-        own organised view of memory.
+        protection and gives each process
+        its own organised view of memory.
     </p>
 
     <p>
@@ -3379,6 +3379,189 @@ to finish.
 
     </ul>
 
+    <!-- ==================================================
+         PROCESS MEMORY MAP EXPLORER
+         ================================================== -->
+
+    <div class="memory-explorer" data-memory-explorer>
+
+        <div class="memory-explorer-header">
+
+            <h4>Explore the Process Memory Map</h4>
+
+            <p>
+                Select a memory region to discover what it
+                contains, why it exists, and how it is used
+                by a running process.
+            </p>
+
+        </div>
+
+        <div class="memory-explorer-layout">
+
+            <!-- MEMORY MAP VISUAL -->
+
+            <div class="memory-map-visual">
+
+                <p class="memory-map-label">
+                    Simplified Virtual Address Space
+                </p>
+
+                <div class="memory-address-label">
+                    Higher Addresses
+                </div>
+
+                <div class="memory-region-buttons">
+
+                    <button type="button"
+                            class="memory-region-button"
+                            data-memory-region="stack"
+                            aria-pressed="false">
+                        <strong>STACK</strong>
+                        <span>Function calls and local data</span>
+                    </button>
+
+                    <button type="button"
+                            class="memory-region-button"
+                            data-memory-region="heap"
+                            aria-pressed="false">
+                        <strong>HEAP</strong>
+                        <span>Dynamic memory allocation</span>
+                    </button>
+
+                    <button type="button"
+                            class="memory-region-button"
+                            data-memory-region="bss"
+                            aria-pressed="false">
+                        <strong>BSS</strong>
+                        <span>Uninitialised global and static data</span>
+                    </button>
+
+                    <button type="button"
+                            class="memory-region-button"
+                            data-memory-region="data"
+                            aria-pressed="false">
+                        <strong>DATA</strong>
+                        <span>Initialised global and static data</span>
+                    </button>
+
+                    <button type="button"
+                            class="memory-region-button"
+                            data-memory-region="code"
+                            aria-pressed="true">
+                        <strong>CODE / TEXT</strong>
+                        <span>Executable program instructions</span>
+                    </button>
+
+                </div>
+
+                <div class="memory-address-label">
+                    Lower Addresses
+                </div>
+
+                <p class="memory-map-disclaimer">
+                    Illustrative layout only. Actual virtual
+                    address-space arrangements vary by system.
+                </p>
+
+            </div>
+
+            <!-- SELECTED REGION EXPLANATION -->
+
+            <div class="memory-region-information"
+                 aria-live="polite">
+
+                <p class="memory-selection-label">
+                    SELECTED MEMORY REGION
+                </p>
+
+                <h4 data-memory-title>
+                    Code / Text Segment
+                </h4>
+
+                <p data-memory-description>
+                    This region contains the executable
+                    instructions of a program. The CPU fetches
+                    and executes these instructions as the
+                    program runs.
+                </p>
+
+                <div class="memory-example-panel">
+
+                    <h5>Practical Example</h5>
+
+                    <p data-memory-example>
+                        Example: Instructions that tell a
+                        program how to calculate a total
+                        or display a message.
+                    </p>
+
+                </div>
+
+                <div class="memory-technical-panel">
+
+                    <h5>Technical Detail</h5>
+
+                    <p data-memory-technical>
+                        The code segment is commonly mapped
+                        with read and execute permissions.
+                        Its exact arrangement depends on the
+                        operating system and executable format.
+                    </p>
+
+                </div>
+
+                <!-- THREAD STACK COMPARISON -->
+
+                <div class="memory-thread-panel"
+                     data-memory-thread-panel
+                     hidden>
+
+                    <h5>Compare Thread Stacks</h5>
+
+                    <p>
+                        Both threads belong to the same
+                        process, but each normally has
+                        its own stack.
+                    </p>
+
+                    <div class="memory-thread-buttons">
+
+                        <button type="button"
+                                data-memory-thread="a"
+                                aria-pressed="true">
+                            Thread A
+                        </button>
+
+                        <button type="button"
+                                data-memory-thread="b"
+                                aria-pressed="false">
+                            Thread B
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="memory-explorer-takeaway">
+
+            <strong>Key takeaway:</strong>
+
+            A process has an organised virtual address
+            space. Its threads generally share that
+            address space, but each thread maintains
+            its own execution stack.
+
+        </div>
+
+    </div>
+
+    <!-- END PROCESS MEMORY MAP EXPLORER -->
+
     <div class="concept-note">
 
         <h4>Important Memory Concept</h4>
@@ -3413,6 +3596,7 @@ to finish.
 
     </div>
 
+    
     <!-- BLOCK 5.11: PROCESS MEMORY SUMMARY -->
 
     <h3>5.10 Understanding the Process Memory Layout</h3>
@@ -3633,10 +3817,9 @@ to finish.
 
 <!-- END SECTION 5: TECHNICAL EXPLANATION -->
 
-<!-- ================================================== -->
-<!-- END SECTION 5                                     -->
-<!-- ================================================== -->
 
+
+        
 
 <!-- ================================================== -->
 <!-- SECTION 6: COMPONENTS AND ARCHITECTURE             -->
