@@ -5,7 +5,10 @@
 
    Section 7: Five interactive teaching animations.
 
-   Existing diagrams and educational content are preserved.
+   Corrected version:
+   1. Ready Queue highlights the File Manager card.
+   2. Termination highlights the Terminated result card.
+   3. Highlight searches cover the complete visual card.
    ========================================================= */
 
 (function () {
@@ -77,6 +80,7 @@
                     }
                 ]
             },
+
             {
                 id: "ready-queue",
                 title: "Explore Ready Queue and CPU Scheduling",
@@ -86,23 +90,24 @@
                     {
                         selector: ".s7-queue-item",
                         index: 0,
-                        title: "Processes enter the queue",
-                        explanation: "Runnable processes wait in the ready queue for an opportunity to use the CPU."
+                        title: "Browser thread",
+                        explanation: "The Browser process is waiting in the ready queue for an opportunity to use the CPU."
                     },
                     {
                         selector: ".s7-queue-item",
                         index: 1,
-                        title: "The scheduler selects",
-                        explanation: "The CPU scheduler chooses a process according to the scheduling policy."
+                        title: "Music Player thread",
+                        explanation: "The Music Player process is another runnable process waiting for CPU time."
                     },
                     {
-                        selector: ".s7-queue-output",
-                        index: 0,
-                        title: "A process is selected",
-                        explanation: "The selected process becomes the candidate for CPU execution."
+                        selector: ".s7-queue-item",
+                        index: 2,
+                        title: "File Manager thread is selected",
+                        explanation: "The File Manager is the third example in the ready queue and is now highlighted as the selected process."
                     }
                 ]
             },
+
             {
                 id: "context-switch",
                 title: "Explore a Context Switch",
@@ -135,6 +140,7 @@
                     }
                 ]
             },
+
             {
                 id: "waiting-ready",
                 title: "Explore Waiting to Ready",
@@ -167,6 +173,7 @@
                     }
                 ]
             },
+
             {
                 id: "termination",
                 title: "Explore Process Termination",
@@ -200,7 +207,7 @@
                     {
                         selector: ".s7-termination-result",
                         index: 0,
-                        title: "Termination complete",
+                        title: "Terminated",
                         explanation: "The process is no longer executing. The operating system has completed the relevant cleanup."
                     }
                 ]
@@ -298,6 +305,19 @@
                 "s7-animation-controls"
             );
 
+            let currentStep = -1;
+            let timer = null;
+
+            function pause() {
+                if (timer) {
+                    window.clearInterval(timer);
+                    timer = null;
+                }
+
+                playButton.disabled = false;
+                pauseButton.disabled = true;
+            }
+
             function createButton(label, action, extraClass) {
                 const button = createElement(
                     "button",
@@ -361,9 +381,6 @@
 
             card.insertAdjacentElement("afterend", panel);
 
-            let currentStep = -1;
-            let timer = null;
-
             function clearHighlights() {
                 const selectors = [
                     ".s7-state",
@@ -378,7 +395,7 @@
                 ];
 
                 selectors.forEach((selector) => {
-                    target.querySelectorAll(selector).forEach((element) => {
+                    card.querySelectorAll(selector).forEach((element) => {
                         element.classList.remove(
                             "s7-animation-active",
                             "s7-animation-complete"
@@ -400,10 +417,11 @@
 
                 currentStep = step;
 
+                // Highlight the stages already completed.
                 for (let i = 0; i < currentStep; i++) {
                     const previousItem = definition.items[i];
 
-                    const previousElements = target.querySelectorAll(
+                    const previousElements = card.querySelectorAll(
                         previousItem.selector
                     );
 
@@ -417,9 +435,10 @@
                     }
                 }
 
+                // Highlight the current stage.
                 const item = definition.items[currentStep];
 
-                const elements = target.querySelectorAll(item.selector);
+                const elements = card.querySelectorAll(item.selector);
 
                 const activeElement = elements[item.index];
 
@@ -489,16 +508,6 @@
                 }, delay);
             }
 
-            function pause() {
-                if (timer) {
-                    window.clearInterval(timer);
-                    timer = null;
-                }
-
-                playButton.disabled = false;
-                pauseButton.disabled = true;
-            }
-
             function reset() {
                 pause();
                 clearHighlights();
@@ -524,8 +533,6 @@
 
             pauseButton.disabled = true;
             previousButton.disabled = true;
-
-            resetButton.addEventListener("click", reset);
         }
 
         animationDefinitions.forEach(createAnimationPanel);
