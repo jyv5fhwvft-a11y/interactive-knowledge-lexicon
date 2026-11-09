@@ -4813,76 +4813,158 @@ to finish.
         the selected thread executes on behalf of its process.
     </p>
 
-    <!-- BLOCK 7.6 — PROCESS EXECUTION -->
+  
+<!-- BLOCK 7.6 — PROCESS EXECUTION AND CONTEXT SWITCHING -->
 
-    <h3>7.6 Stage 4: Process Execution</h3>
+<h3>7.6 Stage 4: Process Execution</h3>
 
-    <p>
-        In the traditional model, a process is described as Running
-        when it is executing instructions on a CPU.
-        More precisely, a thread belonging to that process is
-        executing on the CPU.
-    </p>
+<p>
+    In the traditional model, a process is described as Running
+    when it is executing instructions on a CPU.
+    More precisely, a thread belonging to that process is
+    executing on the CPU.
+</p>
 
-    <div class="s7-visual-card">
-        <div class="s7-visual-heading">
-            <span class="s7-visual-number">INSIDE EXECUTION</span>
-            <h4>What happens when a thread runs?</h4>
-        </div>
-        <div class="s7-execution-flow">
-            <div class="s7-execution-source">
-                <span class="s7-large-icon">01</span>
-                <strong>Program instructions</strong>
-                <small>Instructions belonging to the executing thread</small>
-            </div>
-            <span class="s7-down-arrow">↓</span>
-            <div class="s7-execution-cpu">
-                <span class="s7-large-icon">02</span>
-                <strong>CPU executes instructions</strong>
-                <small>Uses active registers and execution context</small>
-            </div>
-            <span class="s7-down-arrow">↓</span>
-            <div class="s7-execution-outcomes">
-                <div class="s7-outcome-card">
-                    <span>03A</span>
-                    <strong>Memory operations</strong>
-                    <small>Read or change data</small>
-                </div>
-                <div class="s7-outcome-card">
-                    <span>03B</span>
-                    <strong>I/O requests</strong>
-                    <small>Storage, network or input</small>
-                </div>
-            </div>
-        </div>
-        <p class="s7-caption">
-            Simplified teaching flow. Actual instruction execution
-            involves CPU architecture, memory systems and operating-system services.
-        </p>
+<div class="s7-visual-card">
+    <div class="s7-visual-heading">
+        <span class="s7-visual-number">INSIDE EXECUTION</span>
+        <h4>What happens when a thread runs?</h4>
     </div>
 
-    <p>
-        During execution, the CPU processes instructions using
-        the program's execution environment, memory and current
-        execution context.
+    <div class="s7-execution-flow">
+        <div class="s7-execution-source">
+            <span class="s7-large-icon">01</span>
+            <strong>Program instructions</strong>
+            <small>Instructions belonging to the executing thread</small>
+        </div>
+
+        <span class="s7-down-arrow">↓</span>
+
+        <div class="s7-execution-cpu">
+            <span class="s7-large-icon">02</span>
+            <strong>CPU executes instructions</strong>
+            <small>Uses active registers and execution context</small>
+        </div>
+
+        <span class="s7-down-arrow">↓</span>
+
+        <div class="s7-execution-outcomes">
+            <div class="s7-outcome-card">
+                <span>03A</span>
+                <strong>Memory operations</strong>
+                <small>Read or change data</small>
+            </div>
+
+            <div class="s7-outcome-card">
+                <span>03B</span>
+                <strong>I/O requests</strong>
+                <small>Storage, network or input</small>
+            </div>
+        </div>
+    </div>
+
+    <p class="s7-caption">
+        Simplified teaching flow. Actual instruction execution
+        involves CPU architecture, memory systems and operating-system services.
+    </p>
+</div>
+
+<p>
+    During execution, the CPU processes instructions using
+    the program's execution environment, memory and current
+    execution context.
+</p>
+
+<p>The work may include:</p>
+
+<ul>
+    <li>Performing calculations.</li>
+    <li>Reading or changing data in memory.</li>
+    <li>Requesting information from a storage device.</li>
+    <li>Communicating over a network.</li>
+    <li>Responding to user input.</li>
+</ul>
+
+<div class="s7-callout s7-callout-info">
+    <strong>Execution is not necessarily continuous</strong>
+    Running does not mean a process remains on the CPU continuously
+    until it finishes. Its threads may be interrupted, scheduled
+    again later, or blocked while waiting for an event.
+</div>
+
+<!-- CONTEXT SWITCHING INTERACTIVE SIMULATION -->
+
+<h4>Interactive Simulation: Context Switching</h4>
+
+<p>
+    A CPU core executes one thread at a time. When the operating
+    system switches the CPU from one thread to another, it must
+    preserve the first thread's execution context and restore
+    the next thread's saved context.
+</p>
+
+<div class="s7-visual-card">
+
+    <div class="s7-visual-heading">
+        <span class="s7-visual-number">CONTEXT SWITCH</span>
+        <h4>How does the CPU switch from Thread A to Thread B?</h4>
+    </div>
+
+    <div class="s7-switch-flow">
+
+        <div class="s7-switch-thread">
+            <span class="s7-large-icon">A</span>
+            <strong>Thread A</strong>
+            <small>Currently executing on the CPU</small>
+        </div>
+
+        <span class="s7-down-arrow">↓</span>
+
+        <div class="s7-switch-action">
+            <span class="s7-large-icon">01</span>
+            <strong>Save Thread A's context</strong>
+            <small>
+                Preserve its program counter, CPU registers
+                and other required execution information.
+            </small>
+        </div>
+
+        <span class="s7-down-arrow">↓</span>
+
+        <div class="s7-switch-action">
+            <span class="s7-large-icon">02</span>
+            <strong>Restore Thread B's context</strong>
+            <small>
+                Load Thread B's previously saved execution
+                information so it can continue.
+            </small>
+        </div>
+
+        <span class="s7-down-arrow">↓</span>
+
+        <div class="s7-switch-thread">
+            <span class="s7-large-icon">B</span>
+            <strong>Thread B</strong>
+            <small>Now executing on the CPU</small>
+        </div>
+
+    </div>
+
+    <p class="s7-caption">
+        Simplified conceptual model of a context switch.
+        The operating system and processor perform additional
+        architecture-dependent operations.
     </p>
 
-    <p>The work may include:</p>
+</div>
 
-    <ul>
-        <li>Performing calculations.</li>
-        <li>Reading or changing data in memory.</li>
-        <li>Requesting information from a storage device.</li>
-        <li>Communicating over a network.</li>
-        <li>Responding to user input.</li>
-    </ul>
-
-    <div class="s7-callout s7-callout-info">
-        <strong>Execution is not necessarily continuous</strong>
-        Running does not mean a process remains on the CPU continuously
-        until it finishes. Its threads may be interrupted, scheduled
-        again later, or blocked while waiting for an event.
-    </div>
+<p>
+    <strong>Why is this important?</strong>
+    Context switching allows the operating system to share CPU
+    time between multiple threads. A thread can pause and later
+    resume from its saved execution state rather than starting
+    again from the beginning.
+</p>
 
     <!-- BLOCK 7.7 — WAITING STATE -->
 
